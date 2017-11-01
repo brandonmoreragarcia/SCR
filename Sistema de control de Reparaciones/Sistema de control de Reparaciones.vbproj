@@ -14,7 +14,7 @@
     <TargetFrameworkVersion>v4.5.2</TargetFrameworkVersion>
     <AutoGenerateBindingRedirects>true</AutoGenerateBindingRedirects>
     <IsWebBootstrapper>false</IsWebBootstrapper>
-    <PublishUrl>C:\Sistemas\</PublishUrl>
+    <PublishUrl>C:\Users\SistemasG86\Desktop\SCR29092016\</PublishUrl>
     <Install>true</Install>
     <InstallFrom>Disk</InstallFrom>
     <UpdateEnabled>false</UpdateEnabled>
@@ -24,7 +24,7 @@
     <UpdatePeriodically>false</UpdatePeriodically>
     <UpdateRequired>false</UpdateRequired>
     <MapFileExtensions>true</MapFileExtensions>
-    <ApplicationRevision>2</ApplicationRevision>
+    <ApplicationRevision>4</ApplicationRevision>
     <ApplicationVersion>0.0.0.%2a</ApplicationVersion>
     <UseApplicationTrust>false</UseApplicationTrust>
     <CreateDesktopShortcut>true</CreateDesktopShortcut>
@@ -85,10 +85,19 @@
     <SignManifests>false</SignManifests>
   </PropertyGroup>
   <ItemGroup>
+    <Reference Include="CrystalDecisions.CrystalReports.Engine, Version=13.0.2000.0, Culture=neutral, PublicKeyToken=692fbea5521e1304, processorArchitecture=MSIL" />
+    <Reference Include="CrystalDecisions.ReportSource, Version=13.0.2000.0, Culture=neutral, PublicKeyToken=692fbea5521e1304, processorArchitecture=MSIL" />
+    <Reference Include="CrystalDecisions.Shared, Version=13.0.2000.0, Culture=neutral, PublicKeyToken=692fbea5521e1304, processorArchitecture=MSIL" />
+    <Reference Include="CrystalDecisions.Windows.Forms, Version=13.0.2000.0, Culture=neutral, PublicKeyToken=692fbea5521e1304, processorArchitecture=MSIL" />
+    <Reference Include="FlashControlV71, Version=1.0.3187.32366, Culture=neutral, PublicKeyToken=692fbea5521e1304" />
     <Reference Include="System" />
+    <Reference Include="System.Configuration" />
     <Reference Include="System.Data" />
     <Reference Include="System.Deployment" />
     <Reference Include="System.Drawing" />
+    <Reference Include="System.Web" />
+    <Reference Include="System.Web.Extensions" />
+    <Reference Include="System.Web.Services" />
     <Reference Include="System.Windows.Forms" />
     <Reference Include="System.Xml" />
     <Reference Include="System.Core" />
@@ -111,15 +120,78 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="Conexion.vb" />
-    <Compile Include="ExactusERPDataSet.Designer.vb">
+    <Compile Include="ExactusERP_SRC_TABLES.Designer.vb">
       <AutoGen>True</AutoGen>
       <DesignTime>True</DesignTime>
-      <DependentUpon>ExactusERPDataSet.xsd</DependentUpon>
+      <DependentUpon>ExactusERP_SRC_TABLES.xsd</DependentUpon>
     </Compile>
-    <Compile Include="ExactusERP_cliente_d86.Designer.vb">
+    <Compile Include="ExactusERP_SRC_TABLES.vb">
+      <DependentUpon>ExactusERP_SRC_TABLES.xsd</DependentUpon>
+    </Compile>
+    <Compile Include="ExactusERP_TABLES.Designer.vb">
       <AutoGen>True</AutoGen>
       <DesignTime>True</DesignTime>
-      <DependentUpon>ExactusERP_cliente_d86.xsd</DependentUpon>
+      <DependentUpon>ExactusERP_TABLES.xsd</DependentUpon>
+    </Compile>
+    <Compile Include="Frm_Actualizacion_Rep.Designer.vb">
+      <DependentUpon>Frm_Actualizacion_Rep.vb</DependentUpon>
+    </Compile>
+    <Compile Include="Frm_Actualizacion_Rep.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Frm_Actualizacion_Trans.Designer.vb">
+      <DependentUpon>Frm_Actualizacion_Trans.vb</DependentUpon>
+    </Compile>
+    <Compile Include="Frm_Actualizacion_Trans.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Frm_Busqueda.Designer.vb">
+      <DependentUpon>Frm_Busqueda.vb</DependentUpon>
+    </Compile>
+    <Compile Include="Frm_Busqueda.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Frm_Busqueda_Articulo.Designer.vb">
+      <DependentUpon>Frm_Busqueda_Articulo.vb</DependentUpon>
+    </Compile>
+    <Compile Include="Frm_Busqueda_Articulo.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Frm_Busqueda_cliente.Designer.vb">
+      <DependentUpon>Frm_Busqueda_cliente.vb</DependentUpon>
+    </Compile>
+    <Compile Include="Frm_Busqueda_cliente.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Frm_Consulta_Cliente.Designer.vb">
+      <DependentUpon>Frm_Consulta_Cliente.vb</DependentUpon>
+    </Compile>
+    <Compile Include="Frm_Consulta_Cliente.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Frm_Consulta_Num_Queja.Designer.vb">
+      <DependentUpon>Frm_Consulta_Num_Queja.vb</DependentUpon>
+    </Compile>
+    <Compile Include="Frm_Consulta_Num_Queja.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Frm_Consulta_Queja.Designer.vb">
+      <DependentUpon>Frm_Consulta_Queja.vb</DependentUpon>
+    </Compile>
+    <Compile Include="Frm_Consulta_Queja.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Frm_Consulta_Reparacion.Designer.vb">
+      <DependentUpon>Frm_Consulta_Reparacion.vb</DependentUpon>
+    </Compile>
+    <Compile Include="Frm_Consulta_Reparacion.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Frm_Detalle_Reparacion.Designer.vb">
+      <DependentUpon>Frm_Detalle_Reparacion.vb</DependentUpon>
+    </Compile>
+    <Compile Include="Frm_Detalle_Reparacion.vb">
+      <SubType>Form</SubType>
     </Compile>
     <Compile Include="Frm_Entrada.vb">
       <SubType>Form</SubType>
@@ -128,16 +200,160 @@
       <DependentUpon>Frm_Entrada.vb</DependentUpon>
       <SubType>Form</SubType>
     </Compile>
+    <Compile Include="Frm_Impresion_Entrada.Designer.vb">
+      <DependentUpon>Frm_Impresion_Entrada.vb</DependentUpon>
+    </Compile>
+    <Compile Include="Frm_Impresion_Entrada.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Frm_Impresion_Etiqueta_Salida.Designer.vb">
+      <DependentUpon>Frm_Impresion_Etiqueta_Salida.vb</DependentUpon>
+    </Compile>
+    <Compile Include="Frm_Impresion_Etiqueta_Salida.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Frm_Impresion_Rep.Designer.vb">
+      <DependentUpon>Frm_Impresion_Rep.vb</DependentUpon>
+    </Compile>
+    <Compile Include="Frm_Impresion_Rep.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Frm_Impresion_Rep_Consumo.Designer.vb">
+      <DependentUpon>Frm_Impresion_Rep_Consumo.vb</DependentUpon>
+    </Compile>
+    <Compile Include="Frm_Impresion_Rep_Consumo.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Frm_Ingreso_Queja.Designer.vb">
+      <DependentUpon>Frm_Ingreso_Queja.vb</DependentUpon>
+    </Compile>
+    <Compile Include="Frm_Ingreso_Queja.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Frm_Listado_Quejas.Designer.vb">
+      <DependentUpon>Frm_Listado_Quejas.vb</DependentUpon>
+    </Compile>
+    <Compile Include="Frm_Listado_Quejas.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Frm_Listado_Rep.Designer.vb">
+      <DependentUpon>Frm_Listado_Rep.vb</DependentUpon>
+    </Compile>
+    <Compile Include="Frm_Listado_Rep.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Frm_Listado_Reportes.Designer.vb">
+      <DependentUpon>Frm_Listado_Reportes.vb</DependentUpon>
+    </Compile>
+    <Compile Include="Frm_Listado_Reportes.vb">
+      <SubType>Form</SubType>
+    </Compile>
     <Compile Include="Frm_Login.Designer.vb">
       <DependentUpon>Frm_Login.vb</DependentUpon>
     </Compile>
     <Compile Include="Frm_Login.vb">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="Main_Menu.Designer.vb">
-      <DependentUpon>Main_Menu.vb</DependentUpon>
+    <Compile Include="Frm_Mantenimientos.Designer.vb">
+      <DependentUpon>Frm_Mantenimientos.vb</DependentUpon>
     </Compile>
-    <Compile Include="Main_Menu.vb">
+    <Compile Include="Frm_Mantenimientos.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Frm_Mantenimiento_Encargado_Bodega.Designer.vb">
+      <DependentUpon>Frm_Mantenimiento_Encargado_Bodega.vb</DependentUpon>
+    </Compile>
+    <Compile Include="Frm_Mantenimiento_Encargado_Bodega.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Frm_Mantenimiento_Estado.Designer.vb">
+      <DependentUpon>Frm_Mantenimiento_Estado.vb</DependentUpon>
+    </Compile>
+    <Compile Include="Frm_Mantenimiento_Estado.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Frm_Mantenimiento_Estado_Ruta.Designer.vb">
+      <DependentUpon>Frm_Mantenimiento_Estado_Ruta.vb</DependentUpon>
+    </Compile>
+    <Compile Include="Frm_Mantenimiento_Estado_Ruta.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Frm_Mantenimiento_Localizacion.Designer.vb">
+      <DependentUpon>Frm_Mantenimiento_Localizacion.vb</DependentUpon>
+    </Compile>
+    <Compile Include="Frm_Mantenimiento_Localizacion.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Frm_Mantenimiento_Localizacion_Ruta.Designer.vb">
+      <DependentUpon>Frm_Mantenimiento_Localizacion_Ruta.vb</DependentUpon>
+    </Compile>
+    <Compile Include="Frm_Mantenimiento_Localizacion_Ruta.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Frm_Mantenimiento_Motivo.Designer.vb">
+      <DependentUpon>Frm_Mantenimiento_Motivo.vb</DependentUpon>
+    </Compile>
+    <Compile Include="Frm_Mantenimiento_Motivo.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Frm_Mantenimiento_Motivo_Queja.Designer.vb">
+      <DependentUpon>Frm_Mantenimiento_Motivo_Queja.vb</DependentUpon>
+    </Compile>
+    <Compile Include="Frm_Mantenimiento_Motivo_Queja.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Frm_Mantenimiento_Traido_Por.Designer.vb">
+      <DependentUpon>Frm_Mantenimiento_Traido_Por.vb</DependentUpon>
+    </Compile>
+    <Compile Include="Frm_Mantenimiento_Traido_Por.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Frm_Mantenimiento_Transporte.Designer.vb">
+      <DependentUpon>Frm_Mantenimiento_Transporte.vb</DependentUpon>
+    </Compile>
+    <Compile Include="Frm_Mantenimiento_Transporte.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Frm_Mantenimiento_Usuarios.Designer.vb">
+      <DependentUpon>Frm_Mantenimiento_Usuarios.vb</DependentUpon>
+    </Compile>
+    <Compile Include="Frm_Mantenimiento_Usuarios.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Frm_Procesada_Queja.Designer.vb">
+      <DependentUpon>Frm_Procesada_Queja.vb</DependentUpon>
+    </Compile>
+    <Compile Include="Frm_Procesada_Queja.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Frm_Rep_Total.Designer.vb">
+      <DependentUpon>Frm_Rep_Total.vb</DependentUpon>
+    </Compile>
+    <Compile Include="Frm_Rep_Total.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Frm_Solicitud_Boleta_Rep.Designer.vb">
+      <DependentUpon>Frm_Solicitud_Boleta_Rep.vb</DependentUpon>
+    </Compile>
+    <Compile Include="Frm_Solicitud_Boleta_Rep.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Frm_Main_Menu.Designer.vb">
+      <DependentUpon>Frm_Main_Menu.vb</DependentUpon>
+    </Compile>
+    <Compile Include="Frm_Main_Menu.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Frm_Solicitud_Boleta_Tran.Designer.vb">
+      <DependentUpon>Frm_Solicitud_Boleta_Tran.vb</DependentUpon>
+    </Compile>
+    <Compile Include="Frm_Solicitud_Boleta_Tran.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Frm_Solucion_Queja.Designer.vb">
+      <DependentUpon>Frm_Solucion_Queja.vb</DependentUpon>
+    </Compile>
+    <Compile Include="Frm_Solucion_Queja.vb">
       <SubType>Form</SubType>
     </Compile>
     <Compile Include="My Project\AssemblyInfo.vb" />
@@ -155,16 +371,119 @@
       <DependentUpon>Settings.settings</DependentUpon>
       <DesignTimeSharedInput>True</DesignTimeSharedInput>
     </Compile>
+    <Compile Include="MyException.vb" />
   </ItemGroup>
   <ItemGroup>
+    <EmbeddedResource Include="Frm_Actualizacion_Rep.resx">
+      <DependentUpon>Frm_Actualizacion_Rep.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Frm_Actualizacion_Trans.resx">
+      <DependentUpon>Frm_Actualizacion_Trans.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Frm_Busqueda.resx">
+      <DependentUpon>Frm_Busqueda.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Frm_Busqueda_Articulo.resx">
+      <DependentUpon>Frm_Busqueda_Articulo.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Frm_Busqueda_cliente.resx">
+      <DependentUpon>Frm_Busqueda_cliente.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Frm_Consulta_Cliente.resx">
+      <DependentUpon>Frm_Consulta_Cliente.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Frm_Consulta_Num_Queja.resx">
+      <DependentUpon>Frm_Consulta_Num_Queja.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Frm_Consulta_Queja.resx">
+      <DependentUpon>Frm_Consulta_Queja.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Frm_Consulta_Reparacion.resx">
+      <DependentUpon>Frm_Consulta_Reparacion.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Frm_Detalle_Reparacion.resx">
+      <DependentUpon>Frm_Detalle_Reparacion.vb</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="Frm_Entrada.resx">
       <DependentUpon>Frm_Entrada.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Frm_Impresion_Entrada.resx">
+      <DependentUpon>Frm_Impresion_Entrada.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Frm_Impresion_Etiqueta_Salida.resx">
+      <DependentUpon>Frm_Impresion_Etiqueta_Salida.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Frm_Impresion_Rep.resx">
+      <DependentUpon>Frm_Impresion_Rep.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Frm_Impresion_Rep_Consumo.resx">
+      <DependentUpon>Frm_Impresion_Rep_Consumo.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Frm_Ingreso_Queja.resx">
+      <DependentUpon>Frm_Ingreso_Queja.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Frm_Listado_Quejas.resx">
+      <DependentUpon>Frm_Listado_Quejas.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Frm_Listado_Rep.resx">
+      <DependentUpon>Frm_Listado_Rep.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Frm_Listado_Reportes.resx">
+      <DependentUpon>Frm_Listado_Reportes.vb</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Frm_Login.resx">
       <DependentUpon>Frm_Login.vb</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="Main_Menu.resx">
-      <DependentUpon>Main_Menu.vb</DependentUpon>
+    <EmbeddedResource Include="Frm_Mantenimientos.resx">
+      <DependentUpon>Frm_Mantenimientos.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Frm_Mantenimiento_Encargado_Bodega.resx">
+      <DependentUpon>Frm_Mantenimiento_Encargado_Bodega.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Frm_Mantenimiento_Estado.resx">
+      <DependentUpon>Frm_Mantenimiento_Estado.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Frm_Mantenimiento_Estado_Ruta.resx">
+      <DependentUpon>Frm_Mantenimiento_Estado_Ruta.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Frm_Mantenimiento_Localizacion.resx">
+      <DependentUpon>Frm_Mantenimiento_Localizacion.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Frm_Mantenimiento_Localizacion_Ruta.resx">
+      <DependentUpon>Frm_Mantenimiento_Localizacion_Ruta.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Frm_Mantenimiento_Motivo.resx">
+      <DependentUpon>Frm_Mantenimiento_Motivo.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Frm_Mantenimiento_Motivo_Queja.resx">
+      <DependentUpon>Frm_Mantenimiento_Motivo_Queja.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Frm_Mantenimiento_Traido_Por.resx">
+      <DependentUpon>Frm_Mantenimiento_Traido_Por.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Frm_Mantenimiento_Transporte.resx">
+      <DependentUpon>Frm_Mantenimiento_Transporte.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Frm_Mantenimiento_Usuarios.resx">
+      <DependentUpon>Frm_Mantenimiento_Usuarios.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Frm_Procesada_Queja.resx">
+      <DependentUpon>Frm_Procesada_Queja.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Frm_Rep_Total.resx">
+      <DependentUpon>Frm_Rep_Total.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Frm_Solicitud_Boleta_Rep.resx">
+      <DependentUpon>Frm_Solicitud_Boleta_Rep.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Frm_Main_Menu.resx">
+      <DependentUpon>Frm_Main_Menu.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Frm_Solicitud_Boleta_Tran.resx">
+      <DependentUpon>Frm_Solicitud_Boleta_Tran.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Frm_Solucion_Queja.resx">
+      <DependentUpon>Frm_Solucion_Queja.vb</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="My Project\Resources.resx">
       <Generator>VbMyResourcesResXFileCodeGenerator</Generator>
@@ -174,27 +493,27 @@
     </EmbeddedResource>
   </ItemGroup>
   <ItemGroup>
-    <None Include="ExactusERPDataSet.xsc">
-      <DependentUpon>ExactusERPDataSet.xsd</DependentUpon>
+    <None Include="ExactusERP_SRC_TABLES.xsc">
+      <DependentUpon>ExactusERP_SRC_TABLES.xsd</DependentUpon>
     </None>
-    <None Include="ExactusERPDataSet.xsd">
+    <None Include="ExactusERP_SRC_TABLES.xsd">
       <Generator>MSDataSetGenerator</Generator>
-      <LastGenOutput>ExactusERPDataSet.Designer.vb</LastGenOutput>
+      <LastGenOutput>ExactusERP_SRC_TABLES.Designer.vb</LastGenOutput>
       <SubType>Designer</SubType>
     </None>
-    <None Include="ExactusERPDataSet.xss">
-      <DependentUpon>ExactusERPDataSet.xsd</DependentUpon>
+    <None Include="ExactusERP_SRC_TABLES.xss">
+      <DependentUpon>ExactusERP_SRC_TABLES.xsd</DependentUpon>
     </None>
-    <None Include="ExactusERP_cliente_d86.xsc">
-      <DependentUpon>ExactusERP_cliente_d86.xsd</DependentUpon>
+    <None Include="ExactusERP_TABLES.xsc">
+      <DependentUpon>ExactusERP_TABLES.xsd</DependentUpon>
     </None>
-    <None Include="ExactusERP_cliente_d86.xsd">
+    <None Include="ExactusERP_TABLES.xsd">
       <Generator>MSDataSetGenerator</Generator>
-      <LastGenOutput>ExactusERP_cliente_d86.Designer.vb</LastGenOutput>
+      <LastGenOutput>ExactusERP_TABLES.Designer.vb</LastGenOutput>
       <SubType>Designer</SubType>
     </None>
-    <None Include="ExactusERP_cliente_d86.xss">
-      <DependentUpon>ExactusERP_cliente_d86.xsd</DependentUpon>
+    <None Include="ExactusERP_TABLES.xss">
+      <DependentUpon>ExactusERP_TABLES.xsd</DependentUpon>
     </None>
     <None Include="My Project\app.manifest" />
     <None Include="My Project\Application.myapp">
@@ -223,6 +542,38 @@
       <ProductName>.NET Framework 3.5 SP1</ProductName>
       <Install>false</Install>
     </BootstrapperPackage>
+  </ItemGroup>
+  <ItemGroup>
+    <Service Include="{C0C07587-41A7-46C8-8FBD-3F9C8EBE2DDC}" />
+  </ItemGroup>
+  <ItemGroup>
+    <COMReference Include="Microsoft.Office.Core">
+      <Guid>{2DF8D04C-5BFA-101B-BDE5-00AA0044DE52}</Guid>
+      <VersionMajor>2</VersionMajor>
+      <VersionMinor>8</VersionMinor>
+      <Lcid>0</Lcid>
+      <WrapperTool>primary</WrapperTool>
+      <Isolated>False</Isolated>
+      <EmbedInteropTypes>True</EmbedInteropTypes>
+    </COMReference>
+    <COMReference Include="Microsoft.Office.Interop.Excel">
+      <Guid>{00020813-0000-0000-C000-000000000046}</Guid>
+      <VersionMajor>1</VersionMajor>
+      <VersionMinor>9</VersionMinor>
+      <Lcid>0</Lcid>
+      <WrapperTool>primary</WrapperTool>
+      <Isolated>False</Isolated>
+      <EmbedInteropTypes>True</EmbedInteropTypes>
+    </COMReference>
+    <COMReference Include="VBIDE">
+      <Guid>{0002E157-0000-0000-C000-000000000046}</Guid>
+      <VersionMajor>5</VersionMajor>
+      <VersionMinor>3</VersionMinor>
+      <Lcid>0</Lcid>
+      <WrapperTool>primary</WrapperTool>
+      <Isolated>False</Isolated>
+      <EmbedInteropTypes>True</EmbedInteropTypes>
+    </COMReference>
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.VisualBasic.targets" />
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
