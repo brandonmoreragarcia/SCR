@@ -442,5 +442,61 @@ Public Class Frm_Actualizacion_Rep
         End If
     End Sub
 
+    Private Sub ch_ver_informacion_CheckedChanged(sender As Object, e As EventArgs) Handles ch_ver_informacion.CheckedChanged
+        If dg_reparaciones.SelectedCells IsNot Nothing Then
+            If ch_ver_informacion.Checked = True Then
 
+                Using connection As New SqlConnection("Data Source=SERVER;Initial Catalog=ExactusERP;Persist Security Info=True;User ID=sa;Password=B1@dm1n"),
+            command As New SqlCommand("SCR_CONSULTA_REPARACION", connection),
+            adapter As New SqlDataAdapter(command)
+                    command.CommandType = CommandType.StoredProcedure
+
+                    'Add parameters, e.g.
+                    command.Parameters.AddWithValue("@CONSULTAREP", dg_reparaciones.Item(0, dg_reparaciones.CurrentRow.Index).Value())
+
+                    Dim table As New DataTable
+
+                    'Get the data.
+                    adapter.Fill(table)
+
+                    'Display the data.
+                    Me.dg_detalle_rep.DataSource = table
+                End Using
+
+                gb_detalle_reparacion.Visible = True
+                Num_Boleta = dg_reparaciones.Item(0, dg_reparaciones.CurrentRow.Index).Value()
+
+            Else
+                gb_detalle_reparacion.Visible = False
+            End If
+
+        End If
+
+    End Sub
+
+    Private Sub Cbx_Boleta_TextChanged(sender As Object, e As EventArgs) Handles Cbx_Boleta.TextChanged
+
+        If ch_ver_informacion.Checked = True Then
+            Try
+                Using connection As New SqlConnection("Data Source=SERVER;Initial Catalog=ExactusERP;Persist Security Info=True;User ID=sa;Password=B1@dm1n"),
+            command As New SqlCommand("SCR_CONSULTA_REPARACION", connection),
+            adapter As New SqlDataAdapter(command)
+                    command.CommandType = CommandType.StoredProcedure
+
+                    'Add parameters, e.g.
+                    command.Parameters.AddWithValue("@CONSULTAREP", dg_reparaciones.Item(0, dg_reparaciones.CurrentRow.Index).Value())
+
+                    Dim table As New DataTable
+
+                    'Get the data.
+                    adapter.Fill(table)
+
+                    'Display the data.
+                    Me.dg_detalle_rep.DataSource = table
+                End Using
+            Catch ex As Exception
+
+            End Try
+        End If
+    End Sub
 End Class

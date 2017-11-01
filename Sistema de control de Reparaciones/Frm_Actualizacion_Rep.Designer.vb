@@ -24,6 +24,7 @@ Partial Class Frm_Actualizacion_Rep
     Private Sub InitializeComponent()
         Me.components = New System.ComponentModel.Container()
         Dim DataGridViewCellStyle1 As System.Windows.Forms.DataGridViewCellStyle = New System.Windows.Forms.DataGridViewCellStyle()
+        Dim DataGridViewCellStyle2 As System.Windows.Forms.DataGridViewCellStyle = New System.Windows.Forms.DataGridViewCellStyle()
         Dim resources As System.ComponentModel.ComponentResourceManager = New System.ComponentModel.ComponentResourceManager(GetType(Frm_Actualizacion_Rep))
         Me.Lbl_Numero_Boleta = New System.Windows.Forms.Label()
         Me.Lbl_Articulo = New System.Windows.Forms.Label()
@@ -96,12 +97,8 @@ Partial Class Frm_Actualizacion_Rep
         Me.Txt_Adicional = New System.Windows.Forms.TextBox()
         Me.Lbl_Adicional = New System.Windows.Forms.Label()
         Me.GroupBox1 = New System.Windows.Forms.GroupBox()
-        Me.GroupBox2 = New System.Windows.Forms.GroupBox()
-        Me.DataGridView1 = New System.Windows.Forms.DataGridView()
-        Me.COMENTARIODataGridViewTextBoxColumn = New System.Windows.Forms.DataGridViewTextBoxColumn()
-        Me.ESTADODataGridViewTextBoxColumn = New System.Windows.Forms.DataGridViewTextBoxColumn()
-        Me.LOCALIZACIONDataGridViewTextBoxColumn = New System.Windows.Forms.DataGridViewTextBoxColumn()
-        Me.FECHADataGridViewTextBoxColumn = New System.Windows.Forms.DataGridViewTextBoxColumn()
+        Me.gb_detalle_reparacion = New System.Windows.Forms.GroupBox()
+        Me.dg_detalle_rep = New System.Windows.Forms.DataGridView()
         Me.SCRCONSULTAREPARACIONBindingSource = New System.Windows.Forms.BindingSource(Me.components)
         Me.dg_reparaciones = New System.Windows.Forms.DataGridView()
         Me.REPARACIONNUMERODataGridViewTextBoxColumn = New System.Windows.Forms.DataGridViewTextBoxColumn()
@@ -114,6 +111,10 @@ Partial Class Frm_Actualizacion_Rep
         Me.bt_cerrado_rapido = New System.Windows.Forms.Button()
         Me.SCR_CONSULTA_REPARACIONTableAdapter = New WindowsApplication1.ExactusERP_SRC_TABLESTableAdapters.SCR_CONSULTA_REPARACIONTableAdapter()
         Me.ch_ver_informacion = New System.Windows.Forms.CheckBox()
+        Me.COMENTARIODataGridViewTextBoxColumn = New System.Windows.Forms.DataGridViewTextBoxColumn()
+        Me.ESTADODataGridViewTextBoxColumn = New System.Windows.Forms.DataGridViewTextBoxColumn()
+        Me.FECHADataGridViewTextBoxColumn = New System.Windows.Forms.DataGridViewTextBoxColumn()
+        Me.LOCALIZACIONDataGridViewTextBoxColumn = New System.Windows.Forms.DataGridViewTextBoxColumn()
         CType(Me.SCRREPSPENDIENTESBindingSource, System.ComponentModel.ISupportInitialize).BeginInit()
         CType(Me.ExactusERP_SRC_TABLES, System.ComponentModel.ISupportInitialize).BeginInit()
         CType(Me.SCRDATOSREPARACIONBindingSource, System.ComponentModel.ISupportInitialize).BeginInit()
@@ -127,8 +128,8 @@ Partial Class Frm_Actualizacion_Rep
         Me.Gbx_Garantia.SuspendLayout()
         Me.Gbx_Facturada.SuspendLayout()
         Me.GroupBox1.SuspendLayout()
-        Me.GroupBox2.SuspendLayout()
-        CType(Me.DataGridView1, System.ComponentModel.ISupportInitialize).BeginInit()
+        Me.gb_detalle_reparacion.SuspendLayout()
+        CType(Me.dg_detalle_rep, System.ComponentModel.ISupportInitialize).BeginInit()
         CType(Me.SCRCONSULTAREPARACIONBindingSource, System.ComponentModel.ISupportInitialize).BeginInit()
         CType(Me.dg_reparaciones, System.ComponentModel.ISupportInitialize).BeginInit()
         Me.SuspendLayout()
@@ -804,7 +805,7 @@ Partial Class Frm_Actualizacion_Rep
         '
         'GroupBox1
         '
-        Me.GroupBox1.Controls.Add(Me.GroupBox2)
+        Me.GroupBox1.Controls.Add(Me.gb_detalle_reparacion)
         Me.GroupBox1.Controls.Add(Me.Cbx_Estado)
         Me.GroupBox1.Controls.Add(Me.Txt_Adicional)
         Me.GroupBox1.Controls.Add(Me.Lbl_Estado)
@@ -828,66 +829,40 @@ Partial Class Frm_Actualizacion_Rep
         Me.GroupBox1.TabStop = False
         Me.GroupBox1.Text = "INGRESAR INFORMACION"
         '
-        'GroupBox2
+        'gb_detalle_reparacion
         '
-        Me.GroupBox2.Controls.Add(Me.DataGridView1)
-        Me.GroupBox2.Font = New System.Drawing.Font("Square721 BT", 9.0!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.GroupBox2.Location = New System.Drawing.Point(0, 0)
-        Me.GroupBox2.Name = "GroupBox2"
-        Me.GroupBox2.Size = New System.Drawing.Size(561, 299)
-        Me.GroupBox2.TabIndex = 60
-        Me.GroupBox2.TabStop = False
-        Me.GroupBox2.Text = "DETALLE REPARACION"
+        Me.gb_detalle_reparacion.Controls.Add(Me.dg_detalle_rep)
+        Me.gb_detalle_reparacion.Font = New System.Drawing.Font("Square721 BT", 9.0!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.gb_detalle_reparacion.Location = New System.Drawing.Point(0, 0)
+        Me.gb_detalle_reparacion.Name = "gb_detalle_reparacion"
+        Me.gb_detalle_reparacion.Size = New System.Drawing.Size(561, 299)
+        Me.gb_detalle_reparacion.TabIndex = 60
+        Me.gb_detalle_reparacion.TabStop = False
+        Me.gb_detalle_reparacion.Text = "DETALLE REPARACION"
+        Me.gb_detalle_reparacion.Visible = False
         '
-        'DataGridView1
+        'dg_detalle_rep
         '
-        Me.DataGridView1.AllowUserToAddRows = False
-        Me.DataGridView1.AllowUserToDeleteRows = False
-        Me.DataGridView1.AutoGenerateColumns = False
-        Me.DataGridView1.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize
-        Me.DataGridView1.Columns.AddRange(New System.Windows.Forms.DataGridViewColumn() {Me.COMENTARIODataGridViewTextBoxColumn, Me.ESTADODataGridViewTextBoxColumn, Me.LOCALIZACIONDataGridViewTextBoxColumn, Me.FECHADataGridViewTextBoxColumn})
-        Me.DataGridView1.DataSource = Me.SCRCONSULTAREPARACIONBindingSource
-        Me.DataGridView1.Location = New System.Drawing.Point(15, 85)
-        Me.DataGridView1.Name = "DataGridView1"
-        Me.DataGridView1.ReadOnly = True
-        Me.DataGridView1.Size = New System.Drawing.Size(531, 102)
-        Me.DataGridView1.TabIndex = 60
-        '
-        'COMENTARIODataGridViewTextBoxColumn
-        '
-        Me.COMENTARIODataGridViewTextBoxColumn.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.AllCellsExceptHeader
-        Me.COMENTARIODataGridViewTextBoxColumn.DataPropertyName = "COMENTARIO"
-        Me.COMENTARIODataGridViewTextBoxColumn.HeaderText = "COMENTARIO"
-        Me.COMENTARIODataGridViewTextBoxColumn.Name = "COMENTARIODataGridViewTextBoxColumn"
-        Me.COMENTARIODataGridViewTextBoxColumn.ReadOnly = True
-        Me.COMENTARIODataGridViewTextBoxColumn.Width = 5
-        '
-        'ESTADODataGridViewTextBoxColumn
-        '
-        Me.ESTADODataGridViewTextBoxColumn.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.AllCellsExceptHeader
-        Me.ESTADODataGridViewTextBoxColumn.DataPropertyName = "ESTADO"
-        Me.ESTADODataGridViewTextBoxColumn.HeaderText = "ESTADO"
-        Me.ESTADODataGridViewTextBoxColumn.Name = "ESTADODataGridViewTextBoxColumn"
-        Me.ESTADODataGridViewTextBoxColumn.ReadOnly = True
-        Me.ESTADODataGridViewTextBoxColumn.Width = 5
-        '
-        'LOCALIZACIONDataGridViewTextBoxColumn
-        '
-        Me.LOCALIZACIONDataGridViewTextBoxColumn.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.AllCellsExceptHeader
-        Me.LOCALIZACIONDataGridViewTextBoxColumn.DataPropertyName = "LOCALIZACION"
-        Me.LOCALIZACIONDataGridViewTextBoxColumn.HeaderText = "LOCALIZACION"
-        Me.LOCALIZACIONDataGridViewTextBoxColumn.Name = "LOCALIZACIONDataGridViewTextBoxColumn"
-        Me.LOCALIZACIONDataGridViewTextBoxColumn.ReadOnly = True
-        Me.LOCALIZACIONDataGridViewTextBoxColumn.Width = 5
-        '
-        'FECHADataGridViewTextBoxColumn
-        '
-        Me.FECHADataGridViewTextBoxColumn.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.AllCellsExceptHeader
-        Me.FECHADataGridViewTextBoxColumn.DataPropertyName = "FECHA"
-        Me.FECHADataGridViewTextBoxColumn.HeaderText = "FECHA"
-        Me.FECHADataGridViewTextBoxColumn.Name = "FECHADataGridViewTextBoxColumn"
-        Me.FECHADataGridViewTextBoxColumn.ReadOnly = True
-        Me.FECHADataGridViewTextBoxColumn.Width = 5
+        Me.dg_detalle_rep.AllowUserToAddRows = False
+        Me.dg_detalle_rep.AllowUserToDeleteRows = False
+        Me.dg_detalle_rep.AutoGenerateColumns = False
+        Me.dg_detalle_rep.AutoSizeRowsMode = System.Windows.Forms.DataGridViewAutoSizeRowsMode.AllCells
+        Me.dg_detalle_rep.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize
+        Me.dg_detalle_rep.Columns.AddRange(New System.Windows.Forms.DataGridViewColumn() {Me.COMENTARIODataGridViewTextBoxColumn, Me.ESTADODataGridViewTextBoxColumn, Me.FECHADataGridViewTextBoxColumn, Me.LOCALIZACIONDataGridViewTextBoxColumn})
+        Me.dg_detalle_rep.DataSource = Me.SCRCONSULTAREPARACIONBindingSource
+        DataGridViewCellStyle1.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft
+        DataGridViewCellStyle1.BackColor = System.Drawing.SystemColors.Window
+        DataGridViewCellStyle1.Font = New System.Drawing.Font("Square721 BT", 9.0!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        DataGridViewCellStyle1.ForeColor = System.Drawing.SystemColors.ControlText
+        DataGridViewCellStyle1.SelectionBackColor = System.Drawing.SystemColors.Highlight
+        DataGridViewCellStyle1.SelectionForeColor = System.Drawing.SystemColors.HighlightText
+        DataGridViewCellStyle1.WrapMode = System.Windows.Forms.DataGridViewTriState.[True]
+        Me.dg_detalle_rep.DefaultCellStyle = DataGridViewCellStyle1
+        Me.dg_detalle_rep.Location = New System.Drawing.Point(48, 33)
+        Me.dg_detalle_rep.Name = "dg_detalle_rep"
+        Me.dg_detalle_rep.ReadOnly = True
+        Me.dg_detalle_rep.Size = New System.Drawing.Size(459, 243)
+        Me.dg_detalle_rep.TabIndex = 60
         '
         'SCRCONSULTAREPARACIONBindingSource
         '
@@ -902,29 +877,29 @@ Partial Class Frm_Actualizacion_Rep
         Me.dg_reparaciones.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize
         Me.dg_reparaciones.Columns.AddRange(New System.Windows.Forms.DataGridViewColumn() {Me.REPARACIONNUMERODataGridViewTextBoxColumn, Me.ESTADO})
         Me.dg_reparaciones.DataSource = Me.SCRREPSPENDIENTESBindingSource
-        DataGridViewCellStyle1.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft
-        DataGridViewCellStyle1.BackColor = System.Drawing.SystemColors.Window
-        DataGridViewCellStyle1.Font = New System.Drawing.Font("Arial Black", 8.25!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        DataGridViewCellStyle1.ForeColor = System.Drawing.SystemColors.ControlText
-        DataGridViewCellStyle1.SelectionBackColor = System.Drawing.SystemColors.ActiveCaption
-        DataGridViewCellStyle1.SelectionForeColor = System.Drawing.Color.Black
-        DataGridViewCellStyle1.WrapMode = System.Windows.Forms.DataGridViewTriState.[False]
-        Me.dg_reparaciones.DefaultCellStyle = DataGridViewCellStyle1
-        Me.dg_reparaciones.Location = New System.Drawing.Point(26, 56)
+        DataGridViewCellStyle2.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft
+        DataGridViewCellStyle2.BackColor = System.Drawing.SystemColors.Window
+        DataGridViewCellStyle2.Font = New System.Drawing.Font("Arial Black", 8.25!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        DataGridViewCellStyle2.ForeColor = System.Drawing.SystemColors.ControlText
+        DataGridViewCellStyle2.SelectionBackColor = System.Drawing.SystemColors.ActiveCaption
+        DataGridViewCellStyle2.SelectionForeColor = System.Drawing.Color.Black
+        DataGridViewCellStyle2.WrapMode = System.Windows.Forms.DataGridViewTriState.[False]
+        Me.dg_reparaciones.DefaultCellStyle = DataGridViewCellStyle2
+        Me.dg_reparaciones.Location = New System.Drawing.Point(23, 56)
         Me.dg_reparaciones.Name = "dg_reparaciones"
         Me.dg_reparaciones.ReadOnly = True
-        Me.dg_reparaciones.Size = New System.Drawing.Size(300, 143)
+        Me.dg_reparaciones.Size = New System.Drawing.Size(327, 143)
         Me.dg_reparaciones.TabIndex = 57
         '
         'REPARACIONNUMERODataGridViewTextBoxColumn
         '
-        Me.REPARACIONNUMERODataGridViewTextBoxColumn.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.AllCellsExceptHeader
+        Me.REPARACIONNUMERODataGridViewTextBoxColumn.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.ColumnHeader
         Me.REPARACIONNUMERODataGridViewTextBoxColumn.DataPropertyName = "REPARACION_NUMERO"
-        Me.REPARACIONNUMERODataGridViewTextBoxColumn.HeaderText = "# REPARACION"
+        Me.REPARACIONNUMERODataGridViewTextBoxColumn.HeaderText = "REPARACION"
         Me.REPARACIONNUMERODataGridViewTextBoxColumn.Name = "REPARACIONNUMERODataGridViewTextBoxColumn"
         Me.REPARACIONNUMERODataGridViewTextBoxColumn.ReadOnly = True
         Me.REPARACIONNUMERODataGridViewTextBoxColumn.SortMode = System.Windows.Forms.DataGridViewColumnSortMode.Programmatic
-        Me.REPARACIONNUMERODataGridViewTextBoxColumn.Width = 5
+        Me.REPARACIONNUMERODataGridViewTextBoxColumn.Width = 114
         '
         'ESTADO
         '
@@ -964,7 +939,7 @@ Partial Class Frm_Actualizacion_Rep
         'bt_cerrado_rapido
         '
         Me.bt_cerrado_rapido.Font = New System.Drawing.Font("Square721 BT", 9.0!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.bt_cerrado_rapido.Location = New System.Drawing.Point(335, 126)
+        Me.bt_cerrado_rapido.Location = New System.Drawing.Point(383, 117)
         Me.bt_cerrado_rapido.Name = "bt_cerrado_rapido"
         Me.bt_cerrado_rapido.Size = New System.Drawing.Size(142, 29)
         Me.bt_cerrado_rapido.TabIndex = 58
@@ -978,12 +953,52 @@ Partial Class Frm_Actualizacion_Rep
         'ch_ver_informacion
         '
         Me.ch_ver_informacion.AutoSize = True
-        Me.ch_ver_informacion.Location = New System.Drawing.Point(335, 180)
+        Me.ch_ver_informacion.Location = New System.Drawing.Point(356, 166)
         Me.ch_ver_informacion.Name = "ch_ver_informacion"
         Me.ch_ver_informacion.Size = New System.Drawing.Size(217, 19)
         Me.ch_ver_informacion.TabIndex = 60
         Me.ch_ver_informacion.Text = "VER INFORMACIÓN ADICIONAL"
         Me.ch_ver_informacion.UseVisualStyleBackColor = True
+        '
+        'COMENTARIODataGridViewTextBoxColumn
+        '
+        Me.COMENTARIODataGridViewTextBoxColumn.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.ColumnHeader
+        Me.COMENTARIODataGridViewTextBoxColumn.DataPropertyName = "COMENTARIO"
+        Me.COMENTARIODataGridViewTextBoxColumn.HeaderText = "COMENTARIO"
+        Me.COMENTARIODataGridViewTextBoxColumn.Name = "COMENTARIODataGridViewTextBoxColumn"
+        Me.COMENTARIODataGridViewTextBoxColumn.ReadOnly = True
+        Me.COMENTARIODataGridViewTextBoxColumn.Resizable = System.Windows.Forms.DataGridViewTriState.[False]
+        Me.COMENTARIODataGridViewTextBoxColumn.Width = 118
+        '
+        'ESTADODataGridViewTextBoxColumn
+        '
+        Me.ESTADODataGridViewTextBoxColumn.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.ColumnHeader
+        Me.ESTADODataGridViewTextBoxColumn.DataPropertyName = "ESTADO"
+        Me.ESTADODataGridViewTextBoxColumn.HeaderText = "ESTADO"
+        Me.ESTADODataGridViewTextBoxColumn.Name = "ESTADODataGridViewTextBoxColumn"
+        Me.ESTADODataGridViewTextBoxColumn.ReadOnly = True
+        Me.ESTADODataGridViewTextBoxColumn.Resizable = System.Windows.Forms.DataGridViewTriState.[False]
+        Me.ESTADODataGridViewTextBoxColumn.Width = 83
+        '
+        'FECHADataGridViewTextBoxColumn
+        '
+        Me.FECHADataGridViewTextBoxColumn.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.ColumnHeader
+        Me.FECHADataGridViewTextBoxColumn.DataPropertyName = "FECHA"
+        Me.FECHADataGridViewTextBoxColumn.HeaderText = "FECHA"
+        Me.FECHADataGridViewTextBoxColumn.Name = "FECHADataGridViewTextBoxColumn"
+        Me.FECHADataGridViewTextBoxColumn.ReadOnly = True
+        Me.FECHADataGridViewTextBoxColumn.Resizable = System.Windows.Forms.DataGridViewTriState.[False]
+        Me.FECHADataGridViewTextBoxColumn.Width = 74
+        '
+        'LOCALIZACIONDataGridViewTextBoxColumn
+        '
+        Me.LOCALIZACIONDataGridViewTextBoxColumn.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.ColumnHeader
+        Me.LOCALIZACIONDataGridViewTextBoxColumn.DataPropertyName = "LOCALIZACION"
+        Me.LOCALIZACIONDataGridViewTextBoxColumn.HeaderText = "LOCALIZACION"
+        Me.LOCALIZACIONDataGridViewTextBoxColumn.Name = "LOCALIZACIONDataGridViewTextBoxColumn"
+        Me.LOCALIZACIONDataGridViewTextBoxColumn.ReadOnly = True
+        Me.LOCALIZACIONDataGridViewTextBoxColumn.Resizable = System.Windows.Forms.DataGridViewTriState.[False]
+        Me.LOCALIZACIONDataGridViewTextBoxColumn.Width = 124
         '
         'Frm_Actualizacion_Rep
         '
@@ -1028,8 +1043,8 @@ Partial Class Frm_Actualizacion_Rep
         Me.Gbx_Facturada.PerformLayout()
         Me.GroupBox1.ResumeLayout(False)
         Me.GroupBox1.PerformLayout()
-        Me.GroupBox2.ResumeLayout(False)
-        CType(Me.DataGridView1, System.ComponentModel.ISupportInitialize).EndInit()
+        Me.gb_detalle_reparacion.ResumeLayout(False)
+        CType(Me.dg_detalle_rep, System.ComponentModel.ISupportInitialize).EndInit()
         CType(Me.SCRCONSULTAREPARACIONBindingSource, System.ComponentModel.ISupportInitialize).EndInit()
         CType(Me.dg_reparaciones, System.ComponentModel.ISupportInitialize).EndInit()
         Me.ResumeLayout(False)
@@ -1118,13 +1133,13 @@ Partial Class Frm_Actualizacion_Rep
     Friend WithEvents bt_cerrado_rapido As Button
     Friend WithEvents SCRCONSULTAREPARACIONBindingSource As BindingSource
     Friend WithEvents SCR_CONSULTA_REPARACIONTableAdapter As ExactusERP_SRC_TABLESTableAdapters.SCR_CONSULTA_REPARACIONTableAdapter
-    Friend WithEvents DataGridView1 As DataGridView
-    Friend WithEvents GroupBox2 As GroupBox
-    Friend WithEvents COMENTARIODataGridViewTextBoxColumn As DataGridViewTextBoxColumn
-    Friend WithEvents ESTADODataGridViewTextBoxColumn As DataGridViewTextBoxColumn
-    Friend WithEvents LOCALIZACIONDataGridViewTextBoxColumn As DataGridViewTextBoxColumn
-    Friend WithEvents FECHADataGridViewTextBoxColumn As DataGridViewTextBoxColumn
+    Friend WithEvents dg_detalle_rep As DataGridView
+    Friend WithEvents gb_detalle_reparacion As GroupBox
+    Friend WithEvents ch_ver_informacion As CheckBox
     Friend WithEvents REPARACIONNUMERODataGridViewTextBoxColumn As DataGridViewTextBoxColumn
     Friend WithEvents ESTADO As DataGridViewTextBoxColumn
-    Friend WithEvents ch_ver_informacion As CheckBox
+    Friend WithEvents COMENTARIODataGridViewTextBoxColumn As DataGridViewTextBoxColumn
+    Friend WithEvents ESTADODataGridViewTextBoxColumn As DataGridViewTextBoxColumn
+    Friend WithEvents FECHADataGridViewTextBoxColumn As DataGridViewTextBoxColumn
+    Friend WithEvents LOCALIZACIONDataGridViewTextBoxColumn As DataGridViewTextBoxColumn
 End Class
