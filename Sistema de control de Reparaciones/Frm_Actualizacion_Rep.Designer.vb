@@ -96,10 +96,23 @@ Partial Class Frm_Actualizacion_Rep
         Me.Txt_Tiempo_Inver = New System.Windows.Forms.TextBox()
         Me.Txt_Adicional = New System.Windows.Forms.TextBox()
         Me.Lbl_Adicional = New System.Windows.Forms.Label()
-        Me.GroupBox1 = New System.Windows.Forms.GroupBox()
+        Me.gb_ingresar_info_reparacion = New System.Windows.Forms.GroupBox()
         Me.gb_detalle_reparacion = New System.Windows.Forms.GroupBox()
         Me.dg_detalle_rep = New System.Windows.Forms.DataGridView()
+        Me.COMENTARIODataGridViewTextBoxColumn = New System.Windows.Forms.DataGridViewTextBoxColumn()
+        Me.ESTADODataGridViewTextBoxColumn = New System.Windows.Forms.DataGridViewTextBoxColumn()
+        Me.FECHADataGridViewTextBoxColumn = New System.Windows.Forms.DataGridViewTextBoxColumn()
+        Me.LOCALIZACIONDataGridViewTextBoxColumn = New System.Windows.Forms.DataGridViewTextBoxColumn()
         Me.SCRCONSULTAREPARACIONBindingSource = New System.Windows.Forms.BindingSource(Me.components)
+        Me.gb__ingresar_info_transporte = New System.Windows.Forms.GroupBox()
+        Me.ComboBox1 = New System.Windows.Forms.ComboBox()
+        Me.SCRLOCALIZACIONTRANSBindingSource = New System.Windows.Forms.BindingSource(Me.components)
+        Me.ComboBox2 = New System.Windows.Forms.ComboBox()
+        Me.SCRESTADOTRANSPORTEBindingSource = New System.Windows.Forms.BindingSource(Me.components)
+        Me.TextBox1 = New System.Windows.Forms.TextBox()
+        Me.Label1 = New System.Windows.Forms.Label()
+        Me.Label2 = New System.Windows.Forms.Label()
+        Me.Label3 = New System.Windows.Forms.Label()
         Me.dg_reparaciones = New System.Windows.Forms.DataGridView()
         Me.REPARACIONNUMERODataGridViewTextBoxColumn = New System.Windows.Forms.DataGridViewTextBoxColumn()
         Me.ESTADO = New System.Windows.Forms.DataGridViewTextBoxColumn()
@@ -111,10 +124,11 @@ Partial Class Frm_Actualizacion_Rep
         Me.bt_cerrado_rapido = New System.Windows.Forms.Button()
         Me.SCR_CONSULTA_REPARACIONTableAdapter = New WindowsApplication1.ExactusERP_SRC_TABLESTableAdapters.SCR_CONSULTA_REPARACIONTableAdapter()
         Me.ch_ver_informacion = New System.Windows.Forms.CheckBox()
-        Me.COMENTARIODataGridViewTextBoxColumn = New System.Windows.Forms.DataGridViewTextBoxColumn()
-        Me.ESTADODataGridViewTextBoxColumn = New System.Windows.Forms.DataGridViewTextBoxColumn()
-        Me.FECHADataGridViewTextBoxColumn = New System.Windows.Forms.DataGridViewTextBoxColumn()
-        Me.LOCALIZACIONDataGridViewTextBoxColumn = New System.Windows.Forms.DataGridViewTextBoxColumn()
+        Me.SCRENCARGADOBODEGABindingSource = New System.Windows.Forms.BindingSource(Me.components)
+        Me.SCR_ENCARGADO_BODEGATableAdapter = New WindowsApplication1.ExactusERP_SRC_TABLESTableAdapters.SCR_ENCARGADO_BODEGATableAdapter()
+        Me.SCR_ESTADO_TRANSPORTETableAdapter = New WindowsApplication1.ExactusERP_SRC_TABLESTableAdapters.SCR_ESTADO_TRANSPORTETableAdapter()
+        Me.SCR_LOCALIZACION_TRANSTableAdapter = New WindowsApplication1.ExactusERP_SRC_TABLESTableAdapters.SCR_LOCALIZACION_TRANSTableAdapter()
+        Me.bt_guardar_transporte = New System.Windows.Forms.Button()
         CType(Me.SCRREPSPENDIENTESBindingSource, System.ComponentModel.ISupportInitialize).BeginInit()
         CType(Me.ExactusERP_SRC_TABLES, System.ComponentModel.ISupportInitialize).BeginInit()
         CType(Me.SCRDATOSREPARACIONBindingSource, System.ComponentModel.ISupportInitialize).BeginInit()
@@ -127,11 +141,15 @@ Partial Class Frm_Actualizacion_Rep
         CType(Me.SCRLOCALIZACIONREPBindingSource, System.ComponentModel.ISupportInitialize).BeginInit()
         Me.Gbx_Garantia.SuspendLayout()
         Me.Gbx_Facturada.SuspendLayout()
-        Me.GroupBox1.SuspendLayout()
+        Me.gb_ingresar_info_reparacion.SuspendLayout()
         Me.gb_detalle_reparacion.SuspendLayout()
         CType(Me.dg_detalle_rep, System.ComponentModel.ISupportInitialize).BeginInit()
         CType(Me.SCRCONSULTAREPARACIONBindingSource, System.ComponentModel.ISupportInitialize).BeginInit()
+        Me.gb__ingresar_info_transporte.SuspendLayout()
+        CType(Me.SCRLOCALIZACIONTRANSBindingSource, System.ComponentModel.ISupportInitialize).BeginInit()
+        CType(Me.SCRESTADOTRANSPORTEBindingSource, System.ComponentModel.ISupportInitialize).BeginInit()
         CType(Me.dg_reparaciones, System.ComponentModel.ISupportInitialize).BeginInit()
+        CType(Me.SCRENCARGADOBODEGABindingSource, System.ComponentModel.ISupportInitialize).BeginInit()
         Me.SuspendLayout()
         '
         'Lbl_Numero_Boleta
@@ -147,7 +165,8 @@ Partial Class Frm_Actualizacion_Rep
         'Lbl_Articulo
         '
         Me.Lbl_Articulo.DataBindings.Add(New System.Windows.Forms.Binding("Text", Me.SCRREPSPENDIENTESBindingSource, "CODIGO_ART", True))
-        Me.Lbl_Articulo.Font = New System.Drawing.Font("Square721 BT", 9.25!)
+        Me.Lbl_Articulo.Font = New System.Drawing.Font("Square721 BT", 9.25!, System.Drawing.FontStyle.Bold)
+        Me.Lbl_Articulo.ForeColor = System.Drawing.Color.Red
         Me.Lbl_Articulo.Location = New System.Drawing.Point(76, 38)
         Me.Lbl_Articulo.Name = "Lbl_Articulo"
         Me.Lbl_Articulo.Size = New System.Drawing.Size(102, 24)
@@ -231,7 +250,8 @@ Partial Class Frm_Actualizacion_Rep
         'Lbl_Nombre_Cliente
         '
         Me.Lbl_Nombre_Cliente.DataBindings.Add(New System.Windows.Forms.Binding("Text", Me.SCRREPSPENDIENTESBindingSource, "NOMBRE", True))
-        Me.Lbl_Nombre_Cliente.Font = New System.Drawing.Font("Square721 BT", 9.25!)
+        Me.Lbl_Nombre_Cliente.Font = New System.Drawing.Font("Square721 BT", 9.25!, System.Drawing.FontStyle.Bold)
+        Me.Lbl_Nombre_Cliente.ForeColor = System.Drawing.Color.Red
         Me.Lbl_Nombre_Cliente.Location = New System.Drawing.Point(73, 61)
         Me.Lbl_Nombre_Cliente.Name = "Lbl_Nombre_Cliente"
         Me.Lbl_Nombre_Cliente.Size = New System.Drawing.Size(196, 48)
@@ -400,7 +420,7 @@ Partial Class Frm_Actualizacion_Rep
         '
         Me.Lbl_Numero_Serie.DataBindings.Add(New System.Windows.Forms.Binding("Text", Me.SCRREPSPENDIENTESBindingSource, "SERIE_PRODUCTO", True))
         Me.Lbl_Numero_Serie.Font = New System.Drawing.Font("Square721 BT", 9.25!)
-        Me.Lbl_Numero_Serie.Location = New System.Drawing.Point(232, 29)
+        Me.Lbl_Numero_Serie.Location = New System.Drawing.Point(232, 37)
         Me.Lbl_Numero_Serie.Name = "Lbl_Numero_Serie"
         Me.Lbl_Numero_Serie.Size = New System.Drawing.Size(162, 33)
         Me.Lbl_Numero_Serie.TabIndex = 49
@@ -552,8 +572,9 @@ Partial Class Frm_Actualizacion_Rep
         'Lbl_Fecha_Ingreso
         '
         Me.Lbl_Fecha_Ingreso.DataBindings.Add(New System.Windows.Forms.Binding("Text", Me.SCRREPSPENDIENTESBindingSource, "FECHA", True))
-        Me.Lbl_Fecha_Ingreso.Font = New System.Drawing.Font("Square721 BT", 9.25!)
-        Me.Lbl_Fecha_Ingreso.Location = New System.Drawing.Point(484, 200)
+        Me.Lbl_Fecha_Ingreso.Font = New System.Drawing.Font("Square721 BT", 9.25!, System.Drawing.FontStyle.Bold)
+        Me.Lbl_Fecha_Ingreso.ForeColor = System.Drawing.Color.Red
+        Me.Lbl_Fecha_Ingreso.Location = New System.Drawing.Point(499, 199)
         Me.Lbl_Fecha_Ingreso.Name = "Lbl_Fecha_Ingreso"
         Me.Lbl_Fecha_Ingreso.Size = New System.Drawing.Size(140, 26)
         Me.Lbl_Fecha_Ingreso.TabIndex = 30
@@ -627,7 +648,6 @@ Partial Class Frm_Actualizacion_Rep
         '
         'Txt_Comentario
         '
-        Me.Txt_Comentario.Enabled = False
         Me.Txt_Comentario.Location = New System.Drawing.Point(105, 158)
         Me.Txt_Comentario.Multiline = True
         Me.Txt_Comentario.Name = "Txt_Comentario"
@@ -676,7 +696,6 @@ Partial Class Frm_Actualizacion_Rep
         Me.Btn_Grabar_Actua.TabIndex = 31
         Me.Btn_Grabar_Actua.Text = "GUARDAR!"
         Me.Btn_Grabar_Actua.UseVisualStyleBackColor = True
-        Me.Btn_Grabar_Actua.Visible = False
         '
         'Gbx_Garantia
         '
@@ -785,7 +804,6 @@ Partial Class Frm_Actualizacion_Rep
         'Txt_Adicional
         '
         Me.Txt_Adicional.AcceptsReturn = True
-        Me.Txt_Adicional.Enabled = False
         Me.Txt_Adicional.Location = New System.Drawing.Point(105, 224)
         Me.Txt_Adicional.Multiline = True
         Me.Txt_Adicional.Name = "Txt_Adicional"
@@ -803,37 +821,36 @@ Partial Class Frm_Actualizacion_Rep
         Me.Lbl_Adicional.Text = "Adicional:"
         Me.Lbl_Adicional.Visible = False
         '
-        'GroupBox1
+        'gb_ingresar_info_reparacion
         '
-        Me.GroupBox1.Controls.Add(Me.gb_detalle_reparacion)
-        Me.GroupBox1.Controls.Add(Me.Cbx_Estado)
-        Me.GroupBox1.Controls.Add(Me.Txt_Adicional)
-        Me.GroupBox1.Controls.Add(Me.Lbl_Estado)
-        Me.GroupBox1.Controls.Add(Me.Lbl_Adicional)
-        Me.GroupBox1.Controls.Add(Me.Lbl_Localizacion)
-        Me.GroupBox1.Controls.Add(Me.Lbl_Comentario)
-        Me.GroupBox1.Controls.Add(Me.Txt_Tiempo_Inver)
-        Me.GroupBox1.Controls.Add(Me.Txt_Factura_Num)
-        Me.GroupBox1.Controls.Add(Me.Lbl_Factura_Num)
-        Me.GroupBox1.Controls.Add(Me.Txt_Comentario)
-        Me.GroupBox1.Controls.Add(Me.Lbl_Tiempo_Rep)
-        Me.GroupBox1.Controls.Add(Me.Cbx_Localizacion)
-        Me.GroupBox1.Controls.Add(Me.Btn_Grabar_Actua)
-        Me.GroupBox1.Controls.Add(Me.Gbx_Garantia)
-        Me.GroupBox1.Controls.Add(Me.Gbx_Facturada)
-        Me.GroupBox1.Font = New System.Drawing.Font("Square721 BT", 9.25!, System.Drawing.FontStyle.Bold)
-        Me.GroupBox1.Location = New System.Drawing.Point(12, 232)
-        Me.GroupBox1.Name = "GroupBox1"
-        Me.GroupBox1.Size = New System.Drawing.Size(561, 299)
-        Me.GroupBox1.TabIndex = 56
-        Me.GroupBox1.TabStop = False
-        Me.GroupBox1.Text = "INGRESAR INFORMACION"
+        Me.gb_ingresar_info_reparacion.Controls.Add(Me.Cbx_Estado)
+        Me.gb_ingresar_info_reparacion.Controls.Add(Me.Txt_Adicional)
+        Me.gb_ingresar_info_reparacion.Controls.Add(Me.Lbl_Estado)
+        Me.gb_ingresar_info_reparacion.Controls.Add(Me.Lbl_Adicional)
+        Me.gb_ingresar_info_reparacion.Controls.Add(Me.Lbl_Localizacion)
+        Me.gb_ingresar_info_reparacion.Controls.Add(Me.Lbl_Comentario)
+        Me.gb_ingresar_info_reparacion.Controls.Add(Me.Txt_Tiempo_Inver)
+        Me.gb_ingresar_info_reparacion.Controls.Add(Me.Txt_Factura_Num)
+        Me.gb_ingresar_info_reparacion.Controls.Add(Me.Lbl_Factura_Num)
+        Me.gb_ingresar_info_reparacion.Controls.Add(Me.Txt_Comentario)
+        Me.gb_ingresar_info_reparacion.Controls.Add(Me.Lbl_Tiempo_Rep)
+        Me.gb_ingresar_info_reparacion.Controls.Add(Me.Cbx_Localizacion)
+        Me.gb_ingresar_info_reparacion.Controls.Add(Me.Btn_Grabar_Actua)
+        Me.gb_ingresar_info_reparacion.Controls.Add(Me.Gbx_Garantia)
+        Me.gb_ingresar_info_reparacion.Controls.Add(Me.Gbx_Facturada)
+        Me.gb_ingresar_info_reparacion.Font = New System.Drawing.Font("Square721 BT", 9.25!, System.Drawing.FontStyle.Bold)
+        Me.gb_ingresar_info_reparacion.Location = New System.Drawing.Point(12, 232)
+        Me.gb_ingresar_info_reparacion.Name = "gb_ingresar_info_reparacion"
+        Me.gb_ingresar_info_reparacion.Size = New System.Drawing.Size(561, 299)
+        Me.gb_ingresar_info_reparacion.TabIndex = 56
+        Me.gb_ingresar_info_reparacion.TabStop = False
+        Me.gb_ingresar_info_reparacion.Text = "REPARACION"
         '
         'gb_detalle_reparacion
         '
         Me.gb_detalle_reparacion.Controls.Add(Me.dg_detalle_rep)
         Me.gb_detalle_reparacion.Font = New System.Drawing.Font("Square721 BT", 9.0!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.gb_detalle_reparacion.Location = New System.Drawing.Point(0, 0)
+        Me.gb_detalle_reparacion.Location = New System.Drawing.Point(579, 422)
         Me.gb_detalle_reparacion.Name = "gb_detalle_reparacion"
         Me.gb_detalle_reparacion.Size = New System.Drawing.Size(561, 299)
         Me.gb_detalle_reparacion.TabIndex = 60
@@ -864,10 +881,141 @@ Partial Class Frm_Actualizacion_Rep
         Me.dg_detalle_rep.Size = New System.Drawing.Size(459, 243)
         Me.dg_detalle_rep.TabIndex = 60
         '
+        'COMENTARIODataGridViewTextBoxColumn
+        '
+        Me.COMENTARIODataGridViewTextBoxColumn.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.ColumnHeader
+        Me.COMENTARIODataGridViewTextBoxColumn.DataPropertyName = "COMENTARIO"
+        Me.COMENTARIODataGridViewTextBoxColumn.HeaderText = "COMENTARIO"
+        Me.COMENTARIODataGridViewTextBoxColumn.Name = "COMENTARIODataGridViewTextBoxColumn"
+        Me.COMENTARIODataGridViewTextBoxColumn.ReadOnly = True
+        Me.COMENTARIODataGridViewTextBoxColumn.Resizable = System.Windows.Forms.DataGridViewTriState.[False]
+        Me.COMENTARIODataGridViewTextBoxColumn.Width = 118
+        '
+        'ESTADODataGridViewTextBoxColumn
+        '
+        Me.ESTADODataGridViewTextBoxColumn.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.ColumnHeader
+        Me.ESTADODataGridViewTextBoxColumn.DataPropertyName = "ESTADO"
+        Me.ESTADODataGridViewTextBoxColumn.HeaderText = "ESTADO"
+        Me.ESTADODataGridViewTextBoxColumn.Name = "ESTADODataGridViewTextBoxColumn"
+        Me.ESTADODataGridViewTextBoxColumn.ReadOnly = True
+        Me.ESTADODataGridViewTextBoxColumn.Resizable = System.Windows.Forms.DataGridViewTriState.[False]
+        Me.ESTADODataGridViewTextBoxColumn.Width = 83
+        '
+        'FECHADataGridViewTextBoxColumn
+        '
+        Me.FECHADataGridViewTextBoxColumn.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.ColumnHeader
+        Me.FECHADataGridViewTextBoxColumn.DataPropertyName = "FECHA"
+        Me.FECHADataGridViewTextBoxColumn.HeaderText = "FECHA"
+        Me.FECHADataGridViewTextBoxColumn.Name = "FECHADataGridViewTextBoxColumn"
+        Me.FECHADataGridViewTextBoxColumn.ReadOnly = True
+        Me.FECHADataGridViewTextBoxColumn.Resizable = System.Windows.Forms.DataGridViewTriState.[False]
+        Me.FECHADataGridViewTextBoxColumn.Width = 74
+        '
+        'LOCALIZACIONDataGridViewTextBoxColumn
+        '
+        Me.LOCALIZACIONDataGridViewTextBoxColumn.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.ColumnHeader
+        Me.LOCALIZACIONDataGridViewTextBoxColumn.DataPropertyName = "LOCALIZACION"
+        Me.LOCALIZACIONDataGridViewTextBoxColumn.HeaderText = "LOCALIZACION"
+        Me.LOCALIZACIONDataGridViewTextBoxColumn.Name = "LOCALIZACIONDataGridViewTextBoxColumn"
+        Me.LOCALIZACIONDataGridViewTextBoxColumn.ReadOnly = True
+        Me.LOCALIZACIONDataGridViewTextBoxColumn.Resizable = System.Windows.Forms.DataGridViewTriState.[False]
+        Me.LOCALIZACIONDataGridViewTextBoxColumn.Width = 124
+        '
         'SCRCONSULTAREPARACIONBindingSource
         '
         Me.SCRCONSULTAREPARACIONBindingSource.DataMember = "SCR_CONSULTA_REPARACION"
         Me.SCRCONSULTAREPARACIONBindingSource.DataSource = Me.ExactusERP_SRC_TABLES
+        '
+        'gb__ingresar_info_transporte
+        '
+        Me.gb__ingresar_info_transporte.Controls.Add(Me.bt_guardar_transporte)
+        Me.gb__ingresar_info_transporte.Controls.Add(Me.ComboBox1)
+        Me.gb__ingresar_info_transporte.Controls.Add(Me.ComboBox2)
+        Me.gb__ingresar_info_transporte.Controls.Add(Me.TextBox1)
+        Me.gb__ingresar_info_transporte.Controls.Add(Me.Label1)
+        Me.gb__ingresar_info_transporte.Controls.Add(Me.Label2)
+        Me.gb__ingresar_info_transporte.Controls.Add(Me.Label3)
+        Me.gb__ingresar_info_transporte.Font = New System.Drawing.Font("Square721 BT", 9.0!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.gb__ingresar_info_transporte.Location = New System.Drawing.Point(559, 30)
+        Me.gb__ingresar_info_transporte.Name = "gb__ingresar_info_transporte"
+        Me.gb__ingresar_info_transporte.Size = New System.Drawing.Size(561, 299)
+        Me.gb__ingresar_info_transporte.TabIndex = 61
+        Me.gb__ingresar_info_transporte.TabStop = False
+        Me.gb__ingresar_info_transporte.Text = "TRANSPORTE"
+        Me.gb__ingresar_info_transporte.Visible = False
+        '
+        'ComboBox1
+        '
+        Me.ComboBox1.DataSource = Me.SCRLOCALIZACIONTRANSBindingSource
+        Me.ComboBox1.DisplayMember = "LOCALIZACION"
+        Me.ComboBox1.DropDownWidth = 290
+        Me.ComboBox1.Enabled = False
+        Me.ComboBox1.Font = New System.Drawing.Font("Square721 BT", 9.75!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.ComboBox1.FormattingEnabled = True
+        Me.ComboBox1.Location = New System.Drawing.Point(319, 47)
+        Me.ComboBox1.Name = "ComboBox1"
+        Me.ComboBox1.Size = New System.Drawing.Size(140, 24)
+        Me.ComboBox1.TabIndex = 50
+        '
+        'SCRLOCALIZACIONTRANSBindingSource
+        '
+        Me.SCRLOCALIZACIONTRANSBindingSource.DataMember = "SCR_LOCALIZACION_TRANS"
+        Me.SCRLOCALIZACIONTRANSBindingSource.DataSource = Me.ExactusERP_SRC_TABLES
+        '
+        'ComboBox2
+        '
+        Me.ComboBox2.DataSource = Me.SCRESTADOTRANSPORTEBindingSource
+        Me.ComboBox2.DropDownWidth = 290
+        Me.ComboBox2.Font = New System.Drawing.Font("Square721 BT", 9.75!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.ComboBox2.FormattingEnabled = True
+        Me.ComboBox2.Location = New System.Drawing.Point(71, 47)
+        Me.ComboBox2.Name = "ComboBox2"
+        Me.ComboBox2.Size = New System.Drawing.Size(140, 24)
+        Me.ComboBox2.TabIndex = 49
+        '
+        'SCRESTADOTRANSPORTEBindingSource
+        '
+        Me.SCRESTADOTRANSPORTEBindingSource.DataMember = "SCR_ESTADO_TRANSPORTE"
+        Me.SCRESTADOTRANSPORTEBindingSource.DataSource = Me.ExactusERP_SRC_TABLES
+        '
+        'TextBox1
+        '
+        Me.TextBox1.Enabled = False
+        Me.TextBox1.Location = New System.Drawing.Point(118, 124)
+        Me.TextBox1.Multiline = True
+        Me.TextBox1.Name = "TextBox1"
+        Me.TextBox1.Size = New System.Drawing.Size(197, 56)
+        Me.TextBox1.TabIndex = 48
+        '
+        'Label1
+        '
+        Me.Label1.AutoSize = True
+        Me.Label1.Font = New System.Drawing.Font("Square721 BT", 9.75!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.Label1.Location = New System.Drawing.Point(24, 125)
+        Me.Label1.Name = "Label1"
+        Me.Label1.Size = New System.Drawing.Size(88, 16)
+        Me.Label1.TabIndex = 47
+        Me.Label1.Text = "Comentario:"
+        '
+        'Label2
+        '
+        Me.Label2.AutoSize = True
+        Me.Label2.Font = New System.Drawing.Font("Square721 BT", 9.75!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.Label2.Location = New System.Drawing.Point(223, 51)
+        Me.Label2.Name = "Label2"
+        Me.Label2.Size = New System.Drawing.Size(92, 16)
+        Me.Label2.TabIndex = 46
+        Me.Label2.Text = "Localizacion:"
+        '
+        'Label3
+        '
+        Me.Label3.AutoSize = True
+        Me.Label3.Font = New System.Drawing.Font("Square721 BT", 9.75!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.Label3.Location = New System.Drawing.Point(14, 51)
+        Me.Label3.Name = "Label3"
+        Me.Label3.Size = New System.Drawing.Size(59, 16)
+        Me.Label3.TabIndex = 45
+        Me.Label3.Text = "Estado:"
         '
         'dg_reparaciones
         '
@@ -960,45 +1108,32 @@ Partial Class Frm_Actualizacion_Rep
         Me.ch_ver_informacion.Text = "VER INFORMACIÓN ADICIONAL"
         Me.ch_ver_informacion.UseVisualStyleBackColor = True
         '
-        'COMENTARIODataGridViewTextBoxColumn
+        'SCRENCARGADOBODEGABindingSource
         '
-        Me.COMENTARIODataGridViewTextBoxColumn.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.ColumnHeader
-        Me.COMENTARIODataGridViewTextBoxColumn.DataPropertyName = "COMENTARIO"
-        Me.COMENTARIODataGridViewTextBoxColumn.HeaderText = "COMENTARIO"
-        Me.COMENTARIODataGridViewTextBoxColumn.Name = "COMENTARIODataGridViewTextBoxColumn"
-        Me.COMENTARIODataGridViewTextBoxColumn.ReadOnly = True
-        Me.COMENTARIODataGridViewTextBoxColumn.Resizable = System.Windows.Forms.DataGridViewTriState.[False]
-        Me.COMENTARIODataGridViewTextBoxColumn.Width = 118
+        Me.SCRENCARGADOBODEGABindingSource.DataMember = "SCR_ENCARGADO_BODEGA"
+        Me.SCRENCARGADOBODEGABindingSource.DataSource = Me.ExactusERP_SRC_TABLES
         '
-        'ESTADODataGridViewTextBoxColumn
+        'SCR_ENCARGADO_BODEGATableAdapter
         '
-        Me.ESTADODataGridViewTextBoxColumn.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.ColumnHeader
-        Me.ESTADODataGridViewTextBoxColumn.DataPropertyName = "ESTADO"
-        Me.ESTADODataGridViewTextBoxColumn.HeaderText = "ESTADO"
-        Me.ESTADODataGridViewTextBoxColumn.Name = "ESTADODataGridViewTextBoxColumn"
-        Me.ESTADODataGridViewTextBoxColumn.ReadOnly = True
-        Me.ESTADODataGridViewTextBoxColumn.Resizable = System.Windows.Forms.DataGridViewTriState.[False]
-        Me.ESTADODataGridViewTextBoxColumn.Width = 83
+        Me.SCR_ENCARGADO_BODEGATableAdapter.ClearBeforeFill = True
         '
-        'FECHADataGridViewTextBoxColumn
+        'SCR_ESTADO_TRANSPORTETableAdapter
         '
-        Me.FECHADataGridViewTextBoxColumn.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.ColumnHeader
-        Me.FECHADataGridViewTextBoxColumn.DataPropertyName = "FECHA"
-        Me.FECHADataGridViewTextBoxColumn.HeaderText = "FECHA"
-        Me.FECHADataGridViewTextBoxColumn.Name = "FECHADataGridViewTextBoxColumn"
-        Me.FECHADataGridViewTextBoxColumn.ReadOnly = True
-        Me.FECHADataGridViewTextBoxColumn.Resizable = System.Windows.Forms.DataGridViewTriState.[False]
-        Me.FECHADataGridViewTextBoxColumn.Width = 74
+        Me.SCR_ESTADO_TRANSPORTETableAdapter.ClearBeforeFill = True
         '
-        'LOCALIZACIONDataGridViewTextBoxColumn
+        'SCR_LOCALIZACION_TRANSTableAdapter
         '
-        Me.LOCALIZACIONDataGridViewTextBoxColumn.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.ColumnHeader
-        Me.LOCALIZACIONDataGridViewTextBoxColumn.DataPropertyName = "LOCALIZACION"
-        Me.LOCALIZACIONDataGridViewTextBoxColumn.HeaderText = "LOCALIZACION"
-        Me.LOCALIZACIONDataGridViewTextBoxColumn.Name = "LOCALIZACIONDataGridViewTextBoxColumn"
-        Me.LOCALIZACIONDataGridViewTextBoxColumn.ReadOnly = True
-        Me.LOCALIZACIONDataGridViewTextBoxColumn.Resizable = System.Windows.Forms.DataGridViewTriState.[False]
-        Me.LOCALIZACIONDataGridViewTextBoxColumn.Width = 124
+        Me.SCR_LOCALIZACION_TRANSTableAdapter.ClearBeforeFill = True
+        '
+        'bt_guardar_transporte
+        '
+        Me.bt_guardar_transporte.Enabled = False
+        Me.bt_guardar_transporte.Location = New System.Drawing.Point(401, 221)
+        Me.bt_guardar_transporte.Name = "bt_guardar_transporte"
+        Me.bt_guardar_transporte.Size = New System.Drawing.Size(103, 30)
+        Me.bt_guardar_transporte.TabIndex = 51
+        Me.bt_guardar_transporte.Text = "GUARDAR!"
+        Me.bt_guardar_transporte.UseVisualStyleBackColor = True
         '
         'Frm_Actualizacion_Rep
         '
@@ -1006,11 +1141,13 @@ Partial Class Frm_Actualizacion_Rep
         Me.AutoScaleDimensions = New System.Drawing.SizeF(8.0!, 15.0!)
         Me.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font
         Me.ClientSize = New System.Drawing.Size(1273, 552)
+        Me.Controls.Add(Me.gb_detalle_reparacion)
+        Me.Controls.Add(Me.gb__ingresar_info_transporte)
         Me.Controls.Add(Me.ch_ver_informacion)
         Me.Controls.Add(Me.bt_cerrado_rapido)
         Me.Controls.Add(Me.lb_ingresar_cod_reparacion)
         Me.Controls.Add(Me.dg_reparaciones)
-        Me.Controls.Add(Me.GroupBox1)
+        Me.Controls.Add(Me.gb_ingresar_info_reparacion)
         Me.Controls.Add(Me.Gbx_Articulo_Rep)
         Me.Controls.Add(Me.Lbl_Fecha_Hora)
         Me.Controls.Add(Me.Cbx_Boleta)
@@ -1041,12 +1178,17 @@ Partial Class Frm_Actualizacion_Rep
         Me.Gbx_Garantia.PerformLayout()
         Me.Gbx_Facturada.ResumeLayout(False)
         Me.Gbx_Facturada.PerformLayout()
-        Me.GroupBox1.ResumeLayout(False)
-        Me.GroupBox1.PerformLayout()
+        Me.gb_ingresar_info_reparacion.ResumeLayout(False)
+        Me.gb_ingresar_info_reparacion.PerformLayout()
         Me.gb_detalle_reparacion.ResumeLayout(False)
         CType(Me.dg_detalle_rep, System.ComponentModel.ISupportInitialize).EndInit()
         CType(Me.SCRCONSULTAREPARACIONBindingSource, System.ComponentModel.ISupportInitialize).EndInit()
+        Me.gb__ingresar_info_transporte.ResumeLayout(False)
+        Me.gb__ingresar_info_transporte.PerformLayout()
+        CType(Me.SCRLOCALIZACIONTRANSBindingSource, System.ComponentModel.ISupportInitialize).EndInit()
+        CType(Me.SCRESTADOTRANSPORTEBindingSource, System.ComponentModel.ISupportInitialize).EndInit()
         CType(Me.dg_reparaciones, System.ComponentModel.ISupportInitialize).EndInit()
+        CType(Me.SCRENCARGADOBODEGABindingSource, System.ComponentModel.ISupportInitialize).EndInit()
         Me.ResumeLayout(False)
         Me.PerformLayout()
 
@@ -1125,7 +1267,7 @@ Partial Class Frm_Actualizacion_Rep
     Friend WithEvents Txt_Adicional As TextBox
     Friend WithEvents Lbl_Adicional As Label
     Private WithEvents Lbl_Problema_Reportado As Label
-    Friend WithEvents GroupBox1 As GroupBox
+    Friend WithEvents gb_ingresar_info_reparacion As GroupBox
     Friend WithEvents dg_reparaciones As DataGridView
     Friend WithEvents lb_ingresar_cod_reparacion As Label
     Friend WithEvents SCRREPSPENDIENTESBindingSource As BindingSource
@@ -1142,4 +1284,18 @@ Partial Class Frm_Actualizacion_Rep
     Friend WithEvents ESTADODataGridViewTextBoxColumn As DataGridViewTextBoxColumn
     Friend WithEvents FECHADataGridViewTextBoxColumn As DataGridViewTextBoxColumn
     Friend WithEvents LOCALIZACIONDataGridViewTextBoxColumn As DataGridViewTextBoxColumn
+    Friend WithEvents gb__ingresar_info_transporte As GroupBox
+    Friend WithEvents ComboBox1 As ComboBox
+    Friend WithEvents ComboBox2 As ComboBox
+    Friend WithEvents TextBox1 As TextBox
+    Friend WithEvents Label1 As Label
+    Friend WithEvents Label2 As Label
+    Friend WithEvents Label3 As Label
+    Friend WithEvents SCRENCARGADOBODEGABindingSource As BindingSource
+    Friend WithEvents SCR_ENCARGADO_BODEGATableAdapter As ExactusERP_SRC_TABLESTableAdapters.SCR_ENCARGADO_BODEGATableAdapter
+    Friend WithEvents SCRESTADOTRANSPORTEBindingSource As BindingSource
+    Friend WithEvents SCR_ESTADO_TRANSPORTETableAdapter As ExactusERP_SRC_TABLESTableAdapters.SCR_ESTADO_TRANSPORTETableAdapter
+    Friend WithEvents SCRLOCALIZACIONTRANSBindingSource As BindingSource
+    Friend WithEvents SCR_LOCALIZACION_TRANSTableAdapter As ExactusERP_SRC_TABLESTableAdapters.SCR_LOCALIZACION_TRANSTableAdapter
+    Friend WithEvents bt_guardar_transporte As Button
 End Class

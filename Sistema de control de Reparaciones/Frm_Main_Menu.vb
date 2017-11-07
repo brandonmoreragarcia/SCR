@@ -26,10 +26,12 @@ Public Class Frm_Main_Menu
         End If
     End Sub
 
+    'Actualizado para que abra la pantalla Actualizacion_Rep, ya que ahora incluye la funcionalidad de Actualizacion_trans
     Private Sub Btn_Transporte_Click(sender As Object, e As EventArgs) Handles Btn_Transporte.Click
         If privilegio_trans_rep(v_usuario) = True Then
-            My.Forms.Frm_Solicitud_Boleta_Tran.MdiParent = Me
-            Frm_Solicitud_Boleta_Tran.Show()
+            My.Forms.Frm_Actualizacion_Rep.MdiParent = Me 'ahora la pantalla de Actualizacion_Rep incluye la función de Actualizacion_Transporte, solo cambian los groupBox
+            'My.Forms.Frm_Actualizacion_Rep.g
+            Frm_Actualizacion_Rep.Show()
         Else
             MsgBox("Lo siento, al parecer no tienes acceso a esta funcion", MsgBoxStyle.Critical)
         End If

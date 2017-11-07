@@ -28,7 +28,7 @@ Public Class Frm_Actualizacion_Trans
     End Sub
 
     Private Sub Btn_Grabar_Actua_Click(sender As Object, e As EventArgs) Handles Btn_Grabar_Actua.Click
-        ACTUA()
+        'ACTUA()
     End Sub
 
     Private Sub Cbx_Estado_SelectedIndexChanged(sender As Object, e As EventArgs) Handles Cbx_Estado.SelectedIndexChanged
@@ -38,7 +38,7 @@ Public Class Frm_Actualizacion_Trans
     Private Sub Cbx_Localizacion_SelectedIndexChanged(sender As Object, e As EventArgs) Handles Cbx_Localizacion.SelectedIndexChanged
         Txt_Comentario.Enabled = True
     End Sub
-    Private Sub ACTUA()
+    Private Sub actualizacion_transporte()
         Dim sql As String = "insert into SCR_ACTUALIZACION_REP values(@REPARACION_NUMERO,@CLIENTE,@COMENTARIO,@ESTADO,@USUARIO,@LOCALIZACION,@FECHA)"
         Dim cmd As New SqlCommand(sql, cxnc)
         Dim sql2 As String = "insert into SCR_ACTUALIZACION_RUTA values(@REPARACION_NUMERO,@CLIENTE,@COMENTARIO,@ESTADO,@USUARIO,@LOCALIZACION,@FECHA)"
@@ -87,5 +87,17 @@ Public Class Frm_Actualizacion_Trans
     Private Sub Txt_Comentario_TextChanged(sender As Object, e As EventArgs) Handles Txt_Comentario.TextChanged
         Btn_Grabar_Actua.Enabled = True
         Btn_Grabar_Actua.Visible = True
+    End Sub
+
+    Private Sub Lbl_Comentario_Click(sender As Object, e As EventArgs) Handles Lbl_Comentario.Click
+
+    End Sub
+
+    Private Sub Lbl_Localizacion_Click(sender As Object, e As EventArgs) Handles Lbl_Localizacion.Click
+
+    End Sub
+
+    Private Sub Lbl_Estado_Click(sender As Object, e As EventArgs) Handles Lbl_Estado.Click
+
     End Sub
 End Class
