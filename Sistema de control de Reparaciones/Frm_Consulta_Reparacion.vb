@@ -6,7 +6,7 @@ Public Class Frm_Consulta_Reparacion
     Dim rowIndex As Integer ' Se usan en los métodos selectUpRow y selectDownRow
     Dim colIndex As Integer ' Se usan en los métodos selectUpRow y selectDownRow
     Dim totalRows As Integer ' Se usa en el método selectDownRow
-
+    Dim count As Integer = 0 'para evitar que se ejecute el método Dgv_Actualizaciones_DataSourceChanged al cargar la página
     Private Sub Frm_Consulta_Reparacion_Load(sender As Object, e As EventArgs) Handles MyBase.Load
         'TODO: esta línea de código carga datos en la tabla 'ExactusERP_TABLES.ARTICULO' Puede moverla o quitarla según sea necesario.
         Me.ARTICULOTableAdapter.Fill(Me.ExactusERP_TABLES.ARTICULO)
@@ -15,8 +15,8 @@ Public Class Frm_Consulta_Reparacion
         'TODO: esta línea de código carga datos en la tabla 'ExactusERP_SRC_TABLES.SCR_DATOS_REPARACION' Puede moverla o quitarla según sea necesario.
         Me.SCR_DATOS_REPARACIONTableAdapter.Fill(Me.ExactusERP_SRC_TABLES.SCR_DATOS_REPARACION)
         reparaciones.Columns.Add("REPARACION")
-        Dgv_Actualizaciones.DefaultCellStyle.Font = New Drawing.Font("Square721 BT", 8, Font.Style.Bold)
-        dg_reps_asociadas.DefaultCellStyle.Font = New Drawing.Font("Square721 BT", 8, Font.Style.Bold)
+        Dgv_Actualizaciones.DefaultCellStyle.Font = New Drawing.Font("Square721 BT", 9.25, Font.Style.Bold)
+        dg_reps_asociadas.DefaultCellStyle.Font = New Drawing.Font("Square721 BT", 9.25, Font.Style.Bold)
 
     End Sub
 
@@ -32,22 +32,9 @@ Public Class Frm_Consulta_Reparacion
         End If
     End Sub
 
-
-    Private Sub Txt_Serie_KeyPress(sender As Object, e As KeyPressEventArgs) Handles Txt_Serie.KeyPress
-        If Char.IsNumber(e.KeyChar) Then
-            e.Handled = False
-        Else
-            If Char.IsControl(e.KeyChar) Then
-                e.Handled = False
-            Else
-                e.Handled = True
-            End If
-        End If
-    End Sub
-
     Private Sub Btn_Cotejar_Boleta_Click(sender As Object, e As EventArgs) Handles Btn_Cotejar_Boleta.Click
         If Txt_Num_Boleta.Text = "" Then
-            MsgBox("DEBES INGRESAR UN NUMERO DE BOLETA")
+            MsgBox("el campo BOLETA no puede ir vacío")
         Else
             reparaciones.Rows.Clear()
             Dim numboleta As String = Txt_Num_Boleta.Text
@@ -63,15 +50,18 @@ Public Class Frm_Consulta_Reparacion
             cxnc.Close()
             dg_reps_asociadas.DataSource = reparaciones
 
-            If reparaciones.Rows Is Nothing Then
+            Try 'PARA QUE NO SE CAIGA CUANDO EL RESULTADO DE LA BÚSQUEDA SEA CERO
+                Cbx_Boleta.Text = dg_reps_asociadas.Item(0, dg_reps_asociadas.CurrentRow.Index).Value()
+            Catch ex As Exception
                 MsgBox("Lo siento, no hay reparaciones asociadas")
-            End If
+            End Try
+
         End If
     End Sub
 
     Private Sub Btn_Cotejar_Serie_Click(sender As Object, e As EventArgs) Handles Btn_Cotejar_Serie.Click
         If Txt_Serie.Text = "" Then
-            MsgBox("DEBES INGRESAR UN NUMERO DE SERIE")
+            MsgBox("El campo SERIE no puede ir vacío")
         Else
             reparaciones.Rows.Clear()
             Dim numboleta As String = Txt_Serie.Text
@@ -85,6 +75,13 @@ Public Class Frm_Consulta_Reparacion
             r.Close()
             cxnc.Close()
             dg_reps_asociadas.DataSource = reparaciones
+
+
+            Try 'PARA QUE NO SE CAIGA CUANDO EL RESULTADO DE LA BÚSQUEDA SEA CERO
+                Cbx_Boleta.Text = dg_reps_asociadas.Item(0, dg_reps_asociadas.CurrentRow.Index).Value()
+            Catch ex As Exception
+                MsgBox("Lo siento, no hay reparaciones asociadas")
+            End Try
         End If
     End Sub
 
@@ -93,9 +90,6 @@ Public Class Frm_Consulta_Reparacion
         If Cbx_Boleta.Text IsNot "" Then 'para que no se caiga cuando se cierra la ventana, ya que setea como "" y se cae porque se asigna a un Long
             Num_Boleta = Cbx_Boleta.Text
         End If
-
-        'Cbx_dummy1.Text = Lbl_Cliente.Text
-        'Cbx_Dummy2.Text = Lbl_Articulo.Text
 
         Using connection As New SqlConnection("Data Source=SERVER;Initial Catalog=ExactusERP;Persist Security Info=True;User ID=sa;Password=B1@dm1n"),
             command As New SqlCommand("SCR_CONSULTA_REPARACION", connection),
@@ -112,6 +106,7 @@ Public Class Frm_Consulta_Reparacion
 
             'Display the data.
             Me.Dgv_Actualizaciones.DataSource = table
+
         End Using
     End Sub
 
@@ -131,7 +126,7 @@ Public Class Frm_Consulta_Reparacion
     End Sub
 
 
-    'Para navegar con las flechas arriba y abajo en el datagrid 'reparaciones pendientes'
+    'Métodos Para navegar con las flechas arriba y abajo en el datagrid 'reparaciones pendientes'
     Private Sub selectUpRow()
         Try
             rowIndex = dg_reps_asociadas.SelectedCells(0).OwningRow.Index
@@ -147,7 +142,6 @@ Public Class Frm_Consulta_Reparacion
         End Try
     End Sub
 
-    'Método que se usa en el grid de CLIENTES, cuando se navega con la flecha abajo
     Private Sub selectDownRow()
         Try
             totalRows = dg_reps_asociadas.Rows.Count

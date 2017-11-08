@@ -349,8 +349,6 @@ Public Class Frm_Entrada
             lb_nombre_cliente.Text = ""
             lb_alias_cliente.Text = ""
         End Try
-
-
     End Sub
 
     Private Sub obtenerArticulos()
@@ -569,4 +567,5 @@ Public Class Frm_Entrada
         lb_nombre_cliente.Text = dg_cliente.Item(0, dg_cliente.CurrentRow.Index).Value()
         lb_alias_cliente.Text = dg_cliente.Item(1, dg_cliente.CurrentRow.Index).Value()
     End Sub
+
 End Class

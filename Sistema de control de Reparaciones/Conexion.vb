@@ -28,7 +28,6 @@ Module Conexion
         Try
             cxnc = New SqlConnection("Data Source=SERVER;Initial Catalog=ExactusERP;Persist Security Info=True;User ID=sa;Password=B1@dm1n")
             cxnc.Open()
-            MsgBox("La Aplicacion se ha iniciado correctamente")
             cxnc.Close()
         Catch ex As Exception
             MsgBox("No se pudo conectar" + ex.ToString)

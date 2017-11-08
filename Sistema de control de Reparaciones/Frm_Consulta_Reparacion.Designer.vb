@@ -1,9 +1,9 @@
-﻿<Global.Microsoft.VisualBasic.CompilerServices.DesignerGenerated()> _
+﻿<Global.Microsoft.VisualBasic.CompilerServices.DesignerGenerated()>
 Partial Class Frm_Consulta_Reparacion
     Inherits System.Windows.Forms.Form
 
     'Form reemplaza a Dispose para limpiar la lista de componentes.
-    <System.Diagnostics.DebuggerNonUserCode()> _
+    <System.Diagnostics.DebuggerNonUserCode()>
     Protected Overrides Sub Dispose(ByVal disposing As Boolean)
         Try
             If disposing AndAlso components IsNot Nothing Then
@@ -20,9 +20,11 @@ Partial Class Frm_Consulta_Reparacion
     'NOTA: el Diseñador de Windows Forms necesita el siguiente procedimiento
     'Se puede modificar usando el Diseñador de Windows Forms.  
     'No lo modifique con el editor de código.
-    <System.Diagnostics.DebuggerStepThrough()> _
+    <System.Diagnostics.DebuggerStepThrough()>
     Private Sub InitializeComponent()
         Me.components = New System.ComponentModel.Container()
+        Dim DataGridViewCellStyle2 As System.Windows.Forms.DataGridViewCellStyle = New System.Windows.Forms.DataGridViewCellStyle()
+        Dim DataGridViewCellStyle1 As System.Windows.Forms.DataGridViewCellStyle = New System.Windows.Forms.DataGridViewCellStyle()
         Dim resources As System.ComponentModel.ComponentResourceManager = New System.ComponentModel.ComponentResourceManager(GetType(Frm_Consulta_Reparacion))
         Me.GroupBox2 = New System.Windows.Forms.GroupBox()
         Me.Lbl_Numero_Serie = New System.Windows.Forms.Label()
@@ -55,8 +57,6 @@ Partial Class Frm_Consulta_Reparacion
         Me.Lbl_Encargado_Bod = New System.Windows.Forms.Label()
         Me.Lbl_T_Encargado_Bod = New System.Windows.Forms.Label()
         Me.Lbl_T_Fecha_Ingeso = New System.Windows.Forms.Label()
-        Me.Cbx_Dummy2 = New System.Windows.Forms.ComboBox()
-        Me.Cbx_dummy1 = New System.Windows.Forms.ComboBox()
         Me.CLIENTEBindingSource = New System.Windows.Forms.BindingSource(Me.components)
         Me.Lbl_Fecha_Hora = New System.Windows.Forms.Label()
         Me.Cbx_Boleta = New System.Windows.Forms.ComboBox()
@@ -383,7 +383,7 @@ Partial Class Frm_Consulta_Reparacion
         '
         Me.Lbl_Fecha_Ingreso.AutoSize = True
         Me.Lbl_Fecha_Ingreso.DataBindings.Add(New System.Windows.Forms.Binding("Text", Me.SCRDATOSREPARACIONBindingSource, "FECHA_HORA", True))
-        Me.Lbl_Fecha_Ingreso.Font = New System.Drawing.Font("Square721 BT", 9.25!, System.Drawing.FontStyle.Bold)
+        Me.Lbl_Fecha_Ingreso.Font = New System.Drawing.Font("Square721 BT", 9.5!, System.Drawing.FontStyle.Bold)
         Me.Lbl_Fecha_Ingreso.ForeColor = System.Drawing.Color.Red
         Me.Lbl_Fecha_Ingreso.Location = New System.Drawing.Point(167, 32)
         Me.Lbl_Fecha_Ingreso.Name = "Lbl_Fecha_Ingreso"
@@ -420,28 +420,6 @@ Partial Class Frm_Consulta_Reparacion
         Me.Lbl_T_Fecha_Ingeso.TabIndex = 29
         Me.Lbl_T_Fecha_Ingeso.Text = "Fecha de Ingreso:"
         '
-        'Cbx_Dummy2
-        '
-        Me.Cbx_Dummy2.DataSource = Me.ARTICULOBindingSource
-        Me.Cbx_Dummy2.DisplayMember = "ARTICULO"
-        Me.Cbx_Dummy2.FormattingEnabled = True
-        Me.Cbx_Dummy2.Location = New System.Drawing.Point(660, 9)
-        Me.Cbx_Dummy2.Name = "Cbx_Dummy2"
-        Me.Cbx_Dummy2.Size = New System.Drawing.Size(121, 21)
-        Me.Cbx_Dummy2.TabIndex = 35
-        Me.Cbx_Dummy2.Visible = False
-        '
-        'Cbx_dummy1
-        '
-        Me.Cbx_dummy1.DataSource = Me.CLIENTEBindingSource
-        Me.Cbx_dummy1.DisplayMember = "CLIENTE"
-        Me.Cbx_dummy1.FormattingEnabled = True
-        Me.Cbx_dummy1.Location = New System.Drawing.Point(532, 8)
-        Me.Cbx_dummy1.Name = "Cbx_dummy1"
-        Me.Cbx_dummy1.Size = New System.Drawing.Size(121, 21)
-        Me.Cbx_dummy1.TabIndex = 34
-        Me.Cbx_dummy1.Visible = False
-        '
         'CLIENTEBindingSource
         '
         Me.CLIENTEBindingSource.DataMember = "CLIENTE"
@@ -451,7 +429,7 @@ Partial Class Frm_Consulta_Reparacion
         '
         Me.Lbl_Fecha_Hora.AutoSize = True
         Me.Lbl_Fecha_Hora.Font = New System.Drawing.Font("Square721 BT", 9.25!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.Lbl_Fecha_Hora.Location = New System.Drawing.Point(861, 13)
+        Me.Lbl_Fecha_Hora.Location = New System.Drawing.Point(891, 23)
         Me.Lbl_Fecha_Hora.Name = "Lbl_Fecha_Hora"
         Me.Lbl_Fecha_Hora.Size = New System.Drawing.Size(85, 16)
         Me.Lbl_Fecha_Hora.TabIndex = 33
@@ -464,21 +442,23 @@ Partial Class Frm_Consulta_Reparacion
         Me.Cbx_Boleta.Enabled = False
         Me.Cbx_Boleta.Font = New System.Drawing.Font("Square721 BT", 9.25!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.Cbx_Boleta.FormattingEnabled = True
-        Me.Cbx_Boleta.Location = New System.Drawing.Point(1134, 13)
+        Me.Cbx_Boleta.Location = New System.Drawing.Point(1134, 20)
         Me.Cbx_Boleta.Name = "Cbx_Boleta"
         Me.Cbx_Boleta.Size = New System.Drawing.Size(119, 23)
         Me.Cbx_Boleta.TabIndex = 32
+        Me.Cbx_Boleta.Visible = False
         '
         'Lbl_Numero_Boleta
         '
         Me.Lbl_Numero_Boleta.AutoSize = True
         Me.Lbl_Numero_Boleta.Font = New System.Drawing.Font("Square721 BT", 9.25!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.Lbl_Numero_Boleta.Location = New System.Drawing.Point(1046, 16)
+        Me.Lbl_Numero_Boleta.Location = New System.Drawing.Point(1046, 23)
         Me.Lbl_Numero_Boleta.Margin = New System.Windows.Forms.Padding(4, 0, 4, 0)
         Me.Lbl_Numero_Boleta.Name = "Lbl_Numero_Boleta"
         Me.Lbl_Numero_Boleta.Size = New System.Drawing.Size(89, 16)
         Me.Lbl_Numero_Boleta.TabIndex = 31
         Me.Lbl_Numero_Boleta.Text = "Reparacion #"
+        Me.Lbl_Numero_Boleta.Visible = False
         '
         'GroupBox1
         '
@@ -570,6 +550,7 @@ Partial Class Frm_Consulta_Reparacion
         '
         Me.Lbl_Numero_2.AutoSize = True
         Me.Lbl_Numero_2.DataBindings.Add(New System.Windows.Forms.Binding("Text", Me.CLIENTEBindingSource, "TELEFONO2", True))
+        Me.Lbl_Numero_2.Font = New System.Drawing.Font("Square721 BT", 9.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.Lbl_Numero_2.Location = New System.Drawing.Point(188, 65)
         Me.Lbl_Numero_2.Name = "Lbl_Numero_2"
         Me.Lbl_Numero_2.Size = New System.Drawing.Size(66, 15)
@@ -602,10 +583,10 @@ Partial Class Frm_Consulta_Reparacion
         'Gbx_Actualizaciones
         '
         Me.Gbx_Actualizaciones.Controls.Add(Me.Dgv_Actualizaciones)
-        Me.Gbx_Actualizaciones.Font = New System.Drawing.Font("Square721 BT", 8.25!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.Gbx_Actualizaciones.Location = New System.Drawing.Point(102, 360)
+        Me.Gbx_Actualizaciones.Font = New System.Drawing.Font("Square721 BT", 9.25!, System.Drawing.FontStyle.Bold)
+        Me.Gbx_Actualizaciones.Location = New System.Drawing.Point(81, 360)
         Me.Gbx_Actualizaciones.Name = "Gbx_Actualizaciones"
-        Me.Gbx_Actualizaciones.Size = New System.Drawing.Size(902, 180)
+        Me.Gbx_Actualizaciones.Size = New System.Drawing.Size(1054, 180)
         Me.Gbx_Actualizaciones.TabIndex = 38
         Me.Gbx_Actualizaciones.TabStop = False
         Me.Gbx_Actualizaciones.Text = "ACTUALIZACIONES"
@@ -617,80 +598,103 @@ Partial Class Frm_Consulta_Reparacion
         Me.Dgv_Actualizaciones.AllowUserToResizeColumns = False
         Me.Dgv_Actualizaciones.AllowUserToResizeRows = False
         Me.Dgv_Actualizaciones.AutoGenerateColumns = False
+        Me.Dgv_Actualizaciones.AutoSizeRowsMode = System.Windows.Forms.DataGridViewAutoSizeRowsMode.AllCells
         Me.Dgv_Actualizaciones.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize
         Me.Dgv_Actualizaciones.Columns.AddRange(New System.Windows.Forms.DataGridViewColumn() {Me.REPARACIONNUMERODataGridViewTextBoxColumn, Me.NUMEROACTUADataGridViewTextBoxColumn, Me.CLIENTEDataGridViewTextBoxColumn, Me.COMENTARIODataGridViewTextBoxColumn, Me.ESTADODataGridViewTextBoxColumn, Me.USUARIODataGridViewTextBoxColumn, Me.LOCALIZACIONDataGridViewTextBoxColumn, Me.FECHADataGridViewTextBoxColumn})
         Me.Dgv_Actualizaciones.DataSource = Me.SCRCONSULTAREPARACIONBindingSource
-        Me.Dgv_Actualizaciones.Location = New System.Drawing.Point(6, 31)
+        DataGridViewCellStyle2.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft
+        DataGridViewCellStyle2.BackColor = System.Drawing.SystemColors.Window
+        DataGridViewCellStyle2.Font = New System.Drawing.Font("Square721 BT", 9.25!, System.Drawing.FontStyle.Bold)
+        DataGridViewCellStyle2.ForeColor = System.Drawing.SystemColors.ControlText
+        DataGridViewCellStyle2.SelectionBackColor = System.Drawing.SystemColors.Highlight
+        DataGridViewCellStyle2.SelectionForeColor = System.Drawing.SystemColors.HighlightText
+        DataGridViewCellStyle2.WrapMode = System.Windows.Forms.DataGridViewTriState.[True]
+        Me.Dgv_Actualizaciones.DefaultCellStyle = DataGridViewCellStyle2
+        Me.Dgv_Actualizaciones.Location = New System.Drawing.Point(19, 36)
         Me.Dgv_Actualizaciones.Name = "Dgv_Actualizaciones"
         Me.Dgv_Actualizaciones.ReadOnly = True
-        Me.Dgv_Actualizaciones.Size = New System.Drawing.Size(853, 138)
+        Me.Dgv_Actualizaciones.Size = New System.Drawing.Size(1006, 138)
         Me.Dgv_Actualizaciones.TabIndex = 0
         '
         'REPARACIONNUMERODataGridViewTextBoxColumn
         '
-        Me.REPARACIONNUMERODataGridViewTextBoxColumn.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.ColumnHeader
+        Me.REPARACIONNUMERODataGridViewTextBoxColumn.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.None
         Me.REPARACIONNUMERODataGridViewTextBoxColumn.DataPropertyName = "REPARACION_NUMERO"
         Me.REPARACIONNUMERODataGridViewTextBoxColumn.HeaderText = "REPARACION"
         Me.REPARACIONNUMERODataGridViewTextBoxColumn.Name = "REPARACIONNUMERODataGridViewTextBoxColumn"
         Me.REPARACIONNUMERODataGridViewTextBoxColumn.ReadOnly = True
-        Me.REPARACIONNUMERODataGridViewTextBoxColumn.SortMode = System.Windows.Forms.DataGridViewColumnSortMode.NotSortable
-        Me.REPARACIONNUMERODataGridViewTextBoxColumn.Width = 90
+        Me.REPARACIONNUMERODataGridViewTextBoxColumn.Resizable = System.Windows.Forms.DataGridViewTriState.[False]
+        Me.REPARACIONNUMERODataGridViewTextBoxColumn.Width = 110
         '
         'NUMEROACTUADataGridViewTextBoxColumn
         '
+        Me.NUMEROACTUADataGridViewTextBoxColumn.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.None
         Me.NUMEROACTUADataGridViewTextBoxColumn.DataPropertyName = "NUMERO_ACTUA"
         Me.NUMEROACTUADataGridViewTextBoxColumn.HeaderText = "ACTUALIZACION"
         Me.NUMEROACTUADataGridViewTextBoxColumn.Name = "NUMEROACTUADataGridViewTextBoxColumn"
         Me.NUMEROACTUADataGridViewTextBoxColumn.ReadOnly = True
-        Me.NUMEROACTUADataGridViewTextBoxColumn.SortMode = System.Windows.Forms.DataGridViewColumnSortMode.NotSortable
+        Me.NUMEROACTUADataGridViewTextBoxColumn.Resizable = System.Windows.Forms.DataGridViewTriState.[False]
+        Me.NUMEROACTUADataGridViewTextBoxColumn.Width = 130
         '
         'CLIENTEDataGridViewTextBoxColumn
         '
+        Me.CLIENTEDataGridViewTextBoxColumn.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.ColumnHeader
         Me.CLIENTEDataGridViewTextBoxColumn.DataPropertyName = "CLIENTE"
         Me.CLIENTEDataGridViewTextBoxColumn.HeaderText = "CLIENTE"
         Me.CLIENTEDataGridViewTextBoxColumn.Name = "CLIENTEDataGridViewTextBoxColumn"
         Me.CLIENTEDataGridViewTextBoxColumn.ReadOnly = True
-        Me.CLIENTEDataGridViewTextBoxColumn.SortMode = System.Windows.Forms.DataGridViewColumnSortMode.NotSortable
+        Me.CLIENTEDataGridViewTextBoxColumn.Resizable = System.Windows.Forms.DataGridViewTriState.[False]
+        Me.CLIENTEDataGridViewTextBoxColumn.Width = 92
         '
         'COMENTARIODataGridViewTextBoxColumn
         '
+        Me.COMENTARIODataGridViewTextBoxColumn.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.None
         Me.COMENTARIODataGridViewTextBoxColumn.DataPropertyName = "COMENTARIO"
+        DataGridViewCellStyle1.Font = New System.Drawing.Font("Square721 BT", 8.25!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.COMENTARIODataGridViewTextBoxColumn.DefaultCellStyle = DataGridViewCellStyle1
         Me.COMENTARIODataGridViewTextBoxColumn.HeaderText = "COMENTARIO"
         Me.COMENTARIODataGridViewTextBoxColumn.Name = "COMENTARIODataGridViewTextBoxColumn"
         Me.COMENTARIODataGridViewTextBoxColumn.ReadOnly = True
-        Me.COMENTARIODataGridViewTextBoxColumn.SortMode = System.Windows.Forms.DataGridViewColumnSortMode.NotSortable
+        Me.COMENTARIODataGridViewTextBoxColumn.Resizable = System.Windows.Forms.DataGridViewTriState.[False]
+        Me.COMENTARIODataGridViewTextBoxColumn.Width = 170
         '
         'ESTADODataGridViewTextBoxColumn
         '
+        Me.ESTADODataGridViewTextBoxColumn.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.None
         Me.ESTADODataGridViewTextBoxColumn.DataPropertyName = "ESTADO"
         Me.ESTADODataGridViewTextBoxColumn.HeaderText = "ESTADO"
         Me.ESTADODataGridViewTextBoxColumn.Name = "ESTADODataGridViewTextBoxColumn"
         Me.ESTADODataGridViewTextBoxColumn.ReadOnly = True
-        Me.ESTADODataGridViewTextBoxColumn.SortMode = System.Windows.Forms.DataGridViewColumnSortMode.NotSortable
+        Me.ESTADODataGridViewTextBoxColumn.Resizable = System.Windows.Forms.DataGridViewTriState.[False]
         '
         'USUARIODataGridViewTextBoxColumn
         '
+        Me.USUARIODataGridViewTextBoxColumn.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.ColumnHeader
         Me.USUARIODataGridViewTextBoxColumn.DataPropertyName = "USUARIO"
         Me.USUARIODataGridViewTextBoxColumn.HeaderText = "USUARIO"
         Me.USUARIODataGridViewTextBoxColumn.Name = "USUARIODataGridViewTextBoxColumn"
         Me.USUARIODataGridViewTextBoxColumn.ReadOnly = True
-        Me.USUARIODataGridViewTextBoxColumn.SortMode = System.Windows.Forms.DataGridViewColumnSortMode.NotSortable
+        Me.USUARIODataGridViewTextBoxColumn.Resizable = System.Windows.Forms.DataGridViewTriState.[False]
+        Me.USUARIODataGridViewTextBoxColumn.Width = 96
         '
         'LOCALIZACIONDataGridViewTextBoxColumn
         '
+        Me.LOCALIZACIONDataGridViewTextBoxColumn.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.ColumnHeader
         Me.LOCALIZACIONDataGridViewTextBoxColumn.DataPropertyName = "LOCALIZACION"
         Me.LOCALIZACIONDataGridViewTextBoxColumn.HeaderText = "LOCALIZACION"
         Me.LOCALIZACIONDataGridViewTextBoxColumn.Name = "LOCALIZACIONDataGridViewTextBoxColumn"
         Me.LOCALIZACIONDataGridViewTextBoxColumn.ReadOnly = True
-        Me.LOCALIZACIONDataGridViewTextBoxColumn.SortMode = System.Windows.Forms.DataGridViewColumnSortMode.NotSortable
+        Me.LOCALIZACIONDataGridViewTextBoxColumn.Resizable = System.Windows.Forms.DataGridViewTriState.[False]
+        Me.LOCALIZACIONDataGridViewTextBoxColumn.Width = 137
         '
         'FECHADataGridViewTextBoxColumn
         '
+        Me.FECHADataGridViewTextBoxColumn.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.None
         Me.FECHADataGridViewTextBoxColumn.DataPropertyName = "FECHA"
         Me.FECHADataGridViewTextBoxColumn.HeaderText = "FECHA"
         Me.FECHADataGridViewTextBoxColumn.Name = "FECHADataGridViewTextBoxColumn"
         Me.FECHADataGridViewTextBoxColumn.ReadOnly = True
-        Me.FECHADataGridViewTextBoxColumn.SortMode = System.Windows.Forms.DataGridViewColumnSortMode.NotSortable
+        Me.FECHADataGridViewTextBoxColumn.Resizable = System.Windows.Forms.DataGridViewTriState.[False]
         '
         'SCRCONSULTAREPARACIONBindingSource
         '
@@ -704,7 +708,7 @@ Partial Class Frm_Consulta_Reparacion
         'Btn_Cotejar_Serie
         '
         Me.Btn_Cotejar_Serie.Font = New System.Drawing.Font("Square721 BT", 9.0!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.Btn_Cotejar_Serie.Location = New System.Drawing.Point(170, 147)
+        Me.Btn_Cotejar_Serie.Location = New System.Drawing.Point(177, 138)
         Me.Btn_Cotejar_Serie.Name = "Btn_Cotejar_Serie"
         Me.Btn_Cotejar_Serie.Size = New System.Drawing.Size(75, 23)
         Me.Btn_Cotejar_Serie.TabIndex = 44
@@ -714,16 +718,16 @@ Partial Class Frm_Consulta_Reparacion
         'Txt_Serie
         '
         Me.Txt_Serie.Font = New System.Drawing.Font("Square721 BT", 8.25!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.Txt_Serie.Location = New System.Drawing.Point(64, 149)
+        Me.Txt_Serie.Location = New System.Drawing.Point(48, 140)
         Me.Txt_Serie.Name = "Txt_Serie"
-        Me.Txt_Serie.Size = New System.Drawing.Size(100, 21)
+        Me.Txt_Serie.Size = New System.Drawing.Size(123, 21)
         Me.Txt_Serie.TabIndex = 43
         '
         'Lbl_Serie_Numero
         '
         Me.Lbl_Serie_Numero.AutoSize = True
         Me.Lbl_Serie_Numero.Font = New System.Drawing.Font("Square721 BT", 9.25!, System.Drawing.FontStyle.Bold)
-        Me.Lbl_Serie_Numero.Location = New System.Drawing.Point(92, 130)
+        Me.Lbl_Serie_Numero.Location = New System.Drawing.Point(83, 121)
         Me.Lbl_Serie_Numero.Name = "Lbl_Serie_Numero"
         Me.Lbl_Serie_Numero.Size = New System.Drawing.Size(57, 16)
         Me.Lbl_Serie_Numero.TabIndex = 42
@@ -732,7 +736,7 @@ Partial Class Frm_Consulta_Reparacion
         'Btn_Cotejar_Boleta
         '
         Me.Btn_Cotejar_Boleta.Font = New System.Drawing.Font("Square721 BT", 9.0!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.Btn_Cotejar_Boleta.Location = New System.Drawing.Point(170, 85)
+        Me.Btn_Cotejar_Boleta.Location = New System.Drawing.Point(177, 76)
         Me.Btn_Cotejar_Boleta.Name = "Btn_Cotejar_Boleta"
         Me.Btn_Cotejar_Boleta.Size = New System.Drawing.Size(75, 23)
         Me.Btn_Cotejar_Boleta.TabIndex = 41
@@ -742,16 +746,16 @@ Partial Class Frm_Consulta_Reparacion
         'Txt_Num_Boleta
         '
         Me.Txt_Num_Boleta.Font = New System.Drawing.Font("Square721 BT", 8.25!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.Txt_Num_Boleta.Location = New System.Drawing.Point(64, 87)
+        Me.Txt_Num_Boleta.Location = New System.Drawing.Point(46, 78)
         Me.Txt_Num_Boleta.Name = "Txt_Num_Boleta"
-        Me.Txt_Num_Boleta.Size = New System.Drawing.Size(100, 21)
+        Me.Txt_Num_Boleta.Size = New System.Drawing.Size(125, 21)
         Me.Txt_Num_Boleta.TabIndex = 40
         '
         'Lbl_Num_Boleta
         '
         Me.Lbl_Num_Boleta.AutoSize = True
         Me.Lbl_Num_Boleta.Font = New System.Drawing.Font("Square721 BT", 9.25!, System.Drawing.FontStyle.Bold)
-        Me.Lbl_Num_Boleta.Location = New System.Drawing.Point(84, 68)
+        Me.Lbl_Num_Boleta.Location = New System.Drawing.Point(83, 59)
         Me.Lbl_Num_Boleta.Name = "Lbl_Num_Boleta"
         Me.Lbl_Num_Boleta.Size = New System.Drawing.Size(65, 16)
         Me.Lbl_Num_Boleta.TabIndex = 39
@@ -762,7 +766,7 @@ Partial Class Frm_Consulta_Reparacion
         Me.dg_reps_asociadas.AllowUserToAddRows = False
         Me.dg_reps_asociadas.AllowUserToDeleteRows = False
         Me.dg_reps_asociadas.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize
-        Me.dg_reps_asociadas.Location = New System.Drawing.Point(266, 68)
+        Me.dg_reps_asociadas.Location = New System.Drawing.Point(270, 71)
         Me.dg_reps_asociadas.Name = "dg_reps_asociadas"
         Me.dg_reps_asociadas.ReadOnly = True
         Me.dg_reps_asociadas.Size = New System.Drawing.Size(181, 110)
@@ -772,7 +776,7 @@ Partial Class Frm_Consulta_Reparacion
         '
         Me.Label1.AutoSize = True
         Me.Label1.Font = New System.Drawing.Font("Square721 BT", 9.0!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.Label1.Location = New System.Drawing.Point(263, 50)
+        Me.Label1.Location = New System.Drawing.Point(267, 53)
         Me.Label1.Name = "Label1"
         Me.Label1.Size = New System.Drawing.Size(184, 15)
         Me.Label1.TabIndex = 46
@@ -793,8 +797,6 @@ Partial Class Frm_Consulta_Reparacion
         Me.Controls.Add(Me.Lbl_Num_Boleta)
         Me.Controls.Add(Me.Gbx_Actualizaciones)
         Me.Controls.Add(Me.GroupBox2)
-        Me.Controls.Add(Me.Cbx_Dummy2)
-        Me.Controls.Add(Me.Cbx_dummy1)
         Me.Controls.Add(Me.Lbl_Fecha_Hora)
         Me.Controls.Add(Me.Cbx_Boleta)
         Me.Controls.Add(Me.Lbl_Numero_Boleta)
@@ -847,8 +849,6 @@ Partial Class Frm_Consulta_Reparacion
     Friend WithEvents Lbl_Encargado_Bod As Label
     Friend WithEvents Lbl_T_Encargado_Bod As Label
     Friend WithEvents Lbl_T_Fecha_Ingeso As Label
-    Friend WithEvents Cbx_Dummy2 As ComboBox
-    Friend WithEvents Cbx_dummy1 As ComboBox
     Friend WithEvents Lbl_Fecha_Hora As Label
     Friend WithEvents Cbx_Boleta As ComboBox
     Friend WithEvents Lbl_Numero_Boleta As Label
@@ -880,6 +880,8 @@ Partial Class Frm_Consulta_Reparacion
     Friend WithEvents Btn_Cotejar_Boleta As Button
     Friend WithEvents Txt_Num_Boleta As TextBox
     Friend WithEvents Lbl_Num_Boleta As Label
+    Friend WithEvents dg_reps_asociadas As DataGridView
+    Friend WithEvents Label1 As Label
     Friend WithEvents REPARACIONNUMERODataGridViewTextBoxColumn As DataGridViewTextBoxColumn
     Friend WithEvents NUMEROACTUADataGridViewTextBoxColumn As DataGridViewTextBoxColumn
     Friend WithEvents CLIENTEDataGridViewTextBoxColumn As DataGridViewTextBoxColumn
@@ -888,6 +890,4 @@ Partial Class Frm_Consulta_Reparacion
     Friend WithEvents USUARIODataGridViewTextBoxColumn As DataGridViewTextBoxColumn
     Friend WithEvents LOCALIZACIONDataGridViewTextBoxColumn As DataGridViewTextBoxColumn
     Friend WithEvents FECHADataGridViewTextBoxColumn As DataGridViewTextBoxColumn
-    Friend WithEvents dg_reps_asociadas As DataGridView
-    Friend WithEvents Label1 As Label
 End Class
