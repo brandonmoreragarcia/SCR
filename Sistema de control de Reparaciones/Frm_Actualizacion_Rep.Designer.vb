@@ -105,11 +105,12 @@ Partial Class Frm_Actualizacion_Rep
         Me.LOCALIZACIONDataGridViewTextBoxColumn = New System.Windows.Forms.DataGridViewTextBoxColumn()
         Me.SCRCONSULTAREPARACIONBindingSource = New System.Windows.Forms.BindingSource(Me.components)
         Me.gb__ingresar_info_transporte = New System.Windows.Forms.GroupBox()
-        Me.ComboBox1 = New System.Windows.Forms.ComboBox()
+        Me.bt_guardar_transporte = New System.Windows.Forms.Button()
+        Me.cbx_localizacion_transporte = New System.Windows.Forms.ComboBox()
         Me.SCRLOCALIZACIONTRANSBindingSource = New System.Windows.Forms.BindingSource(Me.components)
-        Me.ComboBox2 = New System.Windows.Forms.ComboBox()
+        Me.cbx_estado_transporte = New System.Windows.Forms.ComboBox()
         Me.SCRESTADOTRANSPORTEBindingSource = New System.Windows.Forms.BindingSource(Me.components)
-        Me.TextBox1 = New System.Windows.Forms.TextBox()
+        Me.txt_comentario_transporte = New System.Windows.Forms.TextBox()
         Me.Label1 = New System.Windows.Forms.Label()
         Me.Label2 = New System.Windows.Forms.Label()
         Me.Label3 = New System.Windows.Forms.Label()
@@ -128,7 +129,7 @@ Partial Class Frm_Actualizacion_Rep
         Me.SCR_ENCARGADO_BODEGATableAdapter = New WindowsApplication1.ExactusERP_SRC_TABLESTableAdapters.SCR_ENCARGADO_BODEGATableAdapter()
         Me.SCR_ESTADO_TRANSPORTETableAdapter = New WindowsApplication1.ExactusERP_SRC_TABLESTableAdapters.SCR_ESTADO_TRANSPORTETableAdapter()
         Me.SCR_LOCALIZACION_TRANSTableAdapter = New WindowsApplication1.ExactusERP_SRC_TABLESTableAdapters.SCR_LOCALIZACION_TRANSTableAdapter()
-        Me.bt_guardar_transporte = New System.Windows.Forms.Button()
+        Me.ch_ver_informacion_transporte = New System.Windows.Forms.CheckBox()
         CType(Me.SCRREPSPENDIENTESBindingSource, System.ComponentModel.ISupportInitialize).BeginInit()
         CType(Me.ExactusERP_SRC_TABLES, System.ComponentModel.ISupportInitialize).BeginInit()
         CType(Me.SCRDATOSREPARACIONBindingSource, System.ComponentModel.ISupportInitialize).BeginInit()
@@ -850,7 +851,7 @@ Partial Class Frm_Actualizacion_Rep
         '
         Me.gb_detalle_reparacion.Controls.Add(Me.dg_detalle_rep)
         Me.gb_detalle_reparacion.Font = New System.Drawing.Font("Square721 BT", 9.0!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.gb_detalle_reparacion.Location = New System.Drawing.Point(579, 422)
+        Me.gb_detalle_reparacion.Location = New System.Drawing.Point(12, 226)
         Me.gb_detalle_reparacion.Name = "gb_detalle_reparacion"
         Me.gb_detalle_reparacion.Size = New System.Drawing.Size(561, 299)
         Me.gb_detalle_reparacion.TabIndex = 60
@@ -929,69 +930,77 @@ Partial Class Frm_Actualizacion_Rep
         'gb__ingresar_info_transporte
         '
         Me.gb__ingresar_info_transporte.Controls.Add(Me.bt_guardar_transporte)
-        Me.gb__ingresar_info_transporte.Controls.Add(Me.ComboBox1)
-        Me.gb__ingresar_info_transporte.Controls.Add(Me.ComboBox2)
-        Me.gb__ingresar_info_transporte.Controls.Add(Me.TextBox1)
+        Me.gb__ingresar_info_transporte.Controls.Add(Me.cbx_localizacion_transporte)
+        Me.gb__ingresar_info_transporte.Controls.Add(Me.cbx_estado_transporte)
+        Me.gb__ingresar_info_transporte.Controls.Add(Me.txt_comentario_transporte)
         Me.gb__ingresar_info_transporte.Controls.Add(Me.Label1)
         Me.gb__ingresar_info_transporte.Controls.Add(Me.Label2)
         Me.gb__ingresar_info_transporte.Controls.Add(Me.Label3)
         Me.gb__ingresar_info_transporte.Font = New System.Drawing.Font("Square721 BT", 9.0!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.gb__ingresar_info_transporte.Location = New System.Drawing.Point(559, 30)
+        Me.gb__ingresar_info_transporte.Location = New System.Drawing.Point(12, 217)
         Me.gb__ingresar_info_transporte.Name = "gb__ingresar_info_transporte"
-        Me.gb__ingresar_info_transporte.Size = New System.Drawing.Size(561, 299)
+        Me.gb__ingresar_info_transporte.Size = New System.Drawing.Size(561, 302)
         Me.gb__ingresar_info_transporte.TabIndex = 61
         Me.gb__ingresar_info_transporte.TabStop = False
         Me.gb__ingresar_info_transporte.Text = "TRANSPORTE"
         Me.gb__ingresar_info_transporte.Visible = False
         '
-        'ComboBox1
+        'bt_guardar_transporte
         '
-        Me.ComboBox1.DataSource = Me.SCRLOCALIZACIONTRANSBindingSource
-        Me.ComboBox1.DisplayMember = "LOCALIZACION"
-        Me.ComboBox1.DropDownWidth = 290
-        Me.ComboBox1.Enabled = False
-        Me.ComboBox1.Font = New System.Drawing.Font("Square721 BT", 9.75!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.ComboBox1.FormattingEnabled = True
-        Me.ComboBox1.Location = New System.Drawing.Point(319, 47)
-        Me.ComboBox1.Name = "ComboBox1"
-        Me.ComboBox1.Size = New System.Drawing.Size(140, 24)
-        Me.ComboBox1.TabIndex = 50
+        Me.bt_guardar_transporte.Location = New System.Drawing.Point(376, 221)
+        Me.bt_guardar_transporte.Name = "bt_guardar_transporte"
+        Me.bt_guardar_transporte.Size = New System.Drawing.Size(128, 30)
+        Me.bt_guardar_transporte.TabIndex = 51
+        Me.bt_guardar_transporte.Text = "GUARDAR!"
+        Me.bt_guardar_transporte.UseVisualStyleBackColor = True
+        '
+        'cbx_localizacion_transporte
+        '
+        Me.cbx_localizacion_transporte.DataSource = Me.SCRLOCALIZACIONTRANSBindingSource
+        Me.cbx_localizacion_transporte.DisplayMember = "LOCALIZACION"
+        Me.cbx_localizacion_transporte.DropDownWidth = 290
+        Me.cbx_localizacion_transporte.Font = New System.Drawing.Font("Square721 BT", 9.75!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.cbx_localizacion_transporte.FormattingEnabled = True
+        Me.cbx_localizacion_transporte.Location = New System.Drawing.Point(339, 47)
+        Me.cbx_localizacion_transporte.Name = "cbx_localizacion_transporte"
+        Me.cbx_localizacion_transporte.Size = New System.Drawing.Size(140, 24)
+        Me.cbx_localizacion_transporte.TabIndex = 50
         '
         'SCRLOCALIZACIONTRANSBindingSource
         '
         Me.SCRLOCALIZACIONTRANSBindingSource.DataMember = "SCR_LOCALIZACION_TRANS"
         Me.SCRLOCALIZACIONTRANSBindingSource.DataSource = Me.ExactusERP_SRC_TABLES
         '
-        'ComboBox2
+        'cbx_estado_transporte
         '
-        Me.ComboBox2.DataSource = Me.SCRESTADOTRANSPORTEBindingSource
-        Me.ComboBox2.DropDownWidth = 290
-        Me.ComboBox2.Font = New System.Drawing.Font("Square721 BT", 9.75!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.ComboBox2.FormattingEnabled = True
-        Me.ComboBox2.Location = New System.Drawing.Point(71, 47)
-        Me.ComboBox2.Name = "ComboBox2"
-        Me.ComboBox2.Size = New System.Drawing.Size(140, 24)
-        Me.ComboBox2.TabIndex = 49
+        Me.cbx_estado_transporte.DataSource = Me.SCRESTADOTRANSPORTEBindingSource
+        Me.cbx_estado_transporte.DisplayMember = "ESTADO"
+        Me.cbx_estado_transporte.DropDownWidth = 290
+        Me.cbx_estado_transporte.Font = New System.Drawing.Font("Square721 BT", 9.75!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.cbx_estado_transporte.FormattingEnabled = True
+        Me.cbx_estado_transporte.Location = New System.Drawing.Point(71, 47)
+        Me.cbx_estado_transporte.Name = "cbx_estado_transporte"
+        Me.cbx_estado_transporte.Size = New System.Drawing.Size(140, 24)
+        Me.cbx_estado_transporte.TabIndex = 49
         '
         'SCRESTADOTRANSPORTEBindingSource
         '
         Me.SCRESTADOTRANSPORTEBindingSource.DataMember = "SCR_ESTADO_TRANSPORTE"
         Me.SCRESTADOTRANSPORTEBindingSource.DataSource = Me.ExactusERP_SRC_TABLES
         '
-        'TextBox1
+        'txt_comentario_transporte
         '
-        Me.TextBox1.Enabled = False
-        Me.TextBox1.Location = New System.Drawing.Point(118, 124)
-        Me.TextBox1.Multiline = True
-        Me.TextBox1.Name = "TextBox1"
-        Me.TextBox1.Size = New System.Drawing.Size(197, 56)
-        Me.TextBox1.TabIndex = 48
+        Me.txt_comentario_transporte.Location = New System.Drawing.Point(103, 113)
+        Me.txt_comentario_transporte.Multiline = True
+        Me.txt_comentario_transporte.Name = "txt_comentario_transporte"
+        Me.txt_comentario_transporte.Size = New System.Drawing.Size(197, 56)
+        Me.txt_comentario_transporte.TabIndex = 48
         '
         'Label1
         '
         Me.Label1.AutoSize = True
         Me.Label1.Font = New System.Drawing.Font("Square721 BT", 9.75!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.Label1.Location = New System.Drawing.Point(24, 125)
+        Me.Label1.Location = New System.Drawing.Point(9, 114)
         Me.Label1.Name = "Label1"
         Me.Label1.Size = New System.Drawing.Size(88, 16)
         Me.Label1.TabIndex = 47
@@ -1001,7 +1010,7 @@ Partial Class Frm_Actualizacion_Rep
         '
         Me.Label2.AutoSize = True
         Me.Label2.Font = New System.Drawing.Font("Square721 BT", 9.75!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.Label2.Location = New System.Drawing.Point(223, 51)
+        Me.Label2.Location = New System.Drawing.Point(243, 51)
         Me.Label2.Name = "Label2"
         Me.Label2.Size = New System.Drawing.Size(92, 16)
         Me.Label2.TabIndex = 46
@@ -1101,9 +1110,10 @@ Partial Class Frm_Actualizacion_Rep
         'ch_ver_informacion
         '
         Me.ch_ver_informacion.AutoSize = True
+        Me.ch_ver_informacion.Font = New System.Drawing.Font("Square721 BT", 8.25!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.ch_ver_informacion.Location = New System.Drawing.Point(356, 166)
         Me.ch_ver_informacion.Name = "ch_ver_informacion"
-        Me.ch_ver_informacion.Size = New System.Drawing.Size(217, 19)
+        Me.ch_ver_informacion.Size = New System.Drawing.Size(207, 18)
         Me.ch_ver_informacion.TabIndex = 60
         Me.ch_ver_informacion.Text = "VER INFORMACIÓN ADICIONAL"
         Me.ch_ver_informacion.UseVisualStyleBackColor = True
@@ -1125,15 +1135,16 @@ Partial Class Frm_Actualizacion_Rep
         '
         Me.SCR_LOCALIZACION_TRANSTableAdapter.ClearBeforeFill = True
         '
-        'bt_guardar_transporte
+        'ch_ver_informacion_transporte
         '
-        Me.bt_guardar_transporte.Enabled = False
-        Me.bt_guardar_transporte.Location = New System.Drawing.Point(401, 221)
-        Me.bt_guardar_transporte.Name = "bt_guardar_transporte"
-        Me.bt_guardar_transporte.Size = New System.Drawing.Size(103, 30)
-        Me.bt_guardar_transporte.TabIndex = 51
-        Me.bt_guardar_transporte.Text = "GUARDAR!"
-        Me.bt_guardar_transporte.UseVisualStyleBackColor = True
+        Me.ch_ver_informacion_transporte.AutoSize = True
+        Me.ch_ver_informacion_transporte.Font = New System.Drawing.Font("Square721 BT", 8.25!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.ch_ver_informacion_transporte.Location = New System.Drawing.Point(356, 85)
+        Me.ch_ver_informacion_transporte.Name = "ch_ver_informacion_transporte"
+        Me.ch_ver_informacion_transporte.Size = New System.Drawing.Size(207, 18)
+        Me.ch_ver_informacion_transporte.TabIndex = 62
+        Me.ch_ver_informacion_transporte.Text = "VER INFORMACIÓN ADICIONAL"
+        Me.ch_ver_informacion_transporte.UseVisualStyleBackColor = True
         '
         'Frm_Actualizacion_Rep
         '
@@ -1141,8 +1152,9 @@ Partial Class Frm_Actualizacion_Rep
         Me.AutoScaleDimensions = New System.Drawing.SizeF(8.0!, 15.0!)
         Me.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font
         Me.ClientSize = New System.Drawing.Size(1273, 552)
-        Me.Controls.Add(Me.gb_detalle_reparacion)
+        Me.Controls.Add(Me.ch_ver_informacion_transporte)
         Me.Controls.Add(Me.gb__ingresar_info_transporte)
+        Me.Controls.Add(Me.gb_detalle_reparacion)
         Me.Controls.Add(Me.ch_ver_informacion)
         Me.Controls.Add(Me.bt_cerrado_rapido)
         Me.Controls.Add(Me.lb_ingresar_cod_reparacion)
@@ -1285,9 +1297,9 @@ Partial Class Frm_Actualizacion_Rep
     Friend WithEvents FECHADataGridViewTextBoxColumn As DataGridViewTextBoxColumn
     Friend WithEvents LOCALIZACIONDataGridViewTextBoxColumn As DataGridViewTextBoxColumn
     Friend WithEvents gb__ingresar_info_transporte As GroupBox
-    Friend WithEvents ComboBox1 As ComboBox
-    Friend WithEvents ComboBox2 As ComboBox
-    Friend WithEvents TextBox1 As TextBox
+    Friend WithEvents cbx_localizacion_transporte As ComboBox
+    Friend WithEvents cbx_estado_transporte As ComboBox
+    Friend WithEvents txt_comentario_transporte As TextBox
     Friend WithEvents Label1 As Label
     Friend WithEvents Label2 As Label
     Friend WithEvents Label3 As Label
@@ -1298,4 +1310,5 @@ Partial Class Frm_Actualizacion_Rep
     Friend WithEvents SCRLOCALIZACIONTRANSBindingSource As BindingSource
     Friend WithEvents SCR_LOCALIZACION_TRANSTableAdapter As ExactusERP_SRC_TABLESTableAdapters.SCR_LOCALIZACION_TRANSTableAdapter
     Friend WithEvents bt_guardar_transporte As Button
+    Friend WithEvents ch_ver_informacion_transporte As CheckBox
 End Class

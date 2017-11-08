@@ -21,6 +21,8 @@ Public Class Frm_Actualizacion_Rep
         Me.SCR_ESTADO_ACTUATableAdapter.Fill(Me.ExactusERP_SRC_TABLES.SCR_ESTADO_ACTUA)
         'TODO: esta línea de código carga datos en la tabla 'ExactusERP_TABLES.CLIENTE' Puede moverla o quitarla según sea necesario.
         dg_reparaciones.DefaultCellStyle.Font = New Drawing.Font("Square721 BT", 8, Font.Style.Bold)
+        Btn_Grabar_Actua.Enabled = True
+        Cbx_Localizacion.Enabled = True
         Timer1.Start()
 
     End Sub
@@ -72,65 +74,66 @@ Public Class Frm_Actualizacion_Rep
     End Sub
 
     Private Sub Btn_Grabar_Actua_Click(sender As Object, e As EventArgs) Handles Btn_Grabar_Actua.Click
-        Try
 
-            If Txt_Comentario.Text IsNot "" Then
-                If Cbx_Estado.Text = "REPARADA" Then
-                    If estado_rep(Num_Boleta) = False Then
-                        Try
-                            If garancheck = False And faccheck = False Then
-                                MessageBox.Show("HA SELECCIONADO EL ESTADO REPARADA, DEBE SELECCIONAR SI O NO EN LOS CAMPOS GARANTIA Y FACTURADA")
-                            ElseIf garancheck = True And faccheck = False Then
-                                MessageBox.Show("HA SELECCIONADO EL ESTADO REPARADA, DEBE SELECCIONAR SI O NO EN EL CAMPO FACTURADA")
-                            ElseIf garancheck = False And faccheck = True Then
-                                MessageBox.Show("HA SELECCIONADO EL ESTADO REPARADA, DEBE SELECCIONAR SI O NO EN EL CAMPO GARANTIA")
-                            Else
-                                If facturada = "NO" Then
-                                    If Txt_Tiempo_Inver.Text = "" Then
-                                        MessageBox.Show("DEBE INGRESAR LA HORAS INVERTIDAS EN LA REPARACION")
-                                    Else
-                                        'ACTUAREP()
-                                        ACTUA()
-                                        ACTUAREP_2()
-                                        ACTUAREP_3()
-                                        ACTUAREP_LIMPIAR()
-                                    End If
+        Dim answer As DialogResult = MessageBox.Show("Seguro que desear guardar los cambios?" + vbLf + "", "Aviso", MessageBoxButtons.YesNo)
+        If (answer = DialogResult.Yes) Then
+            Try
+                If Txt_Comentario.Text IsNot "" Then
+                    If Cbx_Estado.Text = "REPARADA" Then
+                        If estado_rep(Num_Boleta) = False Then
+                            Try
+                                If garancheck = False And faccheck = False Then
+                                    MessageBox.Show("HA SELECCIONADO EL ESTADO REPARADA, DEBE SELECCIONAR SI O NO EN LOS CAMPOS GARANTIA Y FACTURADA")
+                                ElseIf garancheck = True And faccheck = False Then
+                                    MessageBox.Show("HA SELECCIONADO EL ESTADO REPARADA, DEBE SELECCIONAR SI O NO EN EL CAMPO FACTURADA")
+                                ElseIf garancheck = False And faccheck = True Then
+                                    MessageBox.Show("HA SELECCIONADO EL ESTADO REPARADA, DEBE SELECCIONAR SI O NO EN EL CAMPO GARANTIA")
                                 Else
-                                    If Txt_Factura_Num.Text = "" And Txt_Factura_Num.Visible = True Then
-                                        MessageBox.Show("HA SELECCIONADO FACURADADO COMO SI. DEBE INGRESAR EL NUMERO DE FACTURA")
-                                    Else
+                                    If facturada = "NO" Then
                                         If Txt_Tiempo_Inver.Text = "" Then
                                             MessageBox.Show("DEBE INGRESAR LA HORAS INVERTIDAS EN LA REPARACION")
                                         Else
-                                            ACTUAREP()
+                                            'ACTUAREP()
+                                            ACTUA()
+                                            ACTUAREP_2()
+                                            ACTUAREP_3()
+                                            ACTUAREP_LIMPIAR()
+                                        End If
+                                    Else
+                                        If Txt_Factura_Num.Text = "" And Txt_Factura_Num.Visible = True Then
+                                            MessageBox.Show("HA SELECCIONADO FACURADADO COMO SI. DEBE INGRESAR EL NUMERO DE FACTURA")
+                                        Else
+                                            If Txt_Tiempo_Inver.Text = "" Then
+                                                MessageBox.Show("DEBE INGRESAR LA HORAS INVERTIDAS EN LA REPARACION")
+                                            Else
+                                                ACTUAREP()
+                                            End If
                                         End If
                                     End If
                                 End If
-                            End If
-                        Catch ex As Exception
-                            MsgBox(ex.ToString)
-                        End Try
-                    Else
-                        MsgBox("La Reparacion: " + Cbx_Boleta.Text + " Ya tiene ingresado el estado REPARADA")
+                            Catch ex As Exception
+                                MsgBox(ex.ToString)
+                            End Try
+                        Else
+                            MsgBox("La Reparacion: " + Cbx_Boleta.Text + " Ya tiene ingresado el estado REPARADA")
 
+                        End If
+                    Else
+                        If rep_cerrada(Cbx_Boleta.Text) = True Then
+                            MsgBox("La Reparacion: " + Cbx_Boleta.Text + " Ya ha sido cerrada por tanto no acepta mas actualizaciones, debe comunicarse con un administrador para quitar el bloqueo")
+                        Else
+                            ACTUA()
+                            ACTUA_LIMPIAR()
+                        End If
                     End If
                 Else
-                    If rep_cerrada(Cbx_Boleta.Text) = True Then
-                        MsgBox("La Reparacion: " + Cbx_Boleta.Text + " Ya ha sido cerrada por tanto no acepta mas actualizaciones, debe comunicarse con un administrador para quitar el bloqueo")
-                    Else
-                        ACTUA()
-                        ACTUA_LIMPIAR()
-                    End If
-
+                    Throw New MyException("Error, el espacio COMENTARIO no debe ir vacío")
                 End If
 
-            Else
-                Throw New MyException("Error, el espacio COMENTARIO no debe ir vacío")
-            End If
-
-        Catch ex As Exception
-            MessageBox.Show(ex.Message)
-        End Try
+            Catch ex As Exception
+                MessageBox.Show(ex.Message)
+            End Try
+        End If
     End Sub
 
     Private Sub Rbtn_Factu_Si_CheckedChanged(sender As Object, e As EventArgs) Handles Rbtn_Factu_Si.CheckedChanged
@@ -229,6 +232,7 @@ Public Class Frm_Actualizacion_Rep
             MsgBox(ex.ToString)
         End Try
     End Sub
+
     Private Sub ACTUAREP_3()
         Dim sql3 As String = "insert into SCR_ADICIONAL_REP values(@ADICIONAL,@REPARACION_NUMERO,@USUARIO,@FECHA)"
         Dim cmd3 As New SqlCommand(sql3, cxnc)
@@ -450,6 +454,7 @@ Public Class Frm_Actualizacion_Rep
     End Sub
 
     Private Sub ch_ver_informacion_CheckedChanged(sender As Object, e As EventArgs) Handles ch_ver_informacion.CheckedChanged
+
         If dg_reparaciones.SelectedCells IsNot Nothing Then
             If ch_ver_informacion.Checked = True Then
 
@@ -470,9 +475,9 @@ Public Class Frm_Actualizacion_Rep
                     Me.dg_detalle_rep.DataSource = table
                 End Using
 
-                gb_detalle_reparacion.Visible = True
                 gb_ingresar_info_reparacion.Visible = False
                 gb__ingresar_info_transporte.Visible = False
+                gb_detalle_reparacion.Visible = True
 
                 Num_Boleta = dg_reparaciones.Item(0, dg_reparaciones.CurrentRow.Index).Value()
 
@@ -485,7 +490,7 @@ Public Class Frm_Actualizacion_Rep
 
     Private Sub Cbx_Boleta_TextChanged(sender As Object, e As EventArgs) Handles Cbx_Boleta.TextChanged
 
-        If ch_ver_informacion.Checked = True Then
+        If ch_ver_informacion.Checked Or ch_ver_informacion_transporte.Checked Then
             Try
                 Using connection As New SqlConnection("Data Source=SERVER;Initial Catalog=ExactusERP;Persist Security Info=True;User ID=sa;Password=B1@dm1n"),
             command As New SqlCommand("SCR_CONSULTA_REPARACION", connection),
@@ -508,42 +513,86 @@ Public Class Frm_Actualizacion_Rep
         End If
     End Sub
 
-    Private Sub actualizacion_transporte()
-        Dim sql As String = "insert into SCR_ACTUALIZACION_REP values(@REPARACION_NUMERO,@CLIENTE,@COMENTARIO,@ESTADO,@USUARIO,@LOCALIZACION,@FECHA)"
-        Dim cmd As New SqlCommand(sql, cxnc)
-        Dim sql2 As String = "insert into SCR_ACTUALIZACION_RUTA values(@REPARACION_NUMERO,@CLIENTE,@COMENTARIO,@ESTADO,@USUARIO,@LOCALIZACION,@FECHA)"
-        Dim cmd2 As New SqlCommand(sql2, cxnc)
-        Try
-            cmd.CommandType = CommandType.Text
-            cmd.Parameters.Add("@REPARACION_NUMERO", SqlDbType.NVarChar).Value = Cbx_Boleta.Text
-            cmd.Parameters.Add("@CLIENTE", SqlDbType.NVarChar).Value = Me.Lbl_Cliente.Text
-            cmd.Parameters.Add("@COMENTARIO", SqlDbType.NVarChar).Value = Txt_Comentario.Text
-            cmd.Parameters.Add("@ESTADO", SqlDbType.NVarChar).Value = Cbx_Estado.Text
-            cmd.Parameters.Add("@USUARIO", SqlDbType.NVarChar).Value = v_usuario
-            cmd.Parameters.Add("@LOCALIZACION", SqlDbType.NVarChar).Value = Cbx_Localizacion.Text
-            cmd.Parameters.Add("@FECHA", SqlDbType.DateTime).Value = Lbl_Fecha_Hora.Text
-            cxnc.Open()
-            cmd.ExecuteNonQuery()
-            cxnc.Close()
-            cmd2.CommandType = CommandType.Text
-            cmd2.Parameters.Add("@REPARACION_NUMERO", SqlDbType.NVarChar).Value = Cbx_Boleta.Text
-            cmd2.Parameters.Add("@CLIENTE", SqlDbType.NVarChar).Value = Me.Lbl_Cliente.Text
-            cmd2.Parameters.Add("@COMENTARIO", SqlDbType.NVarChar).Value = Txt_Comentario.Text
-            cmd2.Parameters.Add("@ESTADO", SqlDbType.NVarChar).Value = Cbx_Estado.Text
-            cmd2.Parameters.Add("@USUARIO", SqlDbType.NVarChar).Value = v_usuario
-            cmd2.Parameters.Add("@LOCALIZACION", SqlDbType.NVarChar).Value = Cbx_Localizacion.Text
-            cmd2.Parameters.Add("@FECHA", SqlDbType.DateTime).Value = Lbl_Fecha_Hora.Text
-            cxnc.Open()
-            cmd2.ExecuteNonQuery()
-            cxnc.Close()
-            MessageBox.Show("DATOS GUARDADOS CORRECTAMENTE")
-            Txt_Comentario.Text = ""
-            Cbx_Localizacion.Enabled = False
-            Txt_Comentario.Enabled = False
-            Btn_Grabar_Actua.Enabled = False
-        Catch ex As Exception
-            MsgBox(ex.ToString)
-        End Try
+
+    Private Sub bt_guardar_transporte_Click(sender As Object, e As EventArgs) Handles bt_guardar_transporte.Click
+        Dim answer As DialogResult = MessageBox.Show("Seguro que desear guardar los cambios?" + vbLf + "", "Aviso", MessageBoxButtons.YesNo)
+        If (answer = DialogResult.Yes) Then
+            Try
+                If txt_comentario_transporte.Text IsNot "" Then
+                    Dim sql As String = "insert into SCR_ACTUALIZACION_REP values(@REPARACION_NUMERO,@CLIENTE,@COMENTARIO,@ESTADO,@USUARIO,@LOCALIZACION,@FECHA)"
+                    Dim cmd As New SqlCommand(sql, cxnc)
+                    Dim sql2 As String = "insert into SCR_ACTUALIZACION_RUTA values(@REPARACION_NUMERO,@CLIENTE,@COMENTARIO,@ESTADO,@USUARIO,@LOCALIZACION,@FECHA)"
+                    Dim cmd2 As New SqlCommand(sql2, cxnc)
+
+                    cmd.CommandType = CommandType.Text
+                    cmd.Parameters.Add("@REPARACION_NUMERO", SqlDbType.NVarChar).Value = Cbx_Boleta.Text
+                    cmd.Parameters.Add("@CLIENTE", SqlDbType.NVarChar).Value = Me.Lbl_Cliente.Text
+                    cmd.Parameters.Add("@COMENTARIO", SqlDbType.NVarChar).Value = txt_comentario_transporte.Text
+                    cmd.Parameters.Add("@ESTADO", SqlDbType.NVarChar).Value = cbx_estado_transporte.Text
+                    cmd.Parameters.Add("@USUARIO", SqlDbType.NVarChar).Value = v_usuario
+                    cmd.Parameters.Add("@LOCALIZACION", SqlDbType.NVarChar).Value = cbx_localizacion_transporte.Text
+                    cmd.Parameters.Add("@FECHA", SqlDbType.DateTime).Value = Lbl_Fecha_Hora.Text
+                    cxnc.Open()
+                    cmd.ExecuteNonQuery()
+                    cxnc.Close()
+                    cmd2.CommandType = CommandType.Text
+                    cmd2.Parameters.Add("@REPARACION_NUMERO", SqlDbType.NVarChar).Value = Cbx_Boleta.Text
+                    cmd2.Parameters.Add("@CLIENTE", SqlDbType.NVarChar).Value = Me.Lbl_Cliente.Text
+                    cmd2.Parameters.Add("@COMENTARIO", SqlDbType.NVarChar).Value = txt_comentario_transporte.Text
+                    cmd2.Parameters.Add("@ESTADO", SqlDbType.NVarChar).Value = cbx_estado_transporte.Text
+                    cmd2.Parameters.Add("@USUARIO", SqlDbType.NVarChar).Value = v_usuario
+                    cmd2.Parameters.Add("@LOCALIZACION", SqlDbType.NVarChar).Value = cbx_localizacion_transporte.Text
+                    cmd2.Parameters.Add("@FECHA", SqlDbType.DateTime).Value = Lbl_Fecha_Hora.Text
+                    cxnc.Open()
+                    cmd2.ExecuteNonQuery()
+                    cxnc.Close()
+                    MessageBox.Show("DATOS GUARDADOS CORRECTAMENTE")
+                    txt_comentario_transporte.Text = ""
+                    cbx_localizacion_transporte.Enabled = False
+                    txt_comentario_transporte.Enabled = False
+
+                Else
+                    Throw New MyException("el campo COMENTARIO no puede ir vacío")
+                End If
+            Catch ex As MyException
+                MessageBox.Show(ex.Message)
+            Catch ex As Exception
+                MsgBox(ex.ToString)
+            End Try
+        End If
+    End Sub
+
+    Private Sub ch_ver_informacion_transporte_CheckedChanged(sender As Object, e As EventArgs) Handles ch_ver_informacion_transporte.CheckedChanged
+        If dg_reparaciones.SelectedCells IsNot Nothing Then
+            If ch_ver_informacion_transporte.Checked = True Then
+
+                Using connection As New SqlConnection("Data Source=SERVER;Initial Catalog=ExactusERP;Persist Security Info=True;User ID=sa;Password=B1@dm1n"),
+            command As New SqlCommand("SCR_CONSULTA_REPARACION", connection),
+            adapter As New SqlDataAdapter(command)
+                    command.CommandType = CommandType.StoredProcedure
+
+                    'Add parameters, e.g.
+                    command.Parameters.AddWithValue("@CONSULTAREP", dg_reparaciones.Item(0, dg_reparaciones.CurrentRow.Index).Value())
+
+                    Dim table As New DataTable
+
+                    'Get the data.
+                    adapter.Fill(table)
+
+                    'Display the data.
+                    Me.dg_detalle_rep.DataSource = table
+                End Using
+
+                gb__ingresar_info_transporte.Visible = False
+                gb_detalle_reparacion.Visible = True
+
+                Num_Boleta = dg_reparaciones.Item(0, dg_reparaciones.CurrentRow.Index).Value()
+
+            Else
+                gb_detalle_reparacion.Visible = False
+                gb__ingresar_info_transporte.Visible = True
+            End If
+        End If
     End Sub
 
 End Class

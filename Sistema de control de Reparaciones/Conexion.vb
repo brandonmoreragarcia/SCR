@@ -12,6 +12,7 @@ Module Conexion
     Public respu2 As SqlDataReader
     Public v_usuario As String
     Public Num_Boleta As Long
+    Public Num_Serie As Long
     Public consul_cliente As Boolean
     Public CONSULTA_CLIENTE As String
     Public CONSUTA_REP As String

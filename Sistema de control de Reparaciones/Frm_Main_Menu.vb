@@ -20,6 +20,7 @@ Public Class Frm_Main_Menu
     Private Sub Btn_Reparaciones_Click(sender As Object, e As EventArgs) Handles Btn_Reparaciones.Click
         If privilegio_actua_rep(v_usuario) = True Then
             My.Forms.Frm_Actualizacion_Rep.MdiParent = Me
+            My.Forms.Frm_Actualizacion_Rep.ch_ver_informacion_transporte.Visible = False
             Frm_Actualizacion_Rep.Show()
         Else
             MsgBox("Lo siento, al parecer no tienes acceso a esta funcion", MsgBoxStyle.Critical)
@@ -30,7 +31,15 @@ Public Class Frm_Main_Menu
     Private Sub Btn_Transporte_Click(sender As Object, e As EventArgs) Handles Btn_Transporte.Click
         If privilegio_trans_rep(v_usuario) = True Then
             My.Forms.Frm_Actualizacion_Rep.MdiParent = Me 'ahora la pantalla de Actualizacion_Rep incluye la función de Actualizacion_Transporte, solo cambian los groupBox
-            'My.Forms.Frm_Actualizacion_Rep.g
+
+            'para que no aparezcan los groupbox de REPARACIONES
+            My.Forms.Frm_Actualizacion_Rep.gb_detalle_reparacion.Visible = False
+            My.Forms.Frm_Actualizacion_Rep.gb_ingresar_info_reparacion.Visible = False
+            My.Forms.Frm_Actualizacion_Rep.gb__ingresar_info_transporte.Visible = True
+            My.Forms.Frm_Actualizacion_Rep.bt_cerrado_rapido.Visible = False
+            My.Forms.Frm_Actualizacion_Rep.ch_ver_informacion.Visible = False
+            My.Forms.Frm_Actualizacion_Rep.Text = "Actualización de Transporte"
+
             Frm_Actualizacion_Rep.Show()
         Else
             MsgBox("Lo siento, al parecer no tienes acceso a esta funcion", MsgBoxStyle.Critical)
@@ -48,8 +57,8 @@ Public Class Frm_Main_Menu
 
     Private Sub Btn_Busqueda_Click(sender As Object, e As EventArgs) Handles Btn_Busqueda.Click
         If privilegio_busqueda_boleta(v_usuario) = True Then
-            My.Forms.Frm_Busqueda.MdiParent = Me
-            Frm_Busqueda.Show()
+            My.Forms.Frm_Consulta_Reparacion.MdiParent = Me
+            Frm_Consulta_Reparacion.Show()
         Else
             MsgBox("Lo siento, al parecer no tienes acceso a esta funcion", MsgBoxStyle.Critical)
         End If

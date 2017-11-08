@@ -76,7 +76,6 @@ Partial Class Frm_Entrada
         Me.Chb_Modificar = New System.Windows.Forms.CheckBox()
         Me.Txt_Cod_Cliente = New System.Windows.Forms.TextBox()
         Me.Txt_Cod_Articulo = New System.Windows.Forms.TextBox()
-        Me.Lbl_Boleta_2 = New System.Windows.Forms.Label()
         Me.dg_cliente = New System.Windows.Forms.DataGridView()
         Me.dg_articulo = New System.Windows.Forms.DataGridView()
         Me.rb_nombre = New System.Windows.Forms.RadioButton()
@@ -117,27 +116,27 @@ Partial Class Frm_Entrada
         'Lbl_Codigo_Cliente
         '
         Me.Lbl_Codigo_Cliente.AutoSize = True
-        Me.Lbl_Codigo_Cliente.Font = New System.Drawing.Font("Arial Black", 8.25!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.Lbl_Codigo_Cliente.Font = New System.Drawing.Font("Square721 BT", 9.25!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.Lbl_Codigo_Cliente.Location = New System.Drawing.Point(183, 53)
-        Me.Lbl_Codigo_Cliente.Margin = New System.Windows.Forms.Padding(4, 0, 4, 0)
+        Me.Lbl_Codigo_Cliente.Margin = New System.Windows.Forms.Padding(5, 0, 5, 0)
         Me.Lbl_Codigo_Cliente.Name = "Lbl_Codigo_Cliente"
-        Me.Lbl_Codigo_Cliente.Size = New System.Drawing.Size(48, 15)
+        Me.Lbl_Codigo_Cliente.Size = New System.Drawing.Size(58, 16)
         Me.Lbl_Codigo_Cliente.TabIndex = 2
         Me.Lbl_Codigo_Cliente.Text = "Filtrar:"
         '
         'Lbl_Cliente_Nombre
         '
         Me.Lbl_Cliente_Nombre.AutoSize = True
-        Me.Lbl_Cliente_Nombre.Font = New System.Drawing.Font("Arial Black", 8.25!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.Lbl_Cliente_Nombre.Font = New System.Drawing.Font("Square721 BT", 9.25!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.Lbl_Cliente_Nombre.Location = New System.Drawing.Point(447, 95)
         Me.Lbl_Cliente_Nombre.Name = "Lbl_Cliente_Nombre"
-        Me.Lbl_Cliente_Nombre.Size = New System.Drawing.Size(57, 15)
+        Me.Lbl_Cliente_Nombre.Size = New System.Drawing.Size(64, 16)
         Me.Lbl_Cliente_Nombre.TabIndex = 3
         Me.Lbl_Cliente_Nombre.Text = "Nombre:"
         '
         'lb_nombre_cliente
         '
-        Me.lb_nombre_cliente.Font = New System.Drawing.Font("Arial Black", 8.25!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.lb_nombre_cliente.Font = New System.Drawing.Font("Square721 BT", 8.25!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.lb_nombre_cliente.ForeColor = System.Drawing.Color.Red
         Me.lb_nombre_cliente.Location = New System.Drawing.Point(509, 95)
         Me.lb_nombre_cliente.Name = "lb_nombre_cliente"
@@ -147,16 +146,16 @@ Partial Class Frm_Entrada
         'Lbl_Alias
         '
         Me.Lbl_Alias.AutoSize = True
-        Me.Lbl_Alias.Font = New System.Drawing.Font("Arial Black", 8.25!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.Lbl_Alias.Font = New System.Drawing.Font("Square721 BT", 9.25!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.Lbl_Alias.Location = New System.Drawing.Point(457, 164)
         Me.Lbl_Alias.Name = "Lbl_Alias"
-        Me.Lbl_Alias.Size = New System.Drawing.Size(42, 15)
+        Me.Lbl_Alias.Size = New System.Drawing.Size(46, 16)
         Me.Lbl_Alias.TabIndex = 10
         Me.Lbl_Alias.Text = "Alias:"
         '
         'lb_alias_cliente
         '
-        Me.lb_alias_cliente.Font = New System.Drawing.Font("Arial Black", 8.25!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.lb_alias_cliente.Font = New System.Drawing.Font("Square721 BT", 8.25!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.lb_alias_cliente.ForeColor = System.Drawing.Color.Red
         Me.lb_alias_cliente.Location = New System.Drawing.Point(505, 164)
         Me.lb_alias_cliente.Name = "lb_alias_cliente"
@@ -166,26 +165,26 @@ Partial Class Frm_Entrada
         'Lbl_Codigo_Art
         '
         Me.Lbl_Codigo_Art.AutoSize = True
-        Me.Lbl_Codigo_Art.Font = New System.Drawing.Font("Arial Black", 8.25!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.Lbl_Codigo_Art.Font = New System.Drawing.Font("Square721 BT", 9.25!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.Lbl_Codigo_Art.Location = New System.Drawing.Point(93, 47)
         Me.Lbl_Codigo_Art.Name = "Lbl_Codigo_Art"
-        Me.Lbl_Codigo_Art.Size = New System.Drawing.Size(48, 15)
+        Me.Lbl_Codigo_Art.Size = New System.Drawing.Size(58, 16)
         Me.Lbl_Codigo_Art.TabIndex = 14
         Me.Lbl_Codigo_Art.Text = "Filtrar:"
         '
         'Lbl_Descripcion_Art
         '
         Me.Lbl_Descripcion_Art.AutoSize = True
-        Me.Lbl_Descripcion_Art.Font = New System.Drawing.Font("Arial Black", 8.25!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.Lbl_Descripcion_Art.Font = New System.Drawing.Font("Square721 BT", 9.25!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.Lbl_Descripcion_Art.Location = New System.Drawing.Point(437, 81)
         Me.Lbl_Descripcion_Art.Name = "Lbl_Descripcion_Art"
-        Me.Lbl_Descripcion_Art.Size = New System.Drawing.Size(82, 15)
+        Me.Lbl_Descripcion_Art.Size = New System.Drawing.Size(89, 16)
         Me.Lbl_Descripcion_Art.TabIndex = 15
         Me.Lbl_Descripcion_Art.Text = "Descripcion:"
         '
         'lb_descripcion_articulo
         '
-        Me.lb_descripcion_articulo.Font = New System.Drawing.Font("Arial Black", 8.25!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.lb_descripcion_articulo.Font = New System.Drawing.Font("Square721 BT", 8.25!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.lb_descripcion_articulo.ForeColor = System.Drawing.Color.Red
         Me.lb_descripcion_articulo.Location = New System.Drawing.Point(520, 81)
         Me.lb_descripcion_articulo.Name = "lb_descripcion_articulo"
@@ -203,20 +202,20 @@ Partial Class Frm_Entrada
         'Lbl_Adicional_Art_1
         '
         Me.Lbl_Adicional_Art_1.AutoSize = True
-        Me.Lbl_Adicional_Art_1.Font = New System.Drawing.Font("Arial Black", 8.25!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.Lbl_Adicional_Art_1.Font = New System.Drawing.Font("Square721 BT", 9.25!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.Lbl_Adicional_Art_1.Location = New System.Drawing.Point(437, 155)
         Me.Lbl_Adicional_Art_1.Name = "Lbl_Adicional_Art_1"
-        Me.Lbl_Adicional_Art_1.Size = New System.Drawing.Size(67, 15)
+        Me.Lbl_Adicional_Art_1.Size = New System.Drawing.Size(73, 16)
         Me.Lbl_Adicional_Art_1.TabIndex = 18
         Me.Lbl_Adicional_Art_1.Text = "Adicional:"
         '
         'Lbl_Reparacion
         '
         Me.Lbl_Reparacion.AutoSize = True
-        Me.Lbl_Reparacion.Font = New System.Drawing.Font("Arial Black", 8.25!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.Lbl_Reparacion.Location = New System.Drawing.Point(17, 52)
+        Me.Lbl_Reparacion.Font = New System.Drawing.Font("Square721 BT", 9.25!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.Lbl_Reparacion.Location = New System.Drawing.Point(6, 51)
         Me.Lbl_Reparacion.Name = "Lbl_Reparacion"
-        Me.Lbl_Reparacion.Size = New System.Drawing.Size(85, 15)
+        Me.Lbl_Reparacion.Size = New System.Drawing.Size(96, 16)
         Me.Lbl_Reparacion.TabIndex = 20
         Me.Lbl_Reparacion.Text = "Reparacion #"
         '
@@ -224,18 +223,18 @@ Partial Class Frm_Entrada
         '
         Me.Tbx_Reparacion.Enabled = False
         Me.Tbx_Reparacion.Font = New System.Drawing.Font("Arial Black", 8.25!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.Tbx_Reparacion.Location = New System.Drawing.Point(108, 47)
+        Me.Tbx_Reparacion.Location = New System.Drawing.Point(107, 47)
         Me.Tbx_Reparacion.Name = "Tbx_Reparacion"
-        Me.Tbx_Reparacion.Size = New System.Drawing.Size(104, 23)
+        Me.Tbx_Reparacion.Size = New System.Drawing.Size(105, 23)
         Me.Tbx_Reparacion.TabIndex = 1000
         '
         'Lbl_Estado_Art
         '
         Me.Lbl_Estado_Art.AutoSize = True
-        Me.Lbl_Estado_Art.Font = New System.Drawing.Font("Arial Black", 8.25!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.Lbl_Estado_Art.Location = New System.Drawing.Point(60, 317)
+        Me.Lbl_Estado_Art.Font = New System.Drawing.Font("Square721 BT", 9.25!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.Lbl_Estado_Art.Location = New System.Drawing.Point(46, 329)
         Me.Lbl_Estado_Art.Name = "Lbl_Estado_Art"
-        Me.Lbl_Estado_Art.Size = New System.Drawing.Size(101, 15)
+        Me.Lbl_Estado_Art.Size = New System.Drawing.Size(113, 16)
         Me.Lbl_Estado_Art.TabIndex = 23
         Me.Lbl_Estado_Art.Text = "Estado Articulo"
         '
@@ -260,27 +259,27 @@ Partial Class Frm_Entrada
         'Lbl_Problema_Reportado
         '
         Me.Lbl_Problema_Reportado.AutoSize = True
-        Me.Lbl_Problema_Reportado.Font = New System.Drawing.Font("Arial Black", 8.25!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.Lbl_Problema_Reportado.Location = New System.Drawing.Point(32, 385)
+        Me.Lbl_Problema_Reportado.Font = New System.Drawing.Font("Square721 BT", 9.25!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.Lbl_Problema_Reportado.Location = New System.Drawing.Point(17, 402)
         Me.Lbl_Problema_Reportado.Name = "Lbl_Problema_Reportado"
-        Me.Lbl_Problema_Reportado.Size = New System.Drawing.Size(129, 15)
+        Me.Lbl_Problema_Reportado.Size = New System.Drawing.Size(142, 16)
         Me.Lbl_Problema_Reportado.TabIndex = 26
         Me.Lbl_Problema_Reportado.Text = "Problema Reportado"
         '
         'Lbl_Motivo
         '
         Me.Lbl_Motivo.AutoSize = True
-        Me.Lbl_Motivo.Font = New System.Drawing.Font("Arial Black", 8.25!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.Lbl_Motivo.Location = New System.Drawing.Point(256, 232)
+        Me.Lbl_Motivo.Font = New System.Drawing.Font("Square721 BT", 9.25!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.Lbl_Motivo.Location = New System.Drawing.Point(270, 231)
         Me.Lbl_Motivo.Name = "Lbl_Motivo"
-        Me.Lbl_Motivo.Size = New System.Drawing.Size(47, 15)
+        Me.Lbl_Motivo.Size = New System.Drawing.Size(53, 16)
         Me.Lbl_Motivo.TabIndex = 27
         Me.Lbl_Motivo.Text = "Motivo"
         '
         'Btn_Impresion_Colilla
         '
-        Me.Btn_Impresion_Colilla.Font = New System.Drawing.Font("Arial Black", 8.25!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.Btn_Impresion_Colilla.Location = New System.Drawing.Point(204, 451)
+        Me.Btn_Impresion_Colilla.Font = New System.Drawing.Font("Square721 BT", 9.25!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.Btn_Impresion_Colilla.Location = New System.Drawing.Point(203, 451)
         Me.Btn_Impresion_Colilla.Name = "Btn_Impresion_Colilla"
         Me.Btn_Impresion_Colilla.Size = New System.Drawing.Size(215, 47)
         Me.Btn_Impresion_Colilla.TabIndex = 17
@@ -290,40 +289,40 @@ Partial Class Frm_Entrada
         'Lbl_Traido_Por
         '
         Me.Lbl_Traido_Por.AutoSize = True
-        Me.Lbl_Traido_Por.Font = New System.Drawing.Font("Arial Black", 8.25!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.Lbl_Traido_Por.Location = New System.Drawing.Point(244, 99)
+        Me.Lbl_Traido_Por.Font = New System.Drawing.Font("Square721 BT", 9.25!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.Lbl_Traido_Por.Location = New System.Drawing.Point(245, 99)
         Me.Lbl_Traido_Por.Name = "Lbl_Traido_Por"
-        Me.Lbl_Traido_Por.Size = New System.Drawing.Size(73, 15)
+        Me.Lbl_Traido_Por.Size = New System.Drawing.Size(83, 16)
         Me.Lbl_Traido_Por.TabIndex = 33
         Me.Lbl_Traido_Por.Text = "Traido Por:"
         '
         'Lbl_Transporte
         '
         Me.Lbl_Transporte.AutoSize = True
-        Me.Lbl_Transporte.Font = New System.Drawing.Font("Arial Black", 8.25!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.Lbl_Transporte.Font = New System.Drawing.Font("Square721 BT", 9.25!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.Lbl_Transporte.Location = New System.Drawing.Point(245, 186)
         Me.Lbl_Transporte.Name = "Lbl_Transporte"
-        Me.Lbl_Transporte.Size = New System.Drawing.Size(73, 15)
+        Me.Lbl_Transporte.Size = New System.Drawing.Size(82, 16)
         Me.Lbl_Transporte.TabIndex = 35
         Me.Lbl_Transporte.Text = "Transporte"
         '
         'Lbl_Encargado_Bodega
         '
         Me.Lbl_Encargado_Bodega.AutoSize = True
-        Me.Lbl_Encargado_Bodega.Font = New System.Drawing.Font("Arial Black", 8.25!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.Lbl_Encargado_Bodega.Location = New System.Drawing.Point(244, 266)
+        Me.Lbl_Encargado_Bodega.Font = New System.Drawing.Font("Square721 BT", 9.25!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.Lbl_Encargado_Bodega.Location = New System.Drawing.Point(252, 263)
         Me.Lbl_Encargado_Bodega.Name = "Lbl_Encargado_Bodega"
-        Me.Lbl_Encargado_Bodega.Size = New System.Drawing.Size(69, 30)
+        Me.Lbl_Encargado_Bodega.Size = New System.Drawing.Size(78, 32)
         Me.Lbl_Encargado_Bodega.TabIndex = 37
         Me.Lbl_Encargado_Bodega.Text = "Encargado" & Global.Microsoft.VisualBasic.ChrW(13) & Global.Microsoft.VisualBasic.ChrW(10) & " Bodega"
         '
         'Lbl_Documento_Referencia
         '
         Me.Lbl_Documento_Referencia.AutoSize = True
-        Me.Lbl_Documento_Referencia.Font = New System.Drawing.Font("Arial Black", 8.25!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.Lbl_Documento_Referencia.Location = New System.Drawing.Point(244, 47)
+        Me.Lbl_Documento_Referencia.Font = New System.Drawing.Font("Square721 BT", 9.25!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.Lbl_Documento_Referencia.Location = New System.Drawing.Point(235, 47)
         Me.Lbl_Documento_Referencia.Name = "Lbl_Documento_Referencia"
-        Me.Lbl_Documento_Referencia.Size = New System.Drawing.Size(144, 30)
+        Me.Lbl_Documento_Referencia.Size = New System.Drawing.Size(157, 32)
         Me.Lbl_Documento_Referencia.TabIndex = 39
         Me.Lbl_Documento_Referencia.Text = "Documento Referencia" & Global.Microsoft.VisualBasic.ChrW(13) & Global.Microsoft.VisualBasic.ChrW(10) & """Factura Cliente Final"""
         '
@@ -339,11 +338,11 @@ Partial Class Frm_Entrada
         Me.Cbx_Motivo.DataSource = Me.SCRMOTIVOBindingSource
         Me.Cbx_Motivo.DisplayMember = "MOTIVO"
         Me.Cbx_Motivo.DropDownWidth = 290
-        Me.Cbx_Motivo.Font = New System.Drawing.Font("Arial Black", 8.25!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.Cbx_Motivo.Font = New System.Drawing.Font("Square721 BT", 8.25!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.Cbx_Motivo.FormattingEnabled = True
         Me.Cbx_Motivo.Location = New System.Drawing.Point(336, 229)
         Me.Cbx_Motivo.Name = "Cbx_Motivo"
-        Me.Cbx_Motivo.Size = New System.Drawing.Size(190, 23)
+        Me.Cbx_Motivo.Size = New System.Drawing.Size(190, 22)
         Me.Cbx_Motivo.TabIndex = 13
         '
         'SCRMOTIVOBindingSource
@@ -361,7 +360,7 @@ Partial Class Frm_Entrada
         Me.Lbl_Fecha_Hora.AutoSize = True
         Me.Lbl_Fecha_Hora.Location = New System.Drawing.Point(1121, 9)
         Me.Lbl_Fecha_Hora.Name = "Lbl_Fecha_Hora"
-        Me.Lbl_Fecha_Hora.Size = New System.Drawing.Size(76, 15)
+        Me.Lbl_Fecha_Hora.Size = New System.Drawing.Size(78, 15)
         Me.Lbl_Fecha_Hora.TabIndex = 42
         Me.Lbl_Fecha_Hora.Text = "Fecha_Hora"
         '
@@ -373,11 +372,11 @@ Partial Class Frm_Entrada
         Me.Cbx_Traido_Por.DataSource = Me.SCRTRAIDOPORBindingSource
         Me.Cbx_Traido_Por.DisplayMember = "TRAIDO_POR"
         Me.Cbx_Traido_Por.DropDownWidth = 320
-        Me.Cbx_Traido_Por.Font = New System.Drawing.Font("Arial Black", 8.25!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.Cbx_Traido_Por.Font = New System.Drawing.Font("Square721 BT", 8.25!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.Cbx_Traido_Por.FormattingEnabled = True
         Me.Cbx_Traido_Por.Location = New System.Drawing.Point(335, 96)
         Me.Cbx_Traido_Por.Name = "Cbx_Traido_Por"
-        Me.Cbx_Traido_Por.Size = New System.Drawing.Size(192, 23)
+        Me.Cbx_Traido_Por.Size = New System.Drawing.Size(191, 22)
         Me.Cbx_Traido_Por.TabIndex = 9
         '
         'SCRTRAIDOPORBindingSource
@@ -390,12 +389,12 @@ Partial Class Frm_Entrada
         Me.Cbx_Transporte.DataSource = Me.TRANSPORTESBindingSource
         Me.Cbx_Transporte.DisplayMember = "TRANSPORTE"
         Me.Cbx_Transporte.DropDownHeight = 120
-        Me.Cbx_Transporte.Font = New System.Drawing.Font("Arial Black", 8.25!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.Cbx_Transporte.Font = New System.Drawing.Font("Square721 BT", 8.25!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.Cbx_Transporte.FormattingEnabled = True
         Me.Cbx_Transporte.IntegralHeight = False
         Me.Cbx_Transporte.Location = New System.Drawing.Point(333, 183)
         Me.Cbx_Transporte.Name = "Cbx_Transporte"
-        Me.Cbx_Transporte.Size = New System.Drawing.Size(190, 23)
+        Me.Cbx_Transporte.Size = New System.Drawing.Size(190, 22)
         Me.Cbx_Transporte.TabIndex = 12
         Me.Cbx_Transporte.ValueMember = "TRANSPORTE"
         '
@@ -413,11 +412,11 @@ Partial Class Frm_Entrada
         '
         Me.Cbx_Encargado_Bodega.DataSource = Me.SCRENCARGADOBODEGABindingSource
         Me.Cbx_Encargado_Bodega.DisplayMember = "ENCARGADO"
-        Me.Cbx_Encargado_Bodega.Font = New System.Drawing.Font("Arial Black", 8.25!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.Cbx_Encargado_Bodega.Font = New System.Drawing.Font("Square721 BT", 8.25!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.Cbx_Encargado_Bodega.FormattingEnabled = True
         Me.Cbx_Encargado_Bodega.Location = New System.Drawing.Point(336, 273)
         Me.Cbx_Encargado_Bodega.Name = "Cbx_Encargado_Bodega"
-        Me.Cbx_Encargado_Bodega.Size = New System.Drawing.Size(191, 23)
+        Me.Cbx_Encargado_Bodega.Size = New System.Drawing.Size(191, 22)
         Me.Cbx_Encargado_Bodega.TabIndex = 14
         '
         'SCRENCARGADOBODEGABindingSource
@@ -433,12 +432,12 @@ Partial Class Frm_Entrada
         'Lbl_Boleta
         '
         Me.Lbl_Boleta.AutoSize = True
-        Me.Lbl_Boleta.Font = New System.Drawing.Font("Arial Black", 8.25!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.Lbl_Boleta.Font = New System.Drawing.Font("Square721 BT", 9.25!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.Lbl_Boleta.Location = New System.Drawing.Point(17, 105)
         Me.Lbl_Boleta.Name = "Lbl_Boleta"
-        Me.Lbl_Boleta.Size = New System.Drawing.Size(61, 15)
+        Me.Lbl_Boleta.Size = New System.Drawing.Size(70, 32)
         Me.Lbl_Boleta.TabIndex = 46
-        Me.Lbl_Boleta.Text = "Boleta  #"
+        Me.Lbl_Boleta.Text = "Boleta  #" & Global.Microsoft.VisualBasic.ChrW(13) & Global.Microsoft.VisualBasic.ChrW(10) & "verde"
         '
         'Txt_Boleta
         '
@@ -501,10 +500,10 @@ Partial Class Frm_Entrada
         'Lbl_Serie
         '
         Me.Lbl_Serie.AutoSize = True
-        Me.Lbl_Serie.Font = New System.Drawing.Font("Arial Black", 8.25!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.Lbl_Serie.Font = New System.Drawing.Font("Square721 BT", 9.25!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.Lbl_Serie.Location = New System.Drawing.Point(17, 158)
         Me.Lbl_Serie.Name = "Lbl_Serie"
-        Me.Lbl_Serie.Size = New System.Drawing.Size(49, 15)
+        Me.Lbl_Serie.Size = New System.Drawing.Size(57, 16)
         Me.Lbl_Serie.TabIndex = 50
         Me.Lbl_Serie.Text = "Serie #"
         '
@@ -520,7 +519,7 @@ Partial Class Frm_Entrada
         'Chb_Modificar
         '
         Me.Chb_Modificar.AutoSize = True
-        Me.Chb_Modificar.Location = New System.Drawing.Point(20, 484)
+        Me.Chb_Modificar.Location = New System.Drawing.Point(21, 484)
         Me.Chb_Modificar.Name = "Chb_Modificar"
         Me.Chb_Modificar.Size = New System.Drawing.Size(15, 14)
         Me.Chb_Modificar.TabIndex = 55
@@ -530,7 +529,7 @@ Partial Class Frm_Entrada
         'Txt_Cod_Cliente
         '
         Me.Txt_Cod_Cliente.Font = New System.Drawing.Font("Arial Black", 8.25!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.Txt_Cod_Cliente.Location = New System.Drawing.Point(244, 50)
+        Me.Txt_Cod_Cliente.Location = New System.Drawing.Point(245, 50)
         Me.Txt_Cod_Cliente.Name = "Txt_Cod_Cliente"
         Me.Txt_Cod_Cliente.Size = New System.Drawing.Size(188, 23)
         Me.Txt_Cod_Cliente.TabIndex = 0
@@ -538,20 +537,10 @@ Partial Class Frm_Entrada
         'Txt_Cod_Articulo
         '
         Me.Txt_Cod_Articulo.Font = New System.Drawing.Font("Arial Black", 8.25!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.Txt_Cod_Articulo.Location = New System.Drawing.Point(156, 44)
+        Me.Txt_Cod_Articulo.Location = New System.Drawing.Point(155, 44)
         Me.Txt_Cod_Articulo.Name = "Txt_Cod_Articulo"
         Me.Txt_Cod_Articulo.Size = New System.Drawing.Size(185, 23)
         Me.Txt_Cod_Articulo.TabIndex = 2
-        '
-        'Lbl_Boleta_2
-        '
-        Me.Lbl_Boleta_2.AutoSize = True
-        Me.Lbl_Boleta_2.Font = New System.Drawing.Font("Arial Black", 8.25!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.Lbl_Boleta_2.Location = New System.Drawing.Point(18, 117)
-        Me.Lbl_Boleta_2.Name = "Lbl_Boleta_2"
-        Me.Lbl_Boleta_2.Size = New System.Drawing.Size(40, 15)
-        Me.Lbl_Boleta_2.TabIndex = 46
-        Me.Lbl_Boleta_2.Text = "verde"
         '
         'dg_cliente
         '
@@ -569,7 +558,7 @@ Partial Class Frm_Entrada
         Me.dg_articulo.AllowUserToAddRows = False
         Me.dg_articulo.AllowUserToDeleteRows = False
         Me.dg_articulo.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize
-        Me.dg_articulo.Location = New System.Drawing.Point(12, 81)
+        Me.dg_articulo.Location = New System.Drawing.Point(11, 81)
         Me.dg_articulo.Name = "dg_articulo"
         Me.dg_articulo.ReadOnly = True
         Me.dg_articulo.Size = New System.Drawing.Size(419, 135)
@@ -579,10 +568,10 @@ Partial Class Frm_Entrada
         '
         Me.rb_nombre.AutoSize = True
         Me.rb_nombre.Checked = True
-        Me.rb_nombre.Font = New System.Drawing.Font("Arial Black", 8.25!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.rb_nombre.Font = New System.Drawing.Font("Square721 BT", 9.25!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.rb_nombre.Location = New System.Drawing.Point(23, 51)
         Me.rb_nombre.Name = "rb_nombre"
-        Me.rb_nombre.Size = New System.Drawing.Size(71, 19)
+        Me.rb_nombre.Size = New System.Drawing.Size(77, 20)
         Me.rb_nombre.TabIndex = 62
         Me.rb_nombre.TabStop = True
         Me.rb_nombre.Text = "Nombre"
@@ -591,18 +580,18 @@ Partial Class Frm_Entrada
         'rb_alias
         '
         Me.rb_alias.AutoSize = True
-        Me.rb_alias.Font = New System.Drawing.Font("Arial Black", 8.25!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.rb_alias.Location = New System.Drawing.Point(98, 51)
+        Me.rb_alias.Font = New System.Drawing.Font("Square721 BT", 9.25!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.rb_alias.Location = New System.Drawing.Point(106, 50)
         Me.rb_alias.Name = "rb_alias"
-        Me.rb_alias.Size = New System.Drawing.Size(56, 19)
+        Me.rb_alias.Size = New System.Drawing.Size(59, 20)
         Me.rb_alias.TabIndex = 63
         Me.rb_alias.Text = "Alias"
         Me.rb_alias.UseVisualStyleBackColor = True
         '
         'bt_buscar_articulo
         '
-        Me.bt_buscar_articulo.Font = New System.Drawing.Font("Arial Black", 8.25!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.bt_buscar_articulo.Location = New System.Drawing.Point(356, 44)
+        Me.bt_buscar_articulo.Font = New System.Drawing.Font("Square721 BT", 9.25!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.bt_buscar_articulo.Location = New System.Drawing.Point(357, 44)
         Me.bt_buscar_articulo.Name = "bt_buscar_articulo"
         Me.bt_buscar_articulo.Size = New System.Drawing.Size(75, 23)
         Me.bt_buscar_articulo.TabIndex = 3
@@ -613,7 +602,7 @@ Partial Class Frm_Entrada
         '
         Me.Label3.AutoSize = True
         Me.Label3.Font = New System.Drawing.Font("Arial Black", 8.25!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.Label3.Location = New System.Drawing.Point(244, 142)
+        Me.Label3.Location = New System.Drawing.Point(245, 142)
         Me.Label3.Name = "Label3"
         Me.Label3.Size = New System.Drawing.Size(59, 15)
         Me.Label3.TabIndex = 66
@@ -624,16 +613,16 @@ Partial Class Frm_Entrada
         Me.txt_opcional.Font = New System.Drawing.Font("Arial Black", 8.25!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.txt_opcional.Location = New System.Drawing.Point(335, 139)
         Me.txt_opcional.Name = "txt_opcional"
-        Me.txt_opcional.Size = New System.Drawing.Size(192, 23)
+        Me.txt_opcional.Size = New System.Drawing.Size(191, 23)
         Me.txt_opcional.TabIndex = 11
         '
         'check_box_opcional
         '
         Me.check_box_opcional.AutoSize = True
-        Me.check_box_opcional.Font = New System.Drawing.Font("Arial Black", 8.25!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.check_box_opcional.Font = New System.Drawing.Font("Square721 BT", 9.25!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.check_box_opcional.Location = New System.Drawing.Point(247, 141)
         Me.check_box_opcional.Name = "check_box_opcional"
-        Me.check_box_opcional.Size = New System.Drawing.Size(82, 19)
+        Me.check_box_opcional.Size = New System.Drawing.Size(88, 20)
         Me.check_box_opcional.TabIndex = 10
         Me.check_box_opcional.Text = "Opcional:"
         Me.check_box_opcional.UseVisualStyleBackColor = True
@@ -653,7 +642,7 @@ Partial Class Frm_Entrada
         Me.GroupBox2.Controls.Add(Me.Lbl_Alias)
         Me.GroupBox2.Controls.Add(Me.lb_alias_cliente)
         Me.GroupBox2.Controls.Add(Me.rb_alias)
-        Me.GroupBox2.Font = New System.Drawing.Font("Arial Black", 8.25!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.GroupBox2.Font = New System.Drawing.Font("Square721 BT", 9.25!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.GroupBox2.Location = New System.Drawing.Point(9, 26)
         Me.GroupBox2.Name = "GroupBox2"
         Me.GroupBox2.Size = New System.Drawing.Size(697, 268)
@@ -671,7 +660,7 @@ Partial Class Frm_Entrada
         Me.GroupBox3.Controls.Add(Me.dg_articulo)
         Me.GroupBox3.Controls.Add(Me.bt_buscar_articulo)
         Me.GroupBox3.Controls.Add(Me.Tbx_Adicional_Art)
-        Me.GroupBox3.Font = New System.Drawing.Font("Arial Black", 8.25!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.GroupBox3.Font = New System.Drawing.Font("Square721 BT", 9.25!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.GroupBox3.Location = New System.Drawing.Point(9, 308)
         Me.GroupBox3.Name = "GroupBox3"
         Me.GroupBox3.Size = New System.Drawing.Size(697, 233)
@@ -682,7 +671,6 @@ Partial Class Frm_Entrada
         'GroupBox1
         '
         Me.GroupBox1.Controls.Add(Me.Tbx_Estado_Art)
-        Me.GroupBox1.Controls.Add(Me.Lbl_Boleta_2)
         Me.GroupBox1.Controls.Add(Me.Lbl_Reparacion)
         Me.GroupBox1.Controls.Add(Me.check_box_opcional)
         Me.GroupBox1.Controls.Add(Me.Tbx_Reparacion)
@@ -709,7 +697,7 @@ Partial Class Frm_Entrada
         Me.GroupBox1.Controls.Add(Me.Cbx_Transporte)
         Me.GroupBox1.Controls.Add(Me.Cbx_Motivo)
         Me.GroupBox1.Controls.Add(Me.Cbx_Traido_Por)
-        Me.GroupBox1.Font = New System.Drawing.Font("Square721 BT", 9.0!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.GroupBox1.Font = New System.Drawing.Font("Square721 BT", 9.25!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.GroupBox1.Location = New System.Drawing.Point(722, 27)
         Me.GroupBox1.Name = "GroupBox1"
         Me.GroupBox1.Size = New System.Drawing.Size(539, 513)
@@ -726,11 +714,11 @@ Partial Class Frm_Entrada
         Me.Controls.Add(Me.GroupBox3)
         Me.Controls.Add(Me.GroupBox2)
         Me.Controls.Add(Me.Lbl_Fecha_Hora)
-        Me.Font = New System.Drawing.Font("Arial Black", 8.25!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.Font = New System.Drawing.Font("Square721 BT", 9.0!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedSingle
         Me.Icon = CType(resources.GetObject("$this.Icon"), System.Drawing.Icon)
         Me.Location = New System.Drawing.Point(30, 0)
-        Me.Margin = New System.Windows.Forms.Padding(4, 3, 4, 3)
+        Me.Margin = New System.Windows.Forms.Padding(5, 3, 5, 3)
         Me.MaximizeBox = False
         Me.Name = "Frm_Entrada"
         Me.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen
@@ -814,7 +802,6 @@ Partial Class Frm_Entrada
     Friend WithEvents Chb_Modificar As CheckBox
     Friend WithEvents Txt_Cod_Cliente As TextBox
     Friend WithEvents Txt_Cod_Articulo As TextBox
-    Friend WithEvents Lbl_Boleta_2 As Label
     Friend WithEvents dg_cliente As DataGridView
     Friend WithEvents dg_articulo As DataGridView
     Friend WithEvents rb_nombre As RadioButton

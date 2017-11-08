@@ -40,7 +40,8 @@ Public Class Frm_Entrada
         'TODO: esta línea de código carga datos en la tabla 'ExactusERP_SRC_TABLES1.SCR_MOTIVO' Puede moverla o quitarla según sea necesario.
         Me.SCR_MOTIVOTableAdapter1.Fill(Me.ExactusERP_SRC_TABLES1.SCR_MOTIVO)
         'TODO: esta línea de código carga datos en la tabla 'ExactusERP_TABLES.ARTICULO' Puede moverla o quitarla según sea necesario.
-
+        dg_articulo.DefaultCellStyle.Font = New Drawing.Font("Square721 BT", 8, Font.Style.Bold)
+        dg_cliente.DefaultCellStyle.Font = New Drawing.Font("Square721 BT", 8, Font.Style.Bold)
 
         check_box_opcional.Checked = False
         txt_opcional.Enabled = False
@@ -66,175 +67,178 @@ Public Class Frm_Entrada
 
     Private Sub Btn_Impresion_Colilla_Click(sender As Object, e As EventArgs) Handles Btn_Impresion_Colilla.Click
 
-        'la siguiente línea utiliza el valor de Tbx_Reparacion y lo guarda en la variable global
-        'numero_reparacion, la cual se utiliza en la pantalla Frm_Impresion_Entrada
-        numero_reparacion = Tbx_Reparacion.Text
+        Dim answer As DialogResult = MessageBox.Show("Seguro que desear guardar los cambios?" + vbLf + "", "Aviso", MessageBoxButtons.YesNo)
+        If (answer = DialogResult.Yes) Then
 
-        'validaciones antes de guardar
-        Try
-            'If que  valida selección del cliente
-            If dg_cliente.FirstDisplayedCell IsNot Nothing AndAlso dg_cliente.Item(2, dg_cliente.CurrentRow.Index).Value() IsNot Nothing Then 'valida que el grid de clientes no esté vacío y que haya un cliente seleccionado
+            'la siguiente línea utiliza el valor de Tbx_Reparacion y lo guarda en la variable global
+            'numero_reparacion, la cual se utiliza en la pantalla Frm_Impresion_Entrada
+            numero_reparacion = Tbx_Reparacion.Text
 
-                'If que valida selección del artículo
-                If dg_articulo.FirstDisplayedCell IsNot Nothing AndAlso dg_articulo.Item(1, dg_articulo.CurrentRow.Index).Value() IsNot Nothing Then
+            'validaciones antes de guardar
+            Try
+                'If que  valida selección del cliente
+                If dg_cliente.FirstDisplayedCell IsNot Nothing AndAlso dg_cliente.Item(2, dg_cliente.CurrentRow.Index).Value() IsNot Nothing Then 'valida que el grid de clientes no esté vacío y que haya un cliente seleccionado
 
-                    'If que valida que la boleta verde no vaya en blanco
-                    If Txt_Boleta.Text IsNot "" Then
+                    'If que valida selección del artículo
+                    If dg_articulo.FirstDisplayedCell IsNot Nothing AndAlso dg_articulo.Item(1, dg_articulo.CurrentRow.Index).Value() IsNot Nothing Then
 
-                        'If que  valida que el Estado Artículo no vaya en blanco
-                        If Tbx_Estado_Art.Text IsNot "" Then
+                        'If que valida que la boleta verde no vaya en blanco
+                        If Txt_Boleta.Text IsNot "" Then
 
-                            'If que valida que El problema reportado no vaya en blanco
-                            If Tbx_Problema_Reportado.Text IsNot "" Then
+                            'If que  valida que el Estado Artículo no vaya en blanco
+                            If Tbx_Estado_Art.Text IsNot "" Then
 
-                                'if que valida selección del transporte
-                                If Cbx_Transporte.SelectedValue IsNot Nothing Then
+                                'If que valida que El problema reportado no vaya en blanco
+                                If Tbx_Problema_Reportado.Text IsNot "" Then
 
-                                    'guardamos los datos
+                                    'if que valida selección del transporte
+                                    If Cbx_Transporte.SelectedValue IsNot Nothing Then
 
-                                    Dim sql As String = "insert into SCR_DATOS_REPARACION values(@CODIGO_CLIENTE,@CODIGO_ART,@ADICIONAL_ART,@MOTIVO,@REPARACION_NUMERO,@ESTADO_ART,@PROBLEMA_REPORTADO,@TRAIDO_POR,@TRANSPORTE,@ENCARGADO_BODEGA,@DOCUMENTO_REF,@USUARIO,@ESTADO,@FECHA_HORA,@BOLETA,@SERIE_PRODUCTO)"
-                                    Dim cmd As New SqlCommand(sql, cxnc)
-                                    Dim sql2 As String = "insert into SCR_ACTUALIZACION_REP values(@REPARACION_NUMERO,@CLIENTE,@COMENTARIO,@ESTADO,@USUARIO,@LOCALIZACION,@FECHA)"
-                                    Dim cmd2 As New SqlCommand(sql2, cxnc)
-                                    Dim sql3 As String = "insert into SCR_ACTUALIZACION_REP values(@REPARACION_NUMERO,@CLIENTE,@COMENTARIO,@ESTADO,@USUARIO,@LOCALIZACION,@FECHA)"
-                                    Dim cmd3 As New SqlCommand(sql3, cxnc)
-                                    If numero_rep(Tbx_Reparacion.Text) = False Then
-                                        Try
-                                            cmd.CommandType = CommandType.Text
-                                            cmd.Parameters.Add("@CODIGO_CLIENTE", SqlDbType.NVarChar).Value = dg_cliente.Item(2, dg_cliente.CurrentRow.Index).Value().ToString()
-                                            cmd.Parameters.Add("@CODIGO_ART", SqlDbType.NVarChar).Value = dg_articulo.Item(1, dg_articulo.CurrentRow.Index).Value().ToString()
-                                            cmd.Parameters.Add("@ADICIONAL_ART", SqlDbType.NVarChar).Value = Me.Tbx_Adicional_Art.Text
-                                            cmd.Parameters.Add("@MOTIVO", SqlDbType.NVarChar).Value = Me.Cbx_Motivo.Text
-                                            cmd.Parameters.Add("@REPARACION_NUMERO", SqlDbType.NVarChar).Value = Tbx_Reparacion.Text
-                                            cmd.Parameters.Add("@ESTADO_ART", SqlDbType.NVarChar).Value = Tbx_Estado_Art.Text
-                                            cmd.Parameters.Add("@PROBLEMA_REPORTADO", SqlDbType.NVarChar).Value = Tbx_Problema_Reportado.Text
+                                        'guardamos los datos
 
-                                            'valida quién trajo la reparación
-                                            If check_box_opcional.Checked Then 'si el checkbox está activado se guarda lo que está en el txt opcional, sino se guarda la selección del combobox 
-                                                If txt_opcional.Text IsNot "" Then
-                                                    cmd.Parameters.Add("@TRAIDO_POR", SqlDbType.NVarChar).Value = txt_opcional.Text
-                                                Else
-                                                    Throw New MyException("Error, la casilla opcional está activada pero el campo 'opcional' no puede ir en blanco'")
-                                                End If
-                                            Else
-                                                cmd.Parameters.Add("@TRAIDO_POR", SqlDbType.NVarChar).Value = Cbx_Traido_Por.Text
-                                            End If
-
-                                            cmd.Parameters.Add("@TRANSPORTE", SqlDbType.NVarChar).Value = Cbx_Transporte.Text
-                                            cmd.Parameters.Add("@ENCARGADO_BODEGA", SqlDbType.NVarChar).Value = Cbx_Encargado_Bodega.Text
-                                            cmd.Parameters.Add("@DOCUMENTO_REF", SqlDbType.NVarChar).Value = Tbx_Documento_Referencia.Text
-                                            cmd.Parameters.Add("@USUARIO", SqlDbType.NVarChar).Value = v_usuario
-                                            cmd.Parameters.Add("@ESTADO", SqlDbType.NVarChar).Value = Cbx_Estado.Text
-                                            cmd.Parameters.Add("@FECHA_HORA", SqlDbType.DateTime).Value = Lbl_Fecha_Hora.Text
-                                            cmd.Parameters.Add("@BOLETA", SqlDbType.NVarChar).Value = Txt_Boleta.Text
-                                            cmd.Parameters.Add("@SERIE_PRODUCTO", SqlDbType.NVarChar).Value = Txt_Numero_Serie.Text
-                                            cxnc.Open()
-                                            cmd.ExecuteNonQuery()
-                                            cxnc.Close()
-                                            cmd2.CommandType = CommandType.Text
-                                            cmd2.Parameters.Add("@REPARACION_NUMERO", SqlDbType.NVarChar).Value = Tbx_Reparacion.Text
-                                            cmd2.Parameters.Add("@CLIENTE", SqlDbType.NVarChar).Value = dg_cliente.Item(2, dg_cliente.CurrentRow.Index).Value().ToString()
-                                            cmd2.Parameters.Add("@COMENTARIO", SqlDbType.NVarChar).Value = "ENTRADA DE REPARACION"
-                                            cmd2.Parameters.Add("@ESTADO", SqlDbType.NVarChar).Value = "INGRESADA"
-                                            cmd2.Parameters.Add("@USUARIO", SqlDbType.NVarChar).Value = v_usuario
-                                            cmd2.Parameters.Add("@LOCALIZACION", SqlDbType.NVarChar).Value = "POST VENTA"
-                                            cmd2.Parameters.Add("@FECHA", SqlDbType.DateTime).Value = Lbl_Fecha_Hora.Text
-                                            cxnc.Open()
-                                            cmd2.ExecuteNonQuery()
-                                            cxnc.Close()
-                                            cmd3.CommandType = CommandType.Text
-                                            cmd3.Parameters.Add("@REPARACION_NUMERO", SqlDbType.NVarChar).Value = Tbx_Reparacion.Text
-                                            cmd3.Parameters.Add("@CLIENTE", SqlDbType.NVarChar).Value = dg_cliente.Item(2, dg_cliente.CurrentRow.Index).Value().ToString()
-                                            cmd3.Parameters.Add("@COMENTARIO", SqlDbType.NVarChar).Value = "SE TRASLADA LA REPARACION A TALLER"
-                                            cmd3.Parameters.Add("@ESTADO", SqlDbType.NVarChar).Value = "EN REPARACION"
-                                            cmd3.Parameters.Add("@USUARIO", SqlDbType.NVarChar).Value = v_usuario
-                                            cmd3.Parameters.Add("@LOCALIZACION", SqlDbType.NVarChar).Value = "TALLER"
-                                            cmd3.Parameters.Add("@FECHA", SqlDbType.DateTime).Value = Lbl_Fecha_Hora.Text
-                                            cxnc.Open()
-                                            cmd3.ExecuteNonQuery()
-                                            cxnc.Close()
-                                            MessageBox.Show("DATOS GUARDADOS CORRECTAMENTE")
-
-
-                                            Tbx_Adicional_Art.Text = ""
-                                            Cbx_Motivo.Text = ""
-                                            Tbx_Reparacion.Text = ""
-                                            Tbx_Estado_Art.Text = ""
-                                            Tbx_Problema_Reportado.Text = ""
-                                            Cbx_Traido_Por.Text = ""
-                                            Cbx_Transporte.Text = ""
-                                            Cbx_Encargado_Bodega.Text = ""
-                                            Tbx_Documento_Referencia.Text = ""
-                                            Txt_Boleta.Text = ""
-                                            Txt_Numero_Serie.Text = "N/A"
-                                            Txt_Cod_Cliente.Enabled = True
-                                            Txt_Cod_Cliente.Text = ""
-                                            Txt_Cod_Articulo.Enabled = True
-                                            Txt_Cod_Articulo.Text = ""
-                                            dg_articulo.ClearSelection()
-                                            dg_cliente.ClearSelection()
-                                            lb_nombre_cliente.Text = ""
-                                            lb_alias_cliente.Text = ""
-                                            lb_descripcion_articulo.Text = ""
-
+                                        Dim sql As String = "insert into SCR_DATOS_REPARACION values(@CODIGO_CLIENTE,@CODIGO_ART,@ADICIONAL_ART,@MOTIVO,@REPARACION_NUMERO,@ESTADO_ART,@PROBLEMA_REPORTADO,@TRAIDO_POR,@TRANSPORTE,@ENCARGADO_BODEGA,@DOCUMENTO_REF,@USUARIO,@ESTADO,@FECHA_HORA,@BOLETA,@SERIE_PRODUCTO)"
+                                        Dim cmd As New SqlCommand(sql, cxnc)
+                                        Dim sql2 As String = "insert into SCR_ACTUALIZACION_REP values(@REPARACION_NUMERO,@CLIENTE,@COMENTARIO,@ESTADO,@USUARIO,@LOCALIZACION,@FECHA)"
+                                        Dim cmd2 As New SqlCommand(sql2, cxnc)
+                                        Dim sql3 As String = "insert into SCR_ACTUALIZACION_REP values(@REPARACION_NUMERO,@CLIENTE,@COMENTARIO,@ESTADO,@USUARIO,@LOCALIZACION,@FECHA)"
+                                        Dim cmd3 As New SqlCommand(sql3, cxnc)
+                                        If numero_rep(Tbx_Reparacion.Text) = False Then
                                             Try
-                                                Dim sql4 As String = "Select MAX(REPARACION_NUMERO) From dbo.SCR_DATOS_REPARACION"
-                                                Dim cmd4 As New SqlCommand(sql4, cxnc)
-                                                Dim ULTIMO As Integer
-                                                Dim uno As Integer = 1
-                                                Dim TOTAL As Integer
-                                                cxnc.Open()
-                                                ULTIMO = cmd4.ExecuteScalar()
-                                                cxnc.Close()
-                                                TOTAL = ULTIMO + uno
-                                                Tbx_Reparacion.Text = TOTAL
-                                                Tbx_Reparacion.Enabled = False
+                                                cmd.CommandType = CommandType.Text
+                                                cmd.Parameters.Add("@CODIGO_CLIENTE", SqlDbType.NVarChar).Value = dg_cliente.Item(2, dg_cliente.CurrentRow.Index).Value().ToString()
+                                                cmd.Parameters.Add("@CODIGO_ART", SqlDbType.NVarChar).Value = dg_articulo.Item(1, dg_articulo.CurrentRow.Index).Value().ToString()
+                                                cmd.Parameters.Add("@ADICIONAL_ART", SqlDbType.NVarChar).Value = Me.Tbx_Adicional_Art.Text
+                                                cmd.Parameters.Add("@MOTIVO", SqlDbType.NVarChar).Value = Me.Cbx_Motivo.Text
+                                                cmd.Parameters.Add("@REPARACION_NUMERO", SqlDbType.NVarChar).Value = Tbx_Reparacion.Text
+                                                cmd.Parameters.Add("@ESTADO_ART", SqlDbType.NVarChar).Value = Tbx_Estado_Art.Text
+                                                cmd.Parameters.Add("@PROBLEMA_REPORTADO", SqlDbType.NVarChar).Value = Tbx_Problema_Reportado.Text
 
-                                                'se crea y muestra la siguiente ventana
-                                                My.Forms.Frm_Impresion_Entrada.MdiParent = Frm_Main_Menu
-                                                Frm_Impresion_Entrada.Show()
+                                                'valida quién trajo la reparación
+                                                If check_box_opcional.Checked Then 'si el checkbox está activado se guarda lo que está en el txt opcional, sino se guarda la selección del combobox 
+                                                    If txt_opcional.Text IsNot "" Then
+                                                        cmd.Parameters.Add("@TRAIDO_POR", SqlDbType.NVarChar).Value = txt_opcional.Text
+                                                    Else
+                                                        Throw New MyException("Error, la casilla opcional está activada pero el campo 'opcional' no puede ir en blanco'")
+                                                    End If
+                                                Else
+                                                    cmd.Parameters.Add("@TRAIDO_POR", SqlDbType.NVarChar).Value = Cbx_Traido_Por.Text
+                                                End If
+
+                                                cmd.Parameters.Add("@TRANSPORTE", SqlDbType.NVarChar).Value = Cbx_Transporte.Text
+                                                cmd.Parameters.Add("@ENCARGADO_BODEGA", SqlDbType.NVarChar).Value = Cbx_Encargado_Bodega.Text
+                                                cmd.Parameters.Add("@DOCUMENTO_REF", SqlDbType.NVarChar).Value = Tbx_Documento_Referencia.Text
+                                                cmd.Parameters.Add("@USUARIO", SqlDbType.NVarChar).Value = v_usuario
+                                                cmd.Parameters.Add("@ESTADO", SqlDbType.NVarChar).Value = Cbx_Estado.Text
+                                                cmd.Parameters.Add("@FECHA_HORA", SqlDbType.DateTime).Value = Lbl_Fecha_Hora.Text
+                                                cmd.Parameters.Add("@BOLETA", SqlDbType.NVarChar).Value = Txt_Boleta.Text
+                                                cmd.Parameters.Add("@SERIE_PRODUCTO", SqlDbType.NVarChar).Value = Txt_Numero_Serie.Text
+                                                cxnc.Open()
+                                                cmd.ExecuteNonQuery()
+                                                cxnc.Close()
+                                                cmd2.CommandType = CommandType.Text
+                                                cmd2.Parameters.Add("@REPARACION_NUMERO", SqlDbType.NVarChar).Value = Tbx_Reparacion.Text
+                                                cmd2.Parameters.Add("@CLIENTE", SqlDbType.NVarChar).Value = dg_cliente.Item(2, dg_cliente.CurrentRow.Index).Value().ToString()
+                                                cmd2.Parameters.Add("@COMENTARIO", SqlDbType.NVarChar).Value = "ENTRADA DE REPARACION"
+                                                cmd2.Parameters.Add("@ESTADO", SqlDbType.NVarChar).Value = "INGRESADA"
+                                                cmd2.Parameters.Add("@USUARIO", SqlDbType.NVarChar).Value = v_usuario
+                                                cmd2.Parameters.Add("@LOCALIZACION", SqlDbType.NVarChar).Value = "POST VENTA"
+                                                cmd2.Parameters.Add("@FECHA", SqlDbType.DateTime).Value = Lbl_Fecha_Hora.Text
+                                                cxnc.Open()
+                                                cmd2.ExecuteNonQuery()
+                                                cxnc.Close()
+                                                cmd3.CommandType = CommandType.Text
+                                                cmd3.Parameters.Add("@REPARACION_NUMERO", SqlDbType.NVarChar).Value = Tbx_Reparacion.Text
+                                                cmd3.Parameters.Add("@CLIENTE", SqlDbType.NVarChar).Value = dg_cliente.Item(2, dg_cliente.CurrentRow.Index).Value().ToString()
+                                                cmd3.Parameters.Add("@COMENTARIO", SqlDbType.NVarChar).Value = "SE TRASLADA LA REPARACION A TALLER"
+                                                cmd3.Parameters.Add("@ESTADO", SqlDbType.NVarChar).Value = "EN REPARACION"
+                                                cmd3.Parameters.Add("@USUARIO", SqlDbType.NVarChar).Value = v_usuario
+                                                cmd3.Parameters.Add("@LOCALIZACION", SqlDbType.NVarChar).Value = "TALLER"
+                                                cmd3.Parameters.Add("@FECHA", SqlDbType.DateTime).Value = Lbl_Fecha_Hora.Text
+                                                cxnc.Open()
+                                                cmd3.ExecuteNonQuery()
+                                                cxnc.Close()
+                                                MessageBox.Show("DATOS GUARDADOS CORRECTAMENTE")
+
+
+                                                Tbx_Adicional_Art.Text = ""
+                                                Cbx_Motivo.Text = ""
+                                                Tbx_Reparacion.Text = ""
+                                                Tbx_Estado_Art.Text = ""
+                                                Tbx_Problema_Reportado.Text = ""
+                                                Cbx_Traido_Por.Text = ""
+                                                Cbx_Transporte.Text = ""
+                                                Cbx_Encargado_Bodega.Text = ""
+                                                Tbx_Documento_Referencia.Text = ""
+                                                Txt_Boleta.Text = ""
+                                                Txt_Numero_Serie.Text = "N/A"
+                                                Txt_Cod_Cliente.Enabled = True
+                                                Txt_Cod_Cliente.Text = ""
+                                                Txt_Cod_Articulo.Enabled = True
+                                                Txt_Cod_Articulo.Text = ""
+                                                dg_articulo.ClearSelection()
+                                                dg_cliente.ClearSelection()
+                                                lb_nombre_cliente.Text = ""
+                                                lb_alias_cliente.Text = ""
+                                                lb_descripcion_articulo.Text = ""
+
+                                                Try
+                                                    Dim sql4 As String = "Select MAX(REPARACION_NUMERO) From dbo.SCR_DATOS_REPARACION"
+                                                    Dim cmd4 As New SqlCommand(sql4, cxnc)
+                                                    Dim ULTIMO As Integer
+                                                    Dim uno As Integer = 1
+                                                    Dim TOTAL As Integer
+                                                    cxnc.Open()
+                                                    ULTIMO = cmd4.ExecuteScalar()
+                                                    cxnc.Close()
+                                                    TOTAL = ULTIMO + uno
+                                                    Tbx_Reparacion.Text = TOTAL
+                                                    Tbx_Reparacion.Enabled = False
+
+                                                    'se crea y muestra la siguiente ventana
+                                                    My.Forms.Frm_Impresion_Entrada.MdiParent = Frm_Main_Menu
+                                                    Frm_Impresion_Entrada.Show()
+
+                                                Catch ex As Exception
+                                                    MsgBox(ex.ToString)
+                                                End Try
+
+                                            Catch ex As MyException
+                                                MessageBox.Show(ex.Message)
 
                                             Catch ex As Exception
                                                 MsgBox(ex.ToString)
                                             End Try
-
-                                        Catch ex As MyException
-                                            MessageBox.Show(ex.Message)
-
-                                        Catch ex As Exception
-                                            MsgBox(ex.ToString)
-                                        End Try
+                                        Else
+                                            MsgBox("La Reparacion: " + Tbx_Reparacion.Text + " Ya  ha sido iniciada con anterioridad")
+                                        End If
                                     Else
-                                        MsgBox("La Reparacion: " + Tbx_Reparacion.Text + " Ya  ha sido iniciada con anterioridad")
+                                        Throw New MyException("Error, no hay un transporte seleccionado")
                                     End If
                                 Else
-                                    Throw New MyException("Error, no hay un transporte seleccionado")
+                                    Throw New MyException("Error, El 'Problema Reportado' no puede ir en blanco")
                                 End If
+
                             Else
-                                Throw New MyException("Error, El 'Problema Reportado' no puede ir en blanco")
+                                Throw New MyException("Error, El 'Estado Artículo' no puede ir en blanco")
                             End If
 
                         Else
-                            Throw New MyException("Error, El 'Estado Artículo' no puede ir en blanco")
+                            Throw New MyException("Error, el espacio 'boleta verde' no puede ir en blanco")
                         End If
 
                     Else
-                        Throw New MyException("Error, el espacio 'boleta verde' no puede ir en blanco")
+                        Throw New MyException("Error, no se ha seleccionado el artículo")
                     End If
 
                 Else
-                    Throw New MyException("Error, no se ha seleccionado el artículo")
+                    Throw New MyException("Error, no se ha seleccionado el cliente")
                 End If
 
-            Else
-                Throw New MyException("Error, no se ha seleccionado el cliente")
-            End If
+            Catch ex As MyException
+                MessageBox.Show(ex.Message)
+            End Try
 
-        Catch ex As MyException
-            MessageBox.Show(ex.Message)
-        End Try
-
-
+        End If
 
     End Sub
 
@@ -565,5 +569,4 @@ Public Class Frm_Entrada
         lb_nombre_cliente.Text = dg_cliente.Item(0, dg_cliente.CurrentRow.Index).Value()
         lb_alias_cliente.Text = dg_cliente.Item(1, dg_cliente.CurrentRow.Index).Value()
     End Sub
-
 End Class
