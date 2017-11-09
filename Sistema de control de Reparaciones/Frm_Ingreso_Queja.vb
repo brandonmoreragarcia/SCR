@@ -46,41 +46,100 @@ Public Class Frm_Ingreso_Queja
 
     Private Sub Btn_Guardar_Click(sender As Object, e As EventArgs) Handles Btn_Guardar.Click
 
+        Dim answer As DialogResult = MessageBox.Show("Seguro que desear guardar los cambios?" + vbLf + "", "Aviso", MessageBoxButtons.YesNo)
+        If (answer = DialogResult.Yes) Then
+            Try
+                'If que  valida selección del cliente
+                If dg_cliente.FirstDisplayedCell IsNot Nothing AndAlso dg_cliente.Item(2, dg_cliente.CurrentRow.Index).Value() IsNot Nothing Then 'valida que el grid de clientes no esté vacío y que haya un cliente seleccionado
 
-        Dim sql As String = "insert into dbo.SCR_DATOS_QUEJA values(@NUMERO_QUEJA,@CLIENTE,@FECHA,@USUARIO,@TIPO_QUEJA,@FACTURA,@PROFORMA,@DETALLE)"
-        Dim cmd As New SqlCommand(sql, cxnc)
-        Dim sql2 As String = "insert into dbo.SCR_ESTADO_QUEJA values(@NUMERO_QUEJA,@ESTADO,@USUARIO,@FECHA)"
-        Dim cmd2 As New SqlCommand(sql2, cxnc)
-        Try
-            cmd.CommandType = CommandType.Text
-            cmd.Parameters.Add("@NUMERO_QUEJA", SqlDbType.Int).Value = Me.Lbl_Nun_Queja.Text
-            cmd.Parameters.Add("@CLIENTE", SqlDbType.NVarChar).Value = Me.dg_cliente.Item(0, dg_cliente.CurrentRow.Index).Value()
-            cmd.Parameters.Add("@FECHA", SqlDbType.DateTime).Value = Date.Now
-            cmd.Parameters.Add("@USUARIO", SqlDbType.NVarChar).Value = v_usuario
-            cmd.Parameters.Add("@TIPO_QUEJA", SqlDbType.NVarChar).Value = Me.Cbx_Tipo_Queja.Text
-            cmd.Parameters.Add("@FACTURA", SqlDbType.NVarChar).Value = Me.Txt_Factura.Text
-            cmd.Parameters.Add("@PROFORMA", SqlDbType.NVarChar).Value = Me.Txt_Proforma.Text
-            cmd.Parameters.Add("@DETALLE", SqlDbType.NVarChar).Value = Me.Txt_Descripcion_Queja.Text
-            cxnc.Open()
-            cmd.ExecuteNonQuery()
-            cxnc.Close()
-            cmd2.Parameters.Add("@NUMERO_QUEJA", SqlDbType.NVarChar).Value = Me.Lbl_Nun_Queja.Text
-            cmd2.Parameters.Add("@ESTADO", SqlDbType.NVarChar).Value = "INGRESADA"
-            cmd2.Parameters.Add("@USUARIO", SqlDbType.NVarChar).Value = v_usuario
-            cmd2.Parameters.Add("@FECHA", SqlDbType.DateTime).Value = Date.Now
-            cxnc.Open()
-            cmd2.ExecuteNonQuery()
-            cxnc.Close()
-            MessageBox.Show("DATOS GUARDADOS CORRECTAMENTE")
+                    'If que valida selección del artículo
+                    If dg_articulo.FirstDisplayedCell IsNot Nothing AndAlso dg_articulo.Item(1, dg_articulo.CurrentRow.Index).Value() IsNot Nothing Then
 
-            Txt_Factura.Text = ""
-            Txt_Proforma.Text = ""
-            Txt_Descripcion_Queja.Text = ""
-            Cbx_Tipo_Queja.Text = ""
-        Catch ex As Exception
-            MsgBox(ex.ToString)
-        End Try
-        select_num_queja()
+                        'if que valida selección del tipo queja
+                        If Cbx_Tipo_Queja.Text IsNot "" Then
+
+                            'If que  valida que la factura no vaya en blanco
+                            If Txt_Factura.Text IsNot "" Then
+
+                                'If que valida que la proforma no vaya en blanco
+                                If Txt_Proforma.Text IsNot "" Then
+
+                                    'If que valida que la proforma no vaya en blanco
+                                    If Txt_Descripcion_Queja.Text IsNot "" Then
+
+
+                                        Dim sql As String = "insert into dbo.SCR_DATOS_QUEJA values(@NUMERO_QUEJA,@CLIENTE,@FECHA,@USUARIO,@TIPO_QUEJA,@FACTURA,@PROFORMA,@DETALLE)"
+                                        Dim cmd As New SqlCommand(sql, cxnc)
+                                        Dim sql2 As String = "insert into dbo.SCR_ESTADO_QUEJA values(@NUMERO_QUEJA,@ESTADO,@USUARIO,@FECHA)"
+                                        Dim cmd2 As New SqlCommand(sql2, cxnc)
+                                        Try
+                                            cmd.CommandType = CommandType.Text
+                                            cmd.Parameters.Add("@NUMERO_QUEJA", SqlDbType.Int).Value = Me.Lbl_Nun_Queja.Text
+                                            cmd.Parameters.Add("@CLIENTE", SqlDbType.NVarChar).Value = Me.dg_cliente.Item(0, dg_cliente.CurrentRow.Index).Value()
+                                            cmd.Parameters.Add("@FECHA", SqlDbType.DateTime).Value = Date.Now
+                                            cmd.Parameters.Add("@USUARIO", SqlDbType.NVarChar).Value = v_usuario
+                                            cmd.Parameters.Add("@TIPO_QUEJA", SqlDbType.NVarChar).Value = Me.Cbx_Tipo_Queja.Text
+                                            cmd.Parameters.Add("@FACTURA", SqlDbType.NVarChar).Value = Me.Txt_Factura.Text
+                                            cmd.Parameters.Add("@PROFORMA", SqlDbType.NVarChar).Value = Me.Txt_Proforma.Text
+                                            cmd.Parameters.Add("@DETALLE", SqlDbType.NVarChar).Value = Me.Txt_Descripcion_Queja.Text
+                                            cxnc.Open()
+                                            cmd.ExecuteNonQuery()
+                                            cxnc.Close()
+                                            cmd2.Parameters.Add("@NUMERO_QUEJA", SqlDbType.NVarChar).Value = Me.Lbl_Nun_Queja.Text
+                                            cmd2.Parameters.Add("@ESTADO", SqlDbType.NVarChar).Value = "INGRESADA"
+                                            cmd2.Parameters.Add("@USUARIO", SqlDbType.NVarChar).Value = v_usuario
+                                            cmd2.Parameters.Add("@FECHA", SqlDbType.DateTime).Value = Date.Now
+                                            cxnc.Open()
+                                            cmd2.ExecuteNonQuery()
+                                            cxnc.Close()
+                                            MessageBox.Show("DATOS GUARDADOS CORRECTAMENTE")
+
+                                            Txt_Factura.Text = ""
+                                            Txt_Proforma.Text = ""
+                                            Txt_Descripcion_Queja.Text = ""
+                                            Cbx_Tipo_Queja.Text = ""
+
+                                            lb_alias_cliente.Text = ""
+                                            lb_descripcion_articulo.Text = ""
+                                            lb_nombre_cliente.Text = ""
+
+                                            dg_articulo.ClearSelection()
+                                            dg_cliente.ClearSelection()
+
+                                        Catch ex As Exception
+                                            MsgBox(ex.ToString)
+                                        End Try
+                                        select_num_queja()
+
+                                    Else
+                                        Throw New MyException("Error, el espacio 'descripcion' no puede ir en blanco")
+                                    End If
+
+                                Else
+                                    Throw New MyException("Error, el espacio  'proforma' no puede ir en blanco")
+                                End If
+
+                            Else
+                                Throw New MyException("Error, el espacio 'Factura' no puede ir en blanco")
+                            End If
+
+                        Else
+                            Throw New MyException("Error, no hay un 'motivo' seleccionado")
+                        End If
+
+                    Else
+                            Throw New MyException("Error, no se ha seleccionado el artículo")
+                    End If
+
+                Else
+                    Throw New MyException("Error, no se ha seleccionado el cliente")
+                End If
+
+            Catch ex As MyException
+                MsgBox(ex.Message)
+            End Try
+
+        End If
     End Sub
 
     Private Sub select_num_queja()
@@ -175,8 +234,14 @@ Public Class Frm_Ingreso_Queja
         dt_articulos.Columns.Add("codigo")
         Try
             Dim filtro As String = Txt_Cod_Articulo.Text.Replace("*", "%").ToUpper() 'sustiyuye los * por %, ya que en SQL se utilizan los %
+            Dim query As SqlCommand
 
-            Dim query As SqlCommand = New SqlCommand("SELECT DESCRIPCION, ARTICULO FROM DIS86.ARTICULO WHERE DESCRIPCION LIKE '" & filtro & "'", cxnc)
+            If rb_descripcion.Checked Then
+                query = New SqlCommand("SELECT DESCRIPCION, ARTICULO FROM DIS86.ARTICULO WHERE DESCRIPCION LIKE '" & filtro & "'", cxnc)
+            Else
+                query = New SqlCommand("SELECT DESCRIPCION, ARTICULO FROM DIS86.ARTICULO WHERE ARTICULO LIKE '" & filtro & "'", cxnc)
+            End If
+
             cxnc.Open()
             Dim reader As SqlDataReader = query.ExecuteReader()
             If reader.HasRows Then
@@ -273,7 +338,7 @@ Public Class Frm_Ingreso_Queja
 
     '///////////////////////Métodos de Up and Down para GRID ARTICULOS
 
-    'Método que se usa en el grid de CLIENTES, cuando se navega con la flecha arriba
+    'Método que se usa en el grid de articulos, cuando se navega con la flecha arriba
     Private Sub selectUpRow_articulos()
         Try
             rowIndex = dg_articulo.SelectedCells(0).OwningRow.Index
@@ -289,7 +354,7 @@ Public Class Frm_Ingreso_Queja
         End Try
     End Sub
 
-    'Método que se usa en el grid de CLIENTES, cuando se navega con la flecha abajo
+    'Método que se usa en el grid de articulos, cuando se navega con la flecha abajo
     Private Sub selectDownRow_articulos()
         Try
             totalRows = dg_articulo.Rows.Count
@@ -303,20 +368,17 @@ Public Class Frm_Ingreso_Queja
 
             End If
         Catch ex As Exception
-
         End Try
     End Sub
 
     Private Sub dg_cliente_KeyDown(sender As Object, e As KeyEventArgs) Handles dg_cliente.KeyDown
 
         selectUpRow()
-
     End Sub
 
     Private Sub dg_cliente_KeyUp(sender As Object, e As KeyEventArgs) Handles dg_cliente.KeyUp
 
         selectUpRow()
-
     End Sub
 
     Private Sub rb_alias_CheckedChanged(sender As Object, e As EventArgs) Handles rb_alias.CheckedChanged
@@ -363,6 +425,21 @@ Public Class Frm_Ingreso_Queja
             Else
                 Throw New MyException("Error, Recuerde escribir en el campo antes de iniciar la búsqueda")
             End If
+
+            If dg_articulo.RowCount <> 0 AndAlso rb_codigo.Checked Then
+                dg_articulo.Columns(0).DisplayIndex = 1 'el DisplayIndex solo cambia el orden visual, pero la estructura inicial se mantiene
+                dg_articulo.Columns(1).DisplayIndex = 0
+                dg_articulo.AutoResizeColumn(1)
+            Else
+                If dg_articulo.RowCount <> 0 AndAlso rb_descripcion.Checked Then
+                    dg_articulo.Columns(1).DisplayIndex = 1
+                    dg_articulo.AutoResizeColumn(0)
+                End If
+
+            End If
+
+
+
         Catch ex As MyException
             MessageBox.Show(ex.Message)
 
@@ -385,6 +462,24 @@ Public Class Frm_Ingreso_Queja
 
         Catch ex As MyException
             MsgBox(ex.Message)
+        End Try
+    End Sub
+
+    Private Sub rb_codigo_CheckedChanged(sender As Object, e As EventArgs) Handles rb_codigo.CheckedChanged
+
+        Try
+            bs_articulo.Filter = " codigo like '%" & Txt_Cod_Articulo.Text & "%'"
+
+        Catch ex As Exception
+        End Try
+    End Sub
+
+    Private Sub rb_descripcion_CheckedChanged(sender As Object, e As EventArgs) Handles rb_descripcion.CheckedChanged
+
+        Try
+            bs_articulo.Filter = " descripcion like '%" & Txt_Cod_Articulo.Text & "%'"
+
+        Catch ex As Exception
         End Try
     End Sub
 End Class

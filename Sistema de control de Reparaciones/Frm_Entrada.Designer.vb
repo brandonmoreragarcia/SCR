@@ -541,6 +541,7 @@ Partial Class Frm_Entrada
         Me.Txt_Cod_Articulo.Name = "Txt_Cod_Articulo"
         Me.Txt_Cod_Articulo.Size = New System.Drawing.Size(185, 23)
         Me.Txt_Cod_Articulo.TabIndex = 2
+        Me.Txt_Cod_Articulo.Text = "**"
         '
         'dg_cliente
         '
