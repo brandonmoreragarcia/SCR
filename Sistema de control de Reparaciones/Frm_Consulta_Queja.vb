@@ -34,7 +34,7 @@ Public Class Frm_Consulta_Queja
         If Rbtn_Procesar.Checked = True Then
             Btn_Procesar.Visible = True
             Btn_Solucionar.Visible = False
-            Btn_Procesada.Visible = False
+            bt_guardar.Visible = False
         End If
     End Sub
 
@@ -42,7 +42,7 @@ Public Class Frm_Consulta_Queja
         If Rbtn_Solucionar.Checked = True Then
             Btn_Procesar.Visible = False
             Btn_Solucionar.Visible = True
-            Btn_Procesada.Visible = False
+            bt_guardar.Visible = False
         End If
     End Sub
 
@@ -115,11 +115,11 @@ Public Class Frm_Consulta_Queja
         If Rbt_Procesada.Checked = True Then
             Btn_Procesar.Visible = False
             Btn_Solucionar.Visible = False
-            Btn_Procesada.Visible = True
+            bt_guardar.Visible = True
         End If
     End Sub
 
-    Private Sub Btn_Procesada_Click(sender As Object, e As EventArgs) Handles Btn_Procesada.Click
+    Private Sub Btn_Procesada_Click(sender As Object, e As EventArgs) Handles bt_guardar.Click
         If Queja_Solucionada(Txt_Num_Queja.Text) = True Then
             Dim numboleta As String = Txt_Num_Queja.Text
             Dim cmd3 = New SqlCommand("SELECT FECHA FROM DBO.SCR_QUEJAS_PROCESADAS WHERE DBO.SCR_QUEJAS_PROCESADAS.NUMERO_QUEJA ='" & numboleta & "'", cxnc)
@@ -152,5 +152,9 @@ Public Class Frm_Consulta_Queja
                 e.Handled = True
             End If
         End If
+    End Sub
+
+    Private Sub Button1_Click(sender As Object, e As EventArgs) Handles Button1.Click
+
     End Sub
 End Class

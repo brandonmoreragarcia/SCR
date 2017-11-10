@@ -75,7 +75,7 @@ Public Class Frm_Ingreso_Queja
                                         Try
                                             cmd.CommandType = CommandType.Text
                                             cmd.Parameters.Add("@NUMERO_QUEJA", SqlDbType.Int).Value = Me.Lbl_Nun_Queja.Text
-                                            cmd.Parameters.Add("@CLIENTE", SqlDbType.NVarChar).Value = Me.dg_cliente.Item(0, dg_cliente.CurrentRow.Index).Value()
+                                            cmd.Parameters.Add("@CLIENTE", SqlDbType.NVarChar).Value = Me.dg_cliente.Item(2, dg_cliente.CurrentRow.Index).Value()
                                             cmd.Parameters.Add("@FECHA", SqlDbType.DateTime).Value = Date.Now
                                             cmd.Parameters.Add("@USUARIO", SqlDbType.NVarChar).Value = v_usuario
                                             cmd.Parameters.Add("@TIPO_QUEJA", SqlDbType.NVarChar).Value = Me.Cbx_Tipo_Queja.Text
@@ -102,6 +102,7 @@ Public Class Frm_Ingreso_Queja
                                             lb_alias_cliente.Text = ""
                                             lb_descripcion_articulo.Text = ""
                                             lb_nombre_cliente.Text = ""
+                                            Txt_Cod_Articulo.Text = ""
 
                                             dg_articulo.ClearSelection()
                                             dg_cliente.ClearSelection()

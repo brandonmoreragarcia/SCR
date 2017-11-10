@@ -54,6 +54,8 @@ Partial Class Frm_Ingreso_Queja
         Me.lb_alias_cliente = New System.Windows.Forms.Label()
         Me.rb_alias = New System.Windows.Forms.RadioButton()
         Me.GroupBox3 = New System.Windows.Forms.GroupBox()
+        Me.rb_codigo = New System.Windows.Forms.RadioButton()
+        Me.rb_descripcion = New System.Windows.Forms.RadioButton()
         Me.bt_agregar_a_descripcion = New System.Windows.Forms.Button()
         Me.Txt_Cod_Articulo = New System.Windows.Forms.TextBox()
         Me.Lbl_Codigo_Art = New System.Windows.Forms.Label()
@@ -64,8 +66,6 @@ Partial Class Frm_Ingreso_Queja
         Me.GroupBox1 = New System.Windows.Forms.GroupBox()
         Me.bs_clientes = New System.Windows.Forms.BindingSource(Me.components)
         Me.bs_articulo = New System.Windows.Forms.BindingSource(Me.components)
-        Me.rb_descripcion = New System.Windows.Forms.RadioButton()
-        Me.rb_codigo = New System.Windows.Forms.RadioButton()
         CType(Me.CLIENTEBindingSource, System.ComponentModel.ISupportInitialize).BeginInit()
         CType(Me.ExactusERP_TABLES1, System.ComponentModel.ISupportInitialize).BeginInit()
         CType(Me.SCRTIPOQUEJABindingSource, System.ComponentModel.ISupportInitialize).BeginInit()
@@ -140,10 +140,10 @@ Partial Class Frm_Ingreso_Queja
         'Lbl_Fecha_Hora
         '
         Me.Lbl_Fecha_Hora.AutoSize = True
-        Me.Lbl_Fecha_Hora.Font = New System.Drawing.Font("Square721 BT", 9.25!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.Lbl_Fecha_Hora.Font = New System.Drawing.Font("Square721 BT", 10.0!, System.Drawing.FontStyle.Bold)
         Me.Lbl_Fecha_Hora.Location = New System.Drawing.Point(1011, 20)
         Me.Lbl_Fecha_Hora.Name = "Lbl_Fecha_Hora"
-        Me.Lbl_Fecha_Hora.Size = New System.Drawing.Size(85, 16)
+        Me.Lbl_Fecha_Hora.Size = New System.Drawing.Size(90, 17)
         Me.Lbl_Fecha_Hora.TabIndex = 16
         Me.Lbl_Fecha_Hora.Text = "Fecha_Hora"
         '
@@ -177,19 +177,19 @@ Partial Class Frm_Ingreso_Queja
         '
         Me.Lbl_T_Num_Queja.AutoSize = True
         Me.Lbl_T_Num_Queja.Font = New System.Drawing.Font("Square721 BT", 9.25!, System.Drawing.FontStyle.Bold)
-        Me.Lbl_T_Num_Queja.Location = New System.Drawing.Point(815, 20)
+        Me.Lbl_T_Num_Queja.Location = New System.Drawing.Point(748, 20)
         Me.Lbl_T_Num_Queja.Name = "Lbl_T_Num_Queja"
-        Me.Lbl_T_Num_Queja.Size = New System.Drawing.Size(60, 16)
+        Me.Lbl_T_Num_Queja.Size = New System.Drawing.Size(127, 16)
         Me.Lbl_T_Num_Queja.TabIndex = 19
-        Me.Lbl_T_Num_Queja.Text = "QUEJA:"
+        Me.Lbl_T_Num_Queja.Text = "NUMERO QUEJA:"
         '
         'Lbl_Nun_Queja
         '
         Me.Lbl_Nun_Queja.AutoSize = True
-        Me.Lbl_Nun_Queja.Font = New System.Drawing.Font("Square721 BT", 9.25!, System.Drawing.FontStyle.Bold)
+        Me.Lbl_Nun_Queja.Font = New System.Drawing.Font("Square721 BT", 10.0!, System.Drawing.FontStyle.Bold)
         Me.Lbl_Nun_Queja.Location = New System.Drawing.Point(881, 20)
         Me.Lbl_Nun_Queja.Name = "Lbl_Nun_Queja"
-        Me.Lbl_Nun_Queja.Size = New System.Drawing.Size(52, 16)
+        Me.Lbl_Nun_Queja.Size = New System.Drawing.Size(55, 17)
         Me.Lbl_Nun_Queja.TabIndex = 20
         Me.Lbl_Nun_Queja.Text = "Label1"
         '
@@ -359,12 +359,34 @@ Partial Class Frm_Ingreso_Queja
         Me.GroupBox3.TabStop = False
         Me.GroupBox3.Text = "INFORMACIÓN DEL ARTÍCULO"
         '
+        'rb_codigo
+        '
+        Me.rb_codigo.AutoSize = True
+        Me.rb_codigo.Location = New System.Drawing.Point(14, 54)
+        Me.rb_codigo.Name = "rb_codigo"
+        Me.rb_codigo.Size = New System.Drawing.Size(80, 20)
+        Me.rb_codigo.TabIndex = 19
+        Me.rb_codigo.Text = "CODIGO"
+        Me.rb_codigo.UseVisualStyleBackColor = True
+        '
+        'rb_descripcion
+        '
+        Me.rb_descripcion.AutoSize = True
+        Me.rb_descripcion.Checked = True
+        Me.rb_descripcion.Location = New System.Drawing.Point(14, 32)
+        Me.rb_descripcion.Name = "rb_descripcion"
+        Me.rb_descripcion.Size = New System.Drawing.Size(121, 20)
+        Me.rb_descripcion.TabIndex = 18
+        Me.rb_descripcion.TabStop = True
+        Me.rb_descripcion.Text = "DESCRIPCION"
+        Me.rb_descripcion.UseVisualStyleBackColor = True
+        '
         'bt_agregar_a_descripcion
         '
         Me.bt_agregar_a_descripcion.Font = New System.Drawing.Font("Square721 BT", 9.25!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.bt_agregar_a_descripcion.Location = New System.Drawing.Point(499, 192)
+        Me.bt_agregar_a_descripcion.Location = New System.Drawing.Point(499, 200)
         Me.bt_agregar_a_descripcion.Name = "bt_agregar_a_descripcion"
-        Me.bt_agregar_a_descripcion.Size = New System.Drawing.Size(109, 35)
+        Me.bt_agregar_a_descripcion.Size = New System.Drawing.Size(109, 27)
         Me.bt_agregar_a_descripcion.TabIndex = 17
         Me.bt_agregar_a_descripcion.Text = "AGREGAR"
         Me.bt_agregar_a_descripcion.UseVisualStyleBackColor = True
@@ -372,7 +394,7 @@ Partial Class Frm_Ingreso_Queja
         'Txt_Cod_Articulo
         '
         Me.Txt_Cod_Articulo.Font = New System.Drawing.Font("Arial Black", 8.25!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.Txt_Cod_Articulo.Location = New System.Drawing.Point(205, 63)
+        Me.Txt_Cod_Articulo.Location = New System.Drawing.Point(208, 51)
         Me.Txt_Cod_Articulo.Name = "Txt_Cod_Articulo"
         Me.Txt_Cod_Articulo.Size = New System.Drawing.Size(228, 23)
         Me.Txt_Cod_Articulo.TabIndex = 2
@@ -382,7 +404,7 @@ Partial Class Frm_Ingreso_Queja
         '
         Me.Lbl_Codigo_Art.AutoSize = True
         Me.Lbl_Codigo_Art.Font = New System.Drawing.Font("Square721 BT", 9.25!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.Lbl_Codigo_Art.Location = New System.Drawing.Point(141, 67)
+        Me.Lbl_Codigo_Art.Location = New System.Drawing.Point(144, 55)
         Me.Lbl_Codigo_Art.Name = "Lbl_Codigo_Art"
         Me.Lbl_Codigo_Art.Size = New System.Drawing.Size(58, 16)
         Me.Lbl_Codigo_Art.TabIndex = 14
@@ -392,7 +414,7 @@ Partial Class Frm_Ingreso_Queja
         '
         Me.Lbl_Descripcion_Art.AutoSize = True
         Me.Lbl_Descripcion_Art.Font = New System.Drawing.Font("Square721 BT", 9.25!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.Lbl_Descripcion_Art.Location = New System.Drawing.Point(447, 93)
+        Me.Lbl_Descripcion_Art.Location = New System.Drawing.Point(439, 90)
         Me.Lbl_Descripcion_Art.Name = "Lbl_Descripcion_Art"
         Me.Lbl_Descripcion_Art.Size = New System.Drawing.Size(108, 16)
         Me.Lbl_Descripcion_Art.TabIndex = 15
@@ -402,9 +424,9 @@ Partial Class Frm_Ingreso_Queja
         '
         Me.lb_descripcion_articulo.Font = New System.Drawing.Font("Square721 BT", 9.25!, System.Drawing.FontStyle.Bold)
         Me.lb_descripcion_articulo.ForeColor = System.Drawing.Color.Red
-        Me.lb_descripcion_articulo.Location = New System.Drawing.Point(447, 119)
+        Me.lb_descripcion_articulo.Location = New System.Drawing.Point(447, 106)
         Me.lb_descripcion_articulo.Name = "lb_descripcion_articulo"
-        Me.lb_descripcion_articulo.Size = New System.Drawing.Size(229, 60)
+        Me.lb_descripcion_articulo.Size = New System.Drawing.Size(229, 90)
         Me.lb_descripcion_articulo.TabIndex = 16
         '
         'dg_articulo
@@ -412,16 +434,16 @@ Partial Class Frm_Ingreso_Queja
         Me.dg_articulo.AllowUserToAddRows = False
         Me.dg_articulo.AllowUserToDeleteRows = False
         Me.dg_articulo.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize
-        Me.dg_articulo.Location = New System.Drawing.Point(14, 92)
+        Me.dg_articulo.Location = New System.Drawing.Point(14, 80)
         Me.dg_articulo.Name = "dg_articulo"
         Me.dg_articulo.ReadOnly = True
-        Me.dg_articulo.Size = New System.Drawing.Size(419, 135)
+        Me.dg_articulo.Size = New System.Drawing.Size(419, 147)
         Me.dg_articulo.TabIndex = 4
         '
         'bt_buscar_articulo
         '
         Me.bt_buscar_articulo.Font = New System.Drawing.Font("Square721 BT", 9.25!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.bt_buscar_articulo.Location = New System.Drawing.Point(439, 62)
+        Me.bt_buscar_articulo.Location = New System.Drawing.Point(442, 50)
         Me.bt_buscar_articulo.Name = "bt_buscar_articulo"
         Me.bt_buscar_articulo.Size = New System.Drawing.Size(75, 23)
         Me.bt_buscar_articulo.TabIndex = 3
@@ -446,28 +468,6 @@ Partial Class Frm_Ingreso_Queja
         Me.GroupBox1.TabIndex = 74
         Me.GroupBox1.TabStop = False
         Me.GroupBox1.Text = "INFORMACION QUEJA"
-        '
-        'rb_descripcion
-        '
-        Me.rb_descripcion.AutoSize = True
-        Me.rb_descripcion.Checked = True
-        Me.rb_descripcion.Location = New System.Drawing.Point(14, 40)
-        Me.rb_descripcion.Name = "rb_descripcion"
-        Me.rb_descripcion.Size = New System.Drawing.Size(121, 20)
-        Me.rb_descripcion.TabIndex = 18
-        Me.rb_descripcion.TabStop = True
-        Me.rb_descripcion.Text = "DESCRIPCION"
-        Me.rb_descripcion.UseVisualStyleBackColor = True
-        '
-        'rb_codigo
-        '
-        Me.rb_codigo.AutoSize = True
-        Me.rb_codigo.Location = New System.Drawing.Point(14, 66)
-        Me.rb_codigo.Name = "rb_codigo"
-        Me.rb_codigo.Size = New System.Drawing.Size(80, 20)
-        Me.rb_codigo.TabIndex = 19
-        Me.rb_codigo.Text = "CODIGO"
-        Me.rb_codigo.UseVisualStyleBackColor = True
         '
         'Frm_Ingreso_Queja
         '
