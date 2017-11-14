@@ -212,6 +212,12 @@
     <Compile Include="Frm_Impresion_Etiqueta_Salida.vb">
       <SubType>Form</SubType>
     </Compile>
+    <Compile Include="Frm_Impresion_Queja.Designer.vb">
+      <DependentUpon>Frm_Impresion_Queja.vb</DependentUpon>
+    </Compile>
+    <Compile Include="Frm_Impresion_Queja.vb">
+      <SubType>Form</SubType>
+    </Compile>
     <Compile Include="Frm_Impresion_Rep.Designer.vb">
       <DependentUpon>Frm_Impresion_Rep.vb</DependentUpon>
     </Compile>
@@ -412,6 +418,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Frm_Impresion_Etiqueta_Salida.resx">
       <DependentUpon>Frm_Impresion_Etiqueta_Salida.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Frm_Impresion_Queja.resx">
+      <DependentUpon>Frm_Impresion_Queja.vb</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Frm_Impresion_Rep.resx">
       <DependentUpon>Frm_Impresion_Rep.vb</DependentUpon>

@@ -950,7 +950,7 @@ Partial Class Frm_Actualizacion_Rep
         Me.bt_guardar_transporte.Location = New System.Drawing.Point(376, 221)
         Me.bt_guardar_transporte.Name = "bt_guardar_transporte"
         Me.bt_guardar_transporte.Size = New System.Drawing.Size(128, 30)
-        Me.bt_guardar_transporte.TabIndex = 51
+        Me.bt_guardar_transporte.TabIndex = 7
         Me.bt_guardar_transporte.Text = "GUARDAR!"
         Me.bt_guardar_transporte.UseVisualStyleBackColor = True
         '
@@ -964,7 +964,7 @@ Partial Class Frm_Actualizacion_Rep
         Me.cbx_localizacion_transporte.Location = New System.Drawing.Point(339, 47)
         Me.cbx_localizacion_transporte.Name = "cbx_localizacion_transporte"
         Me.cbx_localizacion_transporte.Size = New System.Drawing.Size(140, 24)
-        Me.cbx_localizacion_transporte.TabIndex = 50
+        Me.cbx_localizacion_transporte.TabIndex = 5
         '
         'SCRLOCALIZACIONTRANSBindingSource
         '
@@ -981,7 +981,7 @@ Partial Class Frm_Actualizacion_Rep
         Me.cbx_estado_transporte.Location = New System.Drawing.Point(71, 47)
         Me.cbx_estado_transporte.Name = "cbx_estado_transporte"
         Me.cbx_estado_transporte.Size = New System.Drawing.Size(140, 24)
-        Me.cbx_estado_transporte.TabIndex = 49
+        Me.cbx_estado_transporte.TabIndex = 4
         '
         'SCRESTADOTRANSPORTEBindingSource
         '
@@ -994,7 +994,7 @@ Partial Class Frm_Actualizacion_Rep
         Me.txt_comentario_transporte.Multiline = True
         Me.txt_comentario_transporte.Name = "txt_comentario_transporte"
         Me.txt_comentario_transporte.Size = New System.Drawing.Size(197, 56)
-        Me.txt_comentario_transporte.TabIndex = 48
+        Me.txt_comentario_transporte.TabIndex = 6
         '
         'Label1
         '
@@ -1046,7 +1046,7 @@ Partial Class Frm_Actualizacion_Rep
         Me.dg_reparaciones.Name = "dg_reparaciones"
         Me.dg_reparaciones.ReadOnly = True
         Me.dg_reparaciones.Size = New System.Drawing.Size(327, 143)
-        Me.dg_reparaciones.TabIndex = 57
+        Me.dg_reparaciones.TabIndex = 0
         '
         'REPARACIONNUMERODataGridViewTextBoxColumn
         '
@@ -1099,7 +1099,7 @@ Partial Class Frm_Actualizacion_Rep
         Me.bt_cerrado_rapido.Location = New System.Drawing.Point(383, 117)
         Me.bt_cerrado_rapido.Name = "bt_cerrado_rapido"
         Me.bt_cerrado_rapido.Size = New System.Drawing.Size(142, 29)
-        Me.bt_cerrado_rapido.TabIndex = 58
+        Me.bt_cerrado_rapido.TabIndex = 3
         Me.bt_cerrado_rapido.Text = "CERRADO RÁPIDO!"
         Me.bt_cerrado_rapido.UseVisualStyleBackColor = True
         '
@@ -1114,7 +1114,7 @@ Partial Class Frm_Actualizacion_Rep
         Me.ch_ver_informacion.Location = New System.Drawing.Point(356, 166)
         Me.ch_ver_informacion.Name = "ch_ver_informacion"
         Me.ch_ver_informacion.Size = New System.Drawing.Size(207, 18)
-        Me.ch_ver_informacion.TabIndex = 60
+        Me.ch_ver_informacion.TabIndex = 2
         Me.ch_ver_informacion.Text = "VER INFORMACIÓN ADICIONAL"
         Me.ch_ver_informacion.UseVisualStyleBackColor = True
         '
@@ -1142,7 +1142,7 @@ Partial Class Frm_Actualizacion_Rep
         Me.ch_ver_informacion_transporte.Location = New System.Drawing.Point(356, 85)
         Me.ch_ver_informacion_transporte.Name = "ch_ver_informacion_transporte"
         Me.ch_ver_informacion_transporte.Size = New System.Drawing.Size(207, 18)
-        Me.ch_ver_informacion_transporte.TabIndex = 62
+        Me.ch_ver_informacion_transporte.TabIndex = 1
         Me.ch_ver_informacion_transporte.Text = "VER INFORMACIÓN ADICIONAL"
         Me.ch_ver_informacion_transporte.UseVisualStyleBackColor = True
         '

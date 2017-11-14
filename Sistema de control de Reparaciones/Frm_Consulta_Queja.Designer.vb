@@ -60,28 +60,32 @@ Partial Class Frm_Consulta_Queja
         Me.Grb_Detalle = New System.Windows.Forms.GroupBox()
         Me.Label1 = New System.Windows.Forms.Label()
         Me.Lbl_Detalle = New System.Windows.Forms.Label()
-        Me.Btn_Procesar = New System.Windows.Forms.Button()
-        Me.Btn_Solucionar = New System.Windows.Forms.Button()
-        Me.Rbt_Procesada = New System.Windows.Forms.RadioButton()
+        Me.Rbtn_Procesada = New System.Windows.Forms.RadioButton()
         Me.bt_guardar = New System.Windows.Forms.Button()
         Me.GroupBox1 = New System.Windows.Forms.GroupBox()
         Me.GroupBox2 = New System.Windows.Forms.GroupBox()
+        Me.Label2 = New System.Windows.Forms.Label()
+        Me.dg_quejas_pendientes = New System.Windows.Forms.DataGridView()
+        Me.BindingSource_datagrid = New System.Windows.Forms.BindingSource(Me.components)
         Me.Button1 = New System.Windows.Forms.Button()
+        Me.ScR_ULTIMO_ESTADO_QUEJATableAdapter1 = New WindowsApplication1.ExactusERP_SRC_TABLESTableAdapters.SCR_ULTIMO_ESTADO_QUEJATableAdapter()
+        Me.NUMEROQUEJADataGridViewTextBoxColumn = New System.Windows.Forms.DataGridViewTextBoxColumn()
         CType(Me.SCRULTIMOESTADOQUEJABindingSource, System.ComponentModel.ISupportInitialize).BeginInit()
         CType(Me.ExactusERP_SRC_TABLES, System.ComponentModel.ISupportInitialize).BeginInit()
         Me.Grb_Detalle.SuspendLayout()
         Me.GroupBox1.SuspendLayout()
         Me.GroupBox2.SuspendLayout()
+        CType(Me.dg_quejas_pendientes, System.ComponentModel.ISupportInitialize).BeginInit()
+        CType(Me.BindingSource_datagrid, System.ComponentModel.ISupportInitialize).BeginInit()
         Me.SuspendLayout()
         '
         'Rbtn_Procesar
         '
         Me.Rbtn_Procesar.Font = New System.Drawing.Font("Square721 BT", 9.25!, System.Drawing.FontStyle.Bold)
-        Me.Rbtn_Procesar.Location = New System.Drawing.Point(97, 152)
+        Me.Rbtn_Procesar.Location = New System.Drawing.Point(96, 362)
         Me.Rbtn_Procesar.Name = "Rbtn_Procesar"
         Me.Rbtn_Procesar.Size = New System.Drawing.Size(115, 32)
-        Me.Rbtn_Procesar.TabIndex = 0
-        Me.Rbtn_Procesar.TabStop = True
+        Me.Rbtn_Procesar.TabIndex = 4
         Me.Rbtn_Procesar.Text = "PROCESAR"
         Me.Rbtn_Procesar.UseVisualStyleBackColor = True
         Me.Rbtn_Procesar.Visible = False
@@ -89,11 +93,10 @@ Partial Class Frm_Consulta_Queja
         'Rbtn_Solucionar
         '
         Me.Rbtn_Solucionar.Font = New System.Drawing.Font("Square721 BT", 9.25!, System.Drawing.FontStyle.Bold)
-        Me.Rbtn_Solucionar.Location = New System.Drawing.Point(97, 128)
+        Me.Rbtn_Solucionar.Location = New System.Drawing.Point(96, 338)
         Me.Rbtn_Solucionar.Name = "Rbtn_Solucionar"
         Me.Rbtn_Solucionar.Size = New System.Drawing.Size(124, 22)
-        Me.Rbtn_Solucionar.TabIndex = 1
-        Me.Rbtn_Solucionar.TabStop = True
+        Me.Rbtn_Solucionar.TabIndex = 3
         Me.Rbtn_Solucionar.Text = "SOLUCIONAR"
         Me.Rbtn_Solucionar.UseVisualStyleBackColor = True
         Me.Rbtn_Solucionar.Visible = False
@@ -102,7 +105,7 @@ Partial Class Frm_Consulta_Queja
         '
         Me.Lbl_Num_Queja.AutoSize = True
         Me.Lbl_Num_Queja.Font = New System.Drawing.Font("Microsoft Sans Serif", 8.25!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.Lbl_Num_Queja.Location = New System.Drawing.Point(46, 46)
+        Me.Lbl_Num_Queja.Location = New System.Drawing.Point(45, 256)
         Me.Lbl_Num_Queja.Name = "Lbl_Num_Queja"
         Me.Lbl_Num_Queja.Size = New System.Drawing.Size(63, 13)
         Me.Lbl_Num_Queja.TabIndex = 2
@@ -110,10 +113,10 @@ Partial Class Frm_Consulta_Queja
         '
         'Txt_Num_Queja
         '
-        Me.Txt_Num_Queja.Location = New System.Drawing.Point(119, 41)
+        Me.Txt_Num_Queja.Location = New System.Drawing.Point(118, 251)
         Me.Txt_Num_Queja.Name = "Txt_Num_Queja"
         Me.Txt_Num_Queja.Size = New System.Drawing.Size(93, 23)
-        Me.Txt_Num_Queja.TabIndex = 3
+        Me.Txt_Num_Queja.TabIndex = 1
         '
         'Lbl_T_Cod_Cliente
         '
@@ -416,10 +419,10 @@ Partial Class Frm_Consulta_Queja
         Me.Grb_Detalle.Controls.Add(Me.Label1)
         Me.Grb_Detalle.Controls.Add(Me.Lbl_Detalle)
         Me.Grb_Detalle.Font = New System.Drawing.Font("Square721 BT", 9.25!, System.Drawing.FontStyle.Bold)
-        Me.Grb_Detalle.Location = New System.Drawing.Point(35, 264)
+        Me.Grb_Detalle.Location = New System.Drawing.Point(20, 273)
         Me.Grb_Detalle.MaximumSize = New System.Drawing.Size(770, 0)
         Me.Grb_Detalle.Name = "Grb_Detalle"
-        Me.Grb_Detalle.Size = New System.Drawing.Size(739, 114)
+        Me.Grb_Detalle.Size = New System.Drawing.Size(739, 162)
         Me.Grb_Detalle.TabIndex = 30
         Me.Grb_Detalle.TabStop = False
         Me.Grb_Detalle.Text = "DETALLE QUEJA"
@@ -433,7 +436,6 @@ Partial Class Frm_Consulta_Queja
         Me.Label1.Size = New System.Drawing.Size(598, 67)
         Me.Label1.TabIndex = 13
         Me.Label1.Text = "Detalle"
-        Me.Label1.Visible = False
         '
         'Lbl_Detalle
         '
@@ -447,47 +449,27 @@ Partial Class Frm_Consulta_Queja
         Me.Lbl_Detalle.Text = "Detalle"
         Me.Lbl_Detalle.Visible = False
         '
-        'Btn_Procesar
+        'Rbtn_Procesada
         '
-        Me.Btn_Procesar.Location = New System.Drawing.Point(-3, 191)
-        Me.Btn_Procesar.Name = "Btn_Procesar"
-        Me.Btn_Procesar.Size = New System.Drawing.Size(95, 39)
-        Me.Btn_Procesar.TabIndex = 31
-        Me.Btn_Procesar.Text = "Procesar"
-        Me.Btn_Procesar.UseVisualStyleBackColor = True
-        Me.Btn_Procesar.Visible = False
-        '
-        'Btn_Solucionar
-        '
-        Me.Btn_Solucionar.Location = New System.Drawing.Point(98, 217)
-        Me.Btn_Solucionar.Name = "Btn_Solucionar"
-        Me.Btn_Solucionar.Size = New System.Drawing.Size(95, 39)
-        Me.Btn_Solucionar.TabIndex = 32
-        Me.Btn_Solucionar.Text = "Solucionar"
-        Me.Btn_Solucionar.UseVisualStyleBackColor = True
-        Me.Btn_Solucionar.Visible = False
-        '
-        'Rbt_Procesada
-        '
-        Me.Rbt_Procesada.Font = New System.Drawing.Font("Square721 BT", 9.25!, System.Drawing.FontStyle.Bold)
-        Me.Rbt_Procesada.Location = New System.Drawing.Point(97, 95)
-        Me.Rbt_Procesada.Name = "Rbt_Procesada"
-        Me.Rbt_Procesada.Size = New System.Drawing.Size(115, 27)
-        Me.Rbt_Procesada.TabIndex = 33
-        Me.Rbt_Procesada.TabStop = True
-        Me.Rbt_Procesada.Text = "PROCESADA"
-        Me.Rbt_Procesada.UseVisualStyleBackColor = True
-        Me.Rbt_Procesada.Visible = False
+        Me.Rbtn_Procesada.Checked = True
+        Me.Rbtn_Procesada.Font = New System.Drawing.Font("Square721 BT", 9.25!, System.Drawing.FontStyle.Bold)
+        Me.Rbtn_Procesada.Location = New System.Drawing.Point(96, 305)
+        Me.Rbtn_Procesada.Name = "Rbtn_Procesada"
+        Me.Rbtn_Procesada.Size = New System.Drawing.Size(115, 27)
+        Me.Rbtn_Procesada.TabIndex = 2
+        Me.Rbtn_Procesada.TabStop = True
+        Me.Rbtn_Procesada.Text = "PROCESADA"
+        Me.Rbtn_Procesada.UseVisualStyleBackColor = True
+        Me.Rbtn_Procesada.Visible = False
         '
         'bt_guardar
         '
-        Me.bt_guardar.Location = New System.Drawing.Point(211, 191)
+        Me.bt_guardar.Location = New System.Drawing.Point(183, 427)
         Me.bt_guardar.Name = "bt_guardar"
-        Me.bt_guardar.Size = New System.Drawing.Size(95, 39)
-        Me.bt_guardar.TabIndex = 34
+        Me.bt_guardar.Size = New System.Drawing.Size(105, 33)
+        Me.bt_guardar.TabIndex = 5
         Me.bt_guardar.Text = "GUARDAR!"
         Me.bt_guardar.UseVisualStyleBackColor = True
-        Me.bt_guardar.Visible = False
         '
         'GroupBox1
         '
@@ -521,38 +503,76 @@ Partial Class Frm_Consulta_Queja
         Me.GroupBox1.Font = New System.Drawing.Font("Square721 BT", 9.25!, System.Drawing.FontStyle.Bold)
         Me.GroupBox1.Location = New System.Drawing.Point(348, 48)
         Me.GroupBox1.Name = "GroupBox1"
-        Me.GroupBox1.Size = New System.Drawing.Size(896, 414)
+        Me.GroupBox1.Size = New System.Drawing.Size(896, 482)
         Me.GroupBox1.TabIndex = 35
         Me.GroupBox1.TabStop = False
         Me.GroupBox1.Text = "INFORMACION QUEJA"
         '
         'GroupBox2
         '
+        Me.GroupBox2.Controls.Add(Me.Label2)
+        Me.GroupBox2.Controls.Add(Me.dg_quejas_pendientes)
         Me.GroupBox2.Controls.Add(Me.Button1)
-        Me.GroupBox2.Controls.Add(Me.Rbt_Procesada)
+        Me.GroupBox2.Controls.Add(Me.Rbtn_Procesada)
         Me.GroupBox2.Controls.Add(Me.Rbtn_Procesar)
         Me.GroupBox2.Controls.Add(Me.Txt_Num_Queja)
         Me.GroupBox2.Controls.Add(Me.Lbl_Num_Queja)
         Me.GroupBox2.Controls.Add(Me.bt_guardar)
         Me.GroupBox2.Controls.Add(Me.Rbtn_Solucionar)
-        Me.GroupBox2.Controls.Add(Me.Btn_Procesar)
-        Me.GroupBox2.Controls.Add(Me.Btn_Solucionar)
         Me.GroupBox2.Font = New System.Drawing.Font("Square721 BT", 9.75!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.GroupBox2.Location = New System.Drawing.Point(12, 48)
         Me.GroupBox2.Name = "GroupBox2"
-        Me.GroupBox2.Size = New System.Drawing.Size(312, 414)
+        Me.GroupBox2.Size = New System.Drawing.Size(312, 482)
         Me.GroupBox2.TabIndex = 36
         Me.GroupBox2.TabStop = False
         Me.GroupBox2.Text = "BÚSQUEDA QUEJA"
         '
+        'Label2
+        '
+        Me.Label2.Location = New System.Drawing.Point(79, 61)
+        Me.Label2.Name = "Label2"
+        Me.Label2.Size = New System.Drawing.Size(160, 18)
+        Me.Label2.TabIndex = 37
+        Me.Label2.Text = "QUEJAS PENDIENTES"
+        '
+        'dg_quejas_pendientes
+        '
+        Me.dg_quejas_pendientes.AllowUserToAddRows = False
+        Me.dg_quejas_pendientes.AllowUserToDeleteRows = False
+        Me.dg_quejas_pendientes.AutoGenerateColumns = False
+        Me.dg_quejas_pendientes.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize
+        Me.dg_quejas_pendientes.Columns.AddRange(New System.Windows.Forms.DataGridViewColumn() {Me.NUMEROQUEJADataGridViewTextBoxColumn})
+        Me.dg_quejas_pendientes.DataSource = Me.BindingSource_datagrid
+        Me.dg_quejas_pendientes.Location = New System.Drawing.Point(69, 82)
+        Me.dg_quejas_pendientes.Name = "dg_quejas_pendientes"
+        Me.dg_quejas_pendientes.ReadOnly = True
+        Me.dg_quejas_pendientes.Size = New System.Drawing.Size(178, 145)
+        Me.dg_quejas_pendientes.TabIndex = 0
+        '
+        'BindingSource_datagrid
+        '
+        Me.BindingSource_datagrid.DataMember = "SCR_ULTIMO_ESTADO_QUEJA"
+        Me.BindingSource_datagrid.DataSource = Me.ExactusERP_SRC_TABLES
+        '
         'Button1
         '
-        Me.Button1.Location = New System.Drawing.Point(98, 282)
+        Me.Button1.Location = New System.Drawing.Point(16, 427)
         Me.Button1.Name = "Button1"
-        Me.Button1.Size = New System.Drawing.Size(93, 37)
-        Me.Button1.TabIndex = 35
-        Me.Button1.Text = "IMPRIMIR!"
+        Me.Button1.Size = New System.Drawing.Size(148, 33)
+        Me.Button1.TabIndex = 6
+        Me.Button1.Text = "IMPRIMIR QUEJA"
         Me.Button1.UseVisualStyleBackColor = True
+        '
+        'ScR_ULTIMO_ESTADO_QUEJATableAdapter1
+        '
+        Me.ScR_ULTIMO_ESTADO_QUEJATableAdapter1.ClearBeforeFill = True
+        '
+        'NUMEROQUEJADataGridViewTextBoxColumn
+        '
+        Me.NUMEROQUEJADataGridViewTextBoxColumn.DataPropertyName = "NUMERO_QUEJA"
+        Me.NUMEROQUEJADataGridViewTextBoxColumn.HeaderText = "#"
+        Me.NUMEROQUEJADataGridViewTextBoxColumn.Name = "NUMEROQUEJADataGridViewTextBoxColumn"
+        Me.NUMEROQUEJADataGridViewTextBoxColumn.ReadOnly = True
         '
         'Frm_Consulta_Queja
         '
@@ -573,6 +593,8 @@ Partial Class Frm_Consulta_Queja
         Me.GroupBox1.PerformLayout()
         Me.GroupBox2.ResumeLayout(False)
         Me.GroupBox2.PerformLayout()
+        CType(Me.dg_quejas_pendientes, System.ComponentModel.ISupportInitialize).EndInit()
+        CType(Me.BindingSource_datagrid, System.ComponentModel.ISupportInitialize).EndInit()
         Me.ResumeLayout(False)
 
     End Sub
@@ -612,12 +634,15 @@ Partial Class Frm_Consulta_Queja
     Friend WithEvents Lbl_Fecha_Estado As Label
     Friend WithEvents Grb_Detalle As GroupBox
     Friend WithEvents Lbl_Detalle As Label
-    Friend WithEvents Btn_Procesar As Button
-    Friend WithEvents Btn_Solucionar As Button
-    Friend WithEvents Rbt_Procesada As RadioButton
+    Friend WithEvents Rbtn_Procesada As RadioButton
     Friend WithEvents bt_guardar As Button
     Friend WithEvents GroupBox1 As GroupBox
     Friend WithEvents Label1 As Label
     Friend WithEvents GroupBox2 As GroupBox
     Friend WithEvents Button1 As Button
+    Friend WithEvents dg_quejas_pendientes As DataGridView
+    Friend WithEvents Label2 As Label
+    Friend WithEvents BindingSource_datagrid As BindingSource
+    Friend WithEvents ScR_ULTIMO_ESTADO_QUEJATableAdapter1 As ExactusERP_SRC_TABLESTableAdapters.SCR_ULTIMO_ESTADO_QUEJATableAdapter
+    Friend WithEvents NUMEROQUEJADataGridViewTextBoxColumn As DataGridViewTextBoxColumn
 End Class

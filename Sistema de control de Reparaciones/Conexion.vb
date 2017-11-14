@@ -232,12 +232,14 @@ Module Conexion
             End If
             respu2.Close()
             cxnc.Close()
+
         Catch ex As Exception
-            MsgBox(ex.ToString)
+            MsgBox(ex.Message)
         End Try
         Return resultado
     End Function
 
+    'devuelve true si la queja está siendo procesada actualmente'
     Function Queja_Proces(ByVal proces_queja As String) As Boolean
         Dim resultado As Boolean = False
         Try
@@ -249,13 +251,16 @@ Module Conexion
             End If
             respu2.Close()
             cxnc.Close()
-        Catch ex As Exception
-            MsgBox(ex.ToString)
+
+        Catch ex As MyException
+            MsgBox(ex.Message)
         End Try
         Return resultado
     End Function
 
+    'Devuelve true si la queja fue solucionada'
     Function Queja_Solucionada(ByVal solucionada_queja As String) As Boolean
+
         Dim resultado As Boolean = False
         Try
             enun2 = New SqlCommand("SELECT * FROM DBO.SCR_QUEJAS_SOLUCIONADAS WHERE DBO.SCR_QUEJAS_SOLUCIONADAS.NUMERO_QUEJA='" & solucionada_queja & "'", cxnc)
@@ -266,9 +271,11 @@ Module Conexion
             End If
             respu2.Close()
             cxnc.Close()
+
         Catch ex As Exception
-            MsgBox(ex.ToString)
+            MsgBox(ex.Message)
         End Try
+
         Return resultado
     End Function
 
