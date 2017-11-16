@@ -4,20 +4,22 @@ Public Class Frm_Listado_Quejas
     Private Sub Frm_Listado_Quejas_Load(sender As Object, e As EventArgs) Handles MyBase.Load
         'TODO: esta línea de código carga datos en la tabla 'ExactusERP_SRC_TABLES.SCR_ULTIMO_ESTADO_QUEJA' Puede moverla o quitarla según sea necesario.
         Me.SCR_ULTIMO_ESTADO_QUEJATableAdapter.Fill(Me.ExactusERP_SRC_TABLES.SCR_ULTIMO_ESTADO_QUEJA)
+        'Dgv_Quejas_Total.DefaultCellStyle.Font = New Drawing.Font("Square721 BT", 10, Font.Style.Regular)
 
     End Sub
 
-    Private Sub Dgv_Quejas_Total_CellContentClick(sender As Object, e As DataGridViewCellEventArgs) Handles Dgv_Quejas_Total.CellContentClick
+    Private Sub Dgv_Quejas_Total_CellContentClick(sender As Object, e As DataGridViewCellEventArgs)
         Num_Queja = Dgv_Quejas_Total.Item(1, Dgv_Quejas_Total.CurrentRow.Index).Value()
         My.Forms.Frm_Consulta_Num_Queja.Txt_Num_Queja.Enabled = False
         Frm_Consulta_Num_Queja.Show()
 
     End Sub
 
-    Private Sub Btn_Selec_Queja_Click(sender As Object, e As EventArgs) Handles Btn_Selec_Queja.Click
+    Private Sub Btn_Selec_Queja_Click(sender As Object, e As EventArgs)
         If T_busqueda_Queja = 2 Then
             My.Forms.Frm_Consulta_Queja.Txt_Num_Queja.Text = Dgv_Quejas_Total.Item(1, Dgv_Quejas_Total.CurrentRow.Index).Value()
             Me.Close()
+
         ElseIf T_busqueda_Queja = 1 Then
             My.Forms.Frm_Consulta_Num_Queja.Txt_Num_Queja.Text = Dgv_Quejas_Total.Item(1, Dgv_Quejas_Total.CurrentRow.Index).Value()
             Me.Close()
@@ -92,5 +94,13 @@ Public Class Frm_Listado_Quejas
         Finally
             GC.Collect()
         End Try
+    End Sub
+
+    Private Sub txt_filtro__TextChanged(sender As Object, e As EventArgs) Handles txt_filtro.TextChanged
+
+    End Sub
+
+    Private Sub txt_filtro_KeyPress(sender As Object, e As KeyPressEventArgs) Handles txt_filtro.KeyPress
+        bs_quejas.Filter = " nombre like '%" & txt_filtro.Text & "%'"
     End Sub
 End Class

@@ -48,8 +48,6 @@ Partial Class Frm_Consulta_Num_Queja
         Me.Lbl_T_Nombre = New System.Windows.Forms.Label()
         Me.Lbl_Motivo = New System.Windows.Forms.Label()
         Me.Lbl__T_Tipo_Queja = New System.Windows.Forms.Label()
-        Me.Lbl_Fax = New System.Windows.Forms.Label()
-        Me.Lbl_T_Fax = New System.Windows.Forms.Label()
         Me.Lbl_Tel_2 = New System.Windows.Forms.Label()
         Me.Lbl_Tel_1 = New System.Windows.Forms.Label()
         Me.Lbl_Telefonos = New System.Windows.Forms.Label()
@@ -86,6 +84,7 @@ Partial Class Frm_Consulta_Num_Queja
         Me.Lbl_Usuario_Procesada = New System.Windows.Forms.Label()
         Me.Lbl_T_Procesada_Por = New System.Windows.Forms.Label()
         Me.SCR_QUEJA_PROCESADATableAdapter = New WindowsApplication1.ExactusERP_SRC_TABLESTableAdapters.SCR_QUEJA_PROCESADATableAdapter()
+        Me.bt_mostrar_todos_datos = New System.Windows.Forms.Button()
         Me.Grb_Detalle.SuspendLayout()
         CType(Me.SCRULTIMOESTADOQUEJABindingSource, System.ComponentModel.ISupportInitialize).BeginInit()
         CType(Me.ExactusERP_SRC_TABLES, System.ComponentModel.ISupportInitialize).BeginInit()
@@ -100,29 +99,30 @@ Partial Class Frm_Consulta_Num_Queja
         '
         'Txt_Num_Queja
         '
-        Me.Txt_Num_Queja.Location = New System.Drawing.Point(56, 12)
+        Me.Txt_Num_Queja.Font = New System.Drawing.Font("Square721 BT", 9.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.Txt_Num_Queja.Location = New System.Drawing.Point(71, 12)
         Me.Txt_Num_Queja.Name = "Txt_Num_Queja"
-        Me.Txt_Num_Queja.Size = New System.Drawing.Size(100, 20)
+        Me.Txt_Num_Queja.Size = New System.Drawing.Size(116, 22)
         Me.Txt_Num_Queja.TabIndex = 0
         '
         'Grb_Detalle
         '
         Me.Grb_Detalle.Controls.Add(Me.Lbl_Detalle)
-        Me.Grb_Detalle.Font = New System.Drawing.Font("Square721 BT", 8.25!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.Grb_Detalle.Location = New System.Drawing.Point(6, 158)
+        Me.Grb_Detalle.Font = New System.Drawing.Font("Square721 BT", 9.0!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.Grb_Detalle.Location = New System.Drawing.Point(6, 192)
         Me.Grb_Detalle.Name = "Grb_Detalle"
-        Me.Grb_Detalle.Size = New System.Drawing.Size(956, 141)
+        Me.Grb_Detalle.Size = New System.Drawing.Size(815, 85)
         Me.Grb_Detalle.TabIndex = 62
         Me.Grb_Detalle.TabStop = False
-        Me.Grb_Detalle.Text = "Descripcion Detallada de la Queja"
+        Me.Grb_Detalle.Text = "DESCRIPCION DETALLADA DE LA QUEJA"
         '
         'Lbl_Detalle
         '
         Me.Lbl_Detalle.DataBindings.Add(New System.Windows.Forms.Binding("Text", Me.SCRULTIMOESTADOQUEJABindingSource, "DETALLE", True))
         Me.Lbl_Detalle.Font = New System.Drawing.Font("Square721 BT", 8.25!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.Lbl_Detalle.Location = New System.Drawing.Point(6, 17)
+        Me.Lbl_Detalle.Location = New System.Drawing.Point(7, 20)
         Me.Lbl_Detalle.Name = "Lbl_Detalle"
-        Me.Lbl_Detalle.Size = New System.Drawing.Size(941, 121)
+        Me.Lbl_Detalle.Size = New System.Drawing.Size(780, 54)
         Me.Lbl_Detalle.TabIndex = 0
         Me.Lbl_Detalle.Text = "Detalle"
         Me.Lbl_Detalle.Visible = False
@@ -141,9 +141,10 @@ Partial Class Frm_Consulta_Num_Queja
         '
         Me.Lbl_Fecha_Estado.AutoSize = True
         Me.Lbl_Fecha_Estado.DataBindings.Add(New System.Windows.Forms.Binding("Text", Me.SCRULTIMOESTADOQUEJABindingSource, "FECHA_ACTUA", True))
-        Me.Lbl_Fecha_Estado.Location = New System.Drawing.Point(664, 140)
+        Me.Lbl_Fecha_Estado.Font = New System.Drawing.Font("Square721 BT", 9.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.Lbl_Fecha_Estado.Location = New System.Drawing.Point(842, 57)
         Me.Lbl_Fecha_Estado.Name = "Lbl_Fecha_Estado"
-        Me.Lbl_Fecha_Estado.Size = New System.Drawing.Size(71, 13)
+        Me.Lbl_Fecha_Estado.Size = New System.Drawing.Size(83, 15)
         Me.Lbl_Fecha_Estado.TabIndex = 61
         Me.Lbl_Fecha_Estado.Text = "Fecha_Actua"
         Me.Lbl_Fecha_Estado.Visible = False
@@ -152,9 +153,10 @@ Partial Class Frm_Consulta_Num_Queja
         '
         Me.Lbl_Estado_Actual.AutoSize = True
         Me.Lbl_Estado_Actual.DataBindings.Add(New System.Windows.Forms.Binding("Text", Me.SCRULTIMOESTADOQUEJABindingSource, "ESTADO", True))
-        Me.Lbl_Estado_Actual.Location = New System.Drawing.Point(571, 140)
+        Me.Lbl_Estado_Actual.Font = New System.Drawing.Font("Square721 BT", 9.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.Lbl_Estado_Actual.Location = New System.Drawing.Point(751, 56)
         Me.Lbl_Estado_Actual.Name = "Lbl_Estado_Actual"
-        Me.Lbl_Estado_Actual.Size = New System.Drawing.Size(76, 13)
+        Me.Lbl_Estado_Actual.Size = New System.Drawing.Size(93, 15)
         Me.Lbl_Estado_Actual.TabIndex = 60
         Me.Lbl_Estado_Actual.Text = "Estado_Actual"
         Me.Lbl_Estado_Actual.Visible = False
@@ -162,20 +164,21 @@ Partial Class Frm_Consulta_Num_Queja
         'Lbl__T_Estado_Actual
         '
         Me.Lbl__T_Estado_Actual.AutoSize = True
-        Me.Lbl__T_Estado_Actual.Font = New System.Drawing.Font("Square721 BT", 8.25!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.Lbl__T_Estado_Actual.Location = New System.Drawing.Point(487, 141)
+        Me.Lbl__T_Estado_Actual.Font = New System.Drawing.Font("Square721 BT", 9.0!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.Lbl__T_Estado_Actual.Location = New System.Drawing.Point(648, 56)
         Me.Lbl__T_Estado_Actual.Name = "Lbl__T_Estado_Actual"
-        Me.Lbl__T_Estado_Actual.Size = New System.Drawing.Size(89, 14)
+        Me.Lbl__T_Estado_Actual.Size = New System.Drawing.Size(97, 15)
         Me.Lbl__T_Estado_Actual.TabIndex = 59
-        Me.Lbl__T_Estado_Actual.Text = "Eatado Actual:"
+        Me.Lbl__T_Estado_Actual.Text = "Estado Actual:"
         '
         'Lbl_Proforma
         '
         Me.Lbl_Proforma.AutoSize = True
         Me.Lbl_Proforma.DataBindings.Add(New System.Windows.Forms.Binding("Text", Me.SCRULTIMOESTADOQUEJABindingSource, "PROFORMA", True))
-        Me.Lbl_Proforma.Location = New System.Drawing.Point(400, 141)
+        Me.Lbl_Proforma.Font = New System.Drawing.Font("Square721 BT", 9.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.Lbl_Proforma.Location = New System.Drawing.Point(518, 172)
         Me.Lbl_Proforma.Name = "Lbl_Proforma"
-        Me.Lbl_Proforma.Size = New System.Drawing.Size(49, 13)
+        Me.Lbl_Proforma.Size = New System.Drawing.Size(63, 15)
         Me.Lbl_Proforma.TabIndex = 58
         Me.Lbl_Proforma.Text = "Proforma"
         Me.Lbl_Proforma.Visible = False
@@ -183,10 +186,10 @@ Partial Class Frm_Consulta_Num_Queja
         'Lbl_T_Proforma
         '
         Me.Lbl_T_Proforma.AutoSize = True
-        Me.Lbl_T_Proforma.Font = New System.Drawing.Font("Square721 BT", 8.25!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.Lbl_T_Proforma.Location = New System.Drawing.Point(340, 141)
+        Me.Lbl_T_Proforma.Font = New System.Drawing.Font("Square721 BT", 9.0!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.Lbl_T_Proforma.Location = New System.Drawing.Point(445, 172)
         Me.Lbl_T_Proforma.Name = "Lbl_T_Proforma"
-        Me.Lbl_T_Proforma.Size = New System.Drawing.Size(62, 14)
+        Me.Lbl_T_Proforma.Size = New System.Drawing.Size(67, 15)
         Me.Lbl_T_Proforma.TabIndex = 57
         Me.Lbl_T_Proforma.Text = "Proforma:"
         '
@@ -194,9 +197,10 @@ Partial Class Frm_Consulta_Num_Queja
         '
         Me.Lbl_Factua.AutoSize = True
         Me.Lbl_Factua.DataBindings.Add(New System.Windows.Forms.Binding("Text", Me.SCRULTIMOESTADOQUEJABindingSource, "FACTURA", True))
-        Me.Lbl_Factua.Location = New System.Drawing.Point(252, 141)
+        Me.Lbl_Factua.Font = New System.Drawing.Font("Square721 BT", 9.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.Lbl_Factua.Location = New System.Drawing.Point(503, 56)
         Me.Lbl_Factua.Name = "Lbl_Factua"
-        Me.Lbl_Factua.Size = New System.Drawing.Size(43, 13)
+        Me.Lbl_Factua.Size = New System.Drawing.Size(54, 15)
         Me.Lbl_Factua.TabIndex = 56
         Me.Lbl_Factua.Text = "Factura"
         Me.Lbl_Factua.Visible = False
@@ -204,10 +208,10 @@ Partial Class Frm_Consulta_Num_Queja
         'Lbl_T_Factua
         '
         Me.Lbl_T_Factua.AutoSize = True
-        Me.Lbl_T_Factua.Font = New System.Drawing.Font("Square721 BT", 8.25!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.Lbl_T_Factua.Location = New System.Drawing.Point(202, 141)
+        Me.Lbl_T_Factua.Font = New System.Drawing.Font("Square721 BT", 9.0!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.Lbl_T_Factua.Location = New System.Drawing.Point(445, 56)
         Me.Lbl_T_Factua.Name = "Lbl_T_Factua"
-        Me.Lbl_T_Factua.Size = New System.Drawing.Size(55, 14)
+        Me.Lbl_T_Factua.Size = New System.Drawing.Size(58, 15)
         Me.Lbl_T_Factua.TabIndex = 55
         Me.Lbl_T_Factua.Text = "Factura:"
         '
@@ -215,9 +219,10 @@ Partial Class Frm_Consulta_Num_Queja
         '
         Me.Lbl_Fecha_Ingreso.AutoSize = True
         Me.Lbl_Fecha_Ingreso.DataBindings.Add(New System.Windows.Forms.Binding("Text", Me.SCRULTIMOESTADOQUEJABindingSource, "FECHA_INGRESO", True))
-        Me.Lbl_Fecha_Ingreso.Location = New System.Drawing.Point(85, 141)
+        Me.Lbl_Fecha_Ingreso.Font = New System.Drawing.Font("Square721 BT", 9.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.Lbl_Fecha_Ingreso.Location = New System.Drawing.Point(751, 87)
         Me.Lbl_Fecha_Ingreso.Name = "Lbl_Fecha_Ingreso"
-        Me.Lbl_Fecha_Ingreso.Size = New System.Drawing.Size(90, 13)
+        Me.Lbl_Fecha_Ingreso.Size = New System.Drawing.Size(108, 15)
         Me.Lbl_Fecha_Ingreso.TabIndex = 54
         Me.Lbl_Fecha_Ingreso.Text = "Fecha de Ingreso"
         Me.Lbl_Fecha_Ingreso.Visible = False
@@ -225,19 +230,20 @@ Partial Class Frm_Consulta_Num_Queja
         'Lbl_T_Fecha_ingreso
         '
         Me.Lbl_T_Fecha_ingreso.AutoSize = True
-        Me.Lbl_T_Fecha_ingreso.Font = New System.Drawing.Font("Square721 BT", 8.25!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.Lbl_T_Fecha_ingreso.Location = New System.Drawing.Point(2, 141)
+        Me.Lbl_T_Fecha_ingreso.Font = New System.Drawing.Font("Square721 BT", 9.0!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.Lbl_T_Fecha_ingreso.Location = New System.Drawing.Point(648, 87)
         Me.Lbl_T_Fecha_ingreso.Name = "Lbl_T_Fecha_ingreso"
-        Me.Lbl_T_Fecha_ingreso.Size = New System.Drawing.Size(88, 14)
+        Me.Lbl_T_Fecha_ingreso.Size = New System.Drawing.Size(95, 15)
         Me.Lbl_T_Fecha_ingreso.TabIndex = 53
         Me.Lbl_T_Fecha_ingreso.Text = "Fecha Ingreso:"
         '
         'Lbl_Direccion
         '
         Me.Lbl_Direccion.DataBindings.Add(New System.Windows.Forms.Binding("Text", Me.SCRULTIMOESTADOQUEJABindingSource, "DIRECCION", True))
-        Me.Lbl_Direccion.Location = New System.Drawing.Point(405, 102)
+        Me.Lbl_Direccion.Font = New System.Drawing.Font("Square721 BT", 9.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.Lbl_Direccion.Location = New System.Drawing.Point(520, 116)
         Me.Lbl_Direccion.Name = "Lbl_Direccion"
-        Me.Lbl_Direccion.Size = New System.Drawing.Size(370, 38)
+        Me.Lbl_Direccion.Size = New System.Drawing.Size(432, 44)
         Me.Lbl_Direccion.TabIndex = 52
         Me.Lbl_Direccion.Text = "Direccion"
         Me.Lbl_Direccion.Visible = False
@@ -245,10 +251,10 @@ Partial Class Frm_Consulta_Num_Queja
         'Lbl_T_Direccion
         '
         Me.Lbl_T_Direccion.AutoSize = True
-        Me.Lbl_T_Direccion.Font = New System.Drawing.Font("Square721 BT", 8.25!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.Lbl_T_Direccion.Location = New System.Drawing.Point(345, 102)
+        Me.Lbl_T_Direccion.Font = New System.Drawing.Font("Square721 BT", 9.0!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.Lbl_T_Direccion.Location = New System.Drawing.Point(445, 116)
         Me.Lbl_T_Direccion.Name = "Lbl_T_Direccion"
-        Me.Lbl_T_Direccion.Size = New System.Drawing.Size(63, 14)
+        Me.Lbl_T_Direccion.Size = New System.Drawing.Size(69, 15)
         Me.Lbl_T_Direccion.TabIndex = 51
         Me.Lbl_T_Direccion.Text = "Direccion:"
         '
@@ -256,9 +262,10 @@ Partial Class Frm_Consulta_Num_Queja
         '
         Me.Lbl_Contacto.AutoSize = True
         Me.Lbl_Contacto.DataBindings.Add(New System.Windows.Forms.Binding("Text", Me.SCRULTIMOESTADOQUEJABindingSource, "CONTACTO", True))
-        Me.Lbl_Contacto.Location = New System.Drawing.Point(58, 117)
+        Me.Lbl_Contacto.Font = New System.Drawing.Font("Square721 BT", 9.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.Lbl_Contacto.Location = New System.Drawing.Point(68, 135)
         Me.Lbl_Contacto.Name = "Lbl_Contacto"
-        Me.Lbl_Contacto.Size = New System.Drawing.Size(50, 13)
+        Me.Lbl_Contacto.Size = New System.Drawing.Size(62, 15)
         Me.Lbl_Contacto.TabIndex = 50
         Me.Lbl_Contacto.Text = "Contacto"
         Me.Lbl_Contacto.Visible = False
@@ -266,10 +273,10 @@ Partial Class Frm_Consulta_Num_Queja
         'Lbl_T_Contacto
         '
         Me.Lbl_T_Contacto.AutoSize = True
-        Me.Lbl_T_Contacto.Font = New System.Drawing.Font("Square721 BT", 8.25!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.Lbl_T_Contacto.Location = New System.Drawing.Point(2, 117)
+        Me.Lbl_T_Contacto.Font = New System.Drawing.Font("Square721 BT", 9.0!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.Lbl_T_Contacto.Location = New System.Drawing.Point(2, 135)
         Me.Lbl_T_Contacto.Name = "Lbl_T_Contacto"
-        Me.Lbl_T_Contacto.Size = New System.Drawing.Size(62, 14)
+        Me.Lbl_T_Contacto.Size = New System.Drawing.Size(66, 15)
         Me.Lbl_T_Contacto.TabIndex = 49
         Me.Lbl_T_Contacto.Text = "Contacto:"
         '
@@ -277,9 +284,10 @@ Partial Class Frm_Consulta_Num_Queja
         '
         Me.Lbl_Alias.AutoSize = True
         Me.Lbl_Alias.DataBindings.Add(New System.Windows.Forms.Binding("Text", Me.SCRULTIMOESTADOQUEJABindingSource, "ALIAS", True))
-        Me.Lbl_Alias.Location = New System.Drawing.Point(379, 75)
+        Me.Lbl_Alias.Font = New System.Drawing.Font("Square721 BT", 9.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.Lbl_Alias.Location = New System.Drawing.Point(490, 85)
         Me.Lbl_Alias.Name = "Lbl_Alias"
-        Me.Lbl_Alias.Size = New System.Drawing.Size(29, 13)
+        Me.Lbl_Alias.Size = New System.Drawing.Size(35, 15)
         Me.Lbl_Alias.TabIndex = 48
         Me.Lbl_Alias.Text = "Alias"
         Me.Lbl_Alias.Visible = False
@@ -287,19 +295,20 @@ Partial Class Frm_Consulta_Num_Queja
         'Lbl_T_Alias
         '
         Me.Lbl_T_Alias.AutoSize = True
-        Me.Lbl_T_Alias.Font = New System.Drawing.Font("Square721 BT", 8.25!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.Lbl_T_Alias.Location = New System.Drawing.Point(345, 75)
+        Me.Lbl_T_Alias.Font = New System.Drawing.Font("Square721 BT", 9.0!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.Lbl_T_Alias.Location = New System.Drawing.Point(445, 85)
         Me.Lbl_T_Alias.Name = "Lbl_T_Alias"
-        Me.Lbl_T_Alias.Size = New System.Drawing.Size(37, 14)
+        Me.Lbl_T_Alias.Size = New System.Drawing.Size(42, 15)
         Me.Lbl_T_Alias.TabIndex = 47
         Me.Lbl_T_Alias.Text = "Alias:"
         '
         'Lbl_Nombre
         '
         Me.Lbl_Nombre.DataBindings.Add(New System.Windows.Forms.Binding("Text", Me.SCRULTIMOESTADOQUEJABindingSource, "NOMBRE", True))
-        Me.Lbl_Nombre.Location = New System.Drawing.Point(52, 75)
+        Me.Lbl_Nombre.Font = New System.Drawing.Font("Square721 BT", 9.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.Lbl_Nombre.Location = New System.Drawing.Point(61, 87)
         Me.Lbl_Nombre.Name = "Lbl_Nombre"
-        Me.Lbl_Nombre.Size = New System.Drawing.Size(288, 32)
+        Me.Lbl_Nombre.Size = New System.Drawing.Size(336, 37)
         Me.Lbl_Nombre.TabIndex = 46
         Me.Lbl_Nombre.Text = "Nombre"
         Me.Lbl_Nombre.Visible = False
@@ -307,10 +316,10 @@ Partial Class Frm_Consulta_Num_Queja
         'Lbl_T_Nombre
         '
         Me.Lbl_T_Nombre.AutoSize = True
-        Me.Lbl_T_Nombre.Font = New System.Drawing.Font("Square721 BT", 8.25!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.Lbl_T_Nombre.Location = New System.Drawing.Point(2, 75)
+        Me.Lbl_T_Nombre.Font = New System.Drawing.Font("Square721 BT", 9.0!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.Lbl_T_Nombre.Location = New System.Drawing.Point(2, 87)
         Me.Lbl_T_Nombre.Name = "Lbl_T_Nombre"
-        Me.Lbl_T_Nombre.Size = New System.Drawing.Size(53, 14)
+        Me.Lbl_T_Nombre.Size = New System.Drawing.Size(58, 15)
         Me.Lbl_T_Nombre.TabIndex = 45
         Me.Lbl_T_Nombre.Text = "Nombre:"
         '
@@ -318,9 +327,10 @@ Partial Class Frm_Consulta_Num_Queja
         '
         Me.Lbl_Motivo.AutoSize = True
         Me.Lbl_Motivo.DataBindings.Add(New System.Windows.Forms.Binding("Text", Me.SCRULTIMOESTADOQUEJABindingSource, "TIPO_QUEJA", True))
-        Me.Lbl_Motivo.Location = New System.Drawing.Point(223, 14)
+        Me.Lbl_Motivo.Font = New System.Drawing.Font("Square721 BT", 9.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.Lbl_Motivo.Location = New System.Drawing.Point(697, 172)
         Me.Lbl_Motivo.Name = "Lbl_Motivo"
-        Me.Lbl_Motivo.Size = New System.Drawing.Size(39, 13)
+        Me.Lbl_Motivo.Size = New System.Drawing.Size(47, 15)
         Me.Lbl_Motivo.TabIndex = 44
         Me.Lbl_Motivo.Text = "Motivo"
         Me.Lbl_Motivo.Visible = False
@@ -328,41 +338,21 @@ Partial Class Frm_Consulta_Num_Queja
         'Lbl__T_Tipo_Queja
         '
         Me.Lbl__T_Tipo_Queja.AutoSize = True
-        Me.Lbl__T_Tipo_Queja.Font = New System.Drawing.Font("Square721 BT", 8.25!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.Lbl__T_Tipo_Queja.Location = New System.Drawing.Point(181, 14)
+        Me.Lbl__T_Tipo_Queja.Font = New System.Drawing.Font("Square721 BT", 9.0!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.Lbl__T_Tipo_Queja.Location = New System.Drawing.Point(648, 172)
         Me.Lbl__T_Tipo_Queja.Name = "Lbl__T_Tipo_Queja"
-        Me.Lbl__T_Tipo_Queja.Size = New System.Drawing.Size(49, 14)
+        Me.Lbl__T_Tipo_Queja.Size = New System.Drawing.Size(54, 15)
         Me.Lbl__T_Tipo_Queja.TabIndex = 43
         Me.Lbl__T_Tipo_Queja.Text = "Motivo:"
-        '
-        'Lbl_Fax
-        '
-        Me.Lbl_Fax.AutoSize = True
-        Me.Lbl_Fax.DataBindings.Add(New System.Windows.Forms.Binding("Text", Me.SCRULTIMOESTADOQUEJABindingSource, "FAX", True))
-        Me.Lbl_Fax.Location = New System.Drawing.Point(385, 50)
-        Me.Lbl_Fax.Name = "Lbl_Fax"
-        Me.Lbl_Fax.Size = New System.Drawing.Size(52, 13)
-        Me.Lbl_Fax.TabIndex = 42
-        Me.Lbl_Fax.Text = "Num_Fax"
-        Me.Lbl_Fax.Visible = False
-        '
-        'Lbl_T_Fax
-        '
-        Me.Lbl_T_Fax.AutoSize = True
-        Me.Lbl_T_Fax.Font = New System.Drawing.Font("Square721 BT", 8.25!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.Lbl_T_Fax.Location = New System.Drawing.Point(357, 50)
-        Me.Lbl_T_Fax.Name = "Lbl_T_Fax"
-        Me.Lbl_T_Fax.Size = New System.Drawing.Size(30, 14)
-        Me.Lbl_T_Fax.TabIndex = 41
-        Me.Lbl_T_Fax.Text = "Fax:"
         '
         'Lbl_Tel_2
         '
         Me.Lbl_Tel_2.AutoSize = True
         Me.Lbl_Tel_2.DataBindings.Add(New System.Windows.Forms.Binding("Text", Me.SCRULTIMOESTADOQUEJABindingSource, "TELEFONO2", True))
-        Me.Lbl_Tel_2.Location = New System.Drawing.Point(271, 50)
+        Me.Lbl_Tel_2.Font = New System.Drawing.Font("Square721 BT", 9.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.Lbl_Tel_2.Location = New System.Drawing.Point(316, 58)
         Me.Lbl_Tel_2.Name = "Lbl_Tel_2"
-        Me.Lbl_Tel_2.Size = New System.Drawing.Size(61, 13)
+        Me.Lbl_Tel_2.Size = New System.Drawing.Size(69, 15)
         Me.Lbl_Tel_2.TabIndex = 40
         Me.Lbl_Tel_2.Text = "Telefono_2"
         Me.Lbl_Tel_2.Visible = False
@@ -371,9 +361,10 @@ Partial Class Frm_Consulta_Num_Queja
         '
         Me.Lbl_Tel_1.AutoSize = True
         Me.Lbl_Tel_1.DataBindings.Add(New System.Windows.Forms.Binding("Text", Me.SCRULTIMOESTADOQUEJABindingSource, "TELEFONO1", True))
-        Me.Lbl_Tel_1.Location = New System.Drawing.Point(202, 50)
+        Me.Lbl_Tel_1.Font = New System.Drawing.Font("Square721 BT", 9.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.Lbl_Tel_1.Location = New System.Drawing.Point(236, 58)
         Me.Lbl_Tel_1.Name = "Lbl_Tel_1"
-        Me.Lbl_Tel_1.Size = New System.Drawing.Size(61, 13)
+        Me.Lbl_Tel_1.Size = New System.Drawing.Size(69, 15)
         Me.Lbl_Tel_1.TabIndex = 39
         Me.Lbl_Tel_1.Text = "Telefono_1"
         Me.Lbl_Tel_1.Visible = False
@@ -381,10 +372,10 @@ Partial Class Frm_Consulta_Num_Queja
         'Lbl_Telefonos
         '
         Me.Lbl_Telefonos.AutoSize = True
-        Me.Lbl_Telefonos.Font = New System.Drawing.Font("Square721 BT", 8.25!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.Lbl_Telefonos.Location = New System.Drawing.Point(145, 50)
+        Me.Lbl_Telefonos.Font = New System.Drawing.Font("Square721 BT", 9.0!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.Lbl_Telefonos.Location = New System.Drawing.Point(169, 58)
         Me.Lbl_Telefonos.Name = "Lbl_Telefonos"
-        Me.Lbl_Telefonos.Size = New System.Drawing.Size(62, 14)
+        Me.Lbl_Telefonos.Size = New System.Drawing.Size(69, 15)
         Me.Lbl_Telefonos.TabIndex = 38
         Me.Lbl_Telefonos.Text = "Telefonos:"
         '
@@ -392,9 +383,10 @@ Partial Class Frm_Consulta_Num_Queja
         '
         Me.Lbl_Cod_Cliente.AutoSize = True
         Me.Lbl_Cod_Cliente.DataBindings.Add(New System.Windows.Forms.Binding("Text", Me.SCRULTIMOESTADOQUEJABindingSource, "CLIENTE", True))
-        Me.Lbl_Cod_Cliente.Location = New System.Drawing.Point(51, 50)
+        Me.Lbl_Cod_Cliente.Font = New System.Drawing.Font("Square721 BT", 9.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.Lbl_Cod_Cliente.Location = New System.Drawing.Point(59, 58)
         Me.Lbl_Cod_Cliente.Name = "Lbl_Cod_Cliente"
-        Me.Lbl_Cod_Cliente.Size = New System.Drawing.Size(64, 13)
+        Me.Lbl_Cod_Cliente.Size = New System.Drawing.Size(76, 15)
         Me.Lbl_Cod_Cliente.TabIndex = 37
         Me.Lbl_Cod_Cliente.Text = "Cod_Cliente"
         Me.Lbl_Cod_Cliente.Visible = False
@@ -402,20 +394,20 @@ Partial Class Frm_Consulta_Num_Queja
         'Lbl_T_Cod_Cliente
         '
         Me.Lbl_T_Cod_Cliente.AutoSize = True
-        Me.Lbl_T_Cod_Cliente.Font = New System.Drawing.Font("Square721 BT", 8.25!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.Lbl_T_Cod_Cliente.Location = New System.Drawing.Point(2, 50)
+        Me.Lbl_T_Cod_Cliente.Font = New System.Drawing.Font("Square721 BT", 9.0!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.Lbl_T_Cod_Cliente.Location = New System.Drawing.Point(2, 58)
         Me.Lbl_T_Cod_Cliente.Name = "Lbl_T_Cod_Cliente"
-        Me.Lbl_T_Cod_Cliente.Size = New System.Drawing.Size(50, 14)
+        Me.Lbl_T_Cod_Cliente.Size = New System.Drawing.Size(54, 15)
         Me.Lbl_T_Cod_Cliente.TabIndex = 36
         Me.Lbl_T_Cod_Cliente.Text = "Cliente:"
         '
         'Lbl_Num_Queja
         '
         Me.Lbl_Num_Queja.AutoSize = True
-        Me.Lbl_Num_Queja.Font = New System.Drawing.Font("Square721 BT", 8.25!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.Lbl_Num_Queja.Location = New System.Drawing.Point(2, 14)
+        Me.Lbl_Num_Queja.Font = New System.Drawing.Font("Square721 BT", 9.0!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.Lbl_Num_Queja.Location = New System.Drawing.Point(8, 14)
         Me.Lbl_Num_Queja.Name = "Lbl_Num_Queja"
-        Me.Lbl_Num_Queja.Size = New System.Drawing.Size(53, 14)
+        Me.Lbl_Num_Queja.Size = New System.Drawing.Size(58, 15)
         Me.Lbl_Num_Queja.TabIndex = 35
         Me.Lbl_Num_Queja.Text = "# Queja:"
         '
@@ -429,22 +421,22 @@ Partial Class Frm_Consulta_Num_Queja
         Me.Grb_Solucion.Controls.Add(Me.Lbl_Fecha_Solucion)
         Me.Grb_Solucion.Controls.Add(Me.Lbl_Usuario_Solucion)
         Me.Grb_Solucion.Controls.Add(Me.Lbl_Solucionado_Por)
-        Me.Grb_Solucion.Font = New System.Drawing.Font("Square721 BT", 8.25!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.Grb_Solucion.Location = New System.Drawing.Point(5, 414)
+        Me.Grb_Solucion.Font = New System.Drawing.Font("Square721 BT", 9.0!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.Grb_Solucion.Location = New System.Drawing.Point(5, 425)
         Me.Grb_Solucion.Name = "Grb_Solucion"
-        Me.Grb_Solucion.Size = New System.Drawing.Size(956, 100)
+        Me.Grb_Solucion.Size = New System.Drawing.Size(816, 115)
         Me.Grb_Solucion.TabIndex = 63
         Me.Grb_Solucion.TabStop = False
-        Me.Grb_Solucion.Text = "Solucion"
+        Me.Grb_Solucion.Text = "SOLUCION"
         '
         'Lbl_Chequeo
         '
         Me.Lbl_Chequeo.AutoSize = True
         Me.Lbl_Chequeo.DataBindings.Add(New System.Windows.Forms.Binding("Text", Me.SCRSOLUCIONQUEJABindingSource, "CHEQUEO", True))
-        Me.Lbl_Chequeo.Font = New System.Drawing.Font("Square721 BT", 8.25!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.Lbl_Chequeo.Location = New System.Drawing.Point(669, 17)
+        Me.Lbl_Chequeo.Font = New System.Drawing.Font("Square721 BT", 9.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.Lbl_Chequeo.Location = New System.Drawing.Point(475, 53)
         Me.Lbl_Chequeo.Name = "Lbl_Chequeo"
-        Me.Lbl_Chequeo.Size = New System.Drawing.Size(51, 14)
+        Me.Lbl_Chequeo.Size = New System.Drawing.Size(57, 15)
         Me.Lbl_Chequeo.TabIndex = 7
         Me.Lbl_Chequeo.Text = "Chequeo"
         Me.Lbl_Chequeo.Visible = False
@@ -457,9 +449,10 @@ Partial Class Frm_Consulta_Num_Queja
         'Lbl_T_Chequeo
         '
         Me.Lbl_T_Chequeo.AutoSize = True
-        Me.Lbl_T_Chequeo.Location = New System.Drawing.Point(614, 17)
+        Me.Lbl_T_Chequeo.Font = New System.Drawing.Font("Square721 BT", 9.0!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.Lbl_T_Chequeo.Location = New System.Drawing.Point(411, 53)
         Me.Lbl_T_Chequeo.Name = "Lbl_T_Chequeo"
-        Me.Lbl_T_Chequeo.Size = New System.Drawing.Size(57, 14)
+        Me.Lbl_T_Chequeo.Size = New System.Drawing.Size(61, 15)
         Me.Lbl_T_Chequeo.TabIndex = 6
         Me.Lbl_T_Chequeo.Text = "Chequeo:"
         '
@@ -467,10 +460,10 @@ Partial Class Frm_Consulta_Num_Queja
         '
         Me.Lbl_Alisto.AutoSize = True
         Me.Lbl_Alisto.DataBindings.Add(New System.Windows.Forms.Binding("Text", Me.SCRSOLUCIONQUEJABindingSource, "ALISTO", True))
-        Me.Lbl_Alisto.Font = New System.Drawing.Font("Square721 BT", 8.25!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.Lbl_Alisto.Location = New System.Drawing.Point(394, 17)
+        Me.Lbl_Alisto.Font = New System.Drawing.Font("Square721 BT", 9.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.Lbl_Alisto.Location = New System.Drawing.Point(460, 20)
         Me.Lbl_Alisto.Name = "Lbl_Alisto"
-        Me.Lbl_Alisto.Size = New System.Drawing.Size(38, 14)
+        Me.Lbl_Alisto.Size = New System.Drawing.Size(41, 15)
         Me.Lbl_Alisto.TabIndex = 5
         Me.Lbl_Alisto.Text = "Alisto"
         Me.Lbl_Alisto.Visible = False
@@ -478,19 +471,20 @@ Partial Class Frm_Consulta_Num_Queja
         'Lbl_T_Alisto
         '
         Me.Lbl_T_Alisto.AutoSize = True
-        Me.Lbl_T_Alisto.Location = New System.Drawing.Point(351, 17)
+        Me.Lbl_T_Alisto.Font = New System.Drawing.Font("Square721 BT", 9.0!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.Lbl_T_Alisto.Location = New System.Drawing.Point(409, 20)
         Me.Lbl_T_Alisto.Name = "Lbl_T_Alisto"
-        Me.Lbl_T_Alisto.Size = New System.Drawing.Size(43, 14)
+        Me.Lbl_T_Alisto.Size = New System.Drawing.Size(48, 15)
         Me.Lbl_T_Alisto.TabIndex = 4
         Me.Lbl_T_Alisto.Text = "Alisto:"
         '
         'Lbl_Solucion
         '
         Me.Lbl_Solucion.DataBindings.Add(New System.Windows.Forms.Binding("Text", Me.SCRSOLUCIONQUEJABindingSource, "SOLUCION", True))
-        Me.Lbl_Solucion.Font = New System.Drawing.Font("Square721 BT", 8.25!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.Lbl_Solucion.Location = New System.Drawing.Point(8, 31)
+        Me.Lbl_Solucion.Font = New System.Drawing.Font("Square721 BT", 9.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.Lbl_Solucion.Location = New System.Drawing.Point(9, 36)
         Me.Lbl_Solucion.Name = "Lbl_Solucion"
-        Me.Lbl_Solucion.Size = New System.Drawing.Size(942, 66)
+        Me.Lbl_Solucion.Size = New System.Drawing.Size(392, 65)
         Me.Lbl_Solucion.TabIndex = 3
         Me.Lbl_Solucion.Text = "Solucion"
         Me.Lbl_Solucion.Visible = False
@@ -499,10 +493,10 @@ Partial Class Frm_Consulta_Num_Queja
         '
         Me.Lbl_Fecha_Solucion.AutoSize = True
         Me.Lbl_Fecha_Solucion.DataBindings.Add(New System.Windows.Forms.Binding("Text", Me.SCRSOLUCIONQUEJABindingSource, "FECHA_HORA", True))
-        Me.Lbl_Fecha_Solucion.Font = New System.Drawing.Font("Square721 BT", 8.25!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.Lbl_Fecha_Solucion.Location = New System.Drawing.Point(213, 17)
+        Me.Lbl_Fecha_Solucion.Font = New System.Drawing.Font("Square721 BT", 9.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.Lbl_Fecha_Solucion.Location = New System.Drawing.Point(248, 20)
         Me.Lbl_Fecha_Solucion.Name = "Lbl_Fecha_Solucion"
-        Me.Lbl_Fecha_Solucion.Size = New System.Drawing.Size(38, 14)
+        Me.Lbl_Fecha_Solucion.Size = New System.Drawing.Size(42, 15)
         Me.Lbl_Fecha_Solucion.TabIndex = 2
         Me.Lbl_Fecha_Solucion.Text = "Fecha"
         Me.Lbl_Fecha_Solucion.Visible = False
@@ -511,10 +505,10 @@ Partial Class Frm_Consulta_Num_Queja
         '
         Me.Lbl_Usuario_Solucion.AutoSize = True
         Me.Lbl_Usuario_Solucion.DataBindings.Add(New System.Windows.Forms.Binding("Text", Me.SCRSOLUCIONQUEJABindingSource, "USUARIO", True))
-        Me.Lbl_Usuario_Solucion.Font = New System.Drawing.Font("Square721 BT", 8.25!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.Lbl_Usuario_Solucion.Location = New System.Drawing.Point(100, 17)
+        Me.Lbl_Usuario_Solucion.Font = New System.Drawing.Font("Square721 BT", 9.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.Lbl_Usuario_Solucion.Location = New System.Drawing.Point(117, 20)
         Me.Lbl_Usuario_Solucion.Name = "Lbl_Usuario_Solucion"
-        Me.Lbl_Usuario_Solucion.Size = New System.Drawing.Size(103, 14)
+        Me.Lbl_Usuario_Solucion.Size = New System.Drawing.Size(116, 15)
         Me.Lbl_Usuario_Solucion.TabIndex = 1
         Me.Lbl_Usuario_Solucion.Text = "Usuario_Soluciuon"
         Me.Lbl_Usuario_Solucion.Visible = False
@@ -522,23 +516,23 @@ Partial Class Frm_Consulta_Num_Queja
         'Lbl_Solucionado_Por
         '
         Me.Lbl_Solucionado_Por.AutoSize = True
-        Me.Lbl_Solucionado_Por.Font = New System.Drawing.Font("Square721 BT", 8.25!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.Lbl_Solucionado_Por.Location = New System.Drawing.Point(8, 17)
+        Me.Lbl_Solucionado_Por.Font = New System.Drawing.Font("Square721 BT", 9.0!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.Lbl_Solucionado_Por.Location = New System.Drawing.Point(9, 20)
         Me.Lbl_Solucionado_Por.Name = "Lbl_Solucionado_Por"
-        Me.Lbl_Solucionado_Por.Size = New System.Drawing.Size(95, 14)
+        Me.Lbl_Solucionado_Por.Size = New System.Drawing.Size(109, 15)
         Me.Lbl_Solucionado_Por.TabIndex = 0
         Me.Lbl_Solucionado_Por.Text = "Solucionado Por:"
         '
         'Grb_Lista_Estados
         '
         Me.Grb_Lista_Estados.Controls.Add(Me.Dgv_Estados)
-        Me.Grb_Lista_Estados.Font = New System.Drawing.Font("Square721 BT", 8.25!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.Grb_Lista_Estados.Location = New System.Drawing.Point(5, 520)
+        Me.Grb_Lista_Estados.Font = New System.Drawing.Font("Square721 BT", 9.0!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.Grb_Lista_Estados.Location = New System.Drawing.Point(830, 192)
         Me.Grb_Lista_Estados.Name = "Grb_Lista_Estados"
-        Me.Grb_Lista_Estados.Size = New System.Drawing.Size(465, 156)
+        Me.Grb_Lista_Estados.Size = New System.Drawing.Size(431, 202)
         Me.Grb_Lista_Estados.TabIndex = 64
         Me.Grb_Lista_Estados.TabStop = False
-        Me.Grb_Lista_Estados.Text = "Lista de Estados"
+        Me.Grb_Lista_Estados.Text = "LISTA DE ESTADOS"
         '
         'Dgv_Estados
         '
@@ -548,10 +542,10 @@ Partial Class Frm_Consulta_Num_Queja
         Me.Dgv_Estados.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize
         Me.Dgv_Estados.Columns.AddRange(New System.Windows.Forms.DataGridViewColumn() {Me.ESTADODataGridViewTextBoxColumn, Me.USUARIODataGridViewTextBoxColumn, Me.FECHA})
         Me.Dgv_Estados.DataSource = Me.SCRESTADOQUEJABindingSource
-        Me.Dgv_Estados.Location = New System.Drawing.Point(18, 20)
+        Me.Dgv_Estados.Location = New System.Drawing.Point(33, 33)
         Me.Dgv_Estados.Name = "Dgv_Estados"
         Me.Dgv_Estados.ReadOnly = True
-        Me.Dgv_Estados.Size = New System.Drawing.Size(441, 130)
+        Me.Dgv_Estados.Size = New System.Drawing.Size(365, 150)
         Me.Dgv_Estados.TabIndex = 0
         Me.Dgv_Estados.Visible = False
         '
@@ -603,22 +597,22 @@ Partial Class Frm_Consulta_Num_Queja
         Me.Grb_Procesada.Controls.Add(Me.Lbl_Procesada)
         Me.Grb_Procesada.Controls.Add(Me.Lbl_Usuario_Procesada)
         Me.Grb_Procesada.Controls.Add(Me.Lbl_T_Procesada_Por)
-        Me.Grb_Procesada.Font = New System.Drawing.Font("Square721 BT", 8.25!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.Grb_Procesada.Location = New System.Drawing.Point(5, 305)
+        Me.Grb_Procesada.Font = New System.Drawing.Font("Square721 BT", 9.0!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.Grb_Procesada.Location = New System.Drawing.Point(5, 283)
         Me.Grb_Procesada.Name = "Grb_Procesada"
-        Me.Grb_Procesada.Size = New System.Drawing.Size(957, 103)
+        Me.Grb_Procesada.Size = New System.Drawing.Size(816, 119)
         Me.Grb_Procesada.TabIndex = 65
         Me.Grb_Procesada.TabStop = False
-        Me.Grb_Procesada.Text = "Procesada"
+        Me.Grb_Procesada.Text = "PROCESADA"
         '
         'Lbl_Chequeo_P
         '
         Me.Lbl_Chequeo_P.AutoSize = True
         Me.Lbl_Chequeo_P.DataBindings.Add(New System.Windows.Forms.Binding("Text", Me.SCRQUEJAPROCESADABindingSource, "CHUEQUEO", True))
-        Me.Lbl_Chequeo_P.Font = New System.Drawing.Font("Square721 BT", 8.25!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.Lbl_Chequeo_P.Location = New System.Drawing.Point(668, 30)
+        Me.Lbl_Chequeo_P.Font = New System.Drawing.Font("Square721 BT", 9.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.Lbl_Chequeo_P.Location = New System.Drawing.Point(472, 67)
         Me.Lbl_Chequeo_P.Name = "Lbl_Chequeo_P"
-        Me.Lbl_Chequeo_P.Size = New System.Drawing.Size(51, 14)
+        Me.Lbl_Chequeo_P.Size = New System.Drawing.Size(57, 15)
         Me.Lbl_Chequeo_P.TabIndex = 15
         Me.Lbl_Chequeo_P.Text = "Chequeo"
         Me.Lbl_Chequeo_P.Visible = False
@@ -631,9 +625,10 @@ Partial Class Frm_Consulta_Num_Queja
         'Lbl_T_Chequeo_Procesada
         '
         Me.Lbl_T_Chequeo_Procesada.AutoSize = True
-        Me.Lbl_T_Chequeo_Procesada.Location = New System.Drawing.Point(613, 30)
+        Me.Lbl_T_Chequeo_Procesada.Font = New System.Drawing.Font("Square721 BT", 9.0!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.Lbl_T_Chequeo_Procesada.Location = New System.Drawing.Point(408, 67)
         Me.Lbl_T_Chequeo_Procesada.Name = "Lbl_T_Chequeo_Procesada"
-        Me.Lbl_T_Chequeo_Procesada.Size = New System.Drawing.Size(57, 14)
+        Me.Lbl_T_Chequeo_Procesada.Size = New System.Drawing.Size(61, 15)
         Me.Lbl_T_Chequeo_Procesada.TabIndex = 14
         Me.Lbl_T_Chequeo_Procesada.Text = "Chequeo:"
         '
@@ -641,10 +636,10 @@ Partial Class Frm_Consulta_Num_Queja
         '
         Me.Lbl_Alisto_P.AutoSize = True
         Me.Lbl_Alisto_P.DataBindings.Add(New System.Windows.Forms.Binding("Text", Me.SCRQUEJAPROCESADABindingSource, "ALISTO", True))
-        Me.Lbl_Alisto_P.Font = New System.Drawing.Font("Square721 BT", 8.25!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.Lbl_Alisto_P.Location = New System.Drawing.Point(393, 30)
+        Me.Lbl_Alisto_P.Font = New System.Drawing.Font("Square721 BT", 9.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.Lbl_Alisto_P.Location = New System.Drawing.Point(458, 35)
         Me.Lbl_Alisto_P.Name = "Lbl_Alisto_P"
-        Me.Lbl_Alisto_P.Size = New System.Drawing.Size(38, 14)
+        Me.Lbl_Alisto_P.Size = New System.Drawing.Size(41, 15)
         Me.Lbl_Alisto_P.TabIndex = 13
         Me.Lbl_Alisto_P.Text = "Alisto"
         Me.Lbl_Alisto_P.Visible = False
@@ -652,19 +647,20 @@ Partial Class Frm_Consulta_Num_Queja
         'Lbl_Alisto_T
         '
         Me.Lbl_Alisto_T.AutoSize = True
-        Me.Lbl_Alisto_T.Location = New System.Drawing.Point(350, 30)
+        Me.Lbl_Alisto_T.Font = New System.Drawing.Font("Square721 BT", 9.0!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.Lbl_Alisto_T.Location = New System.Drawing.Point(408, 35)
         Me.Lbl_Alisto_T.Name = "Lbl_Alisto_T"
-        Me.Lbl_Alisto_T.Size = New System.Drawing.Size(43, 14)
+        Me.Lbl_Alisto_T.Size = New System.Drawing.Size(48, 15)
         Me.Lbl_Alisto_T.TabIndex = 12
         Me.Lbl_Alisto_T.Text = "Alisto:"
         '
         'Lbl_Comentario_Procesada
         '
         Me.Lbl_Comentario_Procesada.DataBindings.Add(New System.Windows.Forms.Binding("Text", Me.SCRQUEJAPROCESADABindingSource, "SOLUCION", True))
-        Me.Lbl_Comentario_Procesada.Font = New System.Drawing.Font("Square721 BT", 8.25!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.Lbl_Comentario_Procesada.Location = New System.Drawing.Point(7, 44)
+        Me.Lbl_Comentario_Procesada.Font = New System.Drawing.Font("Square721 BT", 9.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.Lbl_Comentario_Procesada.Location = New System.Drawing.Point(8, 51)
         Me.Lbl_Comentario_Procesada.Name = "Lbl_Comentario_Procesada"
-        Me.Lbl_Comentario_Procesada.Size = New System.Drawing.Size(942, 50)
+        Me.Lbl_Comentario_Procesada.Size = New System.Drawing.Size(384, 58)
         Me.Lbl_Comentario_Procesada.TabIndex = 11
         Me.Lbl_Comentario_Procesada.Text = "Procesada"
         Me.Lbl_Comentario_Procesada.Visible = False
@@ -673,10 +669,10 @@ Partial Class Frm_Consulta_Num_Queja
         '
         Me.Lbl_Procesada.AutoSize = True
         Me.Lbl_Procesada.DataBindings.Add(New System.Windows.Forms.Binding("Text", Me.SCRQUEJAPROCESADABindingSource, "FECHA_HORA", True))
-        Me.Lbl_Procesada.Font = New System.Drawing.Font("Square721 BT", 8.25!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.Lbl_Procesada.Location = New System.Drawing.Point(212, 30)
+        Me.Lbl_Procesada.Font = New System.Drawing.Font("Square721 BT", 9.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.Lbl_Procesada.Location = New System.Drawing.Point(247, 35)
         Me.Lbl_Procesada.Name = "Lbl_Procesada"
-        Me.Lbl_Procesada.Size = New System.Drawing.Size(38, 14)
+        Me.Lbl_Procesada.Size = New System.Drawing.Size(42, 15)
         Me.Lbl_Procesada.TabIndex = 10
         Me.Lbl_Procesada.Text = "Fecha"
         Me.Lbl_Procesada.Visible = False
@@ -685,10 +681,10 @@ Partial Class Frm_Consulta_Num_Queja
         '
         Me.Lbl_Usuario_Procesada.AutoSize = True
         Me.Lbl_Usuario_Procesada.DataBindings.Add(New System.Windows.Forms.Binding("Text", Me.SCRQUEJAPROCESADABindingSource, "USUARIO", True))
-        Me.Lbl_Usuario_Procesada.Font = New System.Drawing.Font("Square721 BT", 8.25!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.Lbl_Usuario_Procesada.Location = New System.Drawing.Point(99, 30)
+        Me.Lbl_Usuario_Procesada.Font = New System.Drawing.Font("Square721 BT", 9.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.Lbl_Usuario_Procesada.Location = New System.Drawing.Point(115, 35)
         Me.Lbl_Usuario_Procesada.Name = "Lbl_Usuario_Procesada"
-        Me.Lbl_Usuario_Procesada.Size = New System.Drawing.Size(107, 14)
+        Me.Lbl_Usuario_Procesada.Size = New System.Drawing.Size(122, 15)
         Me.Lbl_Usuario_Procesada.TabIndex = 9
         Me.Lbl_Usuario_Procesada.Text = "Usuario_Procesada"
         Me.Lbl_Usuario_Procesada.Visible = False
@@ -696,10 +692,10 @@ Partial Class Frm_Consulta_Num_Queja
         'Lbl_T_Procesada_Por
         '
         Me.Lbl_T_Procesada_Por.AutoSize = True
-        Me.Lbl_T_Procesada_Por.Font = New System.Drawing.Font("Square721 BT", 8.25!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.Lbl_T_Procesada_Por.Location = New System.Drawing.Point(7, 30)
+        Me.Lbl_T_Procesada_Por.Font = New System.Drawing.Font("Square721 BT", 9.0!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.Lbl_T_Procesada_Por.Location = New System.Drawing.Point(8, 35)
         Me.Lbl_T_Procesada_Por.Name = "Lbl_T_Procesada_Por"
-        Me.Lbl_T_Procesada_Por.Size = New System.Drawing.Size(87, 14)
+        Me.Lbl_T_Procesada_Por.Size = New System.Drawing.Size(101, 15)
         Me.Lbl_T_Procesada_Por.TabIndex = 8
         Me.Lbl_T_Procesada_Por.Text = "Procesada Por:"
         '
@@ -707,13 +703,24 @@ Partial Class Frm_Consulta_Num_Queja
         '
         Me.SCR_QUEJA_PROCESADATableAdapter.ClearBeforeFill = True
         '
+        'bt_mostrar_todos_datos
+        '
+        Me.bt_mostrar_todos_datos.Font = New System.Drawing.Font("Square721 BT", 9.0!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.bt_mostrar_todos_datos.Location = New System.Drawing.Point(217, 12)
+        Me.bt_mostrar_todos_datos.Name = "bt_mostrar_todos_datos"
+        Me.bt_mostrar_todos_datos.Size = New System.Drawing.Size(218, 25)
+        Me.bt_mostrar_todos_datos.TabIndex = 66
+        Me.bt_mostrar_todos_datos.Text = "MOSTRAR TODOS LOS DATOS"
+        Me.bt_mostrar_todos_datos.UseVisualStyleBackColor = True
+        '
         'Frm_Consulta_Num_Queja
         '
-        Me.AutoScaleDimensions = New System.Drawing.SizeF(6.0!, 13.0!)
+        Me.AutoScaleDimensions = New System.Drawing.SizeF(7.0!, 15.0!)
         Me.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font
-        Me.ClientSize = New System.Drawing.Size(965, 678)
-        Me.Controls.Add(Me.Grb_Procesada)
+        Me.ClientSize = New System.Drawing.Size(1273, 552)
+        Me.Controls.Add(Me.bt_mostrar_todos_datos)
         Me.Controls.Add(Me.Grb_Lista_Estados)
+        Me.Controls.Add(Me.Grb_Procesada)
         Me.Controls.Add(Me.Grb_Solucion)
         Me.Controls.Add(Me.Grb_Detalle)
         Me.Controls.Add(Me.Lbl_Fecha_Estado)
@@ -735,8 +742,6 @@ Partial Class Frm_Consulta_Num_Queja
         Me.Controls.Add(Me.Lbl_T_Nombre)
         Me.Controls.Add(Me.Lbl_Motivo)
         Me.Controls.Add(Me.Lbl__T_Tipo_Queja)
-        Me.Controls.Add(Me.Lbl_Fax)
-        Me.Controls.Add(Me.Lbl_T_Fax)
         Me.Controls.Add(Me.Lbl_Tel_2)
         Me.Controls.Add(Me.Lbl_Tel_1)
         Me.Controls.Add(Me.Lbl_Telefonos)
@@ -744,8 +749,10 @@ Partial Class Frm_Consulta_Num_Queja
         Me.Controls.Add(Me.Lbl_T_Cod_Cliente)
         Me.Controls.Add(Me.Lbl_Num_Queja)
         Me.Controls.Add(Me.Txt_Num_Queja)
+        Me.Font = New System.Drawing.Font("Square721 BT", 9.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.Icon = CType(resources.GetObject("$this.Icon"), System.Drawing.Icon)
         Me.Name = "Frm_Consulta_Num_Queja"
+        Me.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen
         Me.Text = "Consulta Num Queja"
         Me.Grb_Detalle.ResumeLayout(False)
         CType(Me.SCRULTIMOESTADOQUEJABindingSource, System.ComponentModel.ISupportInitialize).EndInit()
@@ -786,8 +793,6 @@ Partial Class Frm_Consulta_Num_Queja
     Friend WithEvents Lbl_T_Nombre As Label
     Friend WithEvents Lbl_Motivo As Label
     Friend WithEvents Lbl__T_Tipo_Queja As Label
-    Friend WithEvents Lbl_Fax As Label
-    Friend WithEvents Lbl_T_Fax As Label
     Friend WithEvents Lbl_Tel_2 As Label
     Friend WithEvents Lbl_Tel_1 As Label
     Friend WithEvents Lbl_Telefonos As Label
@@ -826,4 +831,5 @@ Partial Class Frm_Consulta_Num_Queja
     Friend WithEvents Lbl_T_Procesada_Por As Label
     Friend WithEvents SCRQUEJAPROCESADABindingSource As BindingSource
     Friend WithEvents SCR_QUEJA_PROCESADATableAdapter As ExactusERP_SRC_TABLESTableAdapters.SCR_QUEJA_PROCESADATableAdapter
+    Friend WithEvents bt_mostrar_todos_datos As Button
 End Class

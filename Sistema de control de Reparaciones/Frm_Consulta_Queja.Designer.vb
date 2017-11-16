@@ -66,10 +66,10 @@ Partial Class Frm_Consulta_Queja
         Me.GroupBox2 = New System.Windows.Forms.GroupBox()
         Me.Label2 = New System.Windows.Forms.Label()
         Me.dg_quejas_pendientes = New System.Windows.Forms.DataGridView()
-        Me.BindingSource_datagrid = New System.Windows.Forms.BindingSource(Me.components)
-        Me.Button1 = New System.Windows.Forms.Button()
-        Me.ScR_ULTIMO_ESTADO_QUEJATableAdapter1 = New WindowsApplication1.ExactusERP_SRC_TABLESTableAdapters.SCR_ULTIMO_ESTADO_QUEJATableAdapter()
         Me.NUMEROQUEJADataGridViewTextBoxColumn = New System.Windows.Forms.DataGridViewTextBoxColumn()
+        Me.BindingSource_datagrid = New System.Windows.Forms.BindingSource(Me.components)
+        Me.bt_imprimir = New System.Windows.Forms.Button()
+        Me.ScR_ULTIMO_ESTADO_QUEJATableAdapter1 = New WindowsApplication1.ExactusERP_SRC_TABLESTableAdapters.SCR_ULTIMO_ESTADO_QUEJATableAdapter()
         CType(Me.SCRULTIMOESTADOQUEJABindingSource, System.ComponentModel.ISupportInitialize).BeginInit()
         CType(Me.ExactusERP_SRC_TABLES, System.ComponentModel.ISupportInitialize).BeginInit()
         Me.Grb_Detalle.SuspendLayout()
@@ -393,10 +393,11 @@ Partial Class Frm_Consulta_Queja
         '
         Me.Lbl_Estado_Actual.AutoSize = True
         Me.Lbl_Estado_Actual.DataBindings.Add(New System.Windows.Forms.Binding("Text", Me.SCRULTIMOESTADOQUEJABindingSource, "ESTADO", True))
-        Me.Lbl_Estado_Actual.Font = New System.Drawing.Font("Square721 BT", 9.25!)
+        Me.Lbl_Estado_Actual.Font = New System.Drawing.Font("Square721 BT", 9.75!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.Lbl_Estado_Actual.ForeColor = System.Drawing.Color.Red
         Me.Lbl_Estado_Actual.Location = New System.Drawing.Point(536, 156)
         Me.Lbl_Estado_Actual.Name = "Lbl_Estado_Actual"
-        Me.Lbl_Estado_Actual.Size = New System.Drawing.Size(97, 16)
+        Me.Lbl_Estado_Actual.Size = New System.Drawing.Size(105, 16)
         Me.Lbl_Estado_Actual.TabIndex = 28
         Me.Lbl_Estado_Actual.Text = "Estado_Actual"
         Me.Lbl_Estado_Actual.Visible = False
@@ -422,7 +423,7 @@ Partial Class Frm_Consulta_Queja
         Me.Grb_Detalle.Location = New System.Drawing.Point(20, 273)
         Me.Grb_Detalle.MaximumSize = New System.Drawing.Size(770, 0)
         Me.Grb_Detalle.Name = "Grb_Detalle"
-        Me.Grb_Detalle.Size = New System.Drawing.Size(739, 162)
+        Me.Grb_Detalle.Size = New System.Drawing.Size(739, 167)
         Me.Grb_Detalle.TabIndex = 30
         Me.Grb_Detalle.TabStop = False
         Me.Grb_Detalle.Text = "DETALLE QUEJA"
@@ -433,7 +434,7 @@ Partial Class Frm_Consulta_Queja
         Me.Label1.Font = New System.Drawing.Font("Square721 BT", 9.25!)
         Me.Label1.Location = New System.Drawing.Point(14, 29)
         Me.Label1.Name = "Label1"
-        Me.Label1.Size = New System.Drawing.Size(598, 67)
+        Me.Label1.Size = New System.Drawing.Size(695, 120)
         Me.Label1.TabIndex = 13
         Me.Label1.Text = "Detalle"
         '
@@ -512,7 +513,7 @@ Partial Class Frm_Consulta_Queja
         '
         Me.GroupBox2.Controls.Add(Me.Label2)
         Me.GroupBox2.Controls.Add(Me.dg_quejas_pendientes)
-        Me.GroupBox2.Controls.Add(Me.Button1)
+        Me.GroupBox2.Controls.Add(Me.bt_imprimir)
         Me.GroupBox2.Controls.Add(Me.Rbtn_Procesada)
         Me.GroupBox2.Controls.Add(Me.Rbtn_Procesar)
         Me.GroupBox2.Controls.Add(Me.Txt_Num_Queja)
@@ -549,30 +550,30 @@ Partial Class Frm_Consulta_Queja
         Me.dg_quejas_pendientes.Size = New System.Drawing.Size(178, 145)
         Me.dg_quejas_pendientes.TabIndex = 0
         '
-        'BindingSource_datagrid
-        '
-        Me.BindingSource_datagrid.DataMember = "SCR_ULTIMO_ESTADO_QUEJA"
-        Me.BindingSource_datagrid.DataSource = Me.ExactusERP_SRC_TABLES
-        '
-        'Button1
-        '
-        Me.Button1.Location = New System.Drawing.Point(16, 427)
-        Me.Button1.Name = "Button1"
-        Me.Button1.Size = New System.Drawing.Size(148, 33)
-        Me.Button1.TabIndex = 6
-        Me.Button1.Text = "IMPRIMIR QUEJA"
-        Me.Button1.UseVisualStyleBackColor = True
-        '
-        'ScR_ULTIMO_ESTADO_QUEJATableAdapter1
-        '
-        Me.ScR_ULTIMO_ESTADO_QUEJATableAdapter1.ClearBeforeFill = True
-        '
         'NUMEROQUEJADataGridViewTextBoxColumn
         '
         Me.NUMEROQUEJADataGridViewTextBoxColumn.DataPropertyName = "NUMERO_QUEJA"
         Me.NUMEROQUEJADataGridViewTextBoxColumn.HeaderText = "#"
         Me.NUMEROQUEJADataGridViewTextBoxColumn.Name = "NUMEROQUEJADataGridViewTextBoxColumn"
         Me.NUMEROQUEJADataGridViewTextBoxColumn.ReadOnly = True
+        '
+        'BindingSource_datagrid
+        '
+        Me.BindingSource_datagrid.DataMember = "SCR_ULTIMO_ESTADO_QUEJA"
+        Me.BindingSource_datagrid.DataSource = Me.ExactusERP_SRC_TABLES
+        '
+        'bt_imprimir
+        '
+        Me.bt_imprimir.Location = New System.Drawing.Point(16, 427)
+        Me.bt_imprimir.Name = "bt_imprimir"
+        Me.bt_imprimir.Size = New System.Drawing.Size(148, 33)
+        Me.bt_imprimir.TabIndex = 6
+        Me.bt_imprimir.Text = "IMPRIMIR QUEJA"
+        Me.bt_imprimir.UseVisualStyleBackColor = True
+        '
+        'ScR_ULTIMO_ESTADO_QUEJATableAdapter1
+        '
+        Me.ScR_ULTIMO_ESTADO_QUEJATableAdapter1.ClearBeforeFill = True
         '
         'Frm_Consulta_Queja
         '
@@ -639,7 +640,7 @@ Partial Class Frm_Consulta_Queja
     Friend WithEvents GroupBox1 As GroupBox
     Friend WithEvents Label1 As Label
     Friend WithEvents GroupBox2 As GroupBox
-    Friend WithEvents Button1 As Button
+    Friend WithEvents bt_imprimir As Button
     Friend WithEvents dg_quejas_pendientes As DataGridView
     Friend WithEvents Label2 As Label
     Friend WithEvents BindingSource_datagrid As BindingSource

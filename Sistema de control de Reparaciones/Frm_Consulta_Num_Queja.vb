@@ -29,7 +29,6 @@
         Lbl_Direccion.Visible = True
         Lbl_Estado_Actual.Visible = True
         Lbl_Factua.Visible = True
-        Lbl_Fax.Visible = True
         Lbl_Fecha_Estado.Visible = True
         Lbl_Fecha_Ingreso.Visible = True
         Lbl_Fecha_Solucion.Visible = True
@@ -46,10 +45,9 @@
         Dgv_Estados.Visible = True
     End Sub
 
-    Private Sub Txt_Num_Queja_MouseClick(sender As Object, e As MouseEventArgs) Handles Txt_Num_Queja.MouseClick
+    Private Sub bt_mostrar_todos_datos_Click(sender As Object, e As EventArgs) Handles bt_mostrar_todos_datos.Click
         T_busqueda_Queja = 1
         My.Forms.Frm_Listado_Quejas.MdiParent = Frm_Main_Menu
-        My.Forms.Frm_Listado_Quejas.Btn_Selec_Queja.Visible = True
         Frm_Listado_Quejas.Show()
     End Sub
 End Class

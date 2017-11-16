@@ -58,7 +58,7 @@ Public Class Frm_Consulta_Queja
     End Sub
 
     Private Sub Acciones_Queja_Procesada()
-        'Se trae la fecha de la FECHA EN LA CUAL SE PROCESÓ la queja'
+        'Obtiene  la FECHA EN LA CUAL SE PROCESÓ la queja'
         Dim numboleta As String = Txt_Num_Queja.Text
         Dim cmd3 = New SqlCommand("SELECT FECHA FROM DBO.SCR_QUEJAS_PROCESADAS WHERE DBO.SCR_QUEJAS_PROCESADAS.NUMERO_QUEJA ='" & numboleta & "'", cxnc)
         cmd3.CommandType = CommandType.Text
@@ -69,6 +69,7 @@ Public Class Frm_Consulta_Queja
         MsgBox("La Queja: " + Txt_Num_Queja.Text + " Fue procesada desde el  " + n + " Seleccione un estado Diferente")
     End Sub
 
+    'Obtiene la FECHA EN LA CUAL SE EMPEZÓ A PROCESAR LA FECHA'
     Private Sub Acciones_Queja_Procesando()
         Dim numboleta As String = Txt_Num_Queja.Text
         Dim cmd3 = New SqlCommand("SELECT FECHA FROM DBO.SCR_QUEJAS_PROCES WHERE DBO.SCR_QUEJAS_PROCES.NUMERO_QUEJA ='" & numboleta & "'", cxnc)
@@ -81,69 +82,79 @@ Public Class Frm_Consulta_Queja
     End Sub
 
     Private Sub Btn_Guardar_Click(sender As Object, e As EventArgs) Handles bt_guardar.Click
+
         Try
             If Txt_Num_Queja.Text IsNot "" Then
-                'Procesada'
-                If Rbtn_Procesada.Checked Then
 
-                    'La queja está en estado Solucionada'
-                    If Queja_Solucionada(Txt_Num_Queja.Text) = True Then
-                        Acciones_Queja_Solucionada()
-                    Else
-                        'la queja está en estado Procesada'
-                        If Queja_Procesada(Txt_Num_Queja.Text) = True Then
-                            Acciones_Queja_Procesada()
+                If Verificar_Queja() Then
+
+                    'Procesada'
+                    If Rbtn_Procesada.Checked Then
+
+                        'La queja está en estado Solucionada'
+                        If Queja_Solucionada(Txt_Num_Queja.Text) = True Then
+                            Acciones_Queja_Solucionada()
                         Else
-                            My.Forms.Frm_Procesada_Queja.MdiParent = Frm_Main_Menu
-                            Frm_Procesada_Queja.Show()
+                            'la queja está en estado Procesada'
+                            If Queja_Procesada(Txt_Num_Queja.Text) = True Then
+                                Acciones_Queja_Procesada()
+                            Else
+                                My.Forms.Frm_Procesada_Queja.MdiParent = Frm_Main_Menu
+                                Frm_Procesada_Queja.Show()
+                            End If
+                        End If
+
+                    End If
+
+                    'Solucionar'
+                    If Rbtn_Solucionar.Checked Then
+                        If Queja_Solucionada(Txt_Num_Queja.Text) = True Then
+                            Acciones_Queja_Solucionada()
+                        Else
+                            My.Forms.Frm_Solucion_Queja.MdiParent = Frm_Main_Menu
+                            Frm_Solucion_Queja.Show()
                         End If
                     End If
 
-                End If
+                    'Procesar'
+                    If Rbtn_Procesar.Checked Then
 
-                'Solucionar'
-                If Rbtn_Solucionar.Checked Then
-                    If Queja_Solucionada(Txt_Num_Queja.Text) = True Then
-                        Acciones_Queja_Solucionada()
-                    Else
-                        My.Forms.Frm_Solucion_Queja.MdiParent = Frm_Main_Menu
-                        Frm_Solucion_Queja.Show()
-                    End If
-                End If
-
-                'Procesar'
-                If Rbtn_Procesar.Checked Then
-
-                    If Queja_Solucionada(Txt_Num_Queja.Text) = True Then
-                        Acciones_Queja_Solucionada()
-                    Else
-                        If Queja_Procesada(Txt_Num_Queja.Text) = True Then
-                            Acciones_Queja_Procesada()
-
+                        If Queja_Solucionada(Txt_Num_Queja.Text) = True Then
+                            Acciones_Queja_Solucionada()
                         Else
-                            If Queja_Proces(Txt_Num_Queja.Text) = True Then
-                                Acciones_Queja_Procesando()
+                            If Queja_Procesada(Txt_Num_Queja.Text) = True Then
+                                Acciones_Queja_Procesada()
+
                             Else
-                                'se procede a procesar la queja'
-                                Dim sql2 As String = "insert into dbo.SCR_ESTADO_QUEJA values(@NUMERO_QUEJA,@ESTADO,@USUARIO,@FECHA)"
-                                Dim cmd2 As New SqlCommand(sql2, cxnc)
+                                If Queja_Proces(Txt_Num_Queja.Text) = True Then
+                                    Acciones_Queja_Procesando()
+                                Else
+                                    'se procede a procesar la queja'
+                                    Dim sql2 As String = "insert into dbo.SCR_ESTADO_QUEJA values(@NUMERO_QUEJA,@ESTADO,@USUARIO,@FECHA)"
+                                    Dim cmd2 As New SqlCommand(sql2, cxnc)
 
-                                cmd2.Parameters.Add("@NUMERO_QUEJA", SqlDbType.NVarChar).Value = Me.Txt_Num_Queja.Text
-                                cmd2.Parameters.Add("@ESTADO", SqlDbType.NVarChar).Value = "PROCESANDO"
-                                cmd2.Parameters.Add("@USUARIO", SqlDbType.NVarChar).Value = v_usuario
-                                cmd2.Parameters.Add("@FECHA", SqlDbType.DateTime).Value = Date.Now
+                                    cmd2.Parameters.Add("@NUMERO_QUEJA", SqlDbType.NVarChar).Value = Me.Txt_Num_Queja.Text
+                                    cmd2.Parameters.Add("@ESTADO", SqlDbType.NVarChar).Value = "PROCESANDO"
+                                    cmd2.Parameters.Add("@USUARIO", SqlDbType.NVarChar).Value = v_usuario
+                                    cmd2.Parameters.Add("@FECHA", SqlDbType.DateTime).Value = Date.Now
 
-                                cmd2.ExecuteNonQuery()
-                                MessageBox.Show("DATOS GUARDADOS CORRECTAMENTE")
+                                    cmd2.ExecuteNonQuery()
+                                    MessageBox.Show("DATOS GUARDADOS CORRECTAMENTE")
 
+                                End If
                             End If
                         End If
                     End If
+
+
+                Else
+                    Throw New MyException("Error, el número de queja ingresado NO EXISTE")
                 End If
 
             Else
                 Throw New MyException("Error, el campo 'Número Queja' está vacío")
             End If
+
 
         Catch ex As Exception
             MsgBox(ex.Message)
@@ -213,20 +224,38 @@ Public Class Frm_Consulta_Queja
         End Try
     End Sub
 
-    Private Sub Button1_Click(sender As Object, e As EventArgs) Handles Button1.Click
+    'Método para imprimir la queja'
+    Private Sub imprimir_Click(sender As Object, e As EventArgs) Handles bt_imprimir.Click
 
         Try
-            Num_Queja = Txt_Num_Queja.Text
-            If SCRULTIMOESTADOQUEJABindingSource.Count <> 0 Then
-                My.Forms.Frm_Impresion_Queja.MdiParent = Frm_Main_Menu
-                Frm_Impresion_Queja.Show()
+            If Verificar_Queja() Then
+                Num_Queja = Txt_Num_Queja.Text
+                If SCRULTIMOESTADOQUEJABindingSource.Count <> 0 Then
+                    My.Forms.Frm_Impresion_Queja.MdiParent = Frm_Main_Menu
+                    Frm_Impresion_Queja.Show()
+                Else
+                    Throw New MyException("Error, no se ha seleccionado ninguna queja")
+                End If
             Else
-                Throw New MyException("Error, no se ha seleccionado ninguna queja")
+                Throw New MyException("Error, el número de queja ingresado NO EXISTE")
             End If
+
 
         Catch ex As MyException
             MsgBox(ex.Message)
         End Try
-
     End Sub
+
+    'verifica que el número de queja ingresado corresponda con una queja existente'
+    Function Verificar_Queja() As Boolean
+        Dim numero_queja As String = Txt_Num_Queja.Text
+        Dim cmd3 = New SqlCommand("SELECT CASE WHEN EXISTS (SELECT * FROM SCR_DATOS_QUEJA WHERE NUMERO_QUEJA ='" & numero_queja & "') THEN CAST(1 AS INTEGER) ELSE CAST(0 AS INTEGER) END", cxnc)
+        cmd3.CommandType = CommandType.Text
+        Dim n As Integer
+        cxnc.Open()
+        n = Integer.Parse(cmd3.ExecuteScalar())
+        cxnc.Close()
+        Return (n = 1) 'retorna true si existe la queja'
+    End Function
+
 End Class

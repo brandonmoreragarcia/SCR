@@ -68,14 +68,14 @@ Partial Class Frm_Listado_Rep
         Me.Crv_Listado_Rep.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle
         Me.Crv_Listado_Rep.Cursor = System.Windows.Forms.Cursors.Default
         Me.Crv_Listado_Rep.DisplayStatusBar = False
-        Me.Crv_Listado_Rep.Location = New System.Drawing.Point(12, 59)
+        Me.Crv_Listado_Rep.Location = New System.Drawing.Point(12, 76)
         Me.Crv_Listado_Rep.Name = "Crv_Listado_Rep"
         Me.Crv_Listado_Rep.ShowCloseButton = False
         Me.Crv_Listado_Rep.ShowCopyButton = False
         Me.Crv_Listado_Rep.ShowGroupTreeButton = False
         Me.Crv_Listado_Rep.ShowParameterPanelButton = False
         Me.Crv_Listado_Rep.ShowRefreshButton = False
-        Me.Crv_Listado_Rep.Size = New System.Drawing.Size(1133, 583)
+        Me.Crv_Listado_Rep.Size = New System.Drawing.Size(702, 328)
         Me.Crv_Listado_Rep.TabIndex = 5
         Me.Crv_Listado_Rep.ToolPanelView = CrystalDecisions.Windows.Forms.ToolPanelViewType.None
         '
