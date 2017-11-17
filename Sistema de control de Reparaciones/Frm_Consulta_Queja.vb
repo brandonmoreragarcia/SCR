@@ -10,7 +10,10 @@ Public Class Frm_Consulta_Queja
         Me.SCR_ULTIMO_ESTADO_QUEJATableAdapter.Fill(Me.ExactusERP_SRC_TABLES.SCR_ULTIMO_ESTADO_QUEJA)
 
         BindingSource_datagrid.Filter = "ESTADO <> '" & "SOLUCIONADO" & "'"
-        Txt_Num_Queja.Text = dg_quejas_pendientes.Item(0, dg_quejas_pendientes.CurrentRow.Index).Value
+        If dg_quejas_pendientes.RowCount <> 0 Then 'Para que no se caiga el programa cuando no hay reparaciones pendientes'
+            Txt_Num_Queja.Text = dg_quejas_pendientes.Item(0, dg_quejas_pendientes.CurrentRow.Index).Value
+        End If
+
     End Sub
 
     Private Sub Txt_Num_Queja_TextChanged(sender As Object, e As EventArgs) Handles Txt_Num_Queja.TextChanged
@@ -23,7 +26,6 @@ Public Class Frm_Consulta_Queja
         Lbl_Direccion.Visible = True
         Lbl_Estado_Actual.Visible = True
         Lbl_Factua.Visible = True
-        Lbl_Fax.Visible = True
         Lbl_Fecha_Estado.Visible = True
         Lbl_Fecha_Ingreso.Visible = True
         Lbl_Motivo.Visible = True
@@ -35,6 +37,7 @@ Public Class Frm_Consulta_Queja
         Rbtn_Procesar.Visible = True
         Rbtn_Solucionar.Visible = True
         Rbtn_Procesada.Visible = True
+        lb_detalle_queja.Visible = True
     End Sub
 
     Private Sub Txt_Num_Queja_MouseClick(sender As Object, e As MouseEventArgs) Handles Txt_Num_Queja.MouseClick
@@ -100,7 +103,14 @@ Public Class Frm_Consulta_Queja
                                 Acciones_Queja_Procesada()
                             Else
                                 My.Forms.Frm_Procesada_Queja.MdiParent = Frm_Main_Menu
+
                                 Frm_Procesada_Queja.Show()
+
+                                'para controlar la ventana, y para que se muestre por encima la ventana de guardar'
+                                Me.Enabled = False
+
+                                'Actualiza el binding source para ver los cambios reflejados en la pantalla'
+                                Me.SCR_ULTIMO_ESTADO_QUEJATableAdapter.Fill(Me.ExactusERP_SRC_TABLES.SCR_ULTIMO_ESTADO_QUEJA)
                             End If
                         End If
 
@@ -113,8 +123,16 @@ Public Class Frm_Consulta_Queja
                         Else
                             My.Forms.Frm_Solucion_Queja.MdiParent = Frm_Main_Menu
                             Frm_Solucion_Queja.Show()
+
+                            'para controlar la ventana, y para que se muestre por encima la ventana de guardar'
+                            Me.Enabled = False
+
+                            'Actualiza el binding source para ver los cambios reflejados en la pantalla'
+                            Me.SCR_ULTIMO_ESTADO_QUEJATableAdapter.Fill(Me.ExactusERP_SRC_TABLES.SCR_ULTIMO_ESTADO_QUEJA)
                         End If
                     End If
+
+
 
                     'Procesar'
                     If Rbtn_Procesar.Checked Then
@@ -132,13 +150,14 @@ Public Class Frm_Consulta_Queja
                                     'se procede a procesar la queja'
                                     Dim sql2 As String = "insert into dbo.SCR_ESTADO_QUEJA values(@NUMERO_QUEJA,@ESTADO,@USUARIO,@FECHA)"
                                     Dim cmd2 As New SqlCommand(sql2, cxnc)
-
-                                    cmd2.Parameters.Add("@NUMERO_QUEJA", SqlDbType.NVarChar).Value = Me.Txt_Num_Queja.Text
+                                    cxnc.Open()
+                                    cmd2.Parameters.Add("@NUMERO_QUEJA", SqlDbType.Int).Value = Me.Txt_Num_Queja.Text
                                     cmd2.Parameters.Add("@ESTADO", SqlDbType.NVarChar).Value = "PROCESANDO"
                                     cmd2.Parameters.Add("@USUARIO", SqlDbType.NVarChar).Value = v_usuario
                                     cmd2.Parameters.Add("@FECHA", SqlDbType.DateTime).Value = Date.Now
 
                                     cmd2.ExecuteNonQuery()
+                                    cxnc.Close()
                                     MessageBox.Show("DATOS GUARDADOS CORRECTAMENTE")
 
                                 End If
@@ -228,17 +247,21 @@ Public Class Frm_Consulta_Queja
     Private Sub imprimir_Click(sender As Object, e As EventArgs) Handles bt_imprimir.Click
 
         Try
-            If Verificar_Queja() Then
-                Num_Queja = Txt_Num_Queja.Text
-                If SCRULTIMOESTADOQUEJABindingSource.Count <> 0 Then
+            If Txt_Num_Queja.Text IsNot "" Then
+                If Verificar_Queja() Then
+                    Num_Queja = Txt_Num_Queja.Text
+
                     My.Forms.Frm_Impresion_Queja.MdiParent = Frm_Main_Menu
                     Frm_Impresion_Queja.Show()
+
                 Else
-                    Throw New MyException("Error, no se ha seleccionado ninguna queja")
+                    Throw New MyException("Error, el número de queja ingresado NO EXISTE")
                 End If
+
             Else
-                Throw New MyException("Error, el número de queja ingresado NO EXISTE")
+                Throw New MyException("Error, el espacio 'número queja' está vacío")
             End If
+
 
 
         Catch ex As MyException

@@ -120,7 +120,7 @@ Partial Class Frm_Ingreso_Queja
         Me.Cbx_Tipo_Queja.Location = New System.Drawing.Point(104, 69)
         Me.Cbx_Tipo_Queja.Name = "Cbx_Tipo_Queja"
         Me.Cbx_Tipo_Queja.Size = New System.Drawing.Size(121, 25)
-        Me.Cbx_Tipo_Queja.TabIndex = 15
+        Me.Cbx_Tipo_Queja.TabIndex = 5
         Me.Cbx_Tipo_Queja.ValueMember = "TIPO_QUEJA"
         '
         'SCRTIPOQUEJABindingSource
@@ -157,7 +157,7 @@ Partial Class Frm_Ingreso_Queja
         Me.Txt_Descripcion_Queja.Multiline = True
         Me.Txt_Descripcion_Queja.Name = "Txt_Descripcion_Queja"
         Me.Txt_Descripcion_Queja.Size = New System.Drawing.Size(449, 120)
-        Me.Txt_Descripcion_Queja.TabIndex = 17
+        Me.Txt_Descripcion_Queja.TabIndex = 8
         '
         'Btn_Guardar
         '
@@ -165,7 +165,7 @@ Partial Class Frm_Ingreso_Queja
         Me.Btn_Guardar.Location = New System.Drawing.Point(196, 362)
         Me.Btn_Guardar.Name = "Btn_Guardar"
         Me.Btn_Guardar.Size = New System.Drawing.Size(122, 37)
-        Me.Btn_Guardar.TabIndex = 18
+        Me.Btn_Guardar.TabIndex = 9
         Me.Btn_Guardar.Text = "GUARDAR!"
         Me.Btn_Guardar.UseVisualStyleBackColor = True
         '
@@ -219,7 +219,7 @@ Partial Class Frm_Ingreso_Queja
         Me.Txt_Factura.Location = New System.Drawing.Point(342, 123)
         Me.Txt_Factura.Name = "Txt_Factura"
         Me.Txt_Factura.Size = New System.Drawing.Size(100, 23)
-        Me.Txt_Factura.TabIndex = 22
+        Me.Txt_Factura.TabIndex = 7
         '
         'Txt_Proforma
         '
@@ -227,7 +227,7 @@ Partial Class Frm_Ingreso_Queja
         Me.Txt_Proforma.Location = New System.Drawing.Point(342, 69)
         Me.Txt_Proforma.Name = "Txt_Proforma"
         Me.Txt_Proforma.Size = New System.Drawing.Size(100, 23)
-        Me.Txt_Proforma.TabIndex = 23
+        Me.Txt_Proforma.TabIndex = 6
         '
         'GroupBox2
         '
@@ -387,7 +387,7 @@ Partial Class Frm_Ingreso_Queja
         Me.bt_agregar_a_descripcion.Location = New System.Drawing.Point(499, 200)
         Me.bt_agregar_a_descripcion.Name = "bt_agregar_a_descripcion"
         Me.bt_agregar_a_descripcion.Size = New System.Drawing.Size(109, 27)
-        Me.bt_agregar_a_descripcion.TabIndex = 17
+        Me.bt_agregar_a_descripcion.TabIndex = 4
         Me.bt_agregar_a_descripcion.Text = "AGREGAR"
         Me.bt_agregar_a_descripcion.UseVisualStyleBackColor = True
         '

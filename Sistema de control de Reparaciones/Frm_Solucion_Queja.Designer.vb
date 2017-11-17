@@ -32,9 +32,10 @@ Partial Class Frm_Solucion_Queja
         Me.SCRALISTOCHEQUEOBindingSource = New System.Windows.Forms.BindingSource(Me.components)
         Me.ExactusERP_SRC_TABLES = New WindowsApplication1.ExactusERP_SRC_TABLES()
         Me.Cbx_Alisto = New System.Windows.Forms.ComboBox()
+        Me.SCRALISTOCHEQUEOBindingSource1 = New System.Windows.Forms.BindingSource(Me.components)
         Me.SCR_ALISTO_CHEQUEOTableAdapter = New WindowsApplication1.ExactusERP_SRC_TABLESTableAdapters.SCR_ALISTO_CHEQUEOTableAdapter()
         Me.Btn_Guardar = New System.Windows.Forms.Button()
-        Me.SCRALISTOCHEQUEOBindingSource1 = New System.Windows.Forms.BindingSource(Me.components)
+        Me.Label1 = New System.Windows.Forms.Label()
         CType(Me.SCRALISTOCHEQUEOBindingSource, System.ComponentModel.ISupportInitialize).BeginInit()
         CType(Me.ExactusERP_SRC_TABLES, System.ComponentModel.ISupportInitialize).BeginInit()
         CType(Me.SCRALISTOCHEQUEOBindingSource1, System.ComponentModel.ISupportInitialize).BeginInit()
@@ -43,52 +44,58 @@ Partial Class Frm_Solucion_Queja
         'Lbl_Solucion
         '
         Me.Lbl_Solucion.AutoSize = True
-        Me.Lbl_Solucion.Location = New System.Drawing.Point(13, 13)
+        Me.Lbl_Solucion.Font = New System.Drawing.Font("Square721 BT", 9.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.Lbl_Solucion.Location = New System.Drawing.Point(32, 78)
         Me.Lbl_Solucion.Name = "Lbl_Solucion"
-        Me.Lbl_Solucion.Size = New System.Drawing.Size(51, 13)
+        Me.Lbl_Solucion.Size = New System.Drawing.Size(74, 15)
         Me.Lbl_Solucion.TabIndex = 0
-        Me.Lbl_Solucion.Text = "Solucion:"
+        Me.Lbl_Solucion.Text = "SOLUCIÓN:"
         '
         'Txt_Solucion
         '
-        Me.Txt_Solucion.Location = New System.Drawing.Point(12, 29)
+        Me.Txt_Solucion.Font = New System.Drawing.Font("Square721 BT", 9.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.Txt_Solucion.Location = New System.Drawing.Point(35, 106)
         Me.Txt_Solucion.Multiline = True
         Me.Txt_Solucion.Name = "Txt_Solucion"
-        Me.Txt_Solucion.Size = New System.Drawing.Size(624, 94)
+        Me.Txt_Solucion.Size = New System.Drawing.Size(405, 67)
         Me.Txt_Solucion.TabIndex = 1
         '
         'Lbl_Chequeo
         '
         Me.Lbl_Chequeo.AutoSize = True
-        Me.Lbl_Chequeo.Location = New System.Drawing.Point(16, 130)
+        Me.Lbl_Chequeo.Font = New System.Drawing.Font("Square721 BT", 9.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.Lbl_Chequeo.Location = New System.Drawing.Point(75, 197)
         Me.Lbl_Chequeo.Name = "Lbl_Chequeo"
-        Me.Lbl_Chequeo.Size = New System.Drawing.Size(53, 13)
+        Me.Lbl_Chequeo.Size = New System.Drawing.Size(71, 15)
         Me.Lbl_Chequeo.TabIndex = 2
-        Me.Lbl_Chequeo.Text = "Chequeo:"
+        Me.Lbl_Chequeo.Text = "CHEQUEÓ:"
         '
         'Lbl_Alisto
         '
         Me.Lbl_Alisto.AutoSize = True
-        Me.Lbl_Alisto.Location = New System.Drawing.Point(345, 130)
+        Me.Lbl_Alisto.Font = New System.Drawing.Font("Square721 BT", 9.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.Lbl_Alisto.Location = New System.Drawing.Point(93, 241)
         Me.Lbl_Alisto.Name = "Lbl_Alisto"
-        Me.Lbl_Alisto.Size = New System.Drawing.Size(35, 13)
+        Me.Lbl_Alisto.Size = New System.Drawing.Size(53, 15)
         Me.Lbl_Alisto.TabIndex = 3
-        Me.Lbl_Alisto.Text = "Alisto:"
+        Me.Lbl_Alisto.Text = "ALISTÓ:"
         '
         'Cbx_Chequeo
         '
         Me.Cbx_Chequeo.DataSource = Me.SCRALISTOCHEQUEOBindingSource
         Me.Cbx_Chequeo.DisplayMember = "NOMBRE"
+        Me.Cbx_Chequeo.Font = New System.Drawing.Font("Square721 BT", 9.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.Cbx_Chequeo.FormattingEnabled = True
-        Me.Cbx_Chequeo.Location = New System.Drawing.Point(71, 127)
+        Me.Cbx_Chequeo.Location = New System.Drawing.Point(152, 194)
         Me.Cbx_Chequeo.Name = "Cbx_Chequeo"
-        Me.Cbx_Chequeo.Size = New System.Drawing.Size(252, 21)
+        Me.Cbx_Chequeo.Size = New System.Drawing.Size(207, 23)
         Me.Cbx_Chequeo.TabIndex = 4
         '
         'SCRALISTOCHEQUEOBindingSource
         '
         Me.SCRALISTOCHEQUEOBindingSource.DataMember = "SCR_ALISTO_CHEQUEO"
         Me.SCRALISTOCHEQUEOBindingSource.DataSource = Me.ExactusERP_SRC_TABLES
+        Me.SCRALISTOCHEQUEOBindingSource.Sort = "NOMBRE"
         '
         'ExactusERP_SRC_TABLES
         '
@@ -99,11 +106,18 @@ Partial Class Frm_Solucion_Queja
         '
         Me.Cbx_Alisto.DataSource = Me.SCRALISTOCHEQUEOBindingSource1
         Me.Cbx_Alisto.DisplayMember = "NOMBRE"
+        Me.Cbx_Alisto.Font = New System.Drawing.Font("Square721 BT", 9.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.Cbx_Alisto.FormattingEnabled = True
-        Me.Cbx_Alisto.Location = New System.Drawing.Point(386, 127)
+        Me.Cbx_Alisto.Location = New System.Drawing.Point(152, 233)
         Me.Cbx_Alisto.Name = "Cbx_Alisto"
-        Me.Cbx_Alisto.Size = New System.Drawing.Size(250, 21)
+        Me.Cbx_Alisto.Size = New System.Drawing.Size(207, 23)
         Me.Cbx_Alisto.TabIndex = 5
+        '
+        'SCRALISTOCHEQUEOBindingSource1
+        '
+        Me.SCRALISTOCHEQUEOBindingSource1.DataMember = "SCR_ALISTO_CHEQUEO"
+        Me.SCRALISTOCHEQUEOBindingSource1.DataSource = Me.ExactusERP_SRC_TABLES
+        Me.SCRALISTOCHEQUEOBindingSource1.Sort = "NOMBRE"
         '
         'SCR_ALISTO_CHEQUEOTableAdapter
         '
@@ -111,23 +125,30 @@ Partial Class Frm_Solucion_Queja
         '
         'Btn_Guardar
         '
-        Me.Btn_Guardar.Location = New System.Drawing.Point(561, 154)
+        Me.Btn_Guardar.Font = New System.Drawing.Font("Square721 BT", 10.0!, System.Drawing.FontStyle.Bold)
+        Me.Btn_Guardar.Location = New System.Drawing.Point(199, 293)
         Me.Btn_Guardar.Name = "Btn_Guardar"
-        Me.Btn_Guardar.Size = New System.Drawing.Size(75, 23)
+        Me.Btn_Guardar.Size = New System.Drawing.Size(92, 33)
         Me.Btn_Guardar.TabIndex = 6
-        Me.Btn_Guardar.Text = "&Guardar"
+        Me.Btn_Guardar.Text = "GUARDAR"
         Me.Btn_Guardar.UseVisualStyleBackColor = True
         '
-        'SCRALISTOCHEQUEOBindingSource1
+        'Label1
         '
-        Me.SCRALISTOCHEQUEOBindingSource1.DataMember = "SCR_ALISTO_CHEQUEO"
-        Me.SCRALISTOCHEQUEOBindingSource1.DataSource = Me.ExactusERP_SRC_TABLES
+        Me.Label1.AutoSize = True
+        Me.Label1.Font = New System.Drawing.Font("Square721 BT", 12.0!, System.Drawing.FontStyle.Bold)
+        Me.Label1.Location = New System.Drawing.Point(133, 21)
+        Me.Label1.Name = "Label1"
+        Me.Label1.Size = New System.Drawing.Size(217, 20)
+        Me.Label1.TabIndex = 7
+        Me.Label1.Text = "SOLUCIÓN DE LA QUEJA"
         '
         'Frm_Solucion_Queja
         '
         Me.AutoScaleDimensions = New System.Drawing.SizeF(6.0!, 13.0!)
         Me.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font
-        Me.ClientSize = New System.Drawing.Size(648, 186)
+        Me.ClientSize = New System.Drawing.Size(486, 348)
+        Me.Controls.Add(Me.Label1)
         Me.Controls.Add(Me.Btn_Guardar)
         Me.Controls.Add(Me.Cbx_Alisto)
         Me.Controls.Add(Me.Cbx_Chequeo)
@@ -137,6 +158,7 @@ Partial Class Frm_Solucion_Queja
         Me.Controls.Add(Me.Lbl_Solucion)
         Me.Icon = CType(resources.GetObject("$this.Icon"), System.Drawing.Icon)
         Me.Name = "Frm_Solucion_Queja"
+        Me.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen
         Me.Text = "Solucion Queja"
         CType(Me.SCRALISTOCHEQUEOBindingSource, System.ComponentModel.ISupportInitialize).EndInit()
         CType(Me.ExactusERP_SRC_TABLES, System.ComponentModel.ISupportInitialize).EndInit()
@@ -157,4 +179,5 @@ Partial Class Frm_Solucion_Queja
     Friend WithEvents SCR_ALISTO_CHEQUEOTableAdapter As ExactusERP_SRC_TABLESTableAdapters.SCR_ALISTO_CHEQUEOTableAdapter
     Friend WithEvents Btn_Guardar As Button
     Friend WithEvents SCRALISTOCHEQUEOBindingSource1 As BindingSource
+    Friend WithEvents Label1 As Label
 End Class

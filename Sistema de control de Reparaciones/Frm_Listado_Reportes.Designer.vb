@@ -70,7 +70,6 @@ Partial Class Frm_Listado_Reportes
         Me.Btn_Cargar = New System.Windows.Forms.Button()
         Me.Label1 = New System.Windows.Forms.Label()
         Me.Lbl_Fecha_Inicial = New System.Windows.Forms.Label()
-        Me.gb_consulta_queja = New System.Windows.Forms.GroupBox()
         Me.GroupBox1.SuspendLayout()
         Me.gb_reparaciones_estado.SuspendLayout()
         CType(Me.Dgv_Rep_Total, System.ComponentModel.ISupportInitialize).BeginInit()
@@ -512,21 +511,11 @@ Partial Class Frm_Listado_Reportes
         Me.Lbl_Fecha_Inicial.TabIndex = 10
         Me.Lbl_Fecha_Inicial.Text = "Fecha Inicial"
         '
-        'gb_consulta_queja
-        '
-        Me.gb_consulta_queja.Location = New System.Drawing.Point(425, 12)
-        Me.gb_consulta_queja.Name = "gb_consulta_queja"
-        Me.gb_consulta_queja.Size = New System.Drawing.Size(857, 492)
-        Me.gb_consulta_queja.TabIndex = 21
-        Me.gb_consulta_queja.TabStop = False
-        Me.gb_consulta_queja.Text = "CONSULTA QUEJA"
-        '
         'Frm_Listado_Reportes
         '
         Me.AutoScaleDimensions = New System.Drawing.SizeF(8.0!, 16.0!)
         Me.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font
         Me.ClientSize = New System.Drawing.Size(1273, 552)
-        Me.Controls.Add(Me.gb_consulta_queja)
         Me.Controls.Add(Me.gb_reparacion_lead)
         Me.Controls.Add(Me.gb_reparaciones_estado)
         Me.Controls.Add(Me.GroupBox1)
@@ -594,5 +583,4 @@ Partial Class Frm_Listado_Reportes
     Friend WithEvents Btn_Cargar As Button
     Friend WithEvents Label1 As Label
     Friend WithEvents Lbl_Fecha_Inicial As Label
-    Friend WithEvents gb_consulta_queja As GroupBox
 End Class

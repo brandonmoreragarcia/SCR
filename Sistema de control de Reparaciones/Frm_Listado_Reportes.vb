@@ -48,6 +48,7 @@ Public Class Frm_Listado_Reportes
     Private Sub bt_listado_rep_estado_Click(sender As Object, e As EventArgs) Handles bt_listado_rep_estado.Click
 
         gb_reparaciones_estado.Visible = True
+        gb_reparacion_lead.Visible = False
 
         'TODO: esta línea de código carga datos en la tabla 'ExactusERP_SRC_TABLES.SCR_ESTADOS_TOTAL' Puede moverla o quitarla según sea necesario.
         Me.SCR_ESTADOS_TOTALTableAdapter.Fill(Me.ExactusERP_SRC_TABLES.SCR_ESTADOS_TOTAL)

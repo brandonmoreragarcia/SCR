@@ -65,10 +65,6 @@ Public Class Frm_Impresion_Rep
         End If
     End Sub
 
-    Private Sub Frm_Impresion_Rep_Load(sender As Object, e As EventArgs) Handles MyBase.Load
-
-    End Sub
-
     Private Sub Btn_Imprimir_Click(sender As Object, e As EventArgs) Handles Btn_Imprimir.Click
         Crv_Impresion_Rep.PrintReport()
         CONTROL_IMPR()

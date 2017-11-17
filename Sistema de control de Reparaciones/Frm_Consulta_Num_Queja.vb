@@ -9,6 +9,7 @@
         'TODO: esta línea de código carga datos en la tabla 'ExactusERP_SRC_TABLES.SCR_ULTIMO_ESTADO_QUEJA' Puede moverla o quitarla según sea necesario.
         Me.SCR_ULTIMO_ESTADO_QUEJATableAdapter.Fill(Me.ExactusERP_SRC_TABLES.SCR_ULTIMO_ESTADO_QUEJA)
         Txt_Num_Queja.Text = Num_Queja
+        Dgv_Estados.DataBindings.Clear()
     End Sub
 
     Private Sub Txt_Num_Queja_TextChanged(sender As Object, e As EventArgs) Handles Txt_Num_Queja.TextChanged

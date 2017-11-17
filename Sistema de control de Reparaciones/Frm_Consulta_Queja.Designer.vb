@@ -35,8 +35,6 @@ Partial Class Frm_Consulta_Queja
         Me.Lbl_Telefonos = New System.Windows.Forms.Label()
         Me.Lbl_Tel_1 = New System.Windows.Forms.Label()
         Me.Lbl_Tel_2 = New System.Windows.Forms.Label()
-        Me.Lbl_T_Fax = New System.Windows.Forms.Label()
-        Me.Lbl_Fax = New System.Windows.Forms.Label()
         Me.Lbl__T_Tipo_Queja = New System.Windows.Forms.Label()
         Me.Lbl_Motivo = New System.Windows.Forms.Label()
         Me.Lbl_T_Nombre = New System.Windows.Forms.Label()
@@ -58,7 +56,7 @@ Partial Class Frm_Consulta_Queja
         Me.Lbl_Estado_Actual = New System.Windows.Forms.Label()
         Me.Lbl_Fecha_Estado = New System.Windows.Forms.Label()
         Me.Grb_Detalle = New System.Windows.Forms.GroupBox()
-        Me.Label1 = New System.Windows.Forms.Label()
+        Me.lb_detalle_queja = New System.Windows.Forms.Label()
         Me.Lbl_Detalle = New System.Windows.Forms.Label()
         Me.Rbtn_Procesada = New System.Windows.Forms.RadioButton()
         Me.bt_guardar = New System.Windows.Forms.Button()
@@ -82,7 +80,7 @@ Partial Class Frm_Consulta_Queja
         'Rbtn_Procesar
         '
         Me.Rbtn_Procesar.Font = New System.Drawing.Font("Square721 BT", 9.25!, System.Drawing.FontStyle.Bold)
-        Me.Rbtn_Procesar.Location = New System.Drawing.Point(96, 362)
+        Me.Rbtn_Procesar.Location = New System.Drawing.Point(96, 302)
         Me.Rbtn_Procesar.Name = "Rbtn_Procesar"
         Me.Rbtn_Procesar.Size = New System.Drawing.Size(115, 32)
         Me.Rbtn_Procesar.TabIndex = 4
@@ -93,7 +91,7 @@ Partial Class Frm_Consulta_Queja
         'Rbtn_Solucionar
         '
         Me.Rbtn_Solucionar.Font = New System.Drawing.Font("Square721 BT", 9.25!, System.Drawing.FontStyle.Bold)
-        Me.Rbtn_Solucionar.Location = New System.Drawing.Point(96, 338)
+        Me.Rbtn_Solucionar.Location = New System.Drawing.Point(96, 367)
         Me.Rbtn_Solucionar.Name = "Rbtn_Solucionar"
         Me.Rbtn_Solucionar.Size = New System.Drawing.Size(124, 22)
         Me.Rbtn_Solucionar.TabIndex = 3
@@ -182,28 +180,6 @@ Partial Class Frm_Consulta_Queja
         Me.Lbl_Tel_2.TabIndex = 8
         Me.Lbl_Tel_2.Text = "Telefono_2"
         Me.Lbl_Tel_2.Visible = False
-        '
-        'Lbl_T_Fax
-        '
-        Me.Lbl_T_Fax.AutoSize = True
-        Me.Lbl_T_Fax.Font = New System.Drawing.Font("Square721 BT", 9.25!, System.Drawing.FontStyle.Bold)
-        Me.Lbl_T_Fax.Location = New System.Drawing.Point(723, 37)
-        Me.Lbl_T_Fax.Name = "Lbl_T_Fax"
-        Me.Lbl_T_Fax.Size = New System.Drawing.Size(36, 16)
-        Me.Lbl_T_Fax.TabIndex = 9
-        Me.Lbl_T_Fax.Text = "Fax:"
-        '
-        'Lbl_Fax
-        '
-        Me.Lbl_Fax.AutoSize = True
-        Me.Lbl_Fax.DataBindings.Add(New System.Windows.Forms.Binding("Text", Me.SCRULTIMOESTADOQUEJABindingSource, "FAX", True))
-        Me.Lbl_Fax.Font = New System.Drawing.Font("Square721 BT", 9.25!)
-        Me.Lbl_Fax.Location = New System.Drawing.Point(765, 37)
-        Me.Lbl_Fax.Name = "Lbl_Fax"
-        Me.Lbl_Fax.Size = New System.Drawing.Size(65, 16)
-        Me.Lbl_Fax.TabIndex = 10
-        Me.Lbl_Fax.Text = "Num_Fax"
-        Me.Lbl_Fax.Visible = False
         '
         'Lbl__T_Tipo_Queja
         '
@@ -417,7 +393,7 @@ Partial Class Frm_Consulta_Queja
         'Grb_Detalle
         '
         Me.Grb_Detalle.AutoSize = True
-        Me.Grb_Detalle.Controls.Add(Me.Label1)
+        Me.Grb_Detalle.Controls.Add(Me.lb_detalle_queja)
         Me.Grb_Detalle.Controls.Add(Me.Lbl_Detalle)
         Me.Grb_Detalle.Font = New System.Drawing.Font("Square721 BT", 9.25!, System.Drawing.FontStyle.Bold)
         Me.Grb_Detalle.Location = New System.Drawing.Point(20, 273)
@@ -428,15 +404,16 @@ Partial Class Frm_Consulta_Queja
         Me.Grb_Detalle.TabStop = False
         Me.Grb_Detalle.Text = "DETALLE QUEJA"
         '
-        'Label1
+        'lb_detalle_queja
         '
-        Me.Label1.DataBindings.Add(New System.Windows.Forms.Binding("Text", Me.SCRULTIMOESTADOQUEJABindingSource, "DETALLE", True))
-        Me.Label1.Font = New System.Drawing.Font("Square721 BT", 9.25!)
-        Me.Label1.Location = New System.Drawing.Point(14, 29)
-        Me.Label1.Name = "Label1"
-        Me.Label1.Size = New System.Drawing.Size(695, 120)
-        Me.Label1.TabIndex = 13
-        Me.Label1.Text = "Detalle"
+        Me.lb_detalle_queja.DataBindings.Add(New System.Windows.Forms.Binding("Text", Me.SCRULTIMOESTADOQUEJABindingSource, "DETALLE", True))
+        Me.lb_detalle_queja.Font = New System.Drawing.Font("Square721 BT", 9.25!)
+        Me.lb_detalle_queja.Location = New System.Drawing.Point(14, 29)
+        Me.lb_detalle_queja.Name = "lb_detalle_queja"
+        Me.lb_detalle_queja.Size = New System.Drawing.Size(695, 120)
+        Me.lb_detalle_queja.TabIndex = 13
+        Me.lb_detalle_queja.Text = "Detalle"
+        Me.lb_detalle_queja.Visible = False
         '
         'Lbl_Detalle
         '
@@ -454,7 +431,7 @@ Partial Class Frm_Consulta_Queja
         '
         Me.Rbtn_Procesada.Checked = True
         Me.Rbtn_Procesada.Font = New System.Drawing.Font("Square721 BT", 9.25!, System.Drawing.FontStyle.Bold)
-        Me.Rbtn_Procesada.Location = New System.Drawing.Point(96, 305)
+        Me.Rbtn_Procesada.Location = New System.Drawing.Point(96, 334)
         Me.Rbtn_Procesada.Name = "Rbtn_Procesada"
         Me.Rbtn_Procesada.Size = New System.Drawing.Size(115, 27)
         Me.Rbtn_Procesada.TabIndex = 2
@@ -482,9 +459,7 @@ Partial Class Frm_Consulta_Queja
         Me.GroupBox1.Controls.Add(Me.Grb_Detalle)
         Me.GroupBox1.Controls.Add(Me.Lbl_Tel_2)
         Me.GroupBox1.Controls.Add(Me.Lbl_Fecha_Estado)
-        Me.GroupBox1.Controls.Add(Me.Lbl_T_Fax)
         Me.GroupBox1.Controls.Add(Me.Lbl_Estado_Actual)
-        Me.GroupBox1.Controls.Add(Me.Lbl_Fax)
         Me.GroupBox1.Controls.Add(Me.Lbl__T_Estado_Actual)
         Me.GroupBox1.Controls.Add(Me.Lbl__T_Tipo_Queja)
         Me.GroupBox1.Controls.Add(Me.Lbl_Proforma)
@@ -504,7 +479,7 @@ Partial Class Frm_Consulta_Queja
         Me.GroupBox1.Font = New System.Drawing.Font("Square721 BT", 9.25!, System.Drawing.FontStyle.Bold)
         Me.GroupBox1.Location = New System.Drawing.Point(348, 48)
         Me.GroupBox1.Name = "GroupBox1"
-        Me.GroupBox1.Size = New System.Drawing.Size(896, 482)
+        Me.GroupBox1.Size = New System.Drawing.Size(867, 482)
         Me.GroupBox1.TabIndex = 35
         Me.GroupBox1.TabStop = False
         Me.GroupBox1.Text = "INFORMACION QUEJA"
@@ -609,8 +584,6 @@ Partial Class Frm_Consulta_Queja
     Friend WithEvents Lbl_Telefonos As Label
     Friend WithEvents Lbl_Tel_1 As Label
     Friend WithEvents Lbl_Tel_2 As Label
-    Friend WithEvents Lbl_T_Fax As Label
-    Friend WithEvents Lbl_Fax As Label
     Friend WithEvents Lbl__T_Tipo_Queja As Label
     Friend WithEvents Lbl_Motivo As Label
     Friend WithEvents Lbl_T_Nombre As Label
@@ -638,7 +611,7 @@ Partial Class Frm_Consulta_Queja
     Friend WithEvents Rbtn_Procesada As RadioButton
     Friend WithEvents bt_guardar As Button
     Friend WithEvents GroupBox1 As GroupBox
-    Friend WithEvents Label1 As Label
+    Friend WithEvents lb_detalle_queja As Label
     Friend WithEvents GroupBox2 As GroupBox
     Friend WithEvents bt_imprimir As Button
     Friend WithEvents dg_quejas_pendientes As DataGridView

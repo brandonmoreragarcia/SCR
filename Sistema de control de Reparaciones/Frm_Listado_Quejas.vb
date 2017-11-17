@@ -96,9 +96,6 @@ Public Class Frm_Listado_Quejas
         End Try
     End Sub
 
-    Private Sub txt_filtro__TextChanged(sender As Object, e As EventArgs) Handles txt_filtro.TextChanged
-
-    End Sub
 
     Private Sub txt_filtro_KeyPress(sender As Object, e As KeyPressEventArgs) Handles txt_filtro.KeyPress
         bs_quejas.Filter = " nombre like '%" & txt_filtro.Text & "%'"

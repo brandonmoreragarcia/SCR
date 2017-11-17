@@ -83,11 +83,11 @@ Partial Class Frm_Listado_Quejas
         'Label1
         '
         Me.Label1.Font = New System.Drawing.Font("Square721 BT", 9.0!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.Label1.Location = New System.Drawing.Point(84, 29)
+        Me.Label1.Location = New System.Drawing.Point(90, 20)
         Me.Label1.Name = "Label1"
-        Me.Label1.Size = New System.Drawing.Size(131, 22)
+        Me.Label1.Size = New System.Drawing.Size(125, 34)
         Me.Label1.TabIndex = 4
-        Me.Label1.Text = "NOMBRE CLIENTE:"
+        Me.Label1.Text = "FILTRAR POR NOMBRE CLIENTE:"
         '
         'Dgv_Quejas_Total
         '
@@ -113,10 +113,10 @@ Partial Class Frm_Listado_Quejas
         DataGridViewCellStyle2.SelectionForeColor = System.Drawing.SystemColors.HighlightText
         DataGridViewCellStyle2.WrapMode = System.Windows.Forms.DataGridViewTriState.[False]
         Me.Dgv_Quejas_Total.DefaultCellStyle = DataGridViewCellStyle2
-        Me.Dgv_Quejas_Total.Location = New System.Drawing.Point(58, 86)
+        Me.Dgv_Quejas_Total.Location = New System.Drawing.Point(12, 86)
         Me.Dgv_Quejas_Total.Name = "Dgv_Quejas_Total"
         Me.Dgv_Quejas_Total.ReadOnly = True
-        Me.Dgv_Quejas_Total.Size = New System.Drawing.Size(1133, 433)
+        Me.Dgv_Quejas_Total.Size = New System.Drawing.Size(1249, 433)
         Me.Dgv_Quejas_Total.TabIndex = 5
         '
         'CLIENTEDataGridViewTextBoxColumn
@@ -150,28 +150,28 @@ Partial Class Frm_Listado_Quejas
         '
         Me.NUMEROQUEJADataGridViewTextBoxColumn.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.ColumnHeader
         Me.NUMEROQUEJADataGridViewTextBoxColumn.DataPropertyName = "NUMERO_QUEJA"
-        Me.NUMEROQUEJADataGridViewTextBoxColumn.HeaderText = "NUMERO_QUEJA"
+        Me.NUMEROQUEJADataGridViewTextBoxColumn.HeaderText = "QUEJA"
         Me.NUMEROQUEJADataGridViewTextBoxColumn.Name = "NUMEROQUEJADataGridViewTextBoxColumn"
         Me.NUMEROQUEJADataGridViewTextBoxColumn.ReadOnly = True
-        Me.NUMEROQUEJADataGridViewTextBoxColumn.Width = 149
+        Me.NUMEROQUEJADataGridViewTextBoxColumn.Width = 80
         '
         'FECHAINGRESODataGridViewTextBoxColumn
         '
         Me.FECHAINGRESODataGridViewTextBoxColumn.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.ColumnHeader
         Me.FECHAINGRESODataGridViewTextBoxColumn.DataPropertyName = "FECHA_INGRESO"
-        Me.FECHAINGRESODataGridViewTextBoxColumn.HeaderText = "FECHA_INGRESO"
+        Me.FECHAINGRESODataGridViewTextBoxColumn.HeaderText = "INGRESADA EL"
         Me.FECHAINGRESODataGridViewTextBoxColumn.Name = "FECHAINGRESODataGridViewTextBoxColumn"
         Me.FECHAINGRESODataGridViewTextBoxColumn.ReadOnly = True
-        Me.FECHAINGRESODataGridViewTextBoxColumn.Width = 149
+        Me.FECHAINGRESODataGridViewTextBoxColumn.Width = 126
         '
         'TIPOQUEJADataGridViewTextBoxColumn
         '
         Me.TIPOQUEJADataGridViewTextBoxColumn.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.ColumnHeader
         Me.TIPOQUEJADataGridViewTextBoxColumn.DataPropertyName = "TIPO_QUEJA"
-        Me.TIPOQUEJADataGridViewTextBoxColumn.HeaderText = "TIPO_QUEJA"
+        Me.TIPOQUEJADataGridViewTextBoxColumn.HeaderText = "TIPO"
         Me.TIPOQUEJADataGridViewTextBoxColumn.Name = "TIPOQUEJADataGridViewTextBoxColumn"
         Me.TIPOQUEJADataGridViewTextBoxColumn.ReadOnly = True
-        Me.TIPOQUEJADataGridViewTextBoxColumn.Width = 119
+        Me.TIPOQUEJADataGridViewTextBoxColumn.Width = 65
         '
         'FACTURADataGridViewTextBoxColumn
         '

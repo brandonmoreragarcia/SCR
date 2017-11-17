@@ -178,6 +178,7 @@ Partial Class Frm_Actualizacion_Rep
         '
         Me.SCRREPSPENDIENTESBindingSource.DataMember = "SCR_REPS_PENDIENTES"
         Me.SCRREPSPENDIENTESBindingSource.DataSource = Me.ExactusERP_SRC_TABLES
+        Me.SCRREPSPENDIENTESBindingSource.Sort = "REPARACION_NUMERO"
         '
         'ExactusERP_SRC_TABLES
         '
@@ -970,6 +971,7 @@ Partial Class Frm_Actualizacion_Rep
         '
         Me.SCRLOCALIZACIONTRANSBindingSource.DataMember = "SCR_LOCALIZACION_TRANS"
         Me.SCRLOCALIZACIONTRANSBindingSource.DataSource = Me.ExactusERP_SRC_TABLES
+        Me.SCRLOCALIZACIONTRANSBindingSource.Sort = "LOCALIZACION"
         '
         'cbx_estado_transporte
         '
