@@ -1,6 +1,6 @@
 ﻿Imports System.Data.SqlClient
 
-Public Class Frm_Detalle_Reparacion
+Public Class NO_Detalle_Reparacion
     Private Sub Frm_Detalle_Reparacion_Load(sender As Object, e As EventArgs) Handles MyBase.Load
 
 

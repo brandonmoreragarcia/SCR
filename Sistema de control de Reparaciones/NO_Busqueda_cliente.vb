@@ -1,4 +1,4 @@
-﻿Public Class Frm_Busqueda_cliente
+﻿Public Class NO_Busqueda_cliente
     Private Sub Frm_Busqueda_cliente_Load(sender As Object, e As EventArgs) Handles MyBase.Load
         'TODO: esta línea de código carga datos en la tabla 'ExactusERP_TABLES.CLIENTE' Puede moverla o quitarla según sea necesario.
         Me.CLIENTETableAdapter.Fill(Me.ExactusERP_TABLES.CLIENTE)

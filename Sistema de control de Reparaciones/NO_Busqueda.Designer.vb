@@ -1,5 +1,5 @@
 ﻿<Global.Microsoft.VisualBasic.CompilerServices.DesignerGenerated()>
-Partial Class Frm_Busqueda
+Partial Class NO_Busqueda
     Inherits System.Windows.Forms.Form
 
     'Form reemplaza a Dispose para limpiar la lista de componentes.
@@ -22,7 +22,7 @@ Partial Class Frm_Busqueda
     'No lo modifique con el editor de código.
     <System.Diagnostics.DebuggerStepThrough()>
     Private Sub InitializeComponent()
-        Dim resources As System.ComponentModel.ComponentResourceManager = New System.ComponentModel.ComponentResourceManager(GetType(Frm_Busqueda))
+        Dim resources As System.ComponentModel.ComponentResourceManager = New System.ComponentModel.ComponentResourceManager(GetType(NO_Busqueda))
         Me.Lbl_Num_Boleta = New System.Windows.Forms.Label()
         Me.Txt_Num_Boleta = New System.Windows.Forms.TextBox()
         Me.Btn_Cotejar = New System.Windows.Forms.Button()

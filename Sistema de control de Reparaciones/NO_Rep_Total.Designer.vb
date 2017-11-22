@@ -271,7 +271,7 @@ Partial Class Frm_Rep_Total
         '
         Me.AutoScaleDimensions = New System.Drawing.SizeF(6.0!, 13.0!)
         Me.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font
-        Me.ClientSize = New System.Drawing.Size(1441, 480)
+        Me.ClientSize = New System.Drawing.Size(1370, 480)
         Me.Controls.Add(Me.Btn_Filtrar)
         Me.Controls.Add(Me.Button1)
         Me.Controls.Add(Me.Cbx_Estados)

@@ -76,4 +76,12 @@ Public Class Frm_Solucion_Queja
         My.Forms.Frm_Consulta_Queja.Enabled = True
         My.Forms.Frm_Consulta_Queja.SCR_ULTIMO_ESTADO_QUEJATableAdapter.Fill(Frm_Consulta_Queja.ExactusERP_SRC_TABLES.SCR_ULTIMO_ESTADO_QUEJA)
     End Sub
+
+    'Para evitar que se mueva la ventana'
+    Private Sub Frm_Entrada_Move(sender As Object, e As EventArgs) Handles MyBase.Move
+        Me.Top = 0
+        Me.Left = 0
+        Me.MaximizeBox = False
+        Me.MinimizeBox = False
+    End Sub
 End Class

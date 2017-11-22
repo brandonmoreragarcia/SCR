@@ -1,5 +1,5 @@
 ﻿<Global.Microsoft.VisualBasic.CompilerServices.DesignerGenerated()>
-Partial Class Frm_Listado_Rep
+Partial Class NO_Listado_Rep
     Inherits System.Windows.Forms.Form
 
     'Form reemplaza a Dispose para limpiar la lista de componentes.
@@ -22,7 +22,7 @@ Partial Class Frm_Listado_Rep
     'No lo modifique con el editor de código.
     <System.Diagnostics.DebuggerStepThrough()>
     Private Sub InitializeComponent()
-        Dim resources As System.ComponentModel.ComponentResourceManager = New System.ComponentModel.ComponentResourceManager(GetType(Frm_Listado_Rep))
+        Dim resources As System.ComponentModel.ComponentResourceManager = New System.ComponentModel.ComponentResourceManager(GetType(NO_Listado_Rep))
         Me.Lbl_Fecha_Inicial = New System.Windows.Forms.Label()
         Me.Lbl_Fecha_Final = New System.Windows.Forms.Label()
         Me.Btn_Cargar = New System.Windows.Forms.Button()

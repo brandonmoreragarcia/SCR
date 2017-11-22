@@ -1,5 +1,5 @@
 ﻿<Global.Microsoft.VisualBasic.CompilerServices.DesignerGenerated()>
-Partial Class Frm_Consulta_Cliente
+Partial Class NO_Consulta_Cliente
     Inherits System.Windows.Forms.Form
 
     'Form reemplaza a Dispose para limpiar la lista de componentes.
@@ -23,7 +23,11 @@ Partial Class Frm_Consulta_Cliente
     <System.Diagnostics.DebuggerStepThrough()>
     Private Sub InitializeComponent()
         Me.components = New System.ComponentModel.Container()
-        Dim resources As System.ComponentModel.ComponentResourceManager = New System.ComponentModel.ComponentResourceManager(GetType(Frm_Consulta_Cliente))
+        Dim DataGridViewCellStyle1 As System.Windows.Forms.DataGridViewCellStyle = New System.Windows.Forms.DataGridViewCellStyle()
+        Dim DataGridViewCellStyle2 As System.Windows.Forms.DataGridViewCellStyle = New System.Windows.Forms.DataGridViewCellStyle()
+        Dim DataGridViewCellStyle3 As System.Windows.Forms.DataGridViewCellStyle = New System.Windows.Forms.DataGridViewCellStyle()
+        Dim DataGridViewCellStyle4 As System.Windows.Forms.DataGridViewCellStyle = New System.Windows.Forms.DataGridViewCellStyle()
+        Dim resources As System.ComponentModel.ComponentResourceManager = New System.ComponentModel.ComponentResourceManager(GetType(NO_Consulta_Cliente))
         Me.Dgv_Consulta_Cliente = New System.Windows.Forms.DataGridView()
         Me.REPARACIONNUMERODataGridViewTextBoxColumn = New System.Windows.Forms.DataGridViewTextBoxColumn()
         Me.NUMEROACTUADataGridViewTextBoxColumn = New System.Windows.Forms.DataGridViewTextBoxColumn()
@@ -66,96 +70,132 @@ Partial Class Frm_Consulta_Cliente
         Me.Dgv_Consulta_Cliente.AllowUserToAddRows = False
         Me.Dgv_Consulta_Cliente.AllowUserToDeleteRows = False
         Me.Dgv_Consulta_Cliente.AutoGenerateColumns = False
-        Me.Dgv_Consulta_Cliente.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.ColumnHeader
+        Me.Dgv_Consulta_Cliente.AutoSizeRowsMode = System.Windows.Forms.DataGridViewAutoSizeRowsMode.AllCells
+        DataGridViewCellStyle1.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft
+        DataGridViewCellStyle1.BackColor = System.Drawing.SystemColors.Control
+        DataGridViewCellStyle1.Font = New System.Drawing.Font("Square721 BT", 9.75!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        DataGridViewCellStyle1.ForeColor = System.Drawing.SystemColors.WindowText
+        DataGridViewCellStyle1.SelectionBackColor = System.Drawing.SystemColors.Highlight
+        DataGridViewCellStyle1.SelectionForeColor = System.Drawing.SystemColors.HighlightText
+        DataGridViewCellStyle1.WrapMode = System.Windows.Forms.DataGridViewTriState.[True]
+        Me.Dgv_Consulta_Cliente.ColumnHeadersDefaultCellStyle = DataGridViewCellStyle1
         Me.Dgv_Consulta_Cliente.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize
         Me.Dgv_Consulta_Cliente.Columns.AddRange(New System.Windows.Forms.DataGridViewColumn() {Me.REPARACIONNUMERODataGridViewTextBoxColumn, Me.NUMEROACTUADataGridViewTextBoxColumn, Me.CODIGOCLIENTEDataGridViewTextBoxColumn, Me.NOMBREDataGridViewTextBoxColumn, Me.ALIASDataGridViewTextBoxColumn, Me.CODIGOARTDataGridViewTextBoxColumn, Me.DESCRIPCIONDataGridViewTextBoxColumn, Me.PROBLEMAREPORTADODataGridViewTextBoxColumn, Me.ESTADODataGridViewTextBoxColumn})
         Me.Dgv_Consulta_Cliente.DataSource = Me.SCRVISTAREPARACLIENTEBindingSource
-        Me.Dgv_Consulta_Cliente.Location = New System.Drawing.Point(-4, 119)
+        DataGridViewCellStyle2.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft
+        DataGridViewCellStyle2.BackColor = System.Drawing.SystemColors.Window
+        DataGridViewCellStyle2.Font = New System.Drawing.Font("Square721 BT", 9.75!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        DataGridViewCellStyle2.ForeColor = System.Drawing.SystemColors.ControlText
+        DataGridViewCellStyle2.SelectionBackColor = System.Drawing.SystemColors.Highlight
+        DataGridViewCellStyle2.SelectionForeColor = System.Drawing.SystemColors.HighlightText
+        DataGridViewCellStyle2.WrapMode = System.Windows.Forms.DataGridViewTriState.[False]
+        Me.Dgv_Consulta_Cliente.DefaultCellStyle = DataGridViewCellStyle2
+        Me.Dgv_Consulta_Cliente.Location = New System.Drawing.Point(16, 169)
         Me.Dgv_Consulta_Cliente.Name = "Dgv_Consulta_Cliente"
         Me.Dgv_Consulta_Cliente.ReadOnly = True
-        Me.Dgv_Consulta_Cliente.Size = New System.Drawing.Size(1106, 250)
+        DataGridViewCellStyle3.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft
+        DataGridViewCellStyle3.BackColor = System.Drawing.SystemColors.Control
+        DataGridViewCellStyle3.Font = New System.Drawing.Font("Square721 BT", 9.75!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        DataGridViewCellStyle3.ForeColor = System.Drawing.SystemColors.WindowText
+        DataGridViewCellStyle3.SelectionBackColor = System.Drawing.SystemColors.Highlight
+        DataGridViewCellStyle3.SelectionForeColor = System.Drawing.SystemColors.HighlightText
+        DataGridViewCellStyle3.WrapMode = System.Windows.Forms.DataGridViewTriState.[True]
+        Me.Dgv_Consulta_Cliente.RowHeadersDefaultCellStyle = DataGridViewCellStyle3
+        DataGridViewCellStyle4.Font = New System.Drawing.Font("Square721 BT", 9.75!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        DataGridViewCellStyle4.WrapMode = System.Windows.Forms.DataGridViewTriState.[True]
+        Me.Dgv_Consulta_Cliente.RowsDefaultCellStyle = DataGridViewCellStyle4
+        Me.Dgv_Consulta_Cliente.Size = New System.Drawing.Size(880, 250)
         Me.Dgv_Consulta_Cliente.TabIndex = 0
         '
         'REPARACIONNUMERODataGridViewTextBoxColumn
         '
+        Me.REPARACIONNUMERODataGridViewTextBoxColumn.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.ColumnHeader
         Me.REPARACIONNUMERODataGridViewTextBoxColumn.DataPropertyName = "REPARACION_NUMERO"
-        Me.REPARACIONNUMERODataGridViewTextBoxColumn.HeaderText = "REPARACION NUMERO"
+        Me.REPARACIONNUMERODataGridViewTextBoxColumn.HeaderText = "REPARACIÓN"
         Me.REPARACIONNUMERODataGridViewTextBoxColumn.Name = "REPARACIONNUMERODataGridViewTextBoxColumn"
         Me.REPARACIONNUMERODataGridViewTextBoxColumn.ReadOnly = True
         Me.REPARACIONNUMERODataGridViewTextBoxColumn.SortMode = System.Windows.Forms.DataGridViewColumnSortMode.NotSortable
-        Me.REPARACIONNUMERODataGridViewTextBoxColumn.Width = 121
+        Me.REPARACIONNUMERODataGridViewTextBoxColumn.Width = 105
         '
         'NUMEROACTUADataGridViewTextBoxColumn
         '
+        Me.NUMEROACTUADataGridViewTextBoxColumn.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.ColumnHeader
         Me.NUMEROACTUADataGridViewTextBoxColumn.DataPropertyName = "NUMERO_ACTUA"
-        Me.NUMEROACTUADataGridViewTextBoxColumn.HeaderText = "NUMERO ACTUALIZACION"
+        Me.NUMEROACTUADataGridViewTextBoxColumn.HeaderText = "ACTUALIZACIÓN"
         Me.NUMEROACTUADataGridViewTextBoxColumn.Name = "NUMEROACTUADataGridViewTextBoxColumn"
         Me.NUMEROACTUADataGridViewTextBoxColumn.ReadOnly = True
         Me.NUMEROACTUADataGridViewTextBoxColumn.SortMode = System.Windows.Forms.DataGridViewColumnSortMode.NotSortable
-        Me.NUMEROACTUADataGridViewTextBoxColumn.Width = 134
+        Me.NUMEROACTUADataGridViewTextBoxColumn.Width = 128
         '
         'CODIGOCLIENTEDataGridViewTextBoxColumn
         '
+        Me.CODIGOCLIENTEDataGridViewTextBoxColumn.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.ColumnHeader
         Me.CODIGOCLIENTEDataGridViewTextBoxColumn.DataPropertyName = "CODIGO_CLIENTE"
-        Me.CODIGOCLIENTEDataGridViewTextBoxColumn.HeaderText = "CODIGO CLIENTE"
+        Me.CODIGOCLIENTEDataGridViewTextBoxColumn.HeaderText = "CLIENTE"
         Me.CODIGOCLIENTEDataGridViewTextBoxColumn.Name = "CODIGOCLIENTEDataGridViewTextBoxColumn"
         Me.CODIGOCLIENTEDataGridViewTextBoxColumn.ReadOnly = True
         Me.CODIGOCLIENTEDataGridViewTextBoxColumn.SortMode = System.Windows.Forms.DataGridViewColumnSortMode.NotSortable
-        Me.CODIGOCLIENTEDataGridViewTextBoxColumn.Width = 93
+        Me.CODIGOCLIENTEDataGridViewTextBoxColumn.Width = 73
         '
         'NOMBREDataGridViewTextBoxColumn
         '
+        Me.NOMBREDataGridViewTextBoxColumn.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.ColumnHeader
         Me.NOMBREDataGridViewTextBoxColumn.DataPropertyName = "NOMBRE"
         Me.NOMBREDataGridViewTextBoxColumn.HeaderText = "NOMBRE"
         Me.NOMBREDataGridViewTextBoxColumn.Name = "NOMBREDataGridViewTextBoxColumn"
         Me.NOMBREDataGridViewTextBoxColumn.ReadOnly = True
         Me.NOMBREDataGridViewTextBoxColumn.SortMode = System.Windows.Forms.DataGridViewColumnSortMode.NotSortable
-        Me.NOMBREDataGridViewTextBoxColumn.Width = 60
+        Me.NOMBREDataGridViewTextBoxColumn.Width = 75
         '
         'ALIASDataGridViewTextBoxColumn
         '
+        Me.ALIASDataGridViewTextBoxColumn.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.ColumnHeader
         Me.ALIASDataGridViewTextBoxColumn.DataPropertyName = "ALIAS"
         Me.ALIASDataGridViewTextBoxColumn.HeaderText = "ALIAS"
         Me.ALIASDataGridViewTextBoxColumn.Name = "ALIASDataGridViewTextBoxColumn"
         Me.ALIASDataGridViewTextBoxColumn.ReadOnly = True
         Me.ALIASDataGridViewTextBoxColumn.SortMode = System.Windows.Forms.DataGridViewColumnSortMode.NotSortable
-        Me.ALIASDataGridViewTextBoxColumn.Width = 43
+        Me.ALIASDataGridViewTextBoxColumn.Width = 56
         '
         'CODIGOARTDataGridViewTextBoxColumn
         '
+        Me.CODIGOARTDataGridViewTextBoxColumn.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.ColumnHeader
         Me.CODIGOARTDataGridViewTextBoxColumn.DataPropertyName = "CODIGO_ART"
-        Me.CODIGOARTDataGridViewTextBoxColumn.HeaderText = "CODIGO ARTICULO"
+        Me.CODIGOARTDataGridViewTextBoxColumn.HeaderText = "ARTÍCULO"
         Me.CODIGOARTDataGridViewTextBoxColumn.Name = "CODIGOARTDataGridViewTextBoxColumn"
         Me.CODIGOARTDataGridViewTextBoxColumn.ReadOnly = True
         Me.CODIGOARTDataGridViewTextBoxColumn.SortMode = System.Windows.Forms.DataGridViewColumnSortMode.NotSortable
-        Me.CODIGOARTDataGridViewTextBoxColumn.Width = 101
+        Me.CODIGOARTDataGridViewTextBoxColumn.Width = 83
         '
         'DESCRIPCIONDataGridViewTextBoxColumn
         '
+        Me.DESCRIPCIONDataGridViewTextBoxColumn.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.ColumnHeader
         Me.DESCRIPCIONDataGridViewTextBoxColumn.DataPropertyName = "DESCRIPCION"
-        Me.DESCRIPCIONDataGridViewTextBoxColumn.HeaderText = "DESCRIPCION"
+        Me.DESCRIPCIONDataGridViewTextBoxColumn.HeaderText = "DESCRIPCIÓN"
         Me.DESCRIPCIONDataGridViewTextBoxColumn.Name = "DESCRIPCIONDataGridViewTextBoxColumn"
         Me.DESCRIPCIONDataGridViewTextBoxColumn.ReadOnly = True
         Me.DESCRIPCIONDataGridViewTextBoxColumn.SortMode = System.Windows.Forms.DataGridViewColumnSortMode.NotSortable
-        Me.DESCRIPCIONDataGridViewTextBoxColumn.Width = 86
+        Me.DESCRIPCIONDataGridViewTextBoxColumn.Width = 109
         '
         'PROBLEMAREPORTADODataGridViewTextBoxColumn
         '
+        Me.PROBLEMAREPORTADODataGridViewTextBoxColumn.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.ColumnHeader
         Me.PROBLEMAREPORTADODataGridViewTextBoxColumn.DataPropertyName = "PROBLEMA_REPORTADO"
-        Me.PROBLEMAREPORTADODataGridViewTextBoxColumn.HeaderText = "PROBLEMA REPORTADO"
+        Me.PROBLEMAREPORTADODataGridViewTextBoxColumn.HeaderText = "PROBLEMA"
         Me.PROBLEMAREPORTADODataGridViewTextBoxColumn.Name = "PROBLEMAREPORTADODataGridViewTextBoxColumn"
         Me.PROBLEMAREPORTADODataGridViewTextBoxColumn.ReadOnly = True
         Me.PROBLEMAREPORTADODataGridViewTextBoxColumn.SortMode = System.Windows.Forms.DataGridViewColumnSortMode.NotSortable
-        Me.PROBLEMAREPORTADODataGridViewTextBoxColumn.Width = 129
+        Me.PROBLEMAREPORTADODataGridViewTextBoxColumn.Width = 91
         '
         'ESTADODataGridViewTextBoxColumn
         '
+        Me.ESTADODataGridViewTextBoxColumn.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.ColumnHeader
         Me.ESTADODataGridViewTextBoxColumn.DataPropertyName = "ESTADO"
         Me.ESTADODataGridViewTextBoxColumn.HeaderText = "ESTADO"
         Me.ESTADODataGridViewTextBoxColumn.Name = "ESTADODataGridViewTextBoxColumn"
         Me.ESTADODataGridViewTextBoxColumn.ReadOnly = True
         Me.ESTADODataGridViewTextBoxColumn.SortMode = System.Windows.Forms.DataGridViewColumnSortMode.NotSortable
-        Me.ESTADODataGridViewTextBoxColumn.Width = 57
+        Me.ESTADODataGridViewTextBoxColumn.Width = 70
         '
         'SCRVISTAREPARACLIENTEBindingSource
         '
@@ -332,7 +372,7 @@ Partial Class Frm_Consulta_Cliente
         '
         Me.AutoScaleDimensions = New System.Drawing.SizeF(6.0!, 13.0!)
         Me.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font
-        Me.ClientSize = New System.Drawing.Size(1108, 376)
+        Me.ClientSize = New System.Drawing.Size(1273, 552)
         Me.Controls.Add(Me.Lbl_Descripcion)
         Me.Controls.Add(Me.Lbl_T_Problema_Reportado)
         Me.Controls.Add(Me.Lbl_T_Alias)

@@ -396,7 +396,7 @@ Partial Class Frm_Consulta_Queja
         Me.Grb_Detalle.Controls.Add(Me.lb_detalle_queja)
         Me.Grb_Detalle.Controls.Add(Me.Lbl_Detalle)
         Me.Grb_Detalle.Font = New System.Drawing.Font("Square721 BT", 9.25!, System.Drawing.FontStyle.Bold)
-        Me.Grb_Detalle.Location = New System.Drawing.Point(20, 273)
+        Me.Grb_Detalle.Location = New System.Drawing.Point(62, 273)
         Me.Grb_Detalle.MaximumSize = New System.Drawing.Size(770, 0)
         Me.Grb_Detalle.Name = "Grb_Detalle"
         Me.Grb_Detalle.Size = New System.Drawing.Size(739, 167)
@@ -429,20 +429,18 @@ Partial Class Frm_Consulta_Queja
         '
         'Rbtn_Procesada
         '
-        Me.Rbtn_Procesada.Checked = True
         Me.Rbtn_Procesada.Font = New System.Drawing.Font("Square721 BT", 9.25!, System.Drawing.FontStyle.Bold)
         Me.Rbtn_Procesada.Location = New System.Drawing.Point(96, 334)
         Me.Rbtn_Procesada.Name = "Rbtn_Procesada"
         Me.Rbtn_Procesada.Size = New System.Drawing.Size(115, 27)
         Me.Rbtn_Procesada.TabIndex = 2
-        Me.Rbtn_Procesada.TabStop = True
         Me.Rbtn_Procesada.Text = "PROCESADA"
         Me.Rbtn_Procesada.UseVisualStyleBackColor = True
         Me.Rbtn_Procesada.Visible = False
         '
         'bt_guardar
         '
-        Me.bt_guardar.Location = New System.Drawing.Point(183, 427)
+        Me.bt_guardar.Location = New System.Drawing.Point(172, 427)
         Me.bt_guardar.Name = "bt_guardar"
         Me.bt_guardar.Size = New System.Drawing.Size(105, 33)
         Me.bt_guardar.TabIndex = 5
@@ -498,7 +496,7 @@ Partial Class Frm_Consulta_Queja
         Me.GroupBox2.Font = New System.Drawing.Font("Square721 BT", 9.75!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.GroupBox2.Location = New System.Drawing.Point(12, 48)
         Me.GroupBox2.Name = "GroupBox2"
-        Me.GroupBox2.Size = New System.Drawing.Size(312, 482)
+        Me.GroupBox2.Size = New System.Drawing.Size(303, 482)
         Me.GroupBox2.TabIndex = 36
         Me.GroupBox2.TabStop = False
         Me.GroupBox2.Text = "BÚSQUEDA QUEJA"
@@ -539,7 +537,7 @@ Partial Class Frm_Consulta_Queja
         '
         'bt_imprimir
         '
-        Me.bt_imprimir.Location = New System.Drawing.Point(16, 427)
+        Me.bt_imprimir.Location = New System.Drawing.Point(6, 427)
         Me.bt_imprimir.Name = "bt_imprimir"
         Me.bt_imprimir.Size = New System.Drawing.Size(148, 33)
         Me.bt_imprimir.TabIndex = 6

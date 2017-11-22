@@ -1,5 +1,5 @@
 ﻿Imports System.Data.SqlClient
-Public Class Frm_Actualizacion_Trans
+Public Class NO_Actualizacion_Trans
     Dim da As SqlDataAdapter
     Dim ds As DataSet
     Private Sub Frm_Actualizacion_Trans_Load(sender As Object, e As EventArgs) Handles MyBase.Load

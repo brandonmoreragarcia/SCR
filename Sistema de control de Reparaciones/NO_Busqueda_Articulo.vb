@@ -1,4 +1,4 @@
-﻿Public Class Frm_Busqueda_Articulo
+﻿Public Class NO_Busqueda_Articulo
     Private Sub ARTICULOBindingNavigatorSaveItem_Click(sender As Object, e As EventArgs)
         Me.Validate()
         Me.ARTICULOBindingSource.EndEdit()

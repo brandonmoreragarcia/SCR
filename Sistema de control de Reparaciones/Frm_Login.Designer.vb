@@ -53,6 +53,7 @@ Partial Class Frm_Login
         '
         'UsernameLabel
         '
+        Me.UsernameLabel.Font = New System.Drawing.Font("Square721 BT", 9.75!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.UsernameLabel.Location = New System.Drawing.Point(210, 24)
         Me.UsernameLabel.Name = "UsernameLabel"
         Me.UsernameLabel.Size = New System.Drawing.Size(220, 23)
@@ -62,6 +63,7 @@ Partial Class Frm_Login
         '
         'PasswordLabel
         '
+        Me.PasswordLabel.Font = New System.Drawing.Font("Square721 BT", 9.75!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.PasswordLabel.Location = New System.Drawing.Point(210, 81)
         Me.PasswordLabel.Name = "PasswordLabel"
         Me.PasswordLabel.Size = New System.Drawing.Size(220, 23)
@@ -71,21 +73,24 @@ Partial Class Frm_Login
         '
         'Txt_Usuario
         '
+        Me.Txt_Usuario.Font = New System.Drawing.Font("Square721 BT", 9.75!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.Txt_Usuario.Location = New System.Drawing.Point(212, 44)
         Me.Txt_Usuario.Name = "Txt_Usuario"
-        Me.Txt_Usuario.Size = New System.Drawing.Size(220, 20)
+        Me.Txt_Usuario.Size = New System.Drawing.Size(220, 23)
         Me.Txt_Usuario.TabIndex = 1
         '
         'Txt_password
         '
+        Me.Txt_password.Font = New System.Drawing.Font("Square721 BT", 9.75!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.Txt_password.Location = New System.Drawing.Point(212, 101)
         Me.Txt_password.Name = "Txt_password"
         Me.Txt_password.PasswordChar = Global.Microsoft.VisualBasic.ChrW(42)
-        Me.Txt_password.Size = New System.Drawing.Size(220, 20)
+        Me.Txt_password.Size = New System.Drawing.Size(220, 23)
         Me.Txt_password.TabIndex = 3
         '
         'OK
         '
+        Me.OK.Font = New System.Drawing.Font("Square721 BT", 9.75!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.OK.Location = New System.Drawing.Point(235, 161)
         Me.OK.Name = "OK"
         Me.OK.Size = New System.Drawing.Size(94, 23)
@@ -95,6 +100,7 @@ Partial Class Frm_Login
         'Cancel
         '
         Me.Cancel.DialogResult = System.Windows.Forms.DialogResult.Cancel
+        Me.Cancel.Font = New System.Drawing.Font("Square721 BT", 9.75!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.Cancel.Location = New System.Drawing.Point(338, 161)
         Me.Cancel.Name = "Cancel"
         Me.Cancel.Size = New System.Drawing.Size(94, 23)
@@ -107,7 +113,7 @@ Partial Class Frm_Login
         Me.AutoScaleDimensions = New System.Drawing.SizeF(6.0!, 13.0!)
         Me.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font
         Me.CancelButton = Me.Cancel
-        Me.ClientSize = New System.Drawing.Size(440, 226)
+        Me.ClientSize = New System.Drawing.Size(451, 248)
         Me.ControlBox = False
         Me.Controls.Add(Me.Cancel)
         Me.Controls.Add(Me.OK)

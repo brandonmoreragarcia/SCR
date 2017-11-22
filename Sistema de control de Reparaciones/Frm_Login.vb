@@ -36,6 +36,7 @@ Public Class Frm_Login
 
     End Sub
 
+
     Private Sub Cancel_Click(ByVal sender As System.Object, ByVal e As System.EventArgs) Handles Cancel.Click
         Application.ExitThread()
     End Sub
@@ -44,15 +45,12 @@ Public Class Frm_Login
         abrir()
     End Sub
 
-    Private Sub Txt_Usuario_KeyPress(sender As Object, e As KeyPressEventArgs) Handles Txt_Usuario.KeyPress
-
+    'Para evitar que se mueva la ventana'
+    Private Sub Frm_Entrada_Move(sender As Object, e As EventArgs) Handles MyBase.Move
+        Me.Top = 0
+        Me.Left = 0
+        Me.MaximizeBox = False
+        Me.MinimizeBox = False
     End Sub
 
-    Private Sub Txt_Usuario_TextChanged(sender As Object, e As EventArgs) Handles Txt_Usuario.TextChanged
-
-    End Sub
-
-    Private Sub LogoPictureBox_Click(sender As Object, e As EventArgs) Handles LogoPictureBox.Click
-
-    End Sub
 End Class

@@ -36,4 +36,14 @@ Public Class Frm_Mantenimiento_Estado_Ruta
         estado_r = ""
         Me.SCR_ESTADO_TRANSPORTETableAdapter.Fill(Me.ExactusERP_SRC_TABLES.SCR_ESTADO_TRANSPORTE)
     End Sub
+
+
+
+    'Para evitar que se mueva la ventana'
+    Private Sub Frm_Entrada_Move(sender As Object, e As EventArgs) Handles MyBase.Move
+        Me.Top = 0
+        Me.Left = 0
+        Me.MaximizeBox = False
+        Me.MinimizeBox = False
+    End Sub
 End Class

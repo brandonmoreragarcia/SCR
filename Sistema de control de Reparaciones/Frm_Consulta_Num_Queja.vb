@@ -8,7 +8,7 @@
         Me.SCR_ESTADO_QUEJATableAdapter.Fill(Me.ExactusERP_SRC_TABLES.SCR_ESTADO_QUEJA)
         'TODO: esta línea de código carga datos en la tabla 'ExactusERP_SRC_TABLES.SCR_ULTIMO_ESTADO_QUEJA' Puede moverla o quitarla según sea necesario.
         Me.SCR_ULTIMO_ESTADO_QUEJATableAdapter.Fill(Me.ExactusERP_SRC_TABLES.SCR_ULTIMO_ESTADO_QUEJA)
-        Txt_Num_Queja.Text = Num_Queja
+
         Dgv_Estados.DataBindings.Clear()
     End Sub
 
@@ -51,4 +51,13 @@
         My.Forms.Frm_Listado_Quejas.MdiParent = Frm_Main_Menu
         Frm_Listado_Quejas.Show()
     End Sub
+
+    'Para evitar que se mueva la ventana'
+    Private Sub Frm_Entrada_Move(sender As Object, e As EventArgs) Handles MyBase.Move
+        Me.Top = 0
+        Me.Left = 0
+        Me.MaximizeBox = False
+        Me.MinimizeBox = False
+    End Sub
+
 End Class

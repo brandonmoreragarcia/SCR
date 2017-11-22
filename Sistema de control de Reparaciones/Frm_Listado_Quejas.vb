@@ -4,7 +4,7 @@ Public Class Frm_Listado_Quejas
     Private Sub Frm_Listado_Quejas_Load(sender As Object, e As EventArgs) Handles MyBase.Load
         'TODO: esta línea de código carga datos en la tabla 'ExactusERP_SRC_TABLES.SCR_ULTIMO_ESTADO_QUEJA' Puede moverla o quitarla según sea necesario.
         Me.SCR_ULTIMO_ESTADO_QUEJATableAdapter.Fill(Me.ExactusERP_SRC_TABLES.SCR_ULTIMO_ESTADO_QUEJA)
-        'Dgv_Quejas_Total.DefaultCellStyle.Font = New Drawing.Font("Square721 BT", 10, Font.Style.Regular)
+
 
     End Sub
 
@@ -96,8 +96,16 @@ Public Class Frm_Listado_Quejas
         End Try
     End Sub
 
-
     Private Sub txt_filtro_KeyPress(sender As Object, e As KeyPressEventArgs) Handles txt_filtro.KeyPress
         bs_quejas.Filter = " nombre like '%" & txt_filtro.Text & "%'"
+    End Sub
+
+
+    'Para evitar que se mueva la ventana'
+    Private Sub Frm_Entrada_Move(sender As Object, e As EventArgs) Handles MyBase.Move
+        Me.Top = 0
+        Me.Left = 0
+        Me.MaximizeBox = False
+        Me.MinimizeBox = False
     End Sub
 End Class

@@ -1,5 +1,5 @@
 ﻿<Global.Microsoft.VisualBasic.CompilerServices.DesignerGenerated()> _
-Partial Class Frm_Actualizacion_Trans
+Partial Class NO_Actualizacion_Trans
     Inherits System.Windows.Forms.Form
 
     'Form reemplaza a Dispose para limpiar la lista de componentes.
@@ -23,7 +23,7 @@ Partial Class Frm_Actualizacion_Trans
     <System.Diagnostics.DebuggerStepThrough()> _
     Private Sub InitializeComponent()
         Me.components = New System.ComponentModel.Container()
-        Dim resources As System.ComponentModel.ComponentResourceManager = New System.ComponentModel.ComponentResourceManager(GetType(Frm_Actualizacion_Trans))
+        Dim resources As System.ComponentModel.ComponentResourceManager = New System.ComponentModel.ComponentResourceManager(GetType(NO_Actualizacion_Trans))
         Me.Btn_Grabar_Actua = New System.Windows.Forms.Button()
         Me.Cbx_Localizacion = New System.Windows.Forms.ComboBox()
         Me.SCRLOCALIZACIONTRANSBindingSource = New System.Windows.Forms.BindingSource(Me.components)

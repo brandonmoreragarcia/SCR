@@ -62,7 +62,16 @@ Public Class Frm_Impresion_Rep_Consumo
         End If
     End Sub
 
-    Private Sub Frm_Impresion_Rep_Consumo_Load(sender As Object, e As EventArgs) Handles MyBase.Load
+    Private Sub Frm_Impresion_Rep_Consumo_FormClosing(sender As Object, e As FormClosingEventArgs) Handles MyBase.FormClosing
+        My.Forms.Frm_Listado_Reportes.Enabled = True
+    End Sub
 
+
+    'Para evitar que se mueva la ventana'
+    Private Sub Frm_Entrada_Move(sender As Object, e As EventArgs) Handles MyBase.Move
+        Me.Top = 0
+        Me.Left = 0
+        Me.MaximizeBox = False
+        Me.MinimizeBox = False
     End Sub
 End Class

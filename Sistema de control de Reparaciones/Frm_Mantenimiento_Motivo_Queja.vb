@@ -36,4 +36,13 @@ Public Class Frm_Mantenimiento_Motivo_Queja
         tipo_queja = ""
         Me.SCR_TIPO_QUEJATableAdapter.Fill(Me.ExactusERP_SRC_TABLES.SCR_TIPO_QUEJA)
     End Sub
+
+
+    'Para evitar que se mueva la ventana'
+    Private Sub Frm_Entrada_Move(sender As Object, e As EventArgs) Handles MyBase.Move
+        Me.Top = 0
+        Me.Left = 0
+        Me.MaximizeBox = False
+        Me.MinimizeBox = False
+    End Sub
 End Class

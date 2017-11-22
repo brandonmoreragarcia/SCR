@@ -54,7 +54,7 @@ Partial Class Frm_Procesada_Queja
         '
         Me.Lbl_Alisto.AutoSize = True
         Me.Lbl_Alisto.Font = New System.Drawing.Font("Square721 BT", 9.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.Lbl_Alisto.Location = New System.Drawing.Point(102, 189)
+        Me.Lbl_Alisto.Location = New System.Drawing.Point(83, 190)
         Me.Lbl_Alisto.Name = "Lbl_Alisto"
         Me.Lbl_Alisto.Size = New System.Drawing.Size(53, 15)
         Me.Lbl_Alisto.TabIndex = 1
@@ -64,7 +64,7 @@ Partial Class Frm_Procesada_Queja
         '
         Me.Lbl_Chequeo.AutoSize = True
         Me.Lbl_Chequeo.Font = New System.Drawing.Font("Square721 BT", 9.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.Lbl_Chequeo.Location = New System.Drawing.Point(82, 233)
+        Me.Lbl_Chequeo.Location = New System.Drawing.Point(63, 234)
         Me.Lbl_Chequeo.Name = "Lbl_Chequeo"
         Me.Lbl_Chequeo.Size = New System.Drawing.Size(71, 15)
         Me.Lbl_Chequeo.TabIndex = 2
@@ -76,9 +76,9 @@ Partial Class Frm_Procesada_Queja
         Me.Cbx_Alisto.DisplayMember = "NOMBRE"
         Me.Cbx_Alisto.Font = New System.Drawing.Font("Square721 BT", 9.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.Cbx_Alisto.FormattingEnabled = True
-        Me.Cbx_Alisto.Location = New System.Drawing.Point(170, 188)
+        Me.Cbx_Alisto.Location = New System.Drawing.Point(151, 189)
         Me.Cbx_Alisto.Name = "Cbx_Alisto"
-        Me.Cbx_Alisto.Size = New System.Drawing.Size(198, 23)
+        Me.Cbx_Alisto.Size = New System.Drawing.Size(235, 23)
         Me.Cbx_Alisto.TabIndex = 3
         '
         'SCRALISTOCHEQUEOBindingSource
@@ -98,9 +98,9 @@ Partial Class Frm_Procesada_Queja
         Me.Cbx_Chequeo.DisplayMember = "NOMBRE"
         Me.Cbx_Chequeo.Font = New System.Drawing.Font("Square721 BT", 9.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.Cbx_Chequeo.FormattingEnabled = True
-        Me.Cbx_Chequeo.Location = New System.Drawing.Point(170, 232)
+        Me.Cbx_Chequeo.Location = New System.Drawing.Point(151, 233)
         Me.Cbx_Chequeo.Name = "Cbx_Chequeo"
-        Me.Cbx_Chequeo.Size = New System.Drawing.Size(198, 23)
+        Me.Cbx_Chequeo.Size = New System.Drawing.Size(235, 23)
         Me.Cbx_Chequeo.TabIndex = 4
         '
         'SCRALISTOCHEQUEOBindingSource1

@@ -35,12 +35,10 @@ Partial Class Frm_Listado_Quejas
         Me.Dgv_Quejas_Total = New System.Windows.Forms.DataGridView()
         Me.CLIENTEDataGridViewTextBoxColumn = New System.Windows.Forms.DataGridViewTextBoxColumn()
         Me.NOMBREDataGridViewTextBoxColumn = New System.Windows.Forms.DataGridViewTextBoxColumn()
-        Me.ALIASDataGridViewTextBoxColumn = New System.Windows.Forms.DataGridViewTextBoxColumn()
         Me.NUMEROQUEJADataGridViewTextBoxColumn = New System.Windows.Forms.DataGridViewTextBoxColumn()
         Me.FECHAINGRESODataGridViewTextBoxColumn = New System.Windows.Forms.DataGridViewTextBoxColumn()
         Me.TIPOQUEJADataGridViewTextBoxColumn = New System.Windows.Forms.DataGridViewTextBoxColumn()
         Me.FACTURADataGridViewTextBoxColumn = New System.Windows.Forms.DataGridViewTextBoxColumn()
-        Me.PROFORMADataGridViewTextBoxColumn = New System.Windows.Forms.DataGridViewTextBoxColumn()
         Me.DETALLEDataGridViewTextBoxColumn = New System.Windows.Forms.DataGridViewTextBoxColumn()
         Me.ESTADODataGridViewTextBoxColumn = New System.Windows.Forms.DataGridViewTextBoxColumn()
         CType(Me.bs_quejas, System.ComponentModel.ISupportInitialize).BeginInit()
@@ -94,6 +92,7 @@ Partial Class Frm_Listado_Quejas
         Me.Dgv_Quejas_Total.AllowUserToAddRows = False
         Me.Dgv_Quejas_Total.AllowUserToDeleteRows = False
         Me.Dgv_Quejas_Total.AutoGenerateColumns = False
+        Me.Dgv_Quejas_Total.AutoSizeRowsMode = System.Windows.Forms.DataGridViewAutoSizeRowsMode.AllCells
         DataGridViewCellStyle1.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft
         DataGridViewCellStyle1.BackColor = System.Drawing.SystemColors.Control
         DataGridViewCellStyle1.Font = New System.Drawing.Font("Square721 BT", 9.75!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
@@ -103,15 +102,15 @@ Partial Class Frm_Listado_Quejas
         DataGridViewCellStyle1.WrapMode = System.Windows.Forms.DataGridViewTriState.[True]
         Me.Dgv_Quejas_Total.ColumnHeadersDefaultCellStyle = DataGridViewCellStyle1
         Me.Dgv_Quejas_Total.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize
-        Me.Dgv_Quejas_Total.Columns.AddRange(New System.Windows.Forms.DataGridViewColumn() {Me.CLIENTEDataGridViewTextBoxColumn, Me.NOMBREDataGridViewTextBoxColumn, Me.ALIASDataGridViewTextBoxColumn, Me.NUMEROQUEJADataGridViewTextBoxColumn, Me.FECHAINGRESODataGridViewTextBoxColumn, Me.TIPOQUEJADataGridViewTextBoxColumn, Me.FACTURADataGridViewTextBoxColumn, Me.PROFORMADataGridViewTextBoxColumn, Me.DETALLEDataGridViewTextBoxColumn, Me.ESTADODataGridViewTextBoxColumn})
+        Me.Dgv_Quejas_Total.Columns.AddRange(New System.Windows.Forms.DataGridViewColumn() {Me.CLIENTEDataGridViewTextBoxColumn, Me.NOMBREDataGridViewTextBoxColumn, Me.NUMEROQUEJADataGridViewTextBoxColumn, Me.FECHAINGRESODataGridViewTextBoxColumn, Me.TIPOQUEJADataGridViewTextBoxColumn, Me.FACTURADataGridViewTextBoxColumn, Me.DETALLEDataGridViewTextBoxColumn, Me.ESTADODataGridViewTextBoxColumn})
         Me.Dgv_Quejas_Total.DataSource = Me.bs_quejas
         DataGridViewCellStyle2.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft
         DataGridViewCellStyle2.BackColor = System.Drawing.SystemColors.Window
-        DataGridViewCellStyle2.Font = New System.Drawing.Font("Square721 BT", 8.25!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        DataGridViewCellStyle2.Font = New System.Drawing.Font("Square721 BT", 9.75!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         DataGridViewCellStyle2.ForeColor = System.Drawing.SystemColors.ControlText
         DataGridViewCellStyle2.SelectionBackColor = System.Drawing.SystemColors.Highlight
         DataGridViewCellStyle2.SelectionForeColor = System.Drawing.SystemColors.HighlightText
-        DataGridViewCellStyle2.WrapMode = System.Windows.Forms.DataGridViewTriState.[False]
+        DataGridViewCellStyle2.WrapMode = System.Windows.Forms.DataGridViewTriState.[True]
         Me.Dgv_Quejas_Total.DefaultCellStyle = DataGridViewCellStyle2
         Me.Dgv_Quejas_Total.Location = New System.Drawing.Point(12, 86)
         Me.Dgv_Quejas_Total.Name = "Dgv_Quejas_Total"
@@ -130,21 +129,11 @@ Partial Class Frm_Listado_Quejas
         '
         'NOMBREDataGridViewTextBoxColumn
         '
-        Me.NOMBREDataGridViewTextBoxColumn.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.ColumnHeader
         Me.NOMBREDataGridViewTextBoxColumn.DataPropertyName = "NOMBRE"
         Me.NOMBREDataGridViewTextBoxColumn.HeaderText = "NOMBRE"
         Me.NOMBREDataGridViewTextBoxColumn.Name = "NOMBREDataGridViewTextBoxColumn"
         Me.NOMBREDataGridViewTextBoxColumn.ReadOnly = True
-        Me.NOMBREDataGridViewTextBoxColumn.Width = 94
-        '
-        'ALIASDataGridViewTextBoxColumn
-        '
-        Me.ALIASDataGridViewTextBoxColumn.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.ColumnHeader
-        Me.ALIASDataGridViewTextBoxColumn.DataPropertyName = "ALIAS"
-        Me.ALIASDataGridViewTextBoxColumn.HeaderText = "ALIAS"
-        Me.ALIASDataGridViewTextBoxColumn.Name = "ALIASDataGridViewTextBoxColumn"
-        Me.ALIASDataGridViewTextBoxColumn.ReadOnly = True
-        Me.ALIASDataGridViewTextBoxColumn.Width = 75
+        Me.NOMBREDataGridViewTextBoxColumn.Width = 200
         '
         'NUMEROQUEJADataGridViewTextBoxColumn
         '
@@ -157,21 +146,19 @@ Partial Class Frm_Listado_Quejas
         '
         'FECHAINGRESODataGridViewTextBoxColumn
         '
-        Me.FECHAINGRESODataGridViewTextBoxColumn.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.ColumnHeader
         Me.FECHAINGRESODataGridViewTextBoxColumn.DataPropertyName = "FECHA_INGRESO"
-        Me.FECHAINGRESODataGridViewTextBoxColumn.HeaderText = "INGRESADA EL"
+        Me.FECHAINGRESODataGridViewTextBoxColumn.HeaderText = "INGRESADA"
         Me.FECHAINGRESODataGridViewTextBoxColumn.Name = "FECHAINGRESODataGridViewTextBoxColumn"
         Me.FECHAINGRESODataGridViewTextBoxColumn.ReadOnly = True
-        Me.FECHAINGRESODataGridViewTextBoxColumn.Width = 126
+        Me.FECHAINGRESODataGridViewTextBoxColumn.Width = 150
         '
         'TIPOQUEJADataGridViewTextBoxColumn
         '
-        Me.TIPOQUEJADataGridViewTextBoxColumn.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.ColumnHeader
         Me.TIPOQUEJADataGridViewTextBoxColumn.DataPropertyName = "TIPO_QUEJA"
         Me.TIPOQUEJADataGridViewTextBoxColumn.HeaderText = "TIPO"
         Me.TIPOQUEJADataGridViewTextBoxColumn.Name = "TIPOQUEJADataGridViewTextBoxColumn"
         Me.TIPOQUEJADataGridViewTextBoxColumn.ReadOnly = True
-        Me.TIPOQUEJADataGridViewTextBoxColumn.Width = 65
+        Me.TIPOQUEJADataGridViewTextBoxColumn.Width = 200
         '
         'FACTURADataGridViewTextBoxColumn
         '
@@ -182,32 +169,21 @@ Partial Class Frm_Listado_Quejas
         Me.FACTURADataGridViewTextBoxColumn.ReadOnly = True
         Me.FACTURADataGridViewTextBoxColumn.Width = 97
         '
-        'PROFORMADataGridViewTextBoxColumn
-        '
-        Me.PROFORMADataGridViewTextBoxColumn.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.ColumnHeader
-        Me.PROFORMADataGridViewTextBoxColumn.DataPropertyName = "PROFORMA"
-        Me.PROFORMADataGridViewTextBoxColumn.HeaderText = "PROFORMA"
-        Me.PROFORMADataGridViewTextBoxColumn.Name = "PROFORMADataGridViewTextBoxColumn"
-        Me.PROFORMADataGridViewTextBoxColumn.ReadOnly = True
-        Me.PROFORMADataGridViewTextBoxColumn.Width = 111
-        '
         'DETALLEDataGridViewTextBoxColumn
         '
-        Me.DETALLEDataGridViewTextBoxColumn.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.ColumnHeader
         Me.DETALLEDataGridViewTextBoxColumn.DataPropertyName = "DETALLE"
         Me.DETALLEDataGridViewTextBoxColumn.HeaderText = "DETALLE"
         Me.DETALLEDataGridViewTextBoxColumn.Name = "DETALLEDataGridViewTextBoxColumn"
         Me.DETALLEDataGridViewTextBoxColumn.ReadOnly = True
-        Me.DETALLEDataGridViewTextBoxColumn.Width = 95
+        Me.DETALLEDataGridViewTextBoxColumn.Width = 250
         '
         'ESTADODataGridViewTextBoxColumn
         '
-        Me.ESTADODataGridViewTextBoxColumn.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.ColumnHeader
         Me.ESTADODataGridViewTextBoxColumn.DataPropertyName = "ESTADO"
         Me.ESTADODataGridViewTextBoxColumn.HeaderText = "ESTADO"
         Me.ESTADODataGridViewTextBoxColumn.Name = "ESTADODataGridViewTextBoxColumn"
         Me.ESTADODataGridViewTextBoxColumn.ReadOnly = True
-        Me.ESTADODataGridViewTextBoxColumn.Width = 89
+        Me.ESTADODataGridViewTextBoxColumn.Width = 120
         '
         'Frm_Listado_Quejas
         '
@@ -238,12 +214,10 @@ Partial Class Frm_Listado_Quejas
     Friend WithEvents Dgv_Quejas_Total As DataGridView
     Friend WithEvents CLIENTEDataGridViewTextBoxColumn As DataGridViewTextBoxColumn
     Friend WithEvents NOMBREDataGridViewTextBoxColumn As DataGridViewTextBoxColumn
-    Friend WithEvents ALIASDataGridViewTextBoxColumn As DataGridViewTextBoxColumn
     Friend WithEvents NUMEROQUEJADataGridViewTextBoxColumn As DataGridViewTextBoxColumn
     Friend WithEvents FECHAINGRESODataGridViewTextBoxColumn As DataGridViewTextBoxColumn
     Friend WithEvents TIPOQUEJADataGridViewTextBoxColumn As DataGridViewTextBoxColumn
     Friend WithEvents FACTURADataGridViewTextBoxColumn As DataGridViewTextBoxColumn
-    Friend WithEvents PROFORMADataGridViewTextBoxColumn As DataGridViewTextBoxColumn
     Friend WithEvents DETALLEDataGridViewTextBoxColumn As DataGridViewTextBoxColumn
     Friend WithEvents ESTADODataGridViewTextBoxColumn As DataGridViewTextBoxColumn
 End Class

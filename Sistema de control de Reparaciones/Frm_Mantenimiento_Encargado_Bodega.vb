@@ -36,4 +36,12 @@ Public Class Frm_Mantenimiento_Encargado_Bodega
     Private Sub Dgv_Encargado_B_CellContentClick(sender As Object, e As DataGridViewCellEventArgs) Handles Dgv_Encargado_B.CellContentClick
         encargado_b = Dgv_Encargado_B.Item(0, Dgv_Encargado_B.CurrentRow.Index).Value()
     End Sub
+
+    'Para evitar que se mueva la ventana'
+    Private Sub Frm_Entrada_Move(sender As Object, e As EventArgs) Handles MyBase.Move
+        Me.Top = 0
+        Me.Left = 0
+        Me.MaximizeBox = False
+        Me.MinimizeBox = False
+    End Sub
 End Class

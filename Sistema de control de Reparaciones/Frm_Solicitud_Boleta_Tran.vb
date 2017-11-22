@@ -20,8 +20,8 @@
                     Else
                         Try
                             Num_Boleta = Txt_Reparacion.Text
-                            My.Forms.Frm_Actualizacion_Trans.MdiParent = Frm_Main_Menu
-                            Frm_Actualizacion_Trans.Show()
+                            My.Forms.NO_Actualizacion_Trans.MdiParent = Frm_Main_Menu
+                            NO_Actualizacion_Trans.Show()
 
                             Me.Close()
                         Catch ex As Exception

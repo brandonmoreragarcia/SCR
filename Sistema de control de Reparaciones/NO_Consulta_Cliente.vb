@@ -1,25 +1,9 @@
 ﻿Imports System.Data.SqlClient
-Public Class Frm_Consulta_Cliente
+Public Class NO_Consulta_Cliente
 
     Private Sub Frm_Consulta_Cliente_Load(sender As Object, e As EventArgs) Handles MyBase.Load
 
-        'TODO: esta línea de código carga datos en la tabla 'ExactusERP_SRC_TABLES.SCR_VISTA_REPARA_CLIENTE' Puede moverla o quitarla según sea necesario.
-        Using connection As New SqlConnection("Data Source=SERVER;Initial Catalog=ExactusERP;Persist Security Info=True;User ID=sa;Password=B1@dm1n"),
-      command As New SqlCommand("SCR_PROC_CONSULTA_CLIENTE", connection),
-      adapter As New SqlDataAdapter(command)
-            command.CommandType = CommandType.StoredProcedure
 
-            'Add parameters, e.g.
-            command.Parameters.AddWithValue("@COD_CLIENTE", CONSULTA_CLIENTE)
-
-            Dim table As New DataTable
-
-            'Get the data.
-            adapter.Fill(table)
-
-            'Display the data.
-            Me.Dgv_Consulta_Cliente.DataSource = table
-        End Using
 
 
 
@@ -61,9 +45,6 @@ Public Class Frm_Consulta_Cliente
         End Try
     End Sub
 
-    Private Sub Dgv_Consulta_Cliente_CellContentClick(sender As Object, e As DataGridViewCellEventArgs) Handles Dgv_Consulta_Cliente.CellContentClick
-
-    End Sub
 End Class
 
 

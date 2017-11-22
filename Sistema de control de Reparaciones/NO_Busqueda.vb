@@ -1,7 +1,7 @@
 ﻿Imports System.Data.Sql
 Imports System.Data.SqlClient
 
-Public Class Frm_Busqueda
+Public Class NO_Busqueda
     Public r As SqlDataReader
     Public reparaciones As New DataTable
 

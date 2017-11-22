@@ -938,7 +938,7 @@ Partial Class Frm_Actualizacion_Rep
         Me.gb__ingresar_info_transporte.Controls.Add(Me.Label2)
         Me.gb__ingresar_info_transporte.Controls.Add(Me.Label3)
         Me.gb__ingresar_info_transporte.Font = New System.Drawing.Font("Square721 BT", 9.0!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.gb__ingresar_info_transporte.Location = New System.Drawing.Point(12, 217)
+        Me.gb__ingresar_info_transporte.Location = New System.Drawing.Point(18, 223)
         Me.gb__ingresar_info_transporte.Name = "gb__ingresar_info_transporte"
         Me.gb__ingresar_info_transporte.Size = New System.Drawing.Size(561, 302)
         Me.gb__ingresar_info_transporte.TabIndex = 61
@@ -1176,6 +1176,7 @@ Partial Class Frm_Actualizacion_Rep
         Me.Name = "Frm_Actualizacion_Rep"
         Me.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen
         Me.Text = "Actualizacion de Reparacion"
+        Me.WindowState = System.Windows.Forms.FormWindowState.Maximized
         CType(Me.SCRREPSPENDIENTESBindingSource, System.ComponentModel.ISupportInitialize).EndInit()
         CType(Me.ExactusERP_SRC_TABLES, System.ComponentModel.ISupportInitialize).EndInit()
         CType(Me.SCRDATOSREPARACIONBindingSource, System.ComponentModel.ISupportInitialize).EndInit()

@@ -1,7 +1,7 @@
 ﻿Imports System.Data.SqlClient
 Imports CrystalDecisions.Shared
 Imports CrystalDecisions.CrystalReports.Engine
-Public Class Frm_Listado_Rep
+Public Class NO_Listado_Rep
 
     Private Sub Btn_Cargar_Click(sender As Object, e As EventArgs) Handles Btn_Cargar.Click
         Try

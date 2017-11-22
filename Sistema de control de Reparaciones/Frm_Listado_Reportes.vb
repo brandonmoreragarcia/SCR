@@ -1,4 +1,5 @@
-﻿Imports CrystalDecisions.CrystalReports.Engine
+﻿Imports System.Data.SqlClient
+Imports CrystalDecisions.CrystalReports.Engine
 Imports CrystalDecisions.Shared
 
 Public Class Frm_Listado_Reportes
@@ -24,7 +25,7 @@ Public Class Frm_Listado_Reportes
         End If
     End Sub
 
-    Private Sub Txt_Reparacion_KeyPress(sender As Object, e As KeyPressEventArgs) Handles Txt_Dato.KeyPress
+    Private Sub Txt_Reparacion_KeyPress(sender As Object, e As KeyPressEventArgs) Handles txt_codigo_cliente.KeyPress
         If Char.IsNumber(e.KeyChar) Then
             e.Handled = False
         Else
@@ -48,6 +49,7 @@ Public Class Frm_Listado_Reportes
     Private Sub bt_listado_rep_estado_Click(sender As Object, e As EventArgs) Handles bt_listado_rep_estado.Click
 
         gb_reparaciones_estado.Visible = True
+        gb_consulta_cliente.Visible = False
         gb_reparacion_lead.Visible = False
 
         'TODO: esta línea de código carga datos en la tabla 'ExactusERP_SRC_TABLES.SCR_ESTADOS_TOTAL' Puede moverla o quitarla según sea necesario.
@@ -124,8 +126,17 @@ Public Class Frm_Listado_Reportes
 
     Private Sub bt_listado_rep_lead_Click(sender As Object, e As EventArgs) Handles bt_listado_rep_lead.Click
         gb_reparaciones_estado.Visible = False
+        gb_consulta_cliente.Visible = False
         gb_reparacion_lead.Visible = True
 
+        Dtp_Fecha_Inicio_lead.Format = DateTimePickerFormat.Custom
+        Dtp_Fecha_Inicio_lead.CustomFormat = "yyyy/MM/dd"
+        Dtp_Fecha_Final_lead.Format = DateTimePickerFormat.Custom
+        Dtp_Fecha_Final_lead.CustomFormat = "yyyy/MM/dd"
+
+    End Sub
+
+    Private Sub Btn_Cargar_Click(sender As Object, e As EventArgs) Handles Btn_Cargar.Click
         Try
             Dim cryRpt As New ReportDocument
             Dim crtableLogoninfos As New TableLogOnInfos
@@ -153,8 +164,8 @@ Public Class Frm_Listado_Reportes
             Next
             param.Clear()
             param2.Clear()
-            fecha_inicio.Value = Dtp_Fecha_Inicio.Text
-            fecha_final.Value = Dtp_Fecha_Final.Text
+            fecha_inicio.Value = Dtp_Fecha_Inicio_lead.Text
+            fecha_final.Value = Dtp_Fecha_Final_lead.Text
             param.Add(fecha_inicio)
             param2.Add(fecha_final)
             cryRpt.DataDefinition.ParameterFields("@FECHA_INICIO").ApplyCurrentValues(param)
@@ -163,8 +174,7 @@ Public Class Frm_Listado_Reportes
             Crv_Listado_Rep.Refresh()
             Txt_Fecha_Final.Text = ""
             Txt_Fecha_Inicial.Text = ""
-            Txt_Fecha_Final.Enabled = False
-            Btn_Cargar.Enabled = False
+
         Catch ex As Exception
             MsgBox(ex.ToString)
         End Try
@@ -191,7 +201,7 @@ Public Class Frm_Listado_Reportes
         Dtp_Fecha_Inicio.CustomFormat = "yyyy/MM/dd"
         Dtp_Fecha_Final.Format = DateTimePickerFormat.Custom
         Dtp_Fecha_Final.CustomFormat = "yyyy/MM/dd"
-        Btn_Cargar.Enabled = False
+
     End Sub
 
     Private Sub DateTimePicker1_ValueChanged(sender As Object, e As EventArgs) Handles Dtp_Fecha_Inicio.ValueChanged
@@ -202,6 +212,17 @@ Public Class Frm_Listado_Reportes
         Btn_Cargar.Enabled = True
     End Sub
 
+
+    Private Sub bt_eliminar_filtros_Click(sender As Object, e As EventArgs) Handles bt_eliminar_filtros.Click
+        SCRPROCREPLISTADOBindingSource.Filter = ""
+        Check_Estado.CheckState = CheckState.Unchecked
+        Check_fecha.CheckState = CheckState.Unchecked
+        Lbl_Fecha_Inicio.Visible = False
+        Lbl_Fecha_Final.Visible = False
+        Dtp_Fecha_Inicio.Visible = False
+        Dtp_Fecha_Final.Visible = False
+        Cbx_Estados.Visible = False
+    End Sub
 
 
     '////////////////
@@ -247,29 +268,11 @@ Public Class Frm_Listado_Reportes
 
 
     Private Sub bt_consulta_cliente_Click(sender As Object, e As EventArgs) Handles bt_consulta_cliente.Click
-        If Txt_Dato.Text = "" Then
-            MsgBox("LA CASILLA DATO DEBE TENER INFORMACION")
-        Else
-            If cliente = True Then
 
-                If cliente_existe(Txt_Dato.Text) = True Then
-                    Try
-                        CONSULTA_CLIENTE = Txt_Dato.Text
-                        My.Forms.Frm_Consulta_Cliente.MdiParent = My.Forms.Frm_Main_Menu
-                        Frm_Consulta_Cliente.Show()
-                        Me.Close()
-                    Catch ex As Exception
-                        MsgBox(ex.ToString)
-                    End Try
-                Else
+        gb_reparaciones_estado.Visible = False
+        gb_consulta_cliente.Visible = True
+        gb_reparacion_lead.Visible = False
 
-                    MsgBox("El cliente: " + Txt_Dato.Text + " No aparece registrado en el sistema")
-
-                End If
-            Else
-                MsgBox("El cliente: " + Txt_Dato.Text + " No aparece registrado en el sistema")
-            End If
-        End If
     End Sub
 
     Private Sub bt_listado_quejas_Click(sender As Object, e As EventArgs) Handles bt_listado_quejas.Click
@@ -284,5 +287,49 @@ Public Class Frm_Listado_Reportes
         Me.Close()
     End Sub
 
+    Private Sub bt_buscar_Click(sender As Object, e As EventArgs) Handles bt_buscar.Click
+        If txt_codigo_cliente.Text = "" Then
+            MsgBox("LA CASILLA DATO DEBE TENER INFORMACION")
+        Else
+            If cliente = True Then
+
+                If cliente_existe(txt_codigo_cliente.Text) = True Then
+
+
+                    Using connection As New SqlConnection("Data Source=SERVER;Initial Catalog=ExactusERP;Persist Security Info=True;User ID=sa;Password=B1@dm1n"),
+                        Command As New SqlCommand("SCR_PROC_CONSULTA_CLIENTE", connection), adapter As New SqlDataAdapter(Command)
+                        Command.CommandType = CommandType.StoredProcedure
+
+                        'Add parameters, e.g.
+                        Command.Parameters.AddWithValue("@COD_CLIENTE", txt_codigo_cliente.Text)
+
+                        Dim table As New DataTable
+
+                        'Get the data.
+                        adapter.Fill(table)
+
+                        'Display the data.
+                        Me.Dgv_Consulta_Cliente.DataSource = table
+
+
+                    End Using
+                Else
+
+                    MsgBox("El cliente: " + txt_codigo_cliente.Text + " No aparece registrado en el sistema")
+
+                End If
+            Else
+                MsgBox("El cliente: " + txt_codigo_cliente.Text + " No aparece registrado en el sistema")
+            End If
+        End If
+    End Sub
+
+    'Para evitar que se mueva la ventana'
+    Private Sub Frm_Entrada_Move(sender As Object, e As EventArgs) Handles MyBase.Move
+        Me.Top = 0
+        Me.Left = 0
+        Me.MaximizeBox = False
+        Me.MinimizeBox = False
+    End Sub
 
 End Class
