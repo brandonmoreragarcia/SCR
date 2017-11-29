@@ -851,7 +851,7 @@ Partial Class Frm_Actualizacion_Rep
         'gb_detalle_reparacion
         '
         Me.gb_detalle_reparacion.Controls.Add(Me.dg_detalle_rep)
-        Me.gb_detalle_reparacion.Font = New System.Drawing.Font("Square721 BT", 9.0!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.gb_detalle_reparacion.Font = New System.Drawing.Font("Square721 BT", 9.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.gb_detalle_reparacion.Location = New System.Drawing.Point(12, 226)
         Me.gb_detalle_reparacion.Name = "gb_detalle_reparacion"
         Me.gb_detalle_reparacion.Size = New System.Drawing.Size(561, 299)
@@ -871,7 +871,7 @@ Partial Class Frm_Actualizacion_Rep
         Me.dg_detalle_rep.DataSource = Me.SCRCONSULTAREPARACIONBindingSource
         DataGridViewCellStyle1.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft
         DataGridViewCellStyle1.BackColor = System.Drawing.SystemColors.Window
-        DataGridViewCellStyle1.Font = New System.Drawing.Font("Square721 BT", 9.0!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        DataGridViewCellStyle1.Font = New System.Drawing.Font("Square721 BT", 9.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         DataGridViewCellStyle1.ForeColor = System.Drawing.SystemColors.ControlText
         DataGridViewCellStyle1.SelectionBackColor = System.Drawing.SystemColors.Highlight
         DataGridViewCellStyle1.SelectionForeColor = System.Drawing.SystemColors.HighlightText
@@ -891,7 +891,7 @@ Partial Class Frm_Actualizacion_Rep
         Me.COMENTARIODataGridViewTextBoxColumn.Name = "COMENTARIODataGridViewTextBoxColumn"
         Me.COMENTARIODataGridViewTextBoxColumn.ReadOnly = True
         Me.COMENTARIODataGridViewTextBoxColumn.Resizable = System.Windows.Forms.DataGridViewTriState.[False]
-        Me.COMENTARIODataGridViewTextBoxColumn.Width = 118
+        Me.COMENTARIODataGridViewTextBoxColumn.Width = 111
         '
         'ESTADODataGridViewTextBoxColumn
         '
@@ -901,7 +901,7 @@ Partial Class Frm_Actualizacion_Rep
         Me.ESTADODataGridViewTextBoxColumn.Name = "ESTADODataGridViewTextBoxColumn"
         Me.ESTADODataGridViewTextBoxColumn.ReadOnly = True
         Me.ESTADODataGridViewTextBoxColumn.Resizable = System.Windows.Forms.DataGridViewTriState.[False]
-        Me.ESTADODataGridViewTextBoxColumn.Width = 83
+        Me.ESTADODataGridViewTextBoxColumn.Width = 81
         '
         'FECHADataGridViewTextBoxColumn
         '
@@ -911,7 +911,7 @@ Partial Class Frm_Actualizacion_Rep
         Me.FECHADataGridViewTextBoxColumn.Name = "FECHADataGridViewTextBoxColumn"
         Me.FECHADataGridViewTextBoxColumn.ReadOnly = True
         Me.FECHADataGridViewTextBoxColumn.Resizable = System.Windows.Forms.DataGridViewTriState.[False]
-        Me.FECHADataGridViewTextBoxColumn.Width = 74
+        Me.FECHADataGridViewTextBoxColumn.Width = 72
         '
         'LOCALIZACIONDataGridViewTextBoxColumn
         '
@@ -921,7 +921,7 @@ Partial Class Frm_Actualizacion_Rep
         Me.LOCALIZACIONDataGridViewTextBoxColumn.Name = "LOCALIZACIONDataGridViewTextBoxColumn"
         Me.LOCALIZACIONDataGridViewTextBoxColumn.ReadOnly = True
         Me.LOCALIZACIONDataGridViewTextBoxColumn.Resizable = System.Windows.Forms.DataGridViewTriState.[False]
-        Me.LOCALIZACIONDataGridViewTextBoxColumn.Width = 124
+        Me.LOCALIZACIONDataGridViewTextBoxColumn.Width = 119
         '
         'SCRCONSULTAREPARACIONBindingSource
         '
@@ -938,7 +938,7 @@ Partial Class Frm_Actualizacion_Rep
         Me.gb__ingresar_info_transporte.Controls.Add(Me.Label2)
         Me.gb__ingresar_info_transporte.Controls.Add(Me.Label3)
         Me.gb__ingresar_info_transporte.Font = New System.Drawing.Font("Square721 BT", 9.0!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.gb__ingresar_info_transporte.Location = New System.Drawing.Point(18, 223)
+        Me.gb__ingresar_info_transporte.Location = New System.Drawing.Point(18, 226)
         Me.gb__ingresar_info_transporte.Name = "gb__ingresar_info_transporte"
         Me.gb__ingresar_info_transporte.Size = New System.Drawing.Size(561, 302)
         Me.gb__ingresar_info_transporte.TabIndex = 61
@@ -1052,19 +1052,17 @@ Partial Class Frm_Actualizacion_Rep
         '
         'REPARACIONNUMERODataGridViewTextBoxColumn
         '
-        Me.REPARACIONNUMERODataGridViewTextBoxColumn.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.ColumnHeader
         Me.REPARACIONNUMERODataGridViewTextBoxColumn.DataPropertyName = "REPARACION_NUMERO"
         Me.REPARACIONNUMERODataGridViewTextBoxColumn.HeaderText = "REPARACION"
         Me.REPARACIONNUMERODataGridViewTextBoxColumn.Name = "REPARACIONNUMERODataGridViewTextBoxColumn"
         Me.REPARACIONNUMERODataGridViewTextBoxColumn.ReadOnly = True
         Me.REPARACIONNUMERODataGridViewTextBoxColumn.SortMode = System.Windows.Forms.DataGridViewColumnSortMode.Programmatic
-        Me.REPARACIONNUMERODataGridViewTextBoxColumn.Width = 114
         '
         'ESTADO
         '
         Me.ESTADO.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.AllCellsExceptHeader
         Me.ESTADO.DataPropertyName = "ESTADO"
-        Me.ESTADO.HeaderText = "Estado"
+        Me.ESTADO.HeaderText = "ESTADO"
         Me.ESTADO.Name = "ESTADO"
         Me.ESTADO.ReadOnly = True
         Me.ESTADO.Width = 5
@@ -1176,7 +1174,6 @@ Partial Class Frm_Actualizacion_Rep
         Me.Name = "Frm_Actualizacion_Rep"
         Me.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen
         Me.Text = "Actualizacion de Reparacion"
-        Me.WindowState = System.Windows.Forms.FormWindowState.Maximized
         CType(Me.SCRREPSPENDIENTESBindingSource, System.ComponentModel.ISupportInitialize).EndInit()
         CType(Me.ExactusERP_SRC_TABLES, System.ComponentModel.ISupportInitialize).EndInit()
         CType(Me.SCRDATOSREPARACIONBindingSource, System.ComponentModel.ISupportInitialize).EndInit()
@@ -1293,8 +1290,6 @@ Partial Class Frm_Actualizacion_Rep
     Friend WithEvents dg_detalle_rep As DataGridView
     Friend WithEvents gb_detalle_reparacion As GroupBox
     Friend WithEvents ch_ver_informacion As CheckBox
-    Friend WithEvents REPARACIONNUMERODataGridViewTextBoxColumn As DataGridViewTextBoxColumn
-    Friend WithEvents ESTADO As DataGridViewTextBoxColumn
     Friend WithEvents COMENTARIODataGridViewTextBoxColumn As DataGridViewTextBoxColumn
     Friend WithEvents ESTADODataGridViewTextBoxColumn As DataGridViewTextBoxColumn
     Friend WithEvents FECHADataGridViewTextBoxColumn As DataGridViewTextBoxColumn
@@ -1314,4 +1309,6 @@ Partial Class Frm_Actualizacion_Rep
     Friend WithEvents SCR_LOCALIZACION_TRANSTableAdapter As ExactusERP_SRC_TABLESTableAdapters.SCR_LOCALIZACION_TRANSTableAdapter
     Friend WithEvents bt_guardar_transporte As Button
     Friend WithEvents ch_ver_informacion_transporte As CheckBox
+    Friend WithEvents REPARACIONNUMERODataGridViewTextBoxColumn As DataGridViewTextBoxColumn
+    Friend WithEvents ESTADO As DataGridViewTextBoxColumn
 End Class

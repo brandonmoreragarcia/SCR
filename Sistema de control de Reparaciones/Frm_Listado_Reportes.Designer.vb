@@ -41,28 +41,17 @@ Partial Class Frm_Listado_Reportes
         Me.Dgv_Consulta_Cliente = New System.Windows.Forms.DataGridView()
         Me.gb_reparaciones_estado = New System.Windows.Forms.GroupBox()
         Me.Btn_Filtrar = New System.Windows.Forms.Button()
-        Me.bt_eliminar_filtros = New System.Windows.Forms.Button()
         Me.Cbx_Estados = New System.Windows.Forms.ComboBox()
         Me.SCRESTADOSTOTALBindingSource = New System.Windows.Forms.BindingSource(Me.components)
         Me.ExactusERP_SRC_TABLES = New WindowsApplication1.ExactusERP_SRC_TABLES()
         Me.Check_Estado = New System.Windows.Forms.CheckBox()
         Me.Dgv_Rep_Total = New System.Windows.Forms.DataGridView()
-        Me.FECHA = New System.Windows.Forms.DataGridViewTextBoxColumn()
-        Me.REPARACIONNUMERODataGridViewTextBoxColumn = New System.Windows.Forms.DataGridViewTextBoxColumn()
-        Me.CODIGOCLIENTEDataGridViewTextBoxColumn = New System.Windows.Forms.DataGridViewTextBoxColumn()
-        Me.NOMBREDataGridViewTextBoxColumn = New System.Windows.Forms.DataGridViewTextBoxColumn()
-        Me.CODIGOARTDataGridViewTextBoxColumn = New System.Windows.Forms.DataGridViewTextBoxColumn()
-        Me.BOLETADataGridViewTextBoxColumn = New System.Windows.Forms.DataGridViewTextBoxColumn()
-        Me.DOCUMENTOREFDataGridViewTextBoxColumn = New System.Windows.Forms.DataGridViewTextBoxColumn()
-        Me.SERIEPRODUCTODataGridViewTextBoxColumn = New System.Windows.Forms.DataGridViewTextBoxColumn()
-        Me.PROBLEMAREPORTADODataGridViewTextBoxColumn = New System.Windows.Forms.DataGridViewTextBoxColumn()
-        Me.ESTADODataGridViewTextBoxColumn = New System.Windows.Forms.DataGridViewTextBoxColumn()
-        Me.SCRPROCREPLISTADOBindingSource = New System.Windows.Forms.BindingSource(Me.components)
         Me.Check_fecha = New System.Windows.Forms.CheckBox()
         Me.Lbl_Fecha_Final = New System.Windows.Forms.Label()
         Me.Lbl_Fecha_Inicio = New System.Windows.Forms.Label()
         Me.Dtp_Fecha_Final = New System.Windows.Forms.DateTimePicker()
         Me.Dtp_Fecha_Inicio = New System.Windows.Forms.DateTimePicker()
+        Me.bs_lista_reportes = New System.Windows.Forms.BindingSource(Me.components)
         Me.SCR_PROC_REP_LISTADOTableAdapter = New WindowsApplication1.ExactusERP_SRC_TABLESTableAdapters.SCR_PROC_REP_LISTADOTableAdapter()
         Me.SCR_ESTADOS_TOTALTableAdapter = New WindowsApplication1.ExactusERP_SRC_TABLESTableAdapters.SCR_ESTADOS_TOTALTableAdapter()
         Me.gb_reparacion_lead = New System.Windows.Forms.GroupBox()
@@ -75,6 +64,7 @@ Partial Class Frm_Listado_Reportes
         Me.Label1 = New System.Windows.Forms.Label()
         Me.Lbl_Fecha_Inicial = New System.Windows.Forms.Label()
         Me.SCRVISTAREPARACLIENTEBindingSource = New System.Windows.Forms.BindingSource(Me.components)
+        Me.ExactusERPDataSet = New WindowsApplication1.ExactusERPDataSet()
         Me.GroupBox1.SuspendLayout()
         Me.gb_consulta_cliente.SuspendLayout()
         CType(Me.Dgv_Consulta_Cliente, System.ComponentModel.ISupportInitialize).BeginInit()
@@ -82,9 +72,10 @@ Partial Class Frm_Listado_Reportes
         CType(Me.SCRESTADOSTOTALBindingSource, System.ComponentModel.ISupportInitialize).BeginInit()
         CType(Me.ExactusERP_SRC_TABLES, System.ComponentModel.ISupportInitialize).BeginInit()
         CType(Me.Dgv_Rep_Total, System.ComponentModel.ISupportInitialize).BeginInit()
-        CType(Me.SCRPROCREPLISTADOBindingSource, System.ComponentModel.ISupportInitialize).BeginInit()
+        CType(Me.bs_lista_reportes, System.ComponentModel.ISupportInitialize).BeginInit()
         Me.gb_reparacion_lead.SuspendLayout()
         CType(Me.SCRVISTAREPARACLIENTEBindingSource, System.ComponentModel.ISupportInitialize).BeginInit()
+        CType(Me.ExactusERPDataSet, System.ComponentModel.ISupportInitialize).BeginInit()
         Me.SuspendLayout()
         '
         'txt_codigo_cliente
@@ -191,7 +182,7 @@ Partial Class Frm_Listado_Reportes
         Me.gb_consulta_cliente.Controls.Add(Me.Dgv_Consulta_Cliente)
         Me.gb_consulta_cliente.Controls.Add(Me.Lbl_Dato)
         Me.gb_consulta_cliente.Controls.Add(Me.txt_codigo_cliente)
-        Me.gb_consulta_cliente.Location = New System.Drawing.Point(12, 404)
+        Me.gb_consulta_cliente.Location = New System.Drawing.Point(425, 24)
         Me.gb_consulta_cliente.Name = "gb_consulta_cliente"
         Me.gb_consulta_cliente.Size = New System.Drawing.Size(806, 520)
         Me.gb_consulta_cliente.TabIndex = 21
@@ -226,7 +217,6 @@ Partial Class Frm_Listado_Reportes
         'gb_reparaciones_estado
         '
         Me.gb_reparaciones_estado.Controls.Add(Me.Btn_Filtrar)
-        Me.gb_reparaciones_estado.Controls.Add(Me.bt_eliminar_filtros)
         Me.gb_reparaciones_estado.Controls.Add(Me.Cbx_Estados)
         Me.gb_reparaciones_estado.Controls.Add(Me.Check_Estado)
         Me.gb_reparaciones_estado.Controls.Add(Me.Dgv_Rep_Total)
@@ -235,7 +225,8 @@ Partial Class Frm_Listado_Reportes
         Me.gb_reparaciones_estado.Controls.Add(Me.Lbl_Fecha_Inicio)
         Me.gb_reparaciones_estado.Controls.Add(Me.Dtp_Fecha_Final)
         Me.gb_reparaciones_estado.Controls.Add(Me.Dtp_Fecha_Inicio)
-        Me.gb_reparaciones_estado.Location = New System.Drawing.Point(413, 25)
+        Me.gb_reparaciones_estado.Font = New System.Drawing.Font("Square721 BT", 9.75!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.gb_reparaciones_estado.Location = New System.Drawing.Point(413, 43)
         Me.gb_reparaciones_estado.Name = "gb_reparaciones_estado"
         Me.gb_reparaciones_estado.Size = New System.Drawing.Size(824, 507)
         Me.gb_reparaciones_estado.TabIndex = 19
@@ -246,22 +237,12 @@ Partial Class Frm_Listado_Reportes
         'Btn_Filtrar
         '
         Me.Btn_Filtrar.Font = New System.Drawing.Font("Square721 BT", 9.75!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.Btn_Filtrar.Location = New System.Drawing.Point(444, 64)
+        Me.Btn_Filtrar.Location = New System.Drawing.Point(491, 79)
         Me.Btn_Filtrar.Name = "Btn_Filtrar"
-        Me.Btn_Filtrar.Size = New System.Drawing.Size(156, 30)
+        Me.Btn_Filtrar.Size = New System.Drawing.Size(123, 29)
         Me.Btn_Filtrar.TabIndex = 19
-        Me.Btn_Filtrar.Text = "FILTRAR"
+        Me.Btn_Filtrar.Text = "FILTRAR!"
         Me.Btn_Filtrar.UseVisualStyleBackColor = True
-        '
-        'bt_eliminar_filtros
-        '
-        Me.bt_eliminar_filtros.Font = New System.Drawing.Font("Square721 BT", 9.75!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.bt_eliminar_filtros.Location = New System.Drawing.Point(444, 110)
-        Me.bt_eliminar_filtros.Name = "bt_eliminar_filtros"
-        Me.bt_eliminar_filtros.Size = New System.Drawing.Size(156, 30)
-        Me.bt_eliminar_filtros.TabIndex = 18
-        Me.bt_eliminar_filtros.Text = "ELIMINAR FILTROS"
-        Me.bt_eliminar_filtros.UseVisualStyleBackColor = True
         '
         'Cbx_Estados
         '
@@ -301,15 +282,11 @@ Partial Class Frm_Listado_Reportes
         '
         Me.Dgv_Rep_Total.AllowUserToAddRows = False
         Me.Dgv_Rep_Total.AllowUserToDeleteRows = False
-        Me.Dgv_Rep_Total.AllowUserToOrderColumns = True
-        Me.Dgv_Rep_Total.AutoGenerateColumns = False
         Me.Dgv_Rep_Total.AutoSizeRowsMode = System.Windows.Forms.DataGridViewAutoSizeRowsMode.AllCells
         Me.Dgv_Rep_Total.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize
-        Me.Dgv_Rep_Total.Columns.AddRange(New System.Windows.Forms.DataGridViewColumn() {Me.FECHA, Me.REPARACIONNUMERODataGridViewTextBoxColumn, Me.CODIGOCLIENTEDataGridViewTextBoxColumn, Me.NOMBREDataGridViewTextBoxColumn, Me.CODIGOARTDataGridViewTextBoxColumn, Me.BOLETADataGridViewTextBoxColumn, Me.DOCUMENTOREFDataGridViewTextBoxColumn, Me.SERIEPRODUCTODataGridViewTextBoxColumn, Me.PROBLEMAREPORTADODataGridViewTextBoxColumn, Me.ESTADODataGridViewTextBoxColumn})
-        Me.Dgv_Rep_Total.DataSource = Me.SCRPROCREPLISTADOBindingSource
         DataGridViewCellStyle2.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft
         DataGridViewCellStyle2.BackColor = System.Drawing.SystemColors.Window
-        DataGridViewCellStyle2.Font = New System.Drawing.Font("Square721 BT", 9.75!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        DataGridViewCellStyle2.Font = New System.Drawing.Font("Square721 BT", 9.75!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         DataGridViewCellStyle2.ForeColor = System.Drawing.SystemColors.ControlText
         DataGridViewCellStyle2.SelectionBackColor = System.Drawing.SystemColors.Highlight
         DataGridViewCellStyle2.SelectionForeColor = System.Drawing.SystemColors.HighlightText
@@ -320,90 +297,6 @@ Partial Class Frm_Listado_Reportes
         Me.Dgv_Rep_Total.ReadOnly = True
         Me.Dgv_Rep_Total.Size = New System.Drawing.Size(770, 328)
         Me.Dgv_Rep_Total.TabIndex = 10
-        '
-        'FECHA
-        '
-        Me.FECHA.DataPropertyName = "FECHA"
-        Me.FECHA.HeaderText = "FECHA"
-        Me.FECHA.Name = "FECHA"
-        Me.FECHA.ReadOnly = True
-        Me.FECHA.Width = 120
-        '
-        'REPARACIONNUMERODataGridViewTextBoxColumn
-        '
-        Me.REPARACIONNUMERODataGridViewTextBoxColumn.DataPropertyName = "REPARACION_NUMERO"
-        Me.REPARACIONNUMERODataGridViewTextBoxColumn.HeaderText = "# REP"
-        Me.REPARACIONNUMERODataGridViewTextBoxColumn.Name = "REPARACIONNUMERODataGridViewTextBoxColumn"
-        Me.REPARACIONNUMERODataGridViewTextBoxColumn.ReadOnly = True
-        Me.REPARACIONNUMERODataGridViewTextBoxColumn.Width = 80
-        '
-        'CODIGOCLIENTEDataGridViewTextBoxColumn
-        '
-        Me.CODIGOCLIENTEDataGridViewTextBoxColumn.DataPropertyName = "CODIGO_CLIENTE"
-        Me.CODIGOCLIENTEDataGridViewTextBoxColumn.HeaderText = "CLIENTE"
-        Me.CODIGOCLIENTEDataGridViewTextBoxColumn.Name = "CODIGOCLIENTEDataGridViewTextBoxColumn"
-        Me.CODIGOCLIENTEDataGridViewTextBoxColumn.ReadOnly = True
-        Me.CODIGOCLIENTEDataGridViewTextBoxColumn.Width = 80
-        '
-        'NOMBREDataGridViewTextBoxColumn
-        '
-        Me.NOMBREDataGridViewTextBoxColumn.DataPropertyName = "NOMBRE"
-        Me.NOMBREDataGridViewTextBoxColumn.HeaderText = "NOMBRE"
-        Me.NOMBREDataGridViewTextBoxColumn.Name = "NOMBREDataGridViewTextBoxColumn"
-        Me.NOMBREDataGridViewTextBoxColumn.ReadOnly = True
-        '
-        'CODIGOARTDataGridViewTextBoxColumn
-        '
-        Me.CODIGOARTDataGridViewTextBoxColumn.DataPropertyName = "CODIGO_ART"
-        Me.CODIGOARTDataGridViewTextBoxColumn.HeaderText = "CODIGO_ART"
-        Me.CODIGOARTDataGridViewTextBoxColumn.Name = "CODIGOARTDataGridViewTextBoxColumn"
-        Me.CODIGOARTDataGridViewTextBoxColumn.ReadOnly = True
-        Me.CODIGOARTDataGridViewTextBoxColumn.Width = 110
-        '
-        'BOLETADataGridViewTextBoxColumn
-        '
-        Me.BOLETADataGridViewTextBoxColumn.DataPropertyName = "BOLETA"
-        Me.BOLETADataGridViewTextBoxColumn.HeaderText = "BOLETA"
-        Me.BOLETADataGridViewTextBoxColumn.Name = "BOLETADataGridViewTextBoxColumn"
-        Me.BOLETADataGridViewTextBoxColumn.ReadOnly = True
-        Me.BOLETADataGridViewTextBoxColumn.Width = 70
-        '
-        'DOCUMENTOREFDataGridViewTextBoxColumn
-        '
-        Me.DOCUMENTOREFDataGridViewTextBoxColumn.DataPropertyName = "DOCUMENTO_REF"
-        Me.DOCUMENTOREFDataGridViewTextBoxColumn.HeaderText = "DOC_REF"
-        Me.DOCUMENTOREFDataGridViewTextBoxColumn.Name = "DOCUMENTOREFDataGridViewTextBoxColumn"
-        Me.DOCUMENTOREFDataGridViewTextBoxColumn.ReadOnly = True
-        Me.DOCUMENTOREFDataGridViewTextBoxColumn.Width = 75
-        '
-        'SERIEPRODUCTODataGridViewTextBoxColumn
-        '
-        Me.SERIEPRODUCTODataGridViewTextBoxColumn.DataPropertyName = "SERIE_PRODUCTO"
-        Me.SERIEPRODUCTODataGridViewTextBoxColumn.HeaderText = "SERIE"
-        Me.SERIEPRODUCTODataGridViewTextBoxColumn.Name = "SERIEPRODUCTODataGridViewTextBoxColumn"
-        Me.SERIEPRODUCTODataGridViewTextBoxColumn.ReadOnly = True
-        Me.SERIEPRODUCTODataGridViewTextBoxColumn.Width = 85
-        '
-        'PROBLEMAREPORTADODataGridViewTextBoxColumn
-        '
-        Me.PROBLEMAREPORTADODataGridViewTextBoxColumn.DataPropertyName = "PROBLEMA_REPORTADO"
-        Me.PROBLEMAREPORTADODataGridViewTextBoxColumn.HeaderText = "REPORTE"
-        Me.PROBLEMAREPORTADODataGridViewTextBoxColumn.Name = "PROBLEMAREPORTADODataGridViewTextBoxColumn"
-        Me.PROBLEMAREPORTADODataGridViewTextBoxColumn.ReadOnly = True
-        Me.PROBLEMAREPORTADODataGridViewTextBoxColumn.Width = 150
-        '
-        'ESTADODataGridViewTextBoxColumn
-        '
-        Me.ESTADODataGridViewTextBoxColumn.DataPropertyName = "ESTADO"
-        Me.ESTADODataGridViewTextBoxColumn.HeaderText = "ESTADO"
-        Me.ESTADODataGridViewTextBoxColumn.Name = "ESTADODataGridViewTextBoxColumn"
-        Me.ESTADODataGridViewTextBoxColumn.ReadOnly = True
-        Me.ESTADODataGridViewTextBoxColumn.Width = 110
-        '
-        'SCRPROCREPLISTADOBindingSource
-        '
-        Me.SCRPROCREPLISTADOBindingSource.DataMember = "SCR_PROC_REP_LISTADO"
-        Me.SCRPROCREPLISTADOBindingSource.DataSource = Me.ExactusERP_SRC_TABLES
         '
         'Check_fecha
         '
@@ -456,6 +349,11 @@ Partial Class Frm_Listado_Reportes
         Me.Dtp_Fecha_Inicio.TabIndex = 11
         Me.Dtp_Fecha_Inicio.Visible = False
         '
+        'bs_lista_reportes
+        '
+        Me.bs_lista_reportes.DataMember = "SCR_PROC_REP_LISTADO"
+        Me.bs_lista_reportes.DataSource = Me.ExactusERP_SRC_TABLES
+        '
         'SCR_PROC_REP_LISTADOTableAdapter
         '
         Me.SCR_PROC_REP_LISTADOTableAdapter.ClearBeforeFill = True
@@ -474,7 +372,7 @@ Partial Class Frm_Listado_Reportes
         Me.gb_reparacion_lead.Controls.Add(Me.Btn_Cargar)
         Me.gb_reparacion_lead.Controls.Add(Me.Label1)
         Me.gb_reparacion_lead.Controls.Add(Me.Lbl_Fecha_Inicial)
-        Me.gb_reparacion_lead.Location = New System.Drawing.Point(419, 20)
+        Me.gb_reparacion_lead.Location = New System.Drawing.Point(419, 30)
         Me.gb_reparacion_lead.Name = "gb_reparacion_lead"
         Me.gb_reparacion_lead.Size = New System.Drawing.Size(804, 520)
         Me.gb_reparacion_lead.TabIndex = 20
@@ -569,6 +467,11 @@ Partial Class Frm_Listado_Reportes
         Me.SCRVISTAREPARACLIENTEBindingSource.DataMember = "SCR_VISTA_REPARA_CLIENTE"
         Me.SCRVISTAREPARACLIENTEBindingSource.DataSource = Me.ExactusERP_SRC_TABLES
         '
+        'ExactusERPDataSet
+        '
+        Me.ExactusERPDataSet.DataSetName = "ExactusERPDataSet"
+        Me.ExactusERPDataSet.SchemaSerializationMode = System.Data.SchemaSerializationMode.IncludeSchema
+        '
         'Frm_Listado_Reportes
         '
         Me.AutoScaleDimensions = New System.Drawing.SizeF(8.0!, 16.0!)
@@ -593,10 +496,11 @@ Partial Class Frm_Listado_Reportes
         CType(Me.SCRESTADOSTOTALBindingSource, System.ComponentModel.ISupportInitialize).EndInit()
         CType(Me.ExactusERP_SRC_TABLES, System.ComponentModel.ISupportInitialize).EndInit()
         CType(Me.Dgv_Rep_Total, System.ComponentModel.ISupportInitialize).EndInit()
-        CType(Me.SCRPROCREPLISTADOBindingSource, System.ComponentModel.ISupportInitialize).EndInit()
+        CType(Me.bs_lista_reportes, System.ComponentModel.ISupportInitialize).EndInit()
         Me.gb_reparacion_lead.ResumeLayout(False)
         Me.gb_reparacion_lead.PerformLayout()
         CType(Me.SCRVISTAREPARACLIENTEBindingSource, System.ComponentModel.ISupportInitialize).EndInit()
+        CType(Me.ExactusERPDataSet, System.ComponentModel.ISupportInitialize).EndInit()
         Me.ResumeLayout(False)
 
     End Sub
@@ -612,7 +516,6 @@ Partial Class Frm_Listado_Reportes
     Friend WithEvents GroupBox1 As GroupBox
     Friend WithEvents gb_reparaciones_estado As GroupBox
     Friend WithEvents Btn_Filtrar As Button
-    Friend WithEvents bt_eliminar_filtros As Button
     Friend WithEvents Cbx_Estados As ComboBox
     Friend WithEvents Check_Estado As CheckBox
     Friend WithEvents Check_fecha As CheckBox
@@ -622,7 +525,7 @@ Partial Class Frm_Listado_Reportes
     Friend WithEvents Dtp_Fecha_Inicio As DateTimePicker
     Friend WithEvents Dgv_Rep_Total As DataGridView
     Friend WithEvents ExactusERP_SRC_TABLES As ExactusERP_SRC_TABLES
-    Friend WithEvents SCRPROCREPLISTADOBindingSource As BindingSource
+    Friend WithEvents bs_lista_reportes As BindingSource
     Friend WithEvents SCR_PROC_REP_LISTADOTableAdapter As ExactusERP_SRC_TABLESTableAdapters.SCR_PROC_REP_LISTADOTableAdapter
     Friend WithEvents SCR_ESTADOS_TOTALTableAdapter As ExactusERP_SRC_TABLESTableAdapters.SCR_ESTADOS_TOTALTableAdapter
     Friend WithEvents gb_reparacion_lead As GroupBox
@@ -639,14 +542,5 @@ Partial Class Frm_Listado_Reportes
     Friend WithEvents Dgv_Consulta_Cliente As DataGridView
     Friend WithEvents bt_buscar As Button
     Friend WithEvents SCRESTADOSTOTALBindingSource As BindingSource
-    Friend WithEvents FECHA As DataGridViewTextBoxColumn
-    Friend WithEvents REPARACIONNUMERODataGridViewTextBoxColumn As DataGridViewTextBoxColumn
-    Friend WithEvents CODIGOCLIENTEDataGridViewTextBoxColumn As DataGridViewTextBoxColumn
-    Friend WithEvents NOMBREDataGridViewTextBoxColumn As DataGridViewTextBoxColumn
-    Friend WithEvents CODIGOARTDataGridViewTextBoxColumn As DataGridViewTextBoxColumn
-    Friend WithEvents BOLETADataGridViewTextBoxColumn As DataGridViewTextBoxColumn
-    Friend WithEvents DOCUMENTOREFDataGridViewTextBoxColumn As DataGridViewTextBoxColumn
-    Friend WithEvents SERIEPRODUCTODataGridViewTextBoxColumn As DataGridViewTextBoxColumn
-    Friend WithEvents PROBLEMAREPORTADODataGridViewTextBoxColumn As DataGridViewTextBoxColumn
-    Friend WithEvents ESTADODataGridViewTextBoxColumn As DataGridViewTextBoxColumn
+    Friend WithEvents ExactusERPDataSet As ExactusERPDataSet
 End Class

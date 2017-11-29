@@ -15,8 +15,8 @@ Public Class Frm_Consulta_Reparacion
         'TODO: esta línea de código carga datos en la tabla 'ExactusERP_SRC_TABLES.SCR_DATOS_REPARACION' Puede moverla o quitarla según sea necesario.
         Me.SCR_DATOS_REPARACIONTableAdapter.Fill(Me.ExactusERP_SRC_TABLES.SCR_DATOS_REPARACION)
         reparaciones.Columns.Add("REPARACION")
-        Dgv_Actualizaciones.DefaultCellStyle.Font = New Drawing.Font("Square721 BT", 9.25, Font.Style.Bold)
-        dg_reps_asociadas.DefaultCellStyle.Font = New Drawing.Font("Square721 BT", 9.25, Font.Style.Bold)
+        'Dgv_Actualizaciones.DefaultCellStyle.Font = New Drawing.Font("Square721 BT", 9.25, Font.Style.Bold)
+        'dg_reps_asociadas.DefaultCellStyle.Font = New Drawing.Font("Square721 BT", 9.25, Font.Style.Bold)
 
     End Sub
 
@@ -165,4 +165,5 @@ Public Class Frm_Consulta_Reparacion
         Me.MaximizeBox = False
         Me.MinimizeBox = False
     End Sub
+
 End Class

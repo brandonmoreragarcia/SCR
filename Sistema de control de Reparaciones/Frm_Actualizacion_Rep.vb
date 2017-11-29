@@ -20,7 +20,10 @@ Public Class Frm_Actualizacion_Rep
         'TODO: esta línea de código carga datos en la tabla 'ExactusERP_SRC_TABLES.SCR_ESTADO_ACTUA' Puede moverla o quitarla según sea necesario.
         Me.SCR_ESTADO_ACTUATableAdapter.Fill(Me.ExactusERP_SRC_TABLES.SCR_ESTADO_ACTUA)
         'TODO: esta línea de código carga datos en la tabla 'ExactusERP_TABLES.CLIENTE' Puede moverla o quitarla según sea necesario.
-        dg_reparaciones.DefaultCellStyle.Font = New Drawing.Font("Square721 BT", 8, Font.Style.Bold)
+        dg_reparaciones.DefaultCellStyle.Font = New Drawing.Font("Square721 BT", 8, Font.Style.Regular)
+        dg_reparaciones.RowHeadersDefaultCellStyle.Font = New Drawing.Font("Square721 BT", 8, Font.Style.Bold)
+        dg_detalle_rep.ColumnHeadersDefaultCellStyle.Font = New Drawing.Font("Square721 BT", 9, Font.Style.Bold)
+
         Btn_Grabar_Actua.Enabled = True
         Cbx_Localizacion.Enabled = True
         Timer1.Start()
@@ -602,5 +605,6 @@ Public Class Frm_Actualizacion_Rep
         Me.MaximizeBox = False
         Me.MinimizeBox = False
     End Sub
+
 
 End Class

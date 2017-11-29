@@ -5,12 +5,14 @@ Imports CrystalDecisions.Shared
 Public Class Frm_Listado_Reportes
     Dim cliente As Boolean
     Dim solicitud As Boolean
+    Dim cargar_bindings As Boolean = True
 
     Private Sub Frm_Listado_Reportes_Load(sender As Object, e As EventArgs) Handles MyBase.Load
         'TODO: esta línea de código carga datos en la tabla 'ExactusERP_SRC_TABLES.SCR_PROC_REP_LISTADO' Puede moverla o quitarla según sea necesario.
         Me.SCR_PROC_REP_LISTADOTableAdapter.Fill(Me.ExactusERP_SRC_TABLES.SCR_PROC_REP_LISTADO)
         cliente = True
         solicitud = True
+
     End Sub
 
     Private Sub Txt_Consulta_Cliente_KeyPress(sender As Object, e As KeyPressEventArgs)
@@ -46,18 +48,29 @@ Public Class Frm_Listado_Reportes
     '////////////////
     '////////////////
 
+    Private Sub cargarBindingSource()
+
+        'para que el método se ejecute solo una vez'
+        If cargar_bindings Then
+            'TODO: esta línea de código carga datos en la tabla 'ExactusERP_SRC_TABLES.SCR_ESTADOS_TOTAL' Puede moverla o quitarla según sea necesario.
+            Me.SCR_PROC_REP_LISTADOTableAdapter.Fill(Me.ExactusERP_SRC_TABLES.SCR_PROC_REP_LISTADO)
+            'TODO: esta línea de código carga datos en la tabla 'ExactusERP_SRC_TABLES.SCR_PROC_REP_LISTADO' Puede moverla o quitarla según sea necesario.
+            Me.SCR_PROC_REP_LISTADOTableAdapter.Fill(Me.ExactusERP_SRC_TABLES.SCR_PROC_REP_LISTADO)
+            Dgv_Rep_Total.DataSource = bs_lista_reportes
+            Dgv_Rep_Total.ColumnHeadersDefaultCellStyle.Font = New Drawing.Font("Square721 BT", 9, Font.Style.Bold)
+            cargar_bindings = False
+        End If
+    End Sub
+
     Private Sub bt_listado_rep_estado_Click(sender As Object, e As EventArgs) Handles bt_listado_rep_estado.Click
+
+        Me.SCR_ESTADOS_TOTALTableAdapter.Fill(Me.ExactusERP_SRC_TABLES.SCR_ESTADOS_TOTAL)
+        'TODO: esta línea de código carga datos en la tabla 'ExactusERP_SRC_TABLES.SCR_PROC_REP_LISTADO' Puede moverla o quitarla según sea necesario.
 
         gb_reparaciones_estado.Visible = True
         gb_consulta_cliente.Visible = False
         gb_reparacion_lead.Visible = False
 
-        'TODO: esta línea de código carga datos en la tabla 'ExactusERP_SRC_TABLES.SCR_ESTADOS_TOTAL' Puede moverla o quitarla según sea necesario.
-        Me.SCR_ESTADOS_TOTALTableAdapter.Fill(Me.ExactusERP_SRC_TABLES.SCR_ESTADOS_TOTAL)
-        'TODO: esta línea de código carga datos en la tabla 'ExactusERP_SRC_TABLES.SCR_PROC_REP_LISTADO' Puede moverla o quitarla según sea necesario.
-        Me.SCR_PROC_REP_LISTADOTableAdapter.Fill(Me.ExactusERP_SRC_TABLES.SCR_PROC_REP_LISTADO)
-        'TODO: esta línea de código carga datos en la tabla 'ExactusERP_SRC_TABLES.SCR_PROC_REP_LISTADO' Puede moverla o quitarla según sea necesario.
-        Me.SCR_PROC_REP_LISTADOTableAdapter.Fill(Me.ExactusERP_SRC_TABLES.SCR_PROC_REP_LISTADO)
         Dtp_Fecha_Inicio.Format = DateTimePickerFormat.Custom
         Dtp_Fecha_Inicio.CustomFormat = "yyyy/MM/dd"
         Dtp_Fecha_Final.Format = DateTimePickerFormat.Custom
@@ -88,13 +101,16 @@ Public Class Frm_Listado_Reportes
     End Sub
 
     Private Sub Btn_Filtrar_Click(sender As Object, e As EventArgs) Handles Btn_Filtrar.Click
+
+        cargarBindingSource()
+
         If Check_Estado.CheckState = CheckState.Unchecked And Check_fecha.CheckState = CheckState.Unchecked Then
         ElseIf Check_Estado.CheckState = CheckState.Unchecked And Check_fecha.CheckState = CheckState.Checked Then
-            SCRPROCREPLISTADOBindingSource.Filter = "FECHA >= '" & Dtp_Fecha_Inicio.Text & "' AND FECHA <='" & Dtp_Fecha_Final.Text & "'"
+            bs_lista_reportes.Filter = "FECHA >= '" & Dtp_Fecha_Inicio.Text & "' AND FECHA <='" & Dtp_Fecha_Final.Text & "'"
         ElseIf Check_Estado.CheckState = CheckState.Checked And Check_fecha.CheckState = CheckState.Unchecked Then
-            SCRPROCREPLISTADOBindingSource.Filter = "ESTADO = '" & Cbx_Estados.Text & "'"
+            bs_lista_reportes.Filter = "ESTADO = '" & Cbx_Estados.Text & "'"
         Else
-            SCRPROCREPLISTADOBindingSource.Filter = "FECHA >= '" & Dtp_Fecha_Inicio.Text & "' AND FECHA <='" & Dtp_Fecha_Final.Text & "' AND ESTADO = '" & Cbx_Estados.Text & "'"
+            bs_lista_reportes.Filter = "FECHA >= '" & Dtp_Fecha_Inicio.Text & "' AND FECHA <='" & Dtp_Fecha_Final.Text & "' AND ESTADO = '" & Cbx_Estados.Text & "'"
         End If
     End Sub
 
@@ -213,18 +229,6 @@ Public Class Frm_Listado_Reportes
     End Sub
 
 
-    Private Sub bt_eliminar_filtros_Click(sender As Object, e As EventArgs) Handles bt_eliminar_filtros.Click
-        SCRPROCREPLISTADOBindingSource.Filter = ""
-        Check_Estado.CheckState = CheckState.Unchecked
-        Check_fecha.CheckState = CheckState.Unchecked
-        Lbl_Fecha_Inicio.Visible = False
-        Lbl_Fecha_Final.Visible = False
-        Dtp_Fecha_Inicio.Visible = False
-        Dtp_Fecha_Final.Visible = False
-        Cbx_Estados.Visible = False
-    End Sub
-
-
     '////////////////
     '////////////////
 
@@ -331,5 +335,6 @@ Public Class Frm_Listado_Reportes
         Me.MaximizeBox = False
         Me.MinimizeBox = False
     End Sub
+
 
 End Class

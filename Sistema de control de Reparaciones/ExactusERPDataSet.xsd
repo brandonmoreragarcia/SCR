@@ -1,0 +1,120 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<xs:schema id="ExactusERPDataSet" targetNamespace="http://tempuri.org/ExactusERPDataSet.xsd" xmlns:mstns="http://tempuri.org/ExactusERPDataSet.xsd" xmlns="http://tempuri.org/ExactusERPDataSet.xsd" xmlns:xs="http://www.w3.org/2001/XMLSchema" xmlns:msdata="urn:schemas-microsoft-com:xml-msdata" xmlns:msprop="urn:schemas-microsoft-com:xml-msprop" attributeFormDefault="qualified" elementFormDefault="qualified">
+  <xs:annotation>
+    <xs:appinfo source="urn:schemas-microsoft-com:xml-msdatasource">
+      <DataSource DefaultConnectionIndex="0" FunctionsComponentName="QueriesTableAdapter" Modifier="AutoLayout, AnsiClass, Class, Public" SchemaSerializationMode="IncludeSchema" xmlns="urn:schemas-microsoft-com:xml-msdatasource">
+        <Connections>
+          <Connection AppSettingsObjectName="MySettings" AppSettingsPropertyName="ExactusERPConnectionString" ConnectionStringObject="" IsAppSettingsProperty="true" Modifier="Assembly" Name="ExactusERPConnectionString (MySettings)" ParameterPrefix="@" PropertyReference="ApplicationSettings.WindowsApplication1.My.MySettings.GlobalReference.Default.ExactusERPConnectionString" Provider="System.Data.SqlClient" />
+        </Connections>
+        <Tables>
+          <TableAdapter BaseClass="System.ComponentModel.Component" DataAccessorModifier="AutoLayout, AnsiClass, Class, Public" DataAccessorName="SCR_REPARACIONES_REPORTETableAdapter" GeneratorDataComponentClassName="SCR_REPARACIONES_REPORTETableAdapter" Name="SCR_REPARACIONES_REPORTE" UserDataComponentName="SCR_REPARACIONES_REPORTETableAdapter">
+            <MainSource>
+              <DbSource ConnectionRef="ExactusERPConnectionString (MySettings)" DbObjectName="ExactusERP.dbo.SCR_REPARACIONES_REPORTE" DbObjectType="View" FillMethodModifier="Public" FillMethodName="Fill" GenerateMethods="Both" GenerateShortCommands="false" GeneratorGetMethodName="GetData" GeneratorSourceName="Fill" GetMethodModifier="Public" GetMethodName="GetData" QueryType="Rowset" ScalarCallRetval="System.Object, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089" UseOptimisticConcurrency="true" UserGetMethodName="GetData" UserSourceName="Fill">
+                <SelectCommand>
+                  <DbCommand CommandType="Text" ModifiedByUser="false">
+                    <CommandText>SELECT REPARACION_NUMERO, CODIGO_CLIENTE, NOMBRE, CODIGO_ART, BOLETA, DOCUMENTO_REF, SERIE_PRODUCTO, PROBLEMA_REPORTADO, ESTADO, FECHA FROM dbo.SCR_REPARACIONES_REPORTE</CommandText>
+                    <Parameters />
+                  </DbCommand>
+                </SelectCommand>
+              </DbSource>
+            </MainSource>
+            <Mappings>
+              <Mapping SourceColumn="REPARACION_NUMERO" DataSetColumn="REPARACION_NUMERO" />
+              <Mapping SourceColumn="CODIGO_CLIENTE" DataSetColumn="CODIGO_CLIENTE" />
+              <Mapping SourceColumn="NOMBRE" DataSetColumn="NOMBRE" />
+              <Mapping SourceColumn="CODIGO_ART" DataSetColumn="CODIGO_ART" />
+              <Mapping SourceColumn="BOLETA" DataSetColumn="BOLETA" />
+              <Mapping SourceColumn="DOCUMENTO_REF" DataSetColumn="DOCUMENTO_REF" />
+              <Mapping SourceColumn="SERIE_PRODUCTO" DataSetColumn="SERIE_PRODUCTO" />
+              <Mapping SourceColumn="PROBLEMA_REPORTADO" DataSetColumn="PROBLEMA_REPORTADO" />
+              <Mapping SourceColumn="ESTADO" DataSetColumn="ESTADO" />
+              <Mapping SourceColumn="FECHA" DataSetColumn="FECHA" />
+            </Mappings>
+            <Sources />
+          </TableAdapter>
+        </Tables>
+        <Sources />
+      </DataSource>
+    </xs:appinfo>
+  </xs:annotation>
+  <xs:element name="ExactusERPDataSet" msdata:IsDataSet="true" msdata:UseCurrentLocale="true" msprop:EnableTableAdapterManager="True" msprop:Generator_DataSetName="ExactusERPDataSet" msprop:Generator_UserDSName="ExactusERPDataSet">
+    <xs:complexType>
+      <xs:choice minOccurs="0" maxOccurs="unbounded">
+        <xs:element name="SCR_REPARACIONES_REPORTE" msprop:Generator_TableClassName="SCR_REPARACIONES_REPORTEDataTable" msprop:Generator_TableVarName="tableSCR_REPARACIONES_REPORTE" msprop:Generator_TablePropName="SCR_REPARACIONES_REPORTE" msprop:Generator_RowDeletingName="SCR_REPARACIONES_REPORTERowDeleting" msprop:Generator_RowChangingName="SCR_REPARACIONES_REPORTERowChanging" msprop:Generator_RowEvHandlerName="SCR_REPARACIONES_REPORTERowChangeEventHandler" msprop:Generator_RowDeletedName="SCR_REPARACIONES_REPORTERowDeleted" msprop:Generator_UserTableName="SCR_REPARACIONES_REPORTE" msprop:Generator_RowChangedName="SCR_REPARACIONES_REPORTERowChanged" msprop:Generator_RowEvArgName="SCR_REPARACIONES_REPORTERowChangeEvent" msprop:Generator_RowClassName="SCR_REPARACIONES_REPORTERow">
+          <xs:complexType>
+            <xs:sequence>
+              <xs:element name="REPARACION_NUMERO" msprop:Generator_ColumnVarNameInTable="columnREPARACION_NUMERO" msprop:Generator_ColumnPropNameInRow="REPARACION_NUMERO" msprop:Generator_ColumnPropNameInTable="REPARACION_NUMEROColumn" msprop:Generator_UserColumnName="REPARACION_NUMERO">
+                <xs:simpleType>
+                  <xs:restriction base="xs:string">
+                    <xs:maxLength value="50" />
+                  </xs:restriction>
+                </xs:simpleType>
+              </xs:element>
+              <xs:element name="CODIGO_CLIENTE" msprop:Generator_ColumnVarNameInTable="columnCODIGO_CLIENTE" msprop:Generator_ColumnPropNameInRow="CODIGO_CLIENTE" msprop:Generator_ColumnPropNameInTable="CODIGO_CLIENTEColumn" msprop:Generator_UserColumnName="CODIGO_CLIENTE">
+                <xs:simpleType>
+                  <xs:restriction base="xs:string">
+                    <xs:maxLength value="50" />
+                  </xs:restriction>
+                </xs:simpleType>
+              </xs:element>
+              <xs:element name="NOMBRE" msprop:Generator_ColumnVarNameInTable="columnNOMBRE" msprop:Generator_ColumnPropNameInRow="NOMBRE" msprop:Generator_ColumnPropNameInTable="NOMBREColumn" msprop:Generator_UserColumnName="NOMBRE">
+                <xs:simpleType>
+                  <xs:restriction base="xs:string">
+                    <xs:maxLength value="150" />
+                  </xs:restriction>
+                </xs:simpleType>
+              </xs:element>
+              <xs:element name="CODIGO_ART" msprop:Generator_ColumnVarNameInTable="columnCODIGO_ART" msprop:Generator_ColumnPropNameInRow="CODIGO_ART" msprop:Generator_ColumnPropNameInTable="CODIGO_ARTColumn" msprop:Generator_UserColumnName="CODIGO_ART">
+                <xs:simpleType>
+                  <xs:restriction base="xs:string">
+                    <xs:maxLength value="50" />
+                  </xs:restriction>
+                </xs:simpleType>
+              </xs:element>
+              <xs:element name="BOLETA" msprop:Generator_ColumnVarNameInTable="columnBOLETA" msprop:Generator_ColumnPropNameInRow="BOLETA" msprop:Generator_ColumnPropNameInTable="BOLETAColumn" msprop:Generator_UserColumnName="BOLETA">
+                <xs:simpleType>
+                  <xs:restriction base="xs:string">
+                    <xs:maxLength value="50" />
+                  </xs:restriction>
+                </xs:simpleType>
+              </xs:element>
+              <xs:element name="DOCUMENTO_REF" msprop:Generator_ColumnVarNameInTable="columnDOCUMENTO_REF" msprop:Generator_ColumnPropNameInRow="DOCUMENTO_REF" msprop:Generator_ColumnPropNameInTable="DOCUMENTO_REFColumn" msprop:Generator_UserColumnName="DOCUMENTO_REF">
+                <xs:simpleType>
+                  <xs:restriction base="xs:string">
+                    <xs:maxLength value="50" />
+                  </xs:restriction>
+                </xs:simpleType>
+              </xs:element>
+              <xs:element name="SERIE_PRODUCTO" msprop:Generator_ColumnVarNameInTable="columnSERIE_PRODUCTO" msprop:Generator_ColumnPropNameInRow="SERIE_PRODUCTO" msprop:Generator_ColumnPropNameInTable="SERIE_PRODUCTOColumn" msprop:Generator_UserColumnName="SERIE_PRODUCTO">
+                <xs:simpleType>
+                  <xs:restriction base="xs:string">
+                    <xs:maxLength value="2147483647" />
+                  </xs:restriction>
+                </xs:simpleType>
+              </xs:element>
+              <xs:element name="PROBLEMA_REPORTADO" msprop:Generator_ColumnVarNameInTable="columnPROBLEMA_REPORTADO" msprop:Generator_ColumnPropNameInRow="PROBLEMA_REPORTADO" msprop:Generator_ColumnPropNameInTable="PROBLEMA_REPORTADOColumn" msprop:Generator_UserColumnName="PROBLEMA_REPORTADO">
+                <xs:simpleType>
+                  <xs:restriction base="xs:string">
+                    <xs:maxLength value="2147483647" />
+                  </xs:restriction>
+                </xs:simpleType>
+              </xs:element>
+              <xs:element name="ESTADO" msprop:Generator_ColumnVarNameInTable="columnESTADO" msprop:Generator_ColumnPropNameInRow="ESTADO" msprop:Generator_ColumnPropNameInTable="ESTADOColumn" msprop:Generator_UserColumnName="ESTADO">
+                <xs:simpleType>
+                  <xs:restriction base="xs:string">
+                    <xs:maxLength value="50" />
+                  </xs:restriction>
+                </xs:simpleType>
+              </xs:element>
+              <xs:element name="FECHA" msprop:Generator_ColumnVarNameInTable="columnFECHA" msprop:Generator_ColumnPropNameInRow="FECHA" msprop:Generator_ColumnPropNameInTable="FECHAColumn" msprop:Generator_UserColumnName="FECHA" type="xs:dateTime" />
+            </xs:sequence>
+          </xs:complexType>
+        </xs:element>
+      </xs:choice>
+    </xs:complexType>
+    <xs:unique name="Constraint1" msdata:PrimaryKey="true">
+      <xs:selector xpath=".//mstns:SCR_REPARACIONES_REPORTE" />
+      <xs:field xpath="mstns:REPARACION_NUMERO" />
+    </xs:unique>
+  </xs:element>
+</xs:schema>

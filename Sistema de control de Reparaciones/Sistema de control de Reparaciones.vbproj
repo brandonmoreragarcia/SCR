@@ -120,6 +120,11 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="Conexion.vb" />
+    <Compile Include="ExactusERPDataSet.Designer.vb">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>ExactusERPDataSet.xsd</DependentUpon>
+    </Compile>
     <Compile Include="ExactusERP_SRC_TABLES.Designer.vb">
       <AutoGen>True</AutoGen>
       <DesignTime>True</DesignTime>
@@ -137,6 +142,12 @@
       <DependentUpon>Frm_Actualizacion_Rep.vb</DependentUpon>
     </Compile>
     <Compile Include="Frm_Actualizacion_Rep.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Frm_Ingreso_Boletas.Designer.vb">
+      <DependentUpon>Frm_Ingreso_Boletas.vb</DependentUpon>
+    </Compile>
+    <Compile Include="Frm_Ingreso_Boletas.vb">
       <SubType>Form</SubType>
     </Compile>
     <Compile Include="NO_Actualizacion_Trans.Designer.vb">
@@ -383,6 +394,9 @@
     <EmbeddedResource Include="Frm_Actualizacion_Rep.resx">
       <DependentUpon>Frm_Actualizacion_Rep.vb</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="Frm_Ingreso_Boletas.resx">
+      <DependentUpon>Frm_Ingreso_Boletas.vb</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="NO_Actualizacion_Trans.resx">
       <DependentUpon>NO_Actualizacion_Trans.vb</DependentUpon>
     </EmbeddedResource>
@@ -502,6 +516,17 @@
     </EmbeddedResource>
   </ItemGroup>
   <ItemGroup>
+    <None Include="ExactusERPDataSet.xsc">
+      <DependentUpon>ExactusERPDataSet.xsd</DependentUpon>
+    </None>
+    <None Include="ExactusERPDataSet.xsd">
+      <Generator>MSDataSetGenerator</Generator>
+      <LastGenOutput>ExactusERPDataSet.Designer.vb</LastGenOutput>
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="ExactusERPDataSet.xss">
+      <DependentUpon>ExactusERPDataSet.xsd</DependentUpon>
+    </None>
     <None Include="ExactusERP_SRC_TABLES.xsc">
       <DependentUpon>ExactusERP_SRC_TABLES.xsd</DependentUpon>
     </None>

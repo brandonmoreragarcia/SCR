@@ -135,7 +135,7 @@ Partial Class Frm_Consulta_Reparacion
         Me.GroupBox2.Controls.Add(Me.Lbl_Encargado_Bod)
         Me.GroupBox2.Controls.Add(Me.Lbl_T_Encargado_Bod)
         Me.GroupBox2.Controls.Add(Me.Lbl_T_Fecha_Ingeso)
-        Me.GroupBox2.Font = New System.Drawing.Font("Square721 BT", 9.0!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.GroupBox2.Font = New System.Drawing.Font("Square721 BT", 9.25!, System.Drawing.FontStyle.Bold)
         Me.GroupBox2.Location = New System.Drawing.Point(490, 51)
         Me.GroupBox2.Name = "GroupBox2"
         Me.GroupBox2.Size = New System.Drawing.Size(763, 288)
@@ -169,7 +169,7 @@ Partial Class Frm_Consulta_Reparacion
         Me.Lbl_Boleta_Chofer.AutoSize = True
         Me.Lbl_Boleta_Chofer.DataBindings.Add(New System.Windows.Forms.Binding("Text", Me.SCRDATOSREPARACIONBindingSource, "BOLETA", True))
         Me.Lbl_Boleta_Chofer.Font = New System.Drawing.Font("Square721 BT", 9.25!)
-        Me.Lbl_Boleta_Chofer.Location = New System.Drawing.Point(490, 197)
+        Me.Lbl_Boleta_Chofer.Location = New System.Drawing.Point(496, 197)
         Me.Lbl_Boleta_Chofer.Name = "Lbl_Boleta_Chofer"
         Me.Lbl_Boleta_Chofer.Size = New System.Drawing.Size(91, 16)
         Me.Lbl_Boleta_Chofer.TabIndex = 35
@@ -178,18 +178,18 @@ Partial Class Frm_Consulta_Reparacion
         'Lbl_T_Numero_Serie
         '
         Me.Lbl_T_Numero_Serie.AutoSize = True
-        Me.Lbl_T_Numero_Serie.Location = New System.Drawing.Point(51, 95)
+        Me.Lbl_T_Numero_Serie.Location = New System.Drawing.Point(42, 94)
         Me.Lbl_T_Numero_Serie.Name = "Lbl_T_Numero_Serie"
-        Me.Lbl_T_Numero_Serie.Size = New System.Drawing.Size(52, 15)
+        Me.Lbl_T_Numero_Serie.Size = New System.Drawing.Size(57, 16)
         Me.Lbl_T_Numero_Serie.TabIndex = 48
         Me.Lbl_T_Numero_Serie.Text = "Serie #"
         '
         'Lbl_T_Articulo
         '
         Me.Lbl_T_Articulo.AutoSize = True
-        Me.Lbl_T_Articulo.Location = New System.Drawing.Point(51, 63)
+        Me.Lbl_T_Articulo.Location = New System.Drawing.Point(42, 64)
         Me.Lbl_T_Articulo.Name = "Lbl_T_Articulo"
-        Me.Lbl_T_Articulo.Size = New System.Drawing.Size(61, 15)
+        Me.Lbl_T_Articulo.Size = New System.Drawing.Size(67, 16)
         Me.Lbl_T_Articulo.TabIndex = 3
         Me.Lbl_T_Articulo.Text = "Articulo:"
         '
@@ -208,7 +208,7 @@ Partial Class Frm_Consulta_Reparacion
         Me.Lbl_.AutoSize = True
         Me.Lbl_.Location = New System.Drawing.Point(392, 197)
         Me.Lbl_.Name = "Lbl_"
-        Me.Lbl_.Size = New System.Drawing.Size(94, 15)
+        Me.Lbl_.Size = New System.Drawing.Size(103, 16)
         Me.Lbl_.TabIndex = 33
         Me.Lbl_.Text = "Boleta Chofer:"
         '
@@ -228,7 +228,7 @@ Partial Class Frm_Consulta_Reparacion
         Me.Lbl_Traido_Por.AutoSize = True
         Me.Lbl_Traido_Por.DataBindings.Add(New System.Windows.Forms.Binding("Text", Me.SCRDATOSREPARACIONBindingSource, "TRAIDO_POR", True))
         Me.Lbl_Traido_Por.Font = New System.Drawing.Font("Square721 BT", 9.25!)
-        Me.Lbl_Traido_Por.Location = New System.Drawing.Point(462, 164)
+        Me.Lbl_Traido_Por.Location = New System.Drawing.Point(470, 164)
         Me.Lbl_Traido_Por.Name = "Lbl_Traido_Por"
         Me.Lbl_Traido_Por.Size = New System.Drawing.Size(71, 16)
         Me.Lbl_Traido_Por.TabIndex = 34
@@ -259,18 +259,18 @@ Partial Class Frm_Consulta_Reparacion
         'Lbl_T_Doc_Ref
         '
         Me.Lbl_T_Doc_Ref.AutoSize = True
-        Me.Lbl_T_Doc_Ref.Location = New System.Drawing.Point(48, 260)
+        Me.Lbl_T_Doc_Ref.Location = New System.Drawing.Point(42, 260)
         Me.Lbl_T_Doc_Ref.Name = "Lbl_T_Doc_Ref"
-        Me.Lbl_T_Doc_Ref.Size = New System.Drawing.Size(147, 15)
+        Me.Lbl_T_Doc_Ref.Size = New System.Drawing.Size(159, 16)
         Me.Lbl_T_Doc_Ref.TabIndex = 31
         Me.Lbl_T_Doc_Ref.Text = "Documento Referencia:"
         '
         'Lbl_T_Adicio_Art
         '
         Me.Lbl_T_Adicio_Art.AutoSize = True
-        Me.Lbl_T_Adicio_Art.Location = New System.Drawing.Point(51, 131)
+        Me.Lbl_T_Adicio_Art.Location = New System.Drawing.Point(42, 131)
         Me.Lbl_T_Adicio_Art.Name = "Lbl_T_Adicio_Art"
-        Me.Lbl_T_Adicio_Art.Size = New System.Drawing.Size(67, 15)
+        Me.Lbl_T_Adicio_Art.Size = New System.Drawing.Size(73, 16)
         Me.Lbl_T_Adicio_Art.TabIndex = 21
         Me.Lbl_T_Adicio_Art.Text = "Adicional:"
         '
@@ -279,7 +279,7 @@ Partial Class Frm_Consulta_Reparacion
         Me.Lbl_T_Estado_Rep.AutoSize = True
         Me.Lbl_T_Estado_Rep.Location = New System.Drawing.Point(391, 252)
         Me.Lbl_T_Estado_Rep.Name = "Lbl_T_Estado_Rep"
-        Me.Lbl_T_Estado_Rep.Size = New System.Drawing.Size(53, 15)
+        Me.Lbl_T_Estado_Rep.Size = New System.Drawing.Size(59, 16)
         Me.Lbl_T_Estado_Rep.TabIndex = 31
         Me.Lbl_T_Estado_Rep.Text = "Estado:"
         '
@@ -298,7 +298,7 @@ Partial Class Frm_Consulta_Reparacion
         Me.Lbl_Estado_Art.AutoSize = True
         Me.Lbl_Estado_Art.DataBindings.Add(New System.Windows.Forms.Binding("Text", Me.SCRDATOSREPARACIONBindingSource, "ESTADO_ART", True))
         Me.Lbl_Estado_Art.Font = New System.Drawing.Font("Square721 BT", 9.25!)
-        Me.Lbl_Estado_Art.Location = New System.Drawing.Point(496, 99)
+        Me.Lbl_Estado_Art.Location = New System.Drawing.Point(508, 99)
         Me.Lbl_Estado_Art.Name = "Lbl_Estado_Art"
         Me.Lbl_Estado_Art.Size = New System.Drawing.Size(79, 16)
         Me.Lbl_Estado_Art.TabIndex = 28
@@ -307,9 +307,9 @@ Partial Class Frm_Consulta_Reparacion
         'Lbl_T_Motivo
         '
         Me.Lbl_T_Motivo.AutoSize = True
-        Me.Lbl_T_Motivo.Location = New System.Drawing.Point(51, 223)
+        Me.Lbl_T_Motivo.Location = New System.Drawing.Point(42, 223)
         Me.Lbl_T_Motivo.Name = "Lbl_T_Motivo"
-        Me.Lbl_T_Motivo.Size = New System.Drawing.Size(54, 15)
+        Me.Lbl_T_Motivo.Size = New System.Drawing.Size(58, 16)
         Me.Lbl_T_Motivo.TabIndex = 27
         Me.Lbl_T_Motivo.Text = "Motivo:"
         '
@@ -318,7 +318,7 @@ Partial Class Frm_Consulta_Reparacion
         Me.Lbl_T_Estado_Art.AutoSize = True
         Me.Lbl_T_Estado_Art.Location = New System.Drawing.Point(392, 99)
         Me.Lbl_T_Estado_Art.Name = "Lbl_T_Estado_Art"
-        Me.Lbl_T_Estado_Art.Size = New System.Drawing.Size(107, 15)
+        Me.Lbl_T_Estado_Art.Size = New System.Drawing.Size(118, 16)
         Me.Lbl_T_Estado_Art.TabIndex = 25
         Me.Lbl_T_Estado_Art.Text = "Estado Articulo:"
         '
@@ -327,16 +327,16 @@ Partial Class Frm_Consulta_Reparacion
         Me.Lbl_T_Descripcion.AutoSize = True
         Me.Lbl_T_Descripcion.Location = New System.Drawing.Point(392, 43)
         Me.Lbl_T_Descripcion.Name = "Lbl_T_Descripcion"
-        Me.Lbl_T_Descripcion.Size = New System.Drawing.Size(83, 15)
+        Me.Lbl_T_Descripcion.Size = New System.Drawing.Size(89, 16)
         Me.Lbl_T_Descripcion.TabIndex = 19
         Me.Lbl_T_Descripcion.Text = "Descripcion:"
         '
         'Lbl_T_Problema
         '
         Me.Lbl_T_Problema.AutoSize = True
-        Me.Lbl_T_Problema.Location = New System.Drawing.Point(51, 164)
+        Me.Lbl_T_Problema.Location = New System.Drawing.Point(42, 164)
         Me.Lbl_T_Problema.Name = "Lbl_T_Problema"
-        Me.Lbl_T_Problema.Size = New System.Drawing.Size(135, 15)
+        Me.Lbl_T_Problema.Size = New System.Drawing.Size(147, 16)
         Me.Lbl_T_Problema.TabIndex = 29
         Me.Lbl_T_Problema.Text = "Problema Reportado:"
         '
@@ -353,9 +353,9 @@ Partial Class Frm_Consulta_Reparacion
         'Lbl_T_Traido_Por
         '
         Me.Lbl_T_Traido_Por.AutoSize = True
-        Me.Lbl_T_Traido_Por.Location = New System.Drawing.Point(392, 164)
+        Me.Lbl_T_Traido_Por.Location = New System.Drawing.Point(391, 164)
         Me.Lbl_T_Traido_Por.Name = "Lbl_T_Traido_Por"
-        Me.Lbl_T_Traido_Por.Size = New System.Drawing.Size(76, 15)
+        Me.Lbl_T_Traido_Por.Size = New System.Drawing.Size(83, 16)
         Me.Lbl_T_Traido_Por.TabIndex = 33
         Me.Lbl_T_Traido_Por.Text = "Traido Por:"
         '
@@ -396,7 +396,7 @@ Partial Class Frm_Consulta_Reparacion
         Me.Lbl_Encargado_Bod.AutoSize = True
         Me.Lbl_Encargado_Bod.DataBindings.Add(New System.Windows.Forms.Binding("Text", Me.SCRDATOSREPARACIONBindingSource, "ENCARGADO_BODEGA", True))
         Me.Lbl_Encargado_Bod.Font = New System.Drawing.Font("Square721 BT", 9.25!)
-        Me.Lbl_Encargado_Bod.Location = New System.Drawing.Point(514, 224)
+        Me.Lbl_Encargado_Bod.Location = New System.Drawing.Point(524, 224)
         Me.Lbl_Encargado_Bod.Name = "Lbl_Encargado_Bod"
         Me.Lbl_Encargado_Bod.Size = New System.Drawing.Size(121, 16)
         Me.Lbl_Encargado_Bod.TabIndex = 26
@@ -407,16 +407,16 @@ Partial Class Frm_Consulta_Reparacion
         Me.Lbl_T_Encargado_Bod.AutoSize = True
         Me.Lbl_T_Encargado_Bod.Location = New System.Drawing.Point(392, 224)
         Me.Lbl_T_Encargado_Bod.Name = "Lbl_T_Encargado_Bod"
-        Me.Lbl_T_Encargado_Bod.Size = New System.Drawing.Size(122, 15)
+        Me.Lbl_T_Encargado_Bod.Size = New System.Drawing.Size(135, 16)
         Me.Lbl_T_Encargado_Bod.TabIndex = 25
         Me.Lbl_T_Encargado_Bod.Text = "Encargado Bodega:"
         '
         'Lbl_T_Fecha_Ingeso
         '
         Me.Lbl_T_Fecha_Ingeso.AutoSize = True
-        Me.Lbl_T_Fecha_Ingeso.Location = New System.Drawing.Point(48, 33)
+        Me.Lbl_T_Fecha_Ingeso.Location = New System.Drawing.Point(36, 32)
         Me.Lbl_T_Fecha_Ingeso.Name = "Lbl_T_Fecha_Ingeso"
-        Me.Lbl_T_Fecha_Ingeso.Size = New System.Drawing.Size(113, 15)
+        Me.Lbl_T_Fecha_Ingeso.Size = New System.Drawing.Size(125, 16)
         Me.Lbl_T_Fecha_Ingeso.TabIndex = 29
         Me.Lbl_T_Fecha_Ingeso.Text = "Fecha de Ingreso:"
         '
@@ -471,7 +471,7 @@ Partial Class Frm_Consulta_Reparacion
         Me.GroupBox1.Controls.Add(Me.Lbl_Telefono)
         Me.GroupBox1.Controls.Add(Me.Lbl_Numero_2)
         Me.GroupBox1.Controls.Add(Me.Lbl_Numero_1)
-        Me.GroupBox1.Font = New System.Drawing.Font("Square721 BT", 9.0!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.GroupBox1.Font = New System.Drawing.Font("Square721 BT", 9.25!, System.Drawing.FontStyle.Bold)
         Me.GroupBox1.Location = New System.Drawing.Point(12, 197)
         Me.GroupBox1.Name = "GroupBox1"
         Me.GroupBox1.Size = New System.Drawing.Size(456, 142)
@@ -483,7 +483,7 @@ Partial Class Frm_Consulta_Reparacion
         '
         Me.Lbl_Nombre_Cliente.DataBindings.Add(New System.Windows.Forms.Binding("Text", Me.CLIENTEBindingSource, "NOMBRE", True))
         Me.Lbl_Nombre_Cliente.Font = New System.Drawing.Font("Square721 BT", 9.25!)
-        Me.Lbl_Nombre_Cliente.Location = New System.Drawing.Point(239, 26)
+        Me.Lbl_Nombre_Cliente.Location = New System.Drawing.Point(238, 35)
         Me.Lbl_Nombre_Cliente.Name = "Lbl_Nombre_Cliente"
         Me.Lbl_Nombre_Cliente.Size = New System.Drawing.Size(200, 39)
         Me.Lbl_Nombre_Cliente.TabIndex = 9
@@ -492,9 +492,9 @@ Partial Class Frm_Consulta_Reparacion
         'Lbl_T_Cliente
         '
         Me.Lbl_T_Cliente.AutoSize = True
-        Me.Lbl_T_Cliente.Location = New System.Drawing.Point(10, 26)
+        Me.Lbl_T_Cliente.Location = New System.Drawing.Point(9, 35)
         Me.Lbl_T_Cliente.Name = "Lbl_T_Cliente"
-        Me.Lbl_T_Cliente.Size = New System.Drawing.Size(54, 15)
+        Me.Lbl_T_Cliente.Size = New System.Drawing.Size(59, 16)
         Me.Lbl_T_Cliente.TabIndex = 6
         Me.Lbl_T_Cliente.Text = "Cliente:"
         '
@@ -502,18 +502,18 @@ Partial Class Frm_Consulta_Reparacion
         '
         Me.Lbl_Alias.DataBindings.Add(New System.Windows.Forms.Binding("Text", Me.CLIENTEBindingSource, "ALIAS", True))
         Me.Lbl_Alias.Font = New System.Drawing.Font("Square721 BT", 9.25!)
-        Me.Lbl_Alias.Location = New System.Drawing.Point(56, 92)
+        Me.Lbl_Alias.Location = New System.Drawing.Point(55, 101)
         Me.Lbl_Alias.Name = "Lbl_Alias"
-        Me.Lbl_Alias.Size = New System.Drawing.Size(272, 43)
+        Me.Lbl_Alias.Size = New System.Drawing.Size(326, 38)
         Me.Lbl_Alias.TabIndex = 15
         Me.Lbl_Alias.Text = "Alias"
         '
         'Lbl_T_Alias
         '
         Me.Lbl_T_Alias.AutoSize = True
-        Me.Lbl_T_Alias.Location = New System.Drawing.Point(8, 92)
+        Me.Lbl_T_Alias.Location = New System.Drawing.Point(7, 101)
         Me.Lbl_T_Alias.Name = "Lbl_T_Alias"
-        Me.Lbl_T_Alias.Size = New System.Drawing.Size(42, 15)
+        Me.Lbl_T_Alias.Size = New System.Drawing.Size(46, 16)
         Me.Lbl_T_Alias.TabIndex = 14
         Me.Lbl_T_Alias.Text = "Alias:"
         '
@@ -522,7 +522,7 @@ Partial Class Frm_Consulta_Reparacion
         Me.Lbl_Cliente.AutoSize = True
         Me.Lbl_Cliente.DataBindings.Add(New System.Windows.Forms.Binding("Text", Me.SCRDATOSREPARACIONBindingSource, "CODIGO_CLIENTE", True))
         Me.Lbl_Cliente.Font = New System.Drawing.Font("Square721 BT", 9.25!)
-        Me.Lbl_Cliente.Location = New System.Drawing.Point(66, 26)
+        Me.Lbl_Cliente.Location = New System.Drawing.Point(65, 35)
         Me.Lbl_Cliente.Name = "Lbl_Cliente"
         Me.Lbl_Cliente.Size = New System.Drawing.Size(98, 16)
         Me.Lbl_Cliente.TabIndex = 7
@@ -531,18 +531,18 @@ Partial Class Frm_Consulta_Reparacion
         'Lbl_T_Nombre_Cliente
         '
         Me.Lbl_T_Nombre_Cliente.AutoSize = True
-        Me.Lbl_T_Nombre_Cliente.Location = New System.Drawing.Point(178, 26)
+        Me.Lbl_T_Nombre_Cliente.Location = New System.Drawing.Point(177, 35)
         Me.Lbl_T_Nombre_Cliente.Name = "Lbl_T_Nombre_Cliente"
-        Me.Lbl_T_Nombre_Cliente.Size = New System.Drawing.Size(58, 15)
+        Me.Lbl_T_Nombre_Cliente.Size = New System.Drawing.Size(64, 16)
         Me.Lbl_T_Nombre_Cliente.TabIndex = 8
         Me.Lbl_T_Nombre_Cliente.Text = "Nombre:"
         '
         'Lbl_Telefono
         '
         Me.Lbl_Telefono.AutoSize = True
-        Me.Lbl_Telefono.Location = New System.Drawing.Point(11, 65)
+        Me.Lbl_Telefono.Location = New System.Drawing.Point(5, 74)
         Me.Lbl_Telefono.Name = "Lbl_Telefono"
-        Me.Lbl_Telefono.Size = New System.Drawing.Size(62, 15)
+        Me.Lbl_Telefono.Size = New System.Drawing.Size(66, 16)
         Me.Lbl_Telefono.TabIndex = 11
         Me.Lbl_Telefono.Text = "Telefono:"
         '
@@ -550,10 +550,10 @@ Partial Class Frm_Consulta_Reparacion
         '
         Me.Lbl_Numero_2.AutoSize = True
         Me.Lbl_Numero_2.DataBindings.Add(New System.Windows.Forms.Binding("Text", Me.CLIENTEBindingSource, "TELEFONO2", True))
-        Me.Lbl_Numero_2.Font = New System.Drawing.Font("Square721 BT", 9.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.Lbl_Numero_2.Location = New System.Drawing.Point(188, 65)
+        Me.Lbl_Numero_2.Font = New System.Drawing.Font("Square721 BT", 9.25!)
+        Me.Lbl_Numero_2.Location = New System.Drawing.Point(187, 74)
         Me.Lbl_Numero_2.Name = "Lbl_Numero_2"
-        Me.Lbl_Numero_2.Size = New System.Drawing.Size(66, 15)
+        Me.Lbl_Numero_2.Size = New System.Drawing.Size(69, 16)
         Me.Lbl_Numero_2.TabIndex = 13
         Me.Lbl_Numero_2.Text = "Numero 2"
         '
@@ -562,7 +562,7 @@ Partial Class Frm_Consulta_Reparacion
         Me.Lbl_Numero_1.AutoSize = True
         Me.Lbl_Numero_1.DataBindings.Add(New System.Windows.Forms.Binding("Text", Me.CLIENTEBindingSource, "TELEFONO1", True))
         Me.Lbl_Numero_1.Font = New System.Drawing.Font("Square721 BT", 9.25!)
-        Me.Lbl_Numero_1.Location = New System.Drawing.Point(72, 65)
+        Me.Lbl_Numero_1.Location = New System.Drawing.Point(71, 74)
         Me.Lbl_Numero_1.Name = "Lbl_Numero_1"
         Me.Lbl_Numero_1.Size = New System.Drawing.Size(69, 16)
         Me.Lbl_Numero_1.TabIndex = 12
@@ -707,27 +707,27 @@ Partial Class Frm_Consulta_Reparacion
         '
         'Btn_Cotejar_Serie
         '
-        Me.Btn_Cotejar_Serie.Font = New System.Drawing.Font("Square721 BT", 9.0!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.Btn_Cotejar_Serie.Location = New System.Drawing.Point(177, 138)
+        Me.Btn_Cotejar_Serie.Font = New System.Drawing.Font("Square721 BT", 9.25!, System.Drawing.FontStyle.Bold)
+        Me.Btn_Cotejar_Serie.Location = New System.Drawing.Point(161, 138)
         Me.Btn_Cotejar_Serie.Name = "Btn_Cotejar_Serie"
-        Me.Btn_Cotejar_Serie.Size = New System.Drawing.Size(75, 23)
+        Me.Btn_Cotejar_Serie.Size = New System.Drawing.Size(87, 27)
         Me.Btn_Cotejar_Serie.TabIndex = 44
         Me.Btn_Cotejar_Serie.Text = "COTEJAR"
         Me.Btn_Cotejar_Serie.UseVisualStyleBackColor = True
         '
         'Txt_Serie
         '
-        Me.Txt_Serie.Font = New System.Drawing.Font("Square721 BT", 8.25!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.Txt_Serie.Location = New System.Drawing.Point(48, 140)
+        Me.Txt_Serie.Font = New System.Drawing.Font("Square721 BT", 9.25!)
+        Me.Txt_Serie.Location = New System.Drawing.Point(32, 140)
         Me.Txt_Serie.Name = "Txt_Serie"
-        Me.Txt_Serie.Size = New System.Drawing.Size(123, 21)
+        Me.Txt_Serie.Size = New System.Drawing.Size(123, 23)
         Me.Txt_Serie.TabIndex = 43
         '
         'Lbl_Serie_Numero
         '
         Me.Lbl_Serie_Numero.AutoSize = True
         Me.Lbl_Serie_Numero.Font = New System.Drawing.Font("Square721 BT", 9.25!, System.Drawing.FontStyle.Bold)
-        Me.Lbl_Serie_Numero.Location = New System.Drawing.Point(83, 121)
+        Me.Lbl_Serie_Numero.Location = New System.Drawing.Point(67, 121)
         Me.Lbl_Serie_Numero.Name = "Lbl_Serie_Numero"
         Me.Lbl_Serie_Numero.Size = New System.Drawing.Size(57, 16)
         Me.Lbl_Serie_Numero.TabIndex = 42
@@ -735,27 +735,27 @@ Partial Class Frm_Consulta_Reparacion
         '
         'Btn_Cotejar_Boleta
         '
-        Me.Btn_Cotejar_Boleta.Font = New System.Drawing.Font("Square721 BT", 9.0!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.Btn_Cotejar_Boleta.Location = New System.Drawing.Point(177, 76)
+        Me.Btn_Cotejar_Boleta.Font = New System.Drawing.Font("Square721 BT", 9.25!, System.Drawing.FontStyle.Bold)
+        Me.Btn_Cotejar_Boleta.Location = New System.Drawing.Point(161, 76)
         Me.Btn_Cotejar_Boleta.Name = "Btn_Cotejar_Boleta"
-        Me.Btn_Cotejar_Boleta.Size = New System.Drawing.Size(75, 23)
+        Me.Btn_Cotejar_Boleta.Size = New System.Drawing.Size(87, 25)
         Me.Btn_Cotejar_Boleta.TabIndex = 41
         Me.Btn_Cotejar_Boleta.Text = "COTEJAR"
         Me.Btn_Cotejar_Boleta.UseVisualStyleBackColor = True
         '
         'Txt_Num_Boleta
         '
-        Me.Txt_Num_Boleta.Font = New System.Drawing.Font("Square721 BT", 8.25!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.Txt_Num_Boleta.Location = New System.Drawing.Point(46, 78)
+        Me.Txt_Num_Boleta.Font = New System.Drawing.Font("Square721 BT", 9.25!)
+        Me.Txt_Num_Boleta.Location = New System.Drawing.Point(30, 78)
         Me.Txt_Num_Boleta.Name = "Txt_Num_Boleta"
-        Me.Txt_Num_Boleta.Size = New System.Drawing.Size(125, 21)
+        Me.Txt_Num_Boleta.Size = New System.Drawing.Size(125, 23)
         Me.Txt_Num_Boleta.TabIndex = 40
         '
         'Lbl_Num_Boleta
         '
         Me.Lbl_Num_Boleta.AutoSize = True
         Me.Lbl_Num_Boleta.Font = New System.Drawing.Font("Square721 BT", 9.25!, System.Drawing.FontStyle.Bold)
-        Me.Lbl_Num_Boleta.Location = New System.Drawing.Point(83, 59)
+        Me.Lbl_Num_Boleta.Location = New System.Drawing.Point(67, 59)
         Me.Lbl_Num_Boleta.Name = "Lbl_Num_Boleta"
         Me.Lbl_Num_Boleta.Size = New System.Drawing.Size(65, 16)
         Me.Lbl_Num_Boleta.TabIndex = 39
@@ -775,10 +775,10 @@ Partial Class Frm_Consulta_Reparacion
         'Label1
         '
         Me.Label1.AutoSize = True
-        Me.Label1.Font = New System.Drawing.Font("Square721 BT", 9.0!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.Label1.Location = New System.Drawing.Point(267, 53)
+        Me.Label1.Font = New System.Drawing.Font("Square721 BT", 9.25!, System.Drawing.FontStyle.Bold)
+        Me.Label1.Location = New System.Drawing.Point(264, 51)
         Me.Label1.Name = "Label1"
-        Me.Label1.Size = New System.Drawing.Size(184, 15)
+        Me.Label1.Size = New System.Drawing.Size(204, 16)
         Me.Label1.TabIndex = 46
         Me.Label1.Text = "REPARACIONES ASOCIADAS"
         '

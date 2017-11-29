@@ -31,15 +31,15 @@ Partial Class Frm_Impresion_Rep
         Me.Btn_Exportar = New System.Windows.Forms.Button()
         Me.Btn_Imprimir_Consumo = New System.Windows.Forms.Button()
         Me.cb_Numero_Rep = New System.Windows.Forms.ComboBox()
-        Me.SCR_DATOS_REPARACIONBindingSource = New System.Windows.Forms.BindingSource(Me.components)
+        Me.SCRREPARACIONESPORIMPRIMIRBindingSource = New System.Windows.Forms.BindingSource(Me.components)
         Me.ExactusERP_SRC_TABLES = New WindowsApplication1.ExactusERP_SRC_TABLES()
+        Me.SCR_DATOS_REPARACIONBindingSource = New System.Windows.Forms.BindingSource(Me.components)
         Me.SCR_DATOS_REPARACIONTableAdapter = New WindowsApplication1.ExactusERP_SRC_TABLESTableAdapters.SCR_DATOS_REPARACIONTableAdapter()
         Me.TableAdapterManager = New WindowsApplication1.ExactusERP_SRC_TABLESTableAdapters.TableAdapterManager()
-        Me.SCRREPARACIONESPORIMPRIMIRBindingSource = New System.Windows.Forms.BindingSource(Me.components)
         Me.SCR_REPARACIONES_POR_IMPRIMIRTableAdapter = New WindowsApplication1.ExactusERP_SRC_TABLESTableAdapters.SCR_REPARACIONES_POR_IMPRIMIRTableAdapter()
-        CType(Me.SCR_DATOS_REPARACIONBindingSource, System.ComponentModel.ISupportInitialize).BeginInit()
-        CType(Me.ExactusERP_SRC_TABLES, System.ComponentModel.ISupportInitialize).BeginInit()
         CType(Me.SCRREPARACIONESPORIMPRIMIRBindingSource, System.ComponentModel.ISupportInitialize).BeginInit()
+        CType(Me.ExactusERP_SRC_TABLES, System.ComponentModel.ISupportInitialize).BeginInit()
+        CType(Me.SCR_DATOS_REPARACIONBindingSource, System.ComponentModel.ISupportInitialize).BeginInit()
         Me.SuspendLayout()
         '
         'Crv_Impresion_Rep
@@ -131,16 +131,21 @@ Partial Class Frm_Impresion_Rep
         Me.cb_Numero_Rep.TabIndex = 0
         Me.cb_Numero_Rep.ValueMember = "REPARACION_NUMERO"
         '
-        'SCR_DATOS_REPARACIONBindingSource
+        'SCRREPARACIONESPORIMPRIMIRBindingSource
         '
-        Me.SCR_DATOS_REPARACIONBindingSource.DataMember = "SCR_DATOS_REPARACION"
-        Me.SCR_DATOS_REPARACIONBindingSource.DataSource = Me.ExactusERP_SRC_TABLES
-        Me.SCR_DATOS_REPARACIONBindingSource.Sort = ""
+        Me.SCRREPARACIONESPORIMPRIMIRBindingSource.DataMember = "SCR_REPARACIONES_POR_IMPRIMIR"
+        Me.SCRREPARACIONESPORIMPRIMIRBindingSource.DataSource = Me.ExactusERP_SRC_TABLES
         '
         'ExactusERP_SRC_TABLES
         '
         Me.ExactusERP_SRC_TABLES.DataSetName = "ExactusERP_SRC_TABLES"
         Me.ExactusERP_SRC_TABLES.SchemaSerializationMode = System.Data.SchemaSerializationMode.IncludeSchema
+        '
+        'SCR_DATOS_REPARACIONBindingSource
+        '
+        Me.SCR_DATOS_REPARACIONBindingSource.DataMember = "SCR_DATOS_REPARACION"
+        Me.SCR_DATOS_REPARACIONBindingSource.DataSource = Me.ExactusERP_SRC_TABLES
+        Me.SCR_DATOS_REPARACIONBindingSource.Sort = ""
         '
         'SCR_DATOS_REPARACIONTableAdapter
         '
@@ -173,11 +178,6 @@ Partial Class Frm_Impresion_Rep
         Me.TableAdapterManager.SCR_Usuario_PTableAdapter = Nothing
         Me.TableAdapterManager.UpdateOrder = WindowsApplication1.ExactusERP_SRC_TABLESTableAdapters.TableAdapterManager.UpdateOrderOption.InsertUpdateDelete
         '
-        'SCRREPARACIONESPORIMPRIMIRBindingSource
-        '
-        Me.SCRREPARACIONESPORIMPRIMIRBindingSource.DataMember = "SCR_REPARACIONES_POR_IMPRIMIR"
-        Me.SCRREPARACIONESPORIMPRIMIRBindingSource.DataSource = Me.ExactusERP_SRC_TABLES
-        '
         'SCR_REPARACIONES_POR_IMPRIMIRTableAdapter
         '
         Me.SCR_REPARACIONES_POR_IMPRIMIRTableAdapter.ClearBeforeFill = True
@@ -202,9 +202,9 @@ Partial Class Frm_Impresion_Rep
         Me.Name = "Frm_Impresion_Rep"
         Me.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen
         Me.Text = "Impresion de Reparacion"
-        CType(Me.SCR_DATOS_REPARACIONBindingSource, System.ComponentModel.ISupportInitialize).EndInit()
-        CType(Me.ExactusERP_SRC_TABLES, System.ComponentModel.ISupportInitialize).EndInit()
         CType(Me.SCRREPARACIONESPORIMPRIMIRBindingSource, System.ComponentModel.ISupportInitialize).EndInit()
+        CType(Me.ExactusERP_SRC_TABLES, System.ComponentModel.ISupportInitialize).EndInit()
+        CType(Me.SCR_DATOS_REPARACIONBindingSource, System.ComponentModel.ISupportInitialize).EndInit()
         Me.ResumeLayout(False)
         Me.PerformLayout()
 
